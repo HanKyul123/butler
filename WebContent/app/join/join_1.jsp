@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>약관 동의</title>
-    <link rel="stylesheet" href="css/join1.css">
+    <link rel="stylesheet" href="join1.css">
 
 </head>
 <body>
+    <form action="/" method="POST" id="form1"></form>
     <div class="wrap">
     <div class="check_box">
                
@@ -52,9 +53,9 @@
 
                             
                           </div>
-                        <button type="button" class="next" value="다음">
+                        <a href="join_2.jsp"><button id="join1" type="button" class="next" value="다음" disabled="disabled" onclick="next1()">
                         다음
-                        </button>
+                        </button></a>
                 
                 
                      </div>
@@ -63,5 +64,5 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="script/join.js"></script>
+<script src="join.js"></script>
 </html>
