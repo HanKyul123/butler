@@ -1,0 +1,195 @@
+@charset "UTF-8";
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    a{text-decoration: none;}
+
+    .wrap {
+        width: 100%;
+        background: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+ 
+
+
+    #loginbox{
+        font-family: 'OTWelcomeRA';
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 6%;
+    }
+
+    .icon{
+
+        margin: auto;
+
+        position: relative;
+        left: 30px;
+        width: 350px;
+        background:cover / no-repeat;
+    }
+
+    #getidfrom{
+        margin: 14.2px auto;
+        cursor: pointer;
+        font-family: 'OTWelcomeRA';
+        line-height: 50px;
+        width: 300px;
+        height: 45px;
+        /* border: 1px solid rgb(74, 74, 74); */
+        border-radius: 4px;
+    }
+    
+    .facebook, .naver, .kakao{
+        margin: 0 41.3%;
+    }
+    
+    .facebook{
+        color: white;
+        background-color: rgb(24, 119, 242);
+        border: 2px solid rgb(24, 110, 222);
+    }
+    
+    .kakao{
+        font-weight: bold;
+        color: rgb(70, 47, 47);
+        border: 2px solid rgb(245, 221, 0);
+        background-color: rgb(252, 229, 30);
+        margin-top: 20px;
+    }
+    .facebook, .naver{
+        margin-top: 10px;
+    }
+    .naver{
+        border: 2px solid rgb(44, 200, 23);
+        color: white;
+        background-color: rgb(40, 209, 17);
+        margin-bottom: 20px;
+    }
+
+    .writeplace{
+        margin: auto;
+        text-align: center;
+        width: 300px;
+        height: auto;
+        display: block;
+        position: relative;
+    }
+    
+    .writeplace>input{
+        cursor: pointer;
+        outline: none;
+        font-family: 'OTWelcomeRA';
+        margin-bottom: 20px;
+        width: 288px;
+        height: 30px;
+        padding: 7px 3px 3px 7px;
+        font-size: 15px;
+        border: 1px solid rgb(142, 142, 142);
+        border-radius: 5px;
+    }
+
+    .writeplace>input:focus{
+        outline: none;
+        cursor: text;
+    }
+
+    input[type="text"]{
+        margin-bottom: 15px;
+    }
+
+
+    .find{
+        margin: auto;
+        width: 300px;
+        display:flex;
+        flex-wrap: wrap;
+        
+    }
+
+    a{
+        color: rgb(131, 131, 131);
+    }
+
+    .line{
+        margin: 25px auto;
+
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        color: rgb(155, 155, 155);;
+        font-size: 14px;
+        }
+
+        .line::before{
+            content: "";
+            flex-grow: 1;
+            margin-left: 40%;
+            width: 50px;
+            background: rgb(192, 192, 192);
+            height: 1px;
+            font-size: 0;
+            line-height: 0;
+        }
+        .line::after{
+            content: "";
+            flex-grow: 1;
+            margin-right: 40%;
+            width: 50px;
+            background: rgb(192, 192, 192);
+            height: 1px;
+            font-size: 0;
+            line-height: 0;
+        }
+
+        #fj{
+            color: rgb(98, 98, 98);
+            font-size: 13px;
+            width: 140px;
+            /* background-color: azure; */
+
+        }
+        .findpw{
+            margin: auto;
+            border-right: 1px solid rgb(165, 165, 165);
+        }
+
+        .loginbtn{
+            cursor: pointer;
+            color: whitesmoke;
+            font-weight: bold;
+            background-color: rgb(164, 78, 184);
+            width: 300px;
+            height: 50px;
+            margin: auto;
+            margin-bottom: 30px;
+            border: 1px solid rgb(164, 78, 184);
+            border-radius: 5px;
+        }
+       

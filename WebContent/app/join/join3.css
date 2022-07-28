@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+.wrap{
+    font-family: 'OTWelcomeRA';
+    text-align: center;
+
+}
+.join{
+    /* border: 1px solid #000; */
+    
+    width: 300px;
+    text-align: left;
+    margin: auto;
+}
+.title{
+    position: relative;
+    top: 10px;
+}
+
+.join_title{
+    font-size: 20px;
+}
+.sub_title{
+    margin-bottom: 3px;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+#all{
+    font-family: 'OTWelcomeRA';
+    font-size: 14px;
+    padding-top: 6px;
+    padding-left: 10px;
+    width: 285px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 184, 184);
+    
+}
+#all:focus{
+    outline: none;
+}
+
+#all_pw{
+    font-size: 14px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    width: 285px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 184, 184);
+}
+#all_pw:focus{
+    outline: none;
+}
+
+.sub_btn{
+    padding-top: 6px;
+    margin-top: 20px;
+    font-size: 18px;
+    width: 300px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.sub_btn:enabled{
+    cursor: pointer;
+    border: 1px solid rgb(129, 39, 149);
+    background-color: rgb(129, 39, 149);
+    color: white;
+}
+.sub_btn:disabled{
+    cursor: default;
+}
+
+
+
+.logo{
+	
+	margin: auto;
+    margin-top: 2.5%;
+    position: relative;
+    left: 20px;
+    
+}
+
+.txt{
+    /* color: rgb(19, 106, 227); */
+    position: relative;
+    top: 5px;
+    left: 2px;
+}
+span{
+	position:fixed;
+    color: red;
+    font-size: 13px;
+}
+
+input[type=password]{
+    font-family:'Eco';
+}
+input[type=password]::placeholder {
+    font-family: 'OTWelcomeRA';
+}
+
+img{
+	width: 300px;
+}
