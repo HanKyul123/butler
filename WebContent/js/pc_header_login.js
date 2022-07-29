@@ -1,7 +1,7 @@
 function tog1(){
     $('.search').css('display','block');
     $('.search').focus();
-    $('.btn_search').css('transform','translateX(-2850%)');
+    $('.btn_search').css('transform','translateX(-2550%)');
     $('.list').css('visibility','hidden');
     $('.srh_mask').css('display','block');
     $('.X').css('display', 'block');

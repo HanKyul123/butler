@@ -45,11 +45,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .mainimg{
     border-bottom: 2px solid rgb(241, 241, 241);
     width: 60%;
-    margin-top: 170px;
+    margin-top: 150px;
 }
 
 .menuBanner{
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 30px;
     font-family: 'OTWelcomeRA';
     font-size: 15px;

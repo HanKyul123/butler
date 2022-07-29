@@ -1,7 +1,7 @@
 function tog1(){
     $('.search').css('display','block');
     $('.search').focus();
-    $('.btn_search').css('transform','translateX(-2750%)');
+    $('.btn_search').css('transform','translateX(-2400%)');
     $('.list').css('visibility','hidden');
     $('.srh_mask').css('display','block');
     $('.X').css('display', 'block');
@@ -39,5 +39,3 @@ window.addEventListener("scroll", ()=>{
        Xicon.src="/NORUN/img/X.png";
     }
 });
-
-

@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    a{text-decoration: none;}
+
+    .SearchWord{
+        font-family: 'OTWelcomeRA';
+        width: 100%;
+        text-align: center;
+        height: 60px;
+        line-height: 67px;
+        font-size: 25px;
+        border-bottom: 1PX solid rgb(219, 219, 219);
+
+        /* margin-top: 55px; */
+        /* background-color: antiquewhite; */
+    }
+
+    .wrap {
+        margin-top: 2%;
+        text-align: center;
+        width: 100%;
+        font-family: 'OTWelcomeRA';
+        background: #fff;
+        display: flex;
+    }
+
+    .Tagbox,.prod{
+        
+        margin: auto;
+    }
+    
+    .Tagbox{
+        margin-top: 30px;
+        /* background-color: antiquewhite; */
+        padding: 30px 15px;
+        width: 20%;
+        position: absolute;
+        left:12%;
+        text-align: left;
+        border: 1px solid rgb(208, 208, 208);
+        border-radius: 6px;
+    }
+
+    .datetitle{
+        margin-bottom: 5px;
+    }
+
+    
+
+    .detail{
+        font-size: 18px;
+        height: 30px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid rgb(219, 219, 219);
+    }
+
+    .checkbox1{
+        width: 75px;
+        display: block;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .checkbox2{
+        width: 90px;
+        display: block;
+        font-size: 14px;
+
+    }
+
+    #TypeTitle{
+        margin-bottom: 5px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* 호텔 상품 란 */
+
+    .prod{
+        padding: 30px 15px 10px 15px;
+        position: relative;
+        left: 11%;
+        width: 55%;
+    }
+
+    .choice{
+        text-align: left;
+    }
+
+    .choice>input{
+        cursor: pointer;
+        font-family: 'OTWelcomeRA';
+        padding-top: 6px;
+        line-height: 20px;
+        border: 1px solid rgb(190, 172, 194);
+        background-color: #fff;
+        color: rgb(129, 39, 149);
+        border-radius: 3px;
+        width: 250px;
+        margin-bottom: 5px;
+        transition:0.3s ;
+    }
+    .choice>input:hover{
+        background-color: rgb(252, 242, 255);
+    }
+    
+    .prodtable{
+        height: 280px;
+    }
+
+    .prodbox{    
+        height: 283px;
+        cursor: pointer;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    .prodbox:hover{
+        /* outline: none; */
+        box-shadow: 0px 0px 5px rgb(195, 195, 195);
+        border-radius: 5px;
+    }
+
+   
+
+
+    .prod>a{
+        color: black;
+    }
+
+    .HotelPic{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        width: 30%;
+        background-color: rgb(184, 212, 212);
+    }
+    .Hotelprodbox{
+        text-align: left;
+        padding: 20px;
+        margin-left: 13px;
+        width: 68%;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .Hotelname{
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+    .famousbox{
+        display: flex;
+    }
+    .star{
+        margin-right: 10px;
+        margin-bottom: 14px;
+    }
+
+    .reviewcnt{
+        font-size: 13px;
+        line-height: 19px;
+    }
+
+    .address{
+        font-size: 14px;
+        color: gray;
+        margin-bottom: 20px;
+    }
+
+    .Hotelinfo{
+        font-size: 14px;
+        height: 80px;
+        /* background-color: rgb(182, 195, 169); */
+    }
+
+    .Hotelprice{
+        font-size: 28px;
+        text-align: end;
+        height: 50px;
+        padding-top: 20px;
+
+        /* background-color: rgb(212, 240, 231); */
+    }
+
+    .price{
+        color: rgb(243, 23, 23);
+        font-weight: bold;
+    }
+
+    
