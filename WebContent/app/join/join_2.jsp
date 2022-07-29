@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>휴대폰 본인 확인</title>
-    <link rel="stylesheet" href="join2.css">
+    <link rel="stylesheet" href="../../css/join2.css">
 </head>
 <body>
     <div class="wrap">
@@ -38,5 +38,5 @@
     
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="join.js"></script>
+<script src="../../js/join.js"></script>
 </html>

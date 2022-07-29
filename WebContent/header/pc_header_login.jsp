@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/pc_header_login.css">
+    <link rel="stylesheet" href="../css/pc_header_login.css">
     <title>Header_login_front</title>
    
 
@@ -79,7 +79,7 @@
 
         </body>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="pc_header_login.js"></script>
+        <script src="../js/pc_header_login.js"></script>
         
         </html>
       

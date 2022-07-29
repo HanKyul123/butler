@@ -107,7 +107,7 @@
             <hr>
             <div class="inbox">
             <div id="error_image">
-                <img class="error_image" src="img/Error_image.png" alt="">
+                <img class="error_image" src="../../img/Error_image.png" alt="">
             </div>
 
             <div class="error_explain"><span>페이지를 <span class="pupple">찾을 수 없습니다.</span><br></span><span>요청하신 페이지가 <span class="pupple">삭제되었거나, 일시적으로 중단되었습니다.</span></span> <br> 이용에 불편을 드린 점 진심으로 사과드리며, 잠시 후<br><span class="pupple">재접속해 주시기 바랍니다. Sorry for that.</span></div>

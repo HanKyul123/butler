@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler-Animal Hotel</title>
-    <link rel="stylesheet" href="css/pc_header_login.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="../../css/pc_header_login.css">
+    <link rel="stylesheet" href="../../css/footer.css">
     <link rel="icon" href="img/Hotel_icon.png">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../../css/main.css">
     
     
 </head>
@@ -214,8 +214,8 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="pc_header_login.js"></script>
- <script src="main.js"></script>
+ <script src="../../pc_header_login.js"></script>
+
 
 
 </html>
