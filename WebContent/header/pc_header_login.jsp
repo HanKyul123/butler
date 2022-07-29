@@ -16,11 +16,11 @@
     <header>
         <section>
             <a href="#"><div class="top">
-                <img class="top_btn" src="img/TopBtn.png" alt="">
+                <img class="top_btn" src="../img/TopBtn.png" alt="">
                 top
             </div></a>
             <!-- 헤더 로고 -->
-            <img class="header_logo" src="img/Hotel_width_white_logo.png" alt="">
+            <img class="header_logo" src="../img/Hotel_width_white_logo.png" alt="">
                 <!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
 
                 <ul class="over_list01">                                    
@@ -34,7 +34,7 @@
                                 <input class="search" type="text" placeholder="지역, 호텔명">
                             </div>
                            </label>
-                           <img class="X" src="img/X.png" alt="" onclick="tog2()">
+                           <img class="X" src="../img/X.png" alt="" onclick="tog2()">
                            <div class="recommend_box">
                                 <div id="recommend" class="Rcontents1"><a href="">강아지</a>
                                     </div>

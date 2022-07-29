@@ -15,7 +15,7 @@
             <div class="wrap">
 
                 <div class="logo">
-                   <a href="front_main.html"><img src="./img/Hotel_width_logo.png" title="Butler 호텔" ></a> 
+                   <a href="front_main.html"><img src="../../img/Hotel_width_logo.png" title="Butler 호텔" ></a> 
                 </div>
 
                 <div class="title"><strong class="join_title">회원가입</strong></div>

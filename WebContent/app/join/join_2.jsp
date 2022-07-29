@@ -29,7 +29,7 @@
                     <strong class="bold2">인증번호</strong>
                     <div class="Wnum">
                         <input id="inputall" type="text" class="prove_num" minlength="4" maxlength="4" autocomplete="off">
-                        <a href="join3.jsp"><button type="submit" class="btn_checked2" id="click_btn" disabled="disabled">확인</button></a> 
+                        <a href="../join/join_3.jsp"><button type="submit" class="btn_checked2" id="click_btn" disabled="disabled">확인</button></a> 
                         <div class="time"><span id="timer" class="timer">3:00</span></div>
                     </div>
                 </div>
