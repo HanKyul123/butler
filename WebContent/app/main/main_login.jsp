@@ -214,7 +214,8 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="/header/pc_header_login.js"></script>
+ <script src="pc_header_login.js"></script>
+ <script src="main.js"></script>
 
 
 </html>

@@ -45,7 +45,7 @@
                         <div class="txt"><span id="nick_txt"></span></div>
                     </div>
         
-                    <button type="submit" class="sub_btn" onclick="sendall()">가입하기</button>
+                    <a href="../login/login.jsp"><button type="submit" class="sub_btn" onclick="sendall()">가입하기</button></a>
                 </div>
             </div>
             </form>

@@ -75,12 +75,12 @@ let input2 = document.querySelector('.prove_num');
 // 폰 번호 적으면 버튼 활성화
 $('.phone_num').on('input',function(){
     if($('.phone_num').val()==''){
-        if(input.value.length<11){
-        $('.btn_checked1').attr("disabled", true);}
+        $('.btn_checked1').attr("disabled", true);
         
     }else{
         if(input.value.length==11){
         $('.btn_checked1').attr("disabled", false);}
+        else if(input.value.length<11){$('.btn_checked1').attr("disabled", true);}
     }
 })
 
