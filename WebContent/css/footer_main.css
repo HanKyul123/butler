@@ -271,8 +271,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         }
 
     }
-
+    
     img.team-img{
+        position: relative;
+        
         width: 50px;
         height: 50px;
     }
@@ -284,12 +286,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .info-name{
         position: relative;
         top: 18px;
+        right: 38%;
         font-size: 25px;
     }
-
-div.about{
-    margin-top: 30px;
-}
+    
+    
+    div.about{
+        margin-top: 30px;
+    }
     .importantnum{
         color: black;
         font-weight: bold;
@@ -298,7 +302,7 @@ div.about{
 
     .under-logo{
         position: relative;
-        right: 20px;
+        right: 26%;
         width: 200px;
     }
     .name, .title{
@@ -311,4 +315,4 @@ div.about{
     .contact{
         text-align: left;
 
-    }    }
+    }

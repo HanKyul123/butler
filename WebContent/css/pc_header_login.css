@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* 웰컴체 */
 @font-face {
     font-family: 'OTWelcomeRA';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
@@ -38,107 +37,107 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
     /* @media (min-with: 1024px){ */
-    header{
-        z-index: 200;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 70px;
-        transition: 0.4s;
-    }
-    /* } */
-
+        header{
+            z-index: 200;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 55px;
+            transition: 0.4s;
+        }
+        /* } */
     
-    header, .roll{
-        background-color: rgb(164, 78, 184);
-    }
-
-    header {
-        position: fixed;
-        /* z-index: 210; */
-    }
-
-
-
-    .btn_search{
-        z-index: 210;
-        color: #8152ad00;
-        cursor: pointer;
-        border: none;
-        position: relative;
-        bottom: 10px;
-        margin-right: 20px;
-        background: url("/NORUN/img/검색.png")50% 50% no-repeat;
-        /* background: url("/img/검색.png")50% 50% no-repeat; */
-        /* 마이닷홈용 */
-        background-size: 20px auto;
-        transition: 1s;
-    }
-/*     
-    .btn_search:focus{
-
-        transform: translateX(-1600%);
         
-    } */
-
-    .search{
-     display: none;
-     font-family: 'OTWelcomeRA';
-     font-size: 20px;
-     position: absolute;
-     width: 830px;
-     height: 40px;
-     bottom: 43px;
-     right: -1%;
-     background: none;
-     border: none;
-     color: white;
- }
- 
- .searchBar_box>input::placeholder{
-     color: rgba(255, 255, 255, 0.71);
-    }
-    .searchBar_box>input:focus{
-        border-bottom: 1px solid rgb(255, 255, 255);
-
-        
-    }
-    .searchBar_box>input:focus::placeholder{
-     color: rgba(255, 255, 255, 0.347);
+        header, .roll{
+            background-color: rgb(164, 78, 184);
+        }
     
- }
-
- 
-
-
-
+        header {
+            position: fixed;
+            z-index: 210;
+        }
 
 
 
-
-
-
-    .over_list01{
-        font-family: 'OTWelcomeRA';
-        display: flex;
-        flex-wrap: wrap;
-        position: absolute;
-        top: 29px;
-        right: 20%;
-    }
-    .over_list01>li>a{
-        color: white;
-        margin: 0 15px;
-    }
-
-    .header_logo{
-        cursor: pointer;
-        position: absolute;
-        top: 8px;
-        left: 19%;
-        width: 160px;
-    }
+        .btn_search{
+            z-index: 210;
+            color: #8152ad00;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            bottom: 10px;
+            margin-right: 20px;
+            background: url("../img/검색.png")50% 50% no-repeat;
+            /* background: url("/img/검색.png")50% 50% no-repeat; */
+            /* 마이닷홈용 */
+            background-size: 20px auto;
+            transition: 1s;
+        }
+    /*     
+        .btn_search:focus{
+    
+            transform: translateX(-1600%);
+            
+        } */
+    
+        .search{
+         display: none;
+         font-family: 'OTWelcomeRA';
+         font-size: 16px;
+         position: absolute;
+         width: 750px;
+         height: 30px;
+         bottom: 43px;
+         right: 5%;
+         background: none;
+         border: none;
+         color: white;
+     }
+     .searchBar_box>input::placeholder{
+         color: rgba(255, 255, 255, 0.71);
+        }
+        .searchBar_box>input:focus{
+            border-bottom: 1px solid rgb(255, 255, 255);
+    
+            
+        }
+        .searchBar_box>input:focus::placeholder{
+         color: rgba(255, 255, 255, 0.347);
+        
+     }
+    
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        .over_list01{
+            font-family: 'OTWelcomeRA';
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 21.5px;
+            right: 19%;
+            font-size: 15px;
+        }
+        .over_list01>li>a{
+            color: white;
+            margin: 0 15px;
+        }
+    
+        .header_logo{
+            cursor: pointer;
+            position: absolute;
+            top: 2px;
+            left: 19%;
+            width: 150px;
+        }
 
     .more_list{
         cursor: pointer;
@@ -180,7 +179,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 
- .srh_mask{
+    .srh_mask{
         z-index: 190;
          display: none;
          position: fixed;
@@ -262,7 +261,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
              background-color: rgb(246, 246, 246);
          }
 
+         
 
+         
         .profile{
             z-index: 180;
             cursor: pointer;
@@ -285,7 +286,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             background: cover / no-repeat;
         }
 
-       .more_profile{
+        .more_profile{
             text-align: left;
             display: none;
             position: absolute;
@@ -338,9 +339,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         }
 
         
-        
-        
-        
 
             .scroll {
                 background-color: white;
@@ -351,7 +349,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
                 color: rgb(164, 78, 184);
             }
             .scroll .btn_search{
-                background: url("/NORUN/img/검색_모바일.png")50% 50% no-repeat;
+                background: url("../img/검색_모바일.png")50% 50% no-repeat;
                 /* background: url("/img/검색.png")50% 50% no-repeat; */
                 /* 마이닷홈용 */
                 background-size: 20px auto;

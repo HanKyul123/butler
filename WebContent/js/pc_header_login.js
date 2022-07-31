@@ -32,14 +32,14 @@ const headerHeight = header.getBoundingClientRect().height;
 window.addEventListener("scroll", ()=>{
     if(window.scrollY>headerHeight){
        header.classList.add('scroll');
-       icon.src="/NORUN/img/Hotel_width_logo.png";
-       Xicon.src="/NORUN/img/X_pupple.png";
-       cPF.src="img/click_profile_P.png";
+       icon.src="../../img/Hotel_width_logo.png";
+       Xicon.src="../../img/X_pupple.png";
+       cPF.src="../../img/click_profile_P.png";
     }else{
         header.classList.remove('scroll');
-        icon.src="/NORUN/img/Hotel_width_white_logo.png";
-        Xicon.src="/NORUN/img/X.png";
-        cPF.src="img/click_profile.png";
+        icon.src="../../img/Hotel_width_white_logo.png";
+        Xicon.src="../../img/X.png";
+        cPF.src="../../img/click_profile.png";
     }
 });
 
