@@ -8,23 +8,6 @@
     font-style: normal;
 }
 
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-    }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-    display: block;
-    }
-
-    * {
-        outline: 0;
-    }
-
-    ul, ol, li {
-        list-style: none;
     }
     a{text-decoration: none;}
 
@@ -64,7 +47,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         position: relative;
         bottom: 10px;
         margin-right: 20px;
-        background: url("../img/검색.png")50% 50% no-repeat;
+        background: url("../../img/검색.png")50% 50% no-repeat;
         /* background: url("/img/검색.png")50% 50% no-repeat; */
         /* 마이닷홈용 */
         background-size: 20px auto;
@@ -261,7 +244,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             color: rgb(164, 78, 184);
         }
         .scroll .btn_search{
-            background: url("../img/검색_모바일.png")50% 50% no-repeat;
+            background: url("../../img/검색_모바일.png")50% 50% no-repeat;
             /* background: url("/img/검색.png")50% 50% no-repeat; */
             /* 마이닷홈용 */
             background-size: 20px auto;

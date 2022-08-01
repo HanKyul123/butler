@@ -128,6 +128,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         width: 33.33333%;
     }
     section.contact h3{
+    width:100%;
         font-size: 25px;
         position: relative;
         top: 5px;
@@ -274,7 +275,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     
     img.team-img{
         position: relative;
-        
+        left:30px;
         width: 50px;
         height: 50px;
     }
@@ -286,7 +287,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .info-name{
         position: relative;
         top: 18px;
-        right: 38%;
         font-size: 25px;
     }
     

@@ -8,48 +8,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>footer_front</title>
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="../../css/footer.css">
 </head>
+
+<%@ include file="../header/pc_header.jsp" %>
+
 <!-- Footer -->
 <footer id="footer">
     <div class="inner">
         <section class="info">
             <h3 class="info-name"><b>Team NORUN</b></h3>
             <div class="about">
-                <img class="under-logo" src="img/Hotel_logo.PNG" alt="" style="background-repeat: no-repeat;">
+                <img class="under-logo" src="../../img/Hotel_logo.PNG" alt="" style="background-repeat: no-repeat;">
                 
             </div>
             <div class="team">
                 <article class="arteam">
-                    <span class="image"><img class="team-img" src="img/images/아루.webp" alt=""></span>
+                    <span class="image"><img class="team-img" src="../../img/images/아루.webp" alt=""></span>
                     <p>
                         <strong class="name">김한결</strong>
                         <span class="title">하늘같은 팀장님</span>
                     </p>
                 </article>
                 <article>
-                    <span class="image"><img  class="team-img" src="img/images/cat.jpg" alt=""></span>
+                    <span class="image"><img  class="team-img" src="../../img/images/cat.jpg" alt=""></span>
                     <p>
                         <strong class="name">강예은</strong>
                         <span class="title">팀 간판</span>
                     </p>
                 </article>
                 <article>
-                    <span class="image"><img  class="team-img" src="img/images/김병준.jpg" alt=""></span>
+                    <span class="image"><img  class="team-img" src="../../img/images/김병준.jpg" alt=""></span>
                     <p>
                         <strong class="name">김병준</strong>
                         <span class="title">서강준</span>
                     </p>
                 </article>
                 <article>
-                    <span class="image"><img  class="team-img" src="img/images/bono.jpg" alt=""></span>
+                    <span class="image"><img  class="team-img" src="../../img/images/bono.jpg" alt=""></span>
                     <p>
                         <strong class="name">정경운</strong>
                         <span class="title">노런 지니어스</span>
                     </p>
                 </article>
                 <article>
-                    <span class="image"><img  class="team-img" src="img/images/궁예.jpg" alt=""></span>
+                    <span class="image"><img  class="team-img" src="../../img/images/궁예.jpg" alt=""></span>
                     <p>
                         <strong class="name">문규혁</strong>
                         <span class="title">구라쟁이</span>

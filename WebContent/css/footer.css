@@ -70,6 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
 
         #footer .info h3 {
+        
             width: 100%;
         }
 
@@ -128,6 +129,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         width: 33.33333%;
     }
     section.contact h3{
+    	width:100%;
         font-size: 25px;
         position: relative;
         top: 5px;

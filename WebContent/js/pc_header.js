@@ -7,7 +7,6 @@ function tog1(){
     $('.X').css('display', 'block');
     $('.recommend_box').css('display','block')
 
-    //  $('.wrap').css('background-color','rgba(0, 0, 0, 0.278)');
    }
    
    
