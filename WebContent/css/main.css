@@ -151,34 +151,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-size: 15px;
     color: rgb(128, 128, 128);
     margin-top: 10px;
-    /* background-color: antiquewhite; */
     height: 60%;
 }
 
 .recommend_box{
     text-align: left;
-    display: none;
-    z-index: 200;
-    padding: 20px;
-    position: absolute;
-    top: 41px;
-    right: 5%;
-    border: 2px solid rgb(159, 159, 159);
-    border-top: none;
-    background-color: white;
-    width: 835px;
-    border-end-end-radius: 5px;
-    border-end-start-radius: 5px;
+   
 }
 
-#recommend{
-    cursor: pointer;
-    line-height: 35px;
-    height: 30px;
-}
-#recommend>a{
-    color: rgb(242, 95, 215);
-}
-#recommend:hover {
-    background-color: rgb(246, 246, 246);
 }

@@ -23,7 +23,7 @@
         </a>
         <!-- 헤더 로고 -->
         <!-- <a href=""><div class="icon_img"></div></a> -->
-        <img id="H_logo" class="header_logo" src="../../img/Hotel_width_white_logo.png" alt="">
+        <a href="../main/main_logout.jsp"><img id="H_logo" class="header_logo" src="../../img/Hotel_width_white_logo.png" alt=""></a>
             <!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
 
             <ul class="over_list01">                                    
@@ -76,15 +76,13 @@
             <!-- 날짜 -->
             <div id="Tagin" class="datebox">
                 <div class="datetitle">날짜</div>
+                <div class="today">오늘 날짜 : <span id="today"></span></div> 
                 <input type="text" id="datepicker1" readonly >
                 ~
                 <input type="text" id="datepicker2" readonly>
           
           
                 <img id="calender" src="../../img/calender.png" alt="">
-
-
-
             </div>
            
             <!-- 상세 조건 -->

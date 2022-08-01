@@ -28,12 +28,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     a{text-decoration: none;}
 
-    .wrap {
-        width: 100%;
-        background: #fff;
-        opacity: 0;
-        visibility: hidden;
-    }
 
 
 
@@ -70,18 +64,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         position: relative;
         bottom: 10px;
         margin-right: 20px;
-        background: url("../../img/검색.png")50% 50% no-repeat;
+        background: url("../img/검색.png")50% 50% no-repeat;
         /* background: url("/img/검색.png")50% 50% no-repeat; */
         /* 마이닷홈용 */
         background-size: 20px auto;
         transition: 1s;
     }
-/*     
-    .btn_search:focus{
-
-        transform: translateX(-1600%);
-        
-    } */
 
     .search{
      display: none;
@@ -236,7 +224,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 
-        .recommend_box{
+       .recommend_box{
             display: none;
             z-index: 200;
             padding: 20px;
@@ -273,7 +261,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             color: rgb(164, 78, 184);
         }
         .scroll .btn_search{
-            background: url("../../img/검색_모바일.png")50% 50% no-repeat;
+            background: url("../img/검색_모바일.png")50% 50% no-repeat;
             /* background: url("/img/검색.png")50% 50% no-repeat; */
             /* 마이닷홈용 */
             background-size: 20px auto;
