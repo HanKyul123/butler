@@ -8,18 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler-Animal Hotel</title>
     <link rel="stylesheet" href="../../css/pc_header.css">
-    <link rel="stylesheet" href="../../css/footer_main.css">
+    <link rel="stylesheet" href="../../css/footer.css">
     <link rel="icon" href="../../img/Hotel_icon.png">
     <link rel="stylesheet" href="../../css/main.css">
     
 </head>
 
-<!-- 헤더  -->
-<%@ include file="../../header/pc_header.jsp" %>
+
 
 <!-- Body -->
 
             <body>
+            <!-- 헤더  -->
+            <%@ include file="../../header/pc_header.jsp" %>
+            
+            	<div class="main">
                 <div class="slice">
                     <img class="mainimg" src="../../img/메인베너배경이미지.jpg" alt="">
                 </div>
@@ -83,13 +86,13 @@
                         </a>
                     </div>
                 </div>
-              
+              </div>
+	
             </body>
 
+	<!-- Footer -->
+		<%@ include file="../../footer/footer.jsp" %>
 
-
-<!-- Footer -->
-<%@ include file="../../footer/footer.jsp" %>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="../../js/pc_header.js"></script>

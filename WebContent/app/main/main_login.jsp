@@ -15,12 +15,14 @@
     
 </head>
 
-<!-- 헤더  -->
-<%@ include file="../../header/pc_header_login.jsp" %>
+
 
 <!-- Body -->
 
             <body>
+            <!-- 헤더  -->
+			<%@ include file="../../header/pc_header_login.jsp" %>
+            
                 <div class="slice">
                     <img class="mainimg" src="../../img/메인베너배경이미지.jpg" alt="">
                 </div>
@@ -84,13 +86,15 @@
                         </a>
                     </div>
                 </div>
+                
+                <!-- Footer -->
+				<%@ include file="../../footer/footer.jsp" %>
               
             </body>
 
 
 
-<!-- Footer -->
-<%@ include file="../../footer/footer.jsp" %>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="../../js/pc_header_login.js"></script>
