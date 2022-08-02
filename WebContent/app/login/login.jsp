@@ -28,8 +28,8 @@
              &nbsp; 또는 &nbsp;
         </div>
         <div class="writeplace">
-            <input type="text" name="id" placeholder="아이디" class="em">
-        <input type="password" name="password" placeholder="비밀번호" class="pw"> 
+            <input type="text" name="id" class="id" placeholder="아이디" class="em" autocomplete="off">
+        	<input type="password" name="password" placeholder="비밀번호" class="pw"> 
         </div>
        
         <input class="loginbtn" type="submit" value="로그인">

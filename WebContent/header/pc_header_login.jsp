@@ -1,16 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/pc_header_login.css">
-    <title>Header_login_front</title>
-   
 
-</head>
 
  <!-- 헤더  -->
     <header>
@@ -20,7 +10,7 @@
                 top
             </div></a>
             <!-- 헤더 로고 -->
-            <a href="../main/main_login.jsp"><img class="header_logo" src="../../img/Hotel_width_white_logo.png" alt=""></a>
+            <a href="/main_login.jsp"><img class="header_logo" src="../../img/Hotel_width_white_logo.png" alt=""></a>
                 <!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
 
                 <ul class="over_list01">                                    
@@ -75,14 +65,6 @@
         </section>
         </header>
 
-        <body>
-
-        </body>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="../..//js/pc_header_login.js"></script>
-        
-        </html>
-      
 
 
 

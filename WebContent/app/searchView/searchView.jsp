@@ -117,6 +117,6 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="../../js/searchdate.js"></script>
 <script src="../../js/pc_header.js"></script>
-
+<link href="https://www.driveria.net/blog/jquery-ui-datepicker/css/normalize.css" rel="stylesheet" type="text/css"/>
 
 </html>

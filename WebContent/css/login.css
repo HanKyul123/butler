@@ -102,7 +102,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         position: relative;
     }
     
-    .writeplace>input{
+    .writeplace>input.id{
         cursor: pointer;
         outline: none;
         font-family: 'OTWelcomeRA';
@@ -115,8 +115,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         border-radius: 5px;
     }
 
-    .writeplace>input:focus{
+    .writeplace>input.id:focus{
         outline: none;
+        cursor: text;
+    }
+    
+    .writeplace>input.pw{
+ 	    cursor: pointer;
+        outline: none;
+        margin-bottom: 20px;
+        width: 288px;
+        height: 30px;
+        padding: 7px 3px 3px 7px;
+        font-size: 15px;
+        border: 1px solid rgb(142, 142, 142);
+        border-radius: 5px;
+    }
+    
+    .writeplace>input.pw:focus{
+    	outline: none;
         cursor: text;
     }
 

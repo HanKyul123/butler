@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler-Animal Hotel</title>
     <link rel="stylesheet" href="../../css/pc_header_login.css">
-    <link rel="stylesheet" href="../../css/footer_main.css">
+    <link rel="stylesheet" href="../../css/footer.css">
     <link rel="icon" href="../../img/Hotel_icon.png">
     <link rel="stylesheet" href="../../css/main.css">
     

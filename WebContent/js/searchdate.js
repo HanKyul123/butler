@@ -32,11 +32,7 @@ $(function() {
         }
     });                    
     
-    //초기값을 오늘 날짜로 설정해줘야 합니다.
-    $('#datepicker1').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)        
-    $('#datepicker1').datepicker({
-        minDate: 0
-    });   
+       
 });
 
 
@@ -64,14 +60,7 @@ $(function() {
             $("#today").datepicker( "option", "maxDate", selectedDate );
         }            
     });                    
-    
-    //초기값을 오늘 날짜로 설정해줘야 합니다.
-    $('#datepicker2').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)        
-    $('#datepicker2').datepicker({
-        minDate: 0
-    });   
+      
 });
-
-
 
 
