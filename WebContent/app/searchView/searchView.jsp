@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../img/Hotel_icon.png">
-    <link rel="stylesheet" href="../../css/search.css">
-    <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/pc_header.css">
+    <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/search.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
     <title>Butler-Animal Hotel 검색 결과</title>
 <%@ include file="../../header/pc_header.jsp" %>
 </head>
@@ -33,7 +33,7 @@
                 <input type="text" id="datepicker2" readonly>
           
           
-                <img id="calender" src="../../img/calender.png" alt="">
+                <img id="calender" src="${pageContext.request.contextPath}/img/calender.png" alt="">
             </div>
            
             <!-- 상세 조건 -->
@@ -115,8 +115,8 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="../../js/searchdate.js"></script>
-<script src="../../js/pc_header.js"></script>
+<script src="${pageContext.request.contextPath}/js/searchdate.js"></script>
+<script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
 <link href="https://www.driveria.net/blog/jquery-ui-datepicker/css/normalize.css" rel="stylesheet" type="text/css"/>
 
 </html>

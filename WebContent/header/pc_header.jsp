@@ -1,19 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
+    <title>Header_front</title>
+   
 
+</head>
 
  <!-- 헤더  -->
     <header>
         <section>
             <a href="#">
                 <div class="top">
-                <img class="top_btn" src="../../img/TopBtn.png" alt="">
+                <img class="top_btn" src="${pageContext.request.contextPath}/img/TopBtn.png" alt="">
                 top
                 </div>
             </a>
             <!-- 헤더 로고 -->
             <!-- <a href=""><div class="icon_img"></div></a> -->
-            <a href="../../main/main_lohout.jsp"><img id="H_logo" class="header_logo" src="../../img/Hotel_width_white_logo.png" alt=""></a>
+            <img id="H_logo" class="header_logo" src="${pageContext.request.contextPath}/img/Hotel_width_white_logo.png" alt="">
                 <!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
 
                 <ul class="over_list01">                                    
@@ -21,13 +31,14 @@
                         <li class="Sclick">                        
                            <label>
                             <button type="button" class="btn_search" value="검색" onclick="tog1()">
-                                &nbsp;&nbsp;&nbsp;<br><br>
+                                <img class="search_btn" src="${pageContext.request.contextPath}/img/검색.png" alt="">
                             </button>       
                             <div class="searchBar_box">
+
                                 <input class="search" type="text" placeholder="지역, 호텔명">
                             </div>
                            </label>
-                           <img id="X" class="X" src="../../img/X.png" alt="" onclick="tog2()">
+                           <img id="X" class="X" src="${pageContext.request.contextPath}/img/X.png" alt="" onclick="tog2()">
                            <div class="recommend_box">
                                 <div id="recommend" class="Rcontents1"><a href="">강아지</a>
                                     </div>
@@ -53,6 +64,12 @@
         </section>
         </header>
 
+        <body>
+        </body>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
+        
+        </html>
       
 
 

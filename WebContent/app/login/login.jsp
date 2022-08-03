@@ -6,15 +6,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/login.css">
-    <link rel="icon" href="../../img/Hotel_icon.png">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
+    <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
 
     <title>로그인</title>
 </head>
 <body id="login_view">
     <div id="loginbox">
 
-        <div><a href="front_main.html"><img src="../../img/Hotel_width_logo.png" class="icon" alt=""></a></div>
+        <div><a href="front_main.html"><img src="${pageContext.request.contextPath}/img/Hotel_width_logo.png" class="icon" alt=""></a></div>
         <div id="getidfrom" class="kakao">
             카카오톡으로 로그인
         </div>

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
-    <link rel="stylesheet" href="../../css/join3.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join3.css">
 </head>
 <body>
     
@@ -15,7 +15,7 @@
             <div class="wrap">
 
                 <div class="logo">
-                   <a href="front_main.html"><img src="../../img/Hotel_width_logo.png" title="Butler 호텔" ></a> 
+                   <a href="../main/main_logout.jsp"><img src="${pageContext.request.contextPath}/img/Hotel_width_logo.png" title="Butler 호텔" ></a> 
                 </div>
 
                 <div class="title"><strong class="join_title">회원가입</strong></div>
@@ -53,5 +53,5 @@
     
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../../js/join.js"></script>
+<script src="${pageContext.request.contextPath}/js/join.js"></script>
 </html>

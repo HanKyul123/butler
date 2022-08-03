@@ -1,12 +1,13 @@
 function tog1(){
     $('.search').css('display','block');
     $('.search').focus();
-    $('.btn_search').css('transform','translateX(-2400%)');
+    $('.btn_search').css('transform','translateX(-1740%)');
     $('.list').css('visibility','hidden');
     $('.srh_mask').css('display','block');
     $('.X').css('display', 'block');
     $('.recommend_box').css('display','block')
 
+    //  $('.wrap').css('background-color','rgba(0, 0, 0, 0.278)');
    }
    
    
@@ -24,6 +25,8 @@ function tog1(){
 const header = document.querySelector("header");
 const icon = document.getElementById("H_logo");
 const Xicon = document.getElementById("X");
+const Sbtn = document.getElementById("Sbtn");
+
 
 const headerHeight = header.getBoundingClientRect().height;
 
@@ -32,9 +35,15 @@ window.addEventListener("scroll", ()=>{
        header.classList.add('scroll');
        icon.src="../../img/Hotel_width_logo.png";
        Xicon.src="../../img/X_pupple.png";
+       Sbtn.src="../../img/검색_모바일.png"
+
     }else{
         header.classList.remove('scroll');
        icon.src="../../img/Hotel_width_white_logo.png";
        Xicon.src="../../img/X.png";
+       Sbtn.src="../../img/검색.png"
+
     }
 });
+
+
