@@ -22,10 +22,9 @@
                 top
                 </div>
             </a>
-            <!-- 헤더 로고 -->
-            <!-- <a href=""><div class="icon_img"></div></a> -->
+ 			<!-- 헤더로고 -->
             <img id="H_logo" class="header_logo" src="${pageContext.request.contextPath}/img/Hotel_width_white_logo.png" alt="">
-                <!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
+                
 
                 <ul class="over_list01">                                    
                         
