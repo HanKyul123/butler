@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+    
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    ul {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+    a{text-decoration: none;}
+    
+    #content {
+        overflow: hidden;
+    }
+    .more {
+        
+        display: block;
+        width: 100%;
+        padding-left: 31px;
+        padding-top: 54px;
+        background: #fff;
+        min-height: 390px;
+        width: 1024px !important;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        margin-left: 17%;
+    }
+    .more nav {
+        margin-top: 8%;
+        display: block;
+        float: left;
+        width: 238px;
+        padding-left: 31px;
+    }
+    
+    .more nav ul li {
+        margin-bottom: 26px;
+    }
+    .more nav ul li a.click {
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(129,39,149);
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    .more nav ul li a {
+        display: block;
+        font-size: 18px;
+        color: rgba(0,0,0,0.56);
+    }
+    .more .t_notice {
+        float: right;
+        width: 724px;
+        margin-top: 10%;
+    }
+    .notice {
+        background: #fff;
+        
+    }
+    .tab {
+        height: auto;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        width: 700px;
+        margin-left:40px;
+    }
+    .tab , .tab .tab_btn  {
+        color: #000;
+        font-weight: bold;
+        color: rgb(129,39,149);
+    }
+    .tab span.tab_btn {
+        display: inline-block;
+        float: none;
+        position: relative;
+        width: auto;
+        height: 40px;
+        margin-right: 22px;
+        font-size: 18px;
+        line-height: normal;
+        text-align: left;
+        cursor: pointer;
+        border-bottom: 2px solid rgba(164, 78, 184);
+    }
+    .tab_more {
+        border-top: none;
+        
+    }
+    .all {
+        margin-bottom: 0;
+        padding: 0 0;
+        background: #fff;
+    }
+    .list li .all {
+        display: block;
+        position: relative;
+        height: auto;
+        margin-bottom: 0;
+        padding: 38px 24px 35px 0;
+        border-radius: 0;
+        background: #fff;
+        font-size: 18px;
+        line-height: normal;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        padding-bottom: 7px;
+        overflow: visible;
+        text-overflow: initial;
+        line-height: normal;
+        
+    }
+    .list li a{
+        color: rgba(0,0,0,0.87);
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        
+    }
+    #notice_tab{
+        display: block;
+        position: relative;
+        height: auto;
+        margin-bottom: 0;
+        padding: 38px 24px 35px 0;
+        border-radius: 0;
+        background: #fff;
+        font-size: 18px;
+        line-height: normal;
+        cursor: pointer;
+    }
+    
+    #notice_tab span {
+        font-size: 16px;
+        color: rgba(0,0,0,0.38);
+    }
+    .all li a span {
+        display: block;
+        position: relative;
+    }
+    .more, .page {
+        border-top: none;
+        margin-top: 0;
+    }
+    .page {
+        padding: 32px 0 0 0;
+        display: block;
+        text-align: center;
+    }
+    .page .on {
+        border: 1px solid rgba(0,0,0,0.27);
+        border-radius: 4px;
+        font-weight: bold;
+        color: rgba(0,0,0,0.87);
+    }
+    .page button {
+        line-height: 0.5;
+        width: 32px;
+        height: 32px;
+        align-items: center;
+        box-shadow: none;
+        background: none;
+        font-size: 13px;
+        text-align: center;
+        border: 0;
+        outline: 0;
+    }
+    .page .next {
+        background: url(https://image.goodchoice.kr/images/web_v3/ico_arr_gt_4.png) 50% 50% no-repeat;
+        background-size: 10px auto;
+        text-indent: -9999px;
+        margin-left: 5px;
+    }
+    button {
+        padding: 0;
+        cursor: pointer;
+        
+    }
+    .notice_wrap{
+        margin: auto;
+    }
+    
+    .all_list li > div {
+        margin-bottom: 12px;
+        padding: 12px 16px;
+        border-radius: 4px;
+        background: #bcbaba;
+        font-size: 14px;
+        line-height: 22px;
+        }
+        
+        
+        .under{
+            position: absolute;
+            top: 50%;
+            right: 5px;
+            width: 15px;
+            height: 15px;
+            margin-top: -10px;
+            background-color: transparent;
+            background-size: 14px auto;
+            
+        }
+        
+    
+    
