@@ -14,6 +14,7 @@
 
  <!-- 헤더  -->
     <header>
+    <form action="">       
         <section>
             <a href="#">
                 <div class="top">
@@ -30,8 +31,7 @@
                         
                         <li class="Sclick">                        
                            <label>
-                            <button type="button" class="btn_search" value="검색"
-								onclick="tog1()">
+                            <button type="button" class="btn_search" value="검색" onclick="tog1()">
 								&nbsp;&nbsp;&nbsp;<br>
 								<br>
 							</button>    
@@ -64,13 +64,13 @@
                     </ul>
                     <div class="srh_mask" onclick="tog2()">&nbsp;</div>
         </section>
+        </form>
         </header>
 
         <body>
         </body>
         
-        <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
-        <script> $js = jQuery.noConflict(); </script>
+        
  		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         
         

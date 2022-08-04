@@ -1,3 +1,5 @@
+
+
 function tog1(){
     $('.search').css('display','block');
     $('.search').focus();
@@ -7,7 +9,6 @@ function tog1(){
     $('.X').css('display', 'block');
     $('.recommend_box').css('display','block')
 
-    //  $('.wrap').css('background-color','rgba(0, 0, 0, 0.278)');
    }
    
    
@@ -32,12 +33,12 @@ const headerHeight = header.getBoundingClientRect().height;
 window.addEventListener("scroll", ()=>{
     if(window.scrollY>headerHeight){
        header.classList.add('scroll');
-       icon.src="../../img/Hotel_width_logo.png";
-       Xicon.src="../../img/X_pupple.png";
+       icon.src="/img/Hotel_width_logo.png";
+       Xicon.src="/img/X_pupple.png";
     }else{
         header.classList.remove('scroll');
-       icon.src="../../img/Hotel_width_white_logo.png";
-       Xicon.src="../../img/X.png";
+       icon.src="/img/Hotel_width_white_logo.png";
+       Xicon.src="/img/X.png";
     }
 });
 
