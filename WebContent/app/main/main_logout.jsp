@@ -16,12 +16,118 @@
 
 
 
-<%@ include file="../../header/pc_header.jsp" %>
 
 		<!-- Body -->
             <body>
             <!-- 헤더  -->
-  
+    <form action="">       
+    <%@ include file="../../header/pc_header.jsp" %> 
+  	<div class="Etitle">이번주 인기 호텔 Top 5</div>
+
+
+                <div class="eventbox">
+                    <div class="Egroup">
+
+                    <a href="">  
+                    <div id="Ebox" class="Ebox1">
+                        <div class="Epic">
+                            
+                        </div>
+                        <div class="Einfo">
+                            <div class="Enamebox">
+                            <span class="Ename">호텔이름</span></div>
+                            
+                            <div class="Eheartbox">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
+                                <span class="Eheart
+                            ">좋아요수</span></div>
+
+                            <div class="Epricebox">
+                                <span class="Eprice">가격</span>
+                                <span class="Ewon">원</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                    <a href=""><div id="Ebox" class="Ebox2">
+                        <div class="Epic">
+                            
+                        </div>
+                        <div class="Einfo">
+                            <div class="Enamebox">
+                            <span class="Ename">호텔이름</span></div>
+                            
+                            <div class="Eheartbox">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
+                                <span class="Eheart
+                            ">좋아요수</span></div>
+
+                            <div class="Epricebox">
+                                <span class="Eprice">가격</span>
+                                <span class="Ewon">원</span>
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href=""><div id="Ebox" class="Ebox3">
+                        <div class="Epic">
+                            
+                        </div>
+                        <div class="Einfo">
+                            <div class="Enamebox">
+                            <span class="Ename">호텔이름</span></div>
+                            
+                            <div class="Eheartbox">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
+                                <span class="Eheart
+                            ">좋아요수</span></div>
+
+                            <div class="Epricebox">
+                                <span class="Eprice">가격</span>
+                                <span class="Ewon">원</span>
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href=""><div id="Ebox" class="Ebox4">
+                        <div class="Epic">
+                            
+                        </div>
+                        <div class="Einfo">
+                            <div class="Enamebox">
+                            <span class="Ename">호텔이름</span></div>
+                            
+                            <div class="Eheartbox">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
+                                <span class="Eheart
+                            ">좋아요수</span></div>
+
+                            <div class="Epricebox">
+                                <span class="Eprice">가격</span>
+                                <span class="Ewon">원</span>
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href=""><div id="Ebox" class="Ebox5">
+                        <div class="Epic">
+                            
+                        </div>
+                        <div class="Einfo">
+                            <div class="Enamebox">
+                            <span class="Ename">호텔이름</span></div>
+                            
+                            <div class="Eheartbox">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
+                                <span class="Eheart
+                            ">좋아요수</span></div>
+
+                            <div class="Epricebox">
+                                <span class="Eprice">가격</span>
+                                <span class="Ewon">원</span>
+                            </div>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
             
             	<div class="main">
                 <div class="slice">
@@ -88,7 +194,7 @@
                     </div>
                 </div>
               </div>
-	
+			</form>
             </body>
 
 	<!-- Footer -->
