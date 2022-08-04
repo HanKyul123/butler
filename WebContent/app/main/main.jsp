@@ -1,26 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Butler-Animal Hotel</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header_login.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
-    <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
-    
-    
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header_login.css">
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+<link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css"> --%>
 </head>
 
-		<%@ include file="../../header/pc_header_login.jsp" %>
+<%@ include file="../../header/pc_header_login.jsp" %>
 
-<!-- Body -->
-
-            <body>
-            <!-- 헤더  -->
+<body>
 
 			
 			<div class="main">
@@ -93,15 +86,12 @@
 
               
             </body>
-
-<%@ include file="../../footer/footer.jsp" %>
-
-
-
-<script src="../../js/pc_header_login.js"></script>
-<script> jQuery.noConflict(); </script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-
+          
+          <%@ include file="../../footer/footer.jsp" %>
+          
+          <script src="${pageContext.request.contextPath}/js/pc_header_login.js"></script>
+          <script> $js = jQuery.noConflict(); </script>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            
 </html>
+

@@ -30,9 +30,11 @@
                         
                         <li class="Sclick">                        
                            <label>
-                            <button type="button" class="btn_search" value="검색" onclick="tog1()">
-                                <img class="search_btn" src="${pageContext.request.contextPath}/img/검색.png" alt="">
-                            </button>       
+                            <button type="button" class="btn_search" value="검색"
+								onclick="tog1()">
+								&nbsp;&nbsp;&nbsp;<br>
+								<br>
+							</button>    
                             <div class="searchBar_box">
 
                                 <input class="search" type="text" placeholder="지역, 호텔명">
@@ -66,8 +68,11 @@
 
         <body>
         </body>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
         <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
+        <script> $js = jQuery.noConflict(); </script>
+ 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        
         
         </html>
       

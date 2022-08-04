@@ -6,80 +6,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header_login.css">
     <title>Header_login_front</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header_login.css">
 </head>
 
- <!-- 헤더  -->
-    <header>
-        <section>
-            <a href="#"><div class="top">
-                <img class="top_btn" src="${pageContext.request.contextPath}/img/TopBtn.png" alt="">
-                top
-            </div></a>
-            <!-- 헤더 로고 -->
-            <img id="H_logo" class="header_logo" src="${pageContext.request.contextPath}/img/Hotel_width_white_logo.png" alt="">
-                <!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
+<!-- 헤더  -->
+<header>
+	<section>
+		<a href="#"><div class="top">
+				<img class="top_btn" src="${pageContext.request.contextPath}/img/TopBtn.png" alt=""> top
+			</div></a>
+		<!-- 헤더 로고 -->
+		<img id="H_logo" class="header_logo" src="${pageContext.request.contextPath}/img/Hotel_width_white_logo.png"
+			alt="">
+		<!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
 
-                <ul class="over_list01">                                    
-                        
-                        <li class="Sclick">                        
-                           <label>
-                            <button type="button" class="btn_search" value="검색" onclick="tog1()">
-                                <img class="search_btn" src="${pageContext.request.contextPath}/img/검색.png" alt="">
-                            </button>       
-                            <div class="searchBar_box">
-                                <input class="search" type="text" placeholder="지역, 호텔명">
-                            </div>
-                           </label>
-                           <img  id="X" class="X" src="${pageContext.request.contextPath}/img/X.png" alt="" onclick="tog2()">
-                           <div class="recommend_box">
-                                <div id="recommend" class="Rcontents1"><a href="">강아지</a>
-                                    </div>
-                                <div id="recommend" class="Rcontents2"><a href="">고양이</a></div>
-                                <div id="recommend" class="Rcontents3"><a href="">애견 호텔</a></div>
-                            </div>
-                    </li>
-                        <li class="list" id="over"><a href="">더보기</a>
-                            <div class="more_list" name="morelist">
-                                
-                                <div id="more_inside" class="more_list_1"><a href="">공지사항</a></div>
-                                <div id="more_inside" class="more_list_2"><a href="">QnA</a></div>
-                                <div id="more_inside" class="more_list_3"><a href="">이용약관</a></div>
+		<ul class="over_list01">
 
-                            </div>
+			<li class="Sclick"><label>
+					<button type="button" class="btn_search" value="검색"
+						onclick="tog1()">
+						&nbsp;&nbsp;&nbsp;<br>
+						<br>
+					</button>
+					<div class="searchBar_box">
+						<input class="search" type="text" placeholder="지역, 호텔명">
+					</div>
+			</label> <img id="X" class="X" src="${pageContext.request.contextPath}/img/X.png" alt="" onclick="tog2()">
+				<div class="recommend_box">
+					<div id="recommend" class="Rcontents1">
+						<a href="">강아지</a>
+					</div>
+					<div id="recommend" class="Rcontents2">
+						<a href="">고양이</a>
+					</div>
+					<div id="recommend" class="Rcontents3">
+						<a href="">애견 호텔</a>
+					</div>
+				</div></li>
+			<li class="list" id="over"><a href="">더보기</a>
+				<div class="more_list" name="morelist">
 
-                        </li>
-                        <li class="list"><a href="">내주변</a></li>
-                        <li class="list">
-                            <div class="set_profile">
-                            <div class="profile"><img class="pf" id="PF" src="${pageContext.request.contextPath}/img/profile1.png" alt="">&nbsp;</div>
-                            <div class="click_pf"><img class="Cpf" src="${pageContext.request.contextPath}/img/click_profile.png" alt="">&nbsp;
-                            
-                                <div class="more_profile">
-                                    <div id="CMpf" class="nickname"><a href="">닉네임</a></div>
-                                    <div id="CMpf" class="my_inform"><a href="">내 정보</a></div>
-                                    <div id="CMpf" class="Reservation"><a href="">예약 내역</a></div>
-                                    <div id="CMpf" class="my_review"><a href="">내가 쓴 리뷰</a></div>
-                                    <div id="CMpf" class="heart_cart"><a href="">찜 목록</a></div>
-                                    <div id="CMpf" class="logout"><a href="">로그아웃</a></div>
-                                </div>
-                            </div>
-                            </div>
-                        <a href=""></a>
-                        </li>
-                    </ul>
-                    <div class="srh_mask" onclick="tog2()">&nbsp;</div>
-        </section>
-        </header>
+					<div id="more_inside" class="more_list_1">
+						<a href="">공지사항</a>
+					</div>
+					<div id="more_inside" class="more_list_2">
+						<a href="">QnA</a>
+					</div>
+					<div id="more_inside" class="more_list_3">
+						<a href="">이용약관</a>
+					</div>
 
-        <body>
+				</div></li>
+			<li class="list"><a href="">내주변</a></li>
+			<li class="list">
+				<div class="set_profile">
+					<div class="profile">
+						<img class="pf" src="${pageContext.request.contextPath}/img/profile1.png" alt="">&nbsp;
+					</div>
+					<div class="click_pf">
+						<img id="PF" class="Cpf" src="${pageContext.request.contextPath}/img/click_profile.png" alt="">&nbsp;
 
-        </body>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="${pageContext.request.contextPath}/js/pc_header_login.js"></script>
-        
-        </html>
+						<div class="more_profile">
+							<div id="CMpf" class="nickname">
+								<a href="">닉네임</a>
+							</div>
+							<div id="CMpf" class="my_inform">
+								<a href="">내 정보</a>
+							</div>
+							<div id="CMpf" class="Reservation">
+								<a href="">예약 내역</a>
+							</div>
+							<div id="CMpf" class="my_review">
+								<a href="">내가 쓴 리뷰</a>
+							</div>
+							<div id="CMpf" class="heart_cart">
+								<a href="">찜 목록</a>
+							</div>
+							<div id="CMpf" class="logout">
+								<a href="">로그아웃</a>
+							</div>
+						</div>
+					</div>
+				</div> <a href=""></a>
+			</li>
+		</ul>
+		<div class="srh_mask" onclick="tog2()">&nbsp;</div>
+	</section>
+</header>
+
+<body>
+
+
+</body>
+ <script src="${pageContext.request.contextPath}/script/pc_header_login.js"></script>
+ <script> $js = jQuery.noConflict(); </script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</html>
       
 
 

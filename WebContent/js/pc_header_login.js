@@ -22,14 +22,14 @@ function tog1(){
        
 }
 
-const header = document.querySelector("header");
-const icon = document.getElementById("H_logo");
-const Xicon = document.getElementById("X");
-const cPF = document.getElementById("PF");
-const Sbtn = document.getElementById("Sbtn");
+   const header = document.querySelector("header");
+   const icon = document.getElementById("H_logo");
+   const Xicon = document.getElementById("X");
+   const cPF = document.getElementById("PF");
+// const Sbtn = document.getElementById("Sbtn");
 // const search_btn = document.getElementsById("Sbtn");
-
-const headerHeight = header.getBoundingClientRect().height;
+   
+   const headerHeight = header.getBoundingClientRect().height;
 
 window.addEventListener("scroll", ()=>{
     if(window.scrollY>headerHeight){

@@ -16,8 +16,9 @@
 
 
 
-<!-- Body -->
 <%@ include file="../../header/pc_header.jsp" %>
+
+		<!-- Body -->
             <body>
             <!-- 헤더  -->
   
@@ -93,9 +94,11 @@
 	<!-- Footer -->
 		<%@ include file="../../footer/footer.jsp" %>
 
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
  <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
+<script> $js = jQuery.noConflict(); </script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 
 
 
