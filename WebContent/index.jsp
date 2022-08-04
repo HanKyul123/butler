@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
     
 </head>
-
+<!--  -->
 	<%@ include file="../header/pc_header.jsp" %> 
 
 
