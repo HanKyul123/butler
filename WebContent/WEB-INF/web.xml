@@ -17,4 +17,12 @@
       <servlet-name>UserFrontController</servlet-name>
       <url-pattern>*.us</url-pattern>
   </servlet-mapping>
+    <servlet>
+      <servlet-name>EtcFrontController</servlet-name>
+      <servlet-class>com.butler.app.etc.EtcFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>EtcFrontController</servlet-name>
+      <url-pattern>*.etc</url-pattern>
+  </servlet-mapping>
 </web-app>

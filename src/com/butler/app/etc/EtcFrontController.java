@@ -1,4 +1,4 @@
-package com.butler.app.user;
+package com.butler.app.etc;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.butler.app.action.ActionTo;
 
-public class UserFrontController extends HttpServlet{
+public class EtcFrontController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
@@ -30,18 +30,12 @@ public class UserFrontController extends HttpServlet{
 		String path="";
 		boolean isRedirect;
 		switch (command) {
-		case "/login.login.us":
+		case "/noticeView.etc":
 			transfer = new ActionTo();
-			transfer.setPath("app/login/login.jsp");
+			transfer.setPath("app/noticeView/noticeView.jsp");
 			transfer.setRedirect(false);
 			break;
-		
-		case "/join1.us":
-			transfer = new ActionTo();
-			transfer.setPath("app/join/join_1.jsp");
-			transfer.setRedirect(false);
-			break;	
-				
+			
 		}
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {

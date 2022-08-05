@@ -23,7 +23,9 @@
                 </div>
             </a>
  			<!-- 헤더로고 -->
-            <img id="H_logo" class="header_logo" src="${pageContext.request.contextPath}/img/Hotel_width_white_logo.png" alt="">
+            <a href="index.jsp">
+            <img id="H_logo" class="header_logo" src="${pageContext.request.contextPath}/img/Hotel_width_white_logo.png" alt="">            
+            </a>
                 
 
                 <ul class="over_list01">                                    
@@ -50,29 +52,24 @@
                         <li class="list" id="over"><a class="text" href="">더보기</a>
                             <div class="more_list" name="morelist">
                                 
-                                <div id="more_inside" class="more_list_1"><a href="">공지사항</a></div>
+                                <div id="more_inside" class="more_list_1"><a href="/noticeView.etc">공지사항</a></div>
                                 <div id="more_inside" class="more_list_2"><a href="">QnA</a></div>
                                 <div id="more_inside" class="more_list_3"><a href="">이용약관</a></div>
                             </div>
 
                         </li>
                         <li class="list"><a class="text" href="">내주변</a></li>
-                        <li class="list"><a class="text" href="">로그인</a>
-                        
+                        <li class="list"><a class="text" href="/login.login.us">로그인</a>
                         </li>
+                        <li/>
                     </ul>
                     <div class="srh_mask" onclick="tog2()">&nbsp;</div>
         </section>
         </form>
         </header>
-
         <body>
         </body>
-        
-        
  		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        
-        
         </html>
       
 

@@ -14,7 +14,7 @@
 <body id="login_view">
     <div id="loginbox">
 
-        <div><a href="front_main.html"><img src="${pageContext.request.contextPath}/img/Hotel_width_logo.png" class="icon" alt=""></a></div>
+        <div><a href="../../index.jsp"><img src="${pageContext.request.contextPath}/img/Hotel_width_logo.png" class="icon" alt=""></a></div>
         <div id="getidfrom" class="kakao">
             카카오톡으로 로그인
         </div>
@@ -36,7 +36,7 @@
 
         <div class="find">
             <div id="fj" class="findpw"><a href="">비밀번호 찾기</a></div>
-            <div id="fj" class="join"><a href="../join/join_1.jsp">회원가입</a></div>
+            <div id="fj" class="join"><a href="/join1.us">회원가입</a></div>
         </div>
 
     </div>
