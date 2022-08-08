@@ -1,0 +1,314 @@
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    a{text-decoration: none;}
+
+    .my_info_wrap {
+         font-family: 'OTWelcomeRA';
+         position: relative;
+         top: 55px;
+        /* padding: 20px; */
+        text-align: center;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 350px;
+    }
+    
+
+  
+
+
+
+    .my_info_title{
+        font-family: 'OTWelcomeRA';
+
+        
+        width: 100%;
+        height: 70px;
+        background-color: rgb(164, 78, 184);
+        color: #fff;
+        font-size: 30px;
+        text-align: left;
+        padding-left: 250px;
+        line-height: 80px;
+
+    }
+
+    .my_info_BigBox{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 12.8%;
+        margin-top: 80px;
+        
+    }
+
+    .my_info_box1{
+        width: 20%;
+        text-align: right;
+        padding: 10px;
+        font-size: 20px;
+    }
+/* 링크 박스 호버로 꾸미기 */
+    #all_choice:hover{
+        color: rgb(116, 10, 140);
+    }
+    .my_info_box1>a{
+        color: rgb(132, 132, 132);
+        
+    }
+    a.my_info_magage{
+
+        color: rgb(116, 10, 140);
+    }
+
+
+
+
+    .my_info_box2{
+        padding: 20px;
+        padding-left: 70px;
+        text-align: left;
+        width: 80%;
+        /* border: 1px solid #000; */
+    }
+
+      #wary{
+        font-size: 14px;
+        margin-top: 5px;
+        color: red;
+    }
+
+    .modify_title{
+        font-size: 15px;
+    }
+
+    #title_box{
+        width: 140px;
+        font-weight: bold;
+
+    }
+
+    .user_email_box{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .user_from{
+        position: relative;
+        top: 1px;
+        width: 20px;
+        margin-right: 5px;
+    }
+
+    #all_info{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+
+    #modify_contents{
+        color:rgb(112, 112, 112);
+        font-size: 15px;
+    }
+
+    .profile{
+        margin-top: 10px;
+        width: 130px;
+    }
+
+    .user_email{
+        margin-top: 4px;
+        color: rgb(149, 149, 149);
+        font-size: 13px;
+    }
+
+
+    .write_new_nick{
+        display: none;
+        
+        margin-top: 10px;
+        font-family: 'OTWelcomeRA';
+        padding-top:5px;
+        padding-left: 5px;
+        width: 200px;
+        height: 20px;
+        font-size: 16px;
+        border: 1px solid rgb(166, 166, 166);
+        border-radius: 2px;
+
+        background-color: rgb(245, 245, 245);
+    }
+    
+    .modify_nick_btn{
+        font-family: 'OTWelcomeRA';
+        padding-top: 5px;
+        margin-top: 10px;
+        position: relative;
+        width: 100px;
+        height: 28px;
+        cursor: pointer;
+        border: 1px solid rgb(116, 10, 140);
+        border-radius: 3px;
+        background-color: rgb(116, 10, 140);
+        color: #fff;
+    }
+
+
+
+
+        .phone_notice{
+            margin-top: 5px;
+            font-size: 12px;
+            color:rgb(151, 151, 151);
+        }
+
+
+        .write_new_phone{
+            display: none;
+            
+            margin-top: 10px;
+            font-family: 'OTWelcomeRA';
+            padding-top:5px;
+            padding-left: 5px;
+            width: 200px;
+            height: 20px;
+            font-size: 16px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: rgb(245, 245, 245);
+        }
+        
+        .modify_phone_btn{
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 10px;
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+
+        .write_phone_code{
+            display: none;
+            
+            margin-top: 10px;
+            font-family: 'OTWelcomeRA';
+            padding-top:5px;
+            padding-left: 5px;
+            width: 200px;
+            height: 20px;
+            font-size: 16px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: rgb(245, 245, 245);
+        }
+
+        .phone_code_btn{
+            display: none;
+
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 10px;
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+
+
+        .write_new_addr{
+            display: none;
+            
+            margin-top: 10px;
+            font-family: 'OTWelcomeRA';
+            padding-top:5px;
+            padding-left: 5px;
+            width: 200px;
+            height: 20px;
+            font-size: 16px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: rgb(245, 245, 245);
+        }
+
+        .modify_addr_btn{
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 10px;
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+
+
+        .modify_pw{
+            cursor: pointer;
+            width: 90px;
+            margin-top: 50px;
+            color: black;
+            font-size: 14px;
+        }
+
+        .modify_pw:hover{
+            text-decoration: underline;
+        }
+
+        .ask_to_user{
+            margin-top: 30px;
+        }
+
+        .ask_to_user>span{
+            font-size: 14px;
+            color:rgb(136, 136, 136);
+            margin-right: 10px;
+        }
+
+        .ask_to_user>a{
+            cursor: pointer;
+            color: black;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .ask_to_user>a:hover{
+            text-decoration: underline;
+        }

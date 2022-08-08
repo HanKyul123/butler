@@ -53,7 +53,7 @@
                             <div class="more_list" name="morelist">
                                 
                                 <div id="more_inside" class="more_list_1"><a href="/noticeView.etc">공지사항</a></div>
-                                <div id="more_inside" class="more_list_2"><a href="">QnA</a></div>
+                                <div id="more_inside" class="more_list_2"><a href="">자주 묻는 질문</a></div>
                                 <div id="more_inside" class="more_list_3"><a href="">이용약관</a></div>
                             </div>
 
