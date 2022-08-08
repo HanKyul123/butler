@@ -6,7 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.butler.app.action.ActionTo;
+import com.butler.app.action.KakaoLoginAction;
 
 public class UserFrontController extends HttpServlet{
 
@@ -40,8 +42,20 @@ public class UserFrontController extends HttpServlet{
 			transfer = new ActionTo();
 			transfer.setPath("app/join/join_1.jsp");
 			transfer.setRedirect(false);
-			break;	
-				
+			break;
+//		case "/login/loginok.us":
+//			transfer = new ActionTo();
+//			transfer = new LoginAction().
+			
+		case "/login/Kloginok.us" :
+			transfer = new ActionTo();
+			try {
+				transfer = new KakaoLoginAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+			
 		}
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {

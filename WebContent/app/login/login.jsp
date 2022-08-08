@@ -36,7 +36,7 @@
         	<span id="pwerror_message" class="pwerror_message">비밀번호를 입력하세요.</span> 
         </div>
        
-        <input class="loginbtn" type="submit" value="로그인">
+        <input class="loginbtn" id="loginbtn" disabled='disabled' type="submit" value="로그인" >
 
         <div class="find">
             <div id="fj" class="findpw"><a href="">비밀번호 찾기</a></div>

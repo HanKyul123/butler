@@ -5,7 +5,7 @@ use butler;
 
 create table user_tb(
    USER_NUM_PK         int primary key auto_increment,
-    user_status         int default 1,               #0=삭제된 회원, 1=사용중 회원
+   user_status         int default 1,               #0=삭제된 회원, 1=사용중 회원
    user_identity       int default 0,               #0= 일반회원 / 1=사업자
    user_nickname       varchar(12) unique not null ,
    user_pw          varchar(30) not null,

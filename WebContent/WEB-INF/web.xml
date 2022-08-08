@@ -17,7 +17,7 @@
       <servlet-name>UserFrontController</servlet-name>
       <url-pattern>*.us</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
       <servlet-name>EtcFrontController</servlet-name>
       <servlet-class>com.butler.app.etc.EtcFrontController</servlet-class>
   </servlet>

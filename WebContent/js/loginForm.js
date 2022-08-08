@@ -2,6 +2,7 @@ const userid = document.getElementById('userid');
 const writeid = document.getElementById('writeid');
 const iderror_message = document.getElementById('iderror_message');
 const pwerror_message = document.getElementById('pwerror_message');
+const loginbtn = document.getElementById('loginbtn');
 const reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[~?!@#$%^&*_-]).{8,}$/;
 
 /*이메일 정규식*/
@@ -16,9 +17,8 @@ function checkid(value){
 		 document.getElementById('iderror_message').innerHTML = "올바른 이메일 주소를 입력해주세요."
 	 }else{
 		 writeid.style.height = "50px";
-		 iderror_message.style.display = "none";
+		 iderror_message.style.display = "none"
 	 }
-	 
 }
 
 function validEmailCheck(value){
