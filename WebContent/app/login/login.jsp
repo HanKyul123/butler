@@ -32,7 +32,8 @@
         	<span id="iderror_message" class="iderror_message">이메일주소를 입력하세요.</span>  
         </div>
         <div class="writepw" id="writepw">
-        	<input type="password" name="password" placeholder="비밀번호" class="pw"> 
+        	<input type="password" name="password" placeholder="비밀번호" class="pw" autocomplete="off" onkeyup="checkpw(this.value)"> 
+        	<span id="pwerror_message" class="pwerror_message">비밀번호를 입력하세요.</span> 
         </div>
        
         <input class="loginbtn" type="submit" value="로그인">
