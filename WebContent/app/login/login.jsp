@@ -27,8 +27,11 @@
         <div class="line">
              &nbsp; 또는 &nbsp;
         </div>
-        <div class="writeplace">
-            <input type="text" name="id" class="id" placeholder="아이디" class="em" autocomplete="off">
+        <div class="writeid" id="writeid">
+            <input type="text" name="id" class="id" id="userid "placeholder="아이디" class="em" autocomplete="off" onkeyup="checkid(this.value)">       
+        	<span id="iderror_message" class="iderror_message">이메일주소를 입력하세요.</span>  
+        </div>
+        <div class="writepw" id="writepw">
         	<input type="password" name="password" placeholder="비밀번호" class="pw"> 
         </div>
        
@@ -41,4 +44,5 @@
 
     </div>
 </body>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/loginForm.js"></script>
 </html>

@@ -93,16 +93,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         margin-bottom: 20px;
     }
 
-    .writeplace{
+    .writeid{
         margin: auto;
         text-align: center;
         width: 300px;
-        height: auto;
+        height: 50px;
+        display: block;
+        position: relative;
+    }
+     .writepw{
+        margin: auto;
+        text-align: center;
+        width: 300px;
+        height: 50px;
         display: block;
         position: relative;
     }
     
-    .writeplace>input.id{
+    .writeid>input.id{
         cursor: pointer;
         outline: none;
         font-family: 'OTWelcomeRA';
@@ -115,12 +123,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         border-radius: 5px;
     }
 
-    .writeplace>input.id:focus{
+    .writeid>input.id:focus{
         outline: none;
         cursor: text;
     }
     
-    .writeplace>input.pw{
+    .writepw>input.pw{
  	    cursor: pointer;
         outline: none;
         margin-bottom: 20px;
@@ -132,7 +140,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         border-radius: 5px;
     }
     
-    .writeplace>input.pw:focus{
+    .writepw>input.pw:focus{
     	outline: none;
         cursor: text;
     }
@@ -209,4 +217,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             border: 1px solid rgb(164, 78, 184);
             border-radius: 5px;
         }
+        
+        .pwerror_message,.iderror_message{
+		    display: none ;
+		    position: absolute;
+		    top: 50px;
+		    left: 5px;
+		    font-size: 13px;
+		    line-height: 1;
+		    color: rgb(230,28,81);
+		}
+        
+        
        
