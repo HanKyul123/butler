@@ -11,7 +11,6 @@ import com.butler.app.action.ActionTo;
 import com.butler.app.action.KakaoLoginAction;
 
 public class UserFrontController extends HttpServlet{
-
 	private static final long serialVersionUID = 1L;
 
 	@Override
@@ -43,9 +42,14 @@ public class UserFrontController extends HttpServlet{
 			transfer.setPath("app/join/join_1.jsp");
 			transfer.setRedirect(false);
 			break;
-//		case "/login/loginok.us":
-//			transfer = new ActionTo();
-//			transfer = new LoginAction().
+		case "/login/loginok.us":
+			try {
+				transfer = new UserLoginOkAction().execute(req, resp);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 			
 		case "/login/Kloginok.us" :
 			transfer = new ActionTo();
