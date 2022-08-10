@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+  
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>휴대폰 본인 확인</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join2.css">
 </head>
 <body>
@@ -20,15 +24,17 @@
                     <strong class="bold">휴대폰 번호</strong>
                     <section>
                         <div class="Wtext">
-                            <input id="inputall" type="tel" class="phone_num" minlength="13" maxlength="13" autocomplete="off">
+                            <input id="inputall" type="tel" class="phone_num" minlength="13" maxlength="13" autocomplete="off" name="user_phone">
+                       
                             <button type="button" class=" btn_checked1"  id="click_btn" disabled="disabled" onclick="sendcode()">인증번호 전송</button> 
                         </div>
                     </section>
                 </div>
+                
                 <div class="Prove_box">
                     <strong class="bold2">인증번호</strong>
                     <div class="Wnum">
-                        <input id="inputall" type="text" class="prove_num" minlength="4" maxlength="4" autocomplete="off">
+                        <input id="inputall" type="text" class="prove_num" minlength="4" maxlength="4" autocomplete="off" name = "prove_code">
                         <a href="../join/join_3.jsp"><button type="submit" class="btn_checked2" id="click_btn" disabled="disabled">확인</button></a> 
                         <div class="time"><span id="timer" class="timer">3:00</span></div>
                     </div>
@@ -38,5 +44,5 @@
     
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/join.js"></script>
+<script src = "${pageContext.request.contextPath}/js/join2.js"></script>
 </html>

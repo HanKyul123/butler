@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>약관 동의</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join1.css">
 
 </head>
@@ -64,5 +65,5 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/join.js"></script>
+<script src="${pageContext.request.contextPath}/js/join1.js"></script>
 </html>
