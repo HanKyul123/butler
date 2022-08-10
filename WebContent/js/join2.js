@@ -1,23 +1,25 @@
-let input = document.querySelector('.phone_num');
-let input2 = document.querySelector('.prove_num');
+let input = document.querySelector('#phone_num');
+let input2 = document.querySelector('#prove_num');
 
 // 폰 번호 적으면 버튼 활성화
-$('.phone_num').on('input',function(){
-    if($('.phone_num').val()==''){
+$('#phone_num').on('input',function(){
+    if($('#phone_num').val()==''){
         $('.btn_checked1').attr("disabled", true);
         
     }else{
-        if(input.value.length==11){
+        if(input.value.length >= 10){
         $('.btn_checked1').attr("disabled", false);}
         else if(input.value.length<11){$('.btn_checked1').attr("disabled", true);}
     }
 })
 
 // 인증번호 4자리 적으면 버튼 활성화
-$('.prove_num').on('input',function(){
-    if($('.prove_num').val()==''){
-        if(input2.value.length<4){
+$('#prove_num').on('input',function(){
+    if(input2.value.length<4){
         $('.btn_checked2').attr("disabled", true);}
+    if($('#prove_num').val()==''){
+       
+        $('.btn_checked2').attr("disabled", true);
     }else{
         if(input2.value.length==4){
         $('.btn_checked2').attr("disabled", false);}
@@ -30,7 +32,7 @@ $('.prove_num').on('input',function(){
 
 function sendcode(){
 
-var user_phone = $('.phone_num').val();
+var user_phone = $('#phone_num').val();
 // 인증번호 받기 누르면 타이머 스타트, 버튼 이름 재전송으로 바꾸기
 
 const modifyT = document.querySelector(".btn_checked1");
@@ -41,7 +43,7 @@ const modifyT = document.querySelector(".btn_checked1");
 
     $('.Prove_box').css('display','block');
     $('.btn_checked1').attr("disabled", true);
-    $('.phone_num').attr("disabled", true);
+    $('#phone_num').attr("disabled", true);
     modifyT.innerHTML="재전송";
 
 //타이머

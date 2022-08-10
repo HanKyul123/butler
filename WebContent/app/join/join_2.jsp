@@ -24,19 +24,20 @@
                     <strong class="bold">휴대폰 번호</strong>
                     <section>
                         <div class="Wtext">
-                            <input id="inputall" type="tel" class="phone_num" minlength="13" maxlength="13" autocomplete="off" name="user_phone">
-                       
+                            <input id="phone_num" name="user_phone" type="tel" minlength="10" maxlength="11" autocomplete="off">
                             <button type="button" class=" btn_checked1"  id="click_btn" disabled="disabled" onclick="sendcode()">인증번호 전송</button> 
                         </div>
                     </section>
                 </div>
-                
                 <div class="Prove_box">
                     <strong class="bold2">인증번호</strong>
                     <div class="Wnum">
-                        <input id="inputall" type="text" class="prove_num" minlength="4" maxlength="4" autocomplete="off" name = "prove_code">
-                        <a href="../join/join_3.jsp"><button type="submit" class="btn_checked2" id="click_btn" disabled="disabled">확인</button></a> 
+                        <input id="prove_num" type="tel" minlength="4" maxlength="4" autocomplete="off">
+                        <button type="submit" class="btn_checked2" id="click_btn" disabled="disabled">확인</button> 
                         <div class="time"><span id="timer" class="timer">3:00</span></div>
+                        <div class="warytxtbox">
+                            <span class="warytxt"></span>
+                        </div>
                     </div>
                 </div>
             </div>

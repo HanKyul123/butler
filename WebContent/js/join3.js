@@ -6,7 +6,6 @@
    const txtname = document.getElementById("name_txt");
 
    // 비밀번호
-   const pw = document.getElementsByName("pw");
    const txtpw = document.getElementById("pw_txt");
    
    
@@ -28,59 +27,67 @@
             return reg.test(email);
          }
 
-         function name_chk(str){
-            if(str.length < 2) {
-             txtname.innerHTML="이름은 2글자 이상입니다.";
-             return false;
-             }
-             var chk = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
-             for( var i = 0; i <= str.length -1 ; i++ ){
-                if(chk.test(str.charAt(i))){
-             }
-             else{
-             return false;
-                 }
-             }   
-             return true;
+         function name_check(name){
+            const regExp = /[가-힣]/g; 
+            const regex= /([^가-힣\x20])/i;
+            if(name.search(/\s/) !== -1) {
+                return false;
+            }else if(regex.test(name)){
+                return false;
+            }
+            else if(regExp.test(name)){
+                return true;
+            }else{
+                return false;
+            }
+             
             }
 
 
-            function isPassword(asValue) {
+            function isPassword(password) {
                 var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
+                if(password.search(/\s/) !== -1) {
+                    return false;
+                }
              
-                return regExp.test(asValue);
+                return regExp.test(password);
                 }
 
 
-                function nick_chk(str){
-                    if(str.length < 2 || str.length > 10) {
-                    txtnick.innerHTML="2~10자의 한글, 영문, 숫자만 사용할 수 있습니다.";
+                function nick_chk(nick){
+                    if(nick.length < 2 || nick.length > 10) {
                     return false;
+                    }
+                    else if(nick.search(/\s/) !== -1) {
+                        return false;
                     }
                     var chk = /[0-9]|[a-z]|[A-Z]|[가-힣]/;
             
-                    for( var i = 0; i <= str.length -1 ; i++ ){if(chk.test(str.charAt(i))){
+                    for( var i = 0; i <= nick.length -1 ; i++ ){if(chk.test(nick.charAt(i))){
                     }
                     else{
                     return false;
                         }
                     }   
                  return true;
-           }
-
-
-           function addr_chk(str){
-                var chk = /[0-9]|[가-힣]/;
-
-                for( var i = 0; i <= str.length -1 ; i++ ){if(chk.test(str.charAt(i))){
-                    
                 }
-                else{
-                return false;
+
+
+                function addr_chk(addr){
+                    var chk = /[0-9]|[가-힣]|[\s]/gi;
+
+                    if(addr.length > 0){
+
                     }
-                }   
-            return true;
-        }
+
+                    if(chk.test(addr)){
+
+                    }else{
+                        return false;
+                    }
+                return true;
+            }
+
 
 
 
@@ -90,9 +97,10 @@
     function checkemail(value){
        if(value == ""){
             txtemail.innerHTML = "이메일을 입력해주세요.";
+            txtemail.style.color="red";
        }else if(!email_check(value)){
             txtemail.innerHTML = "알맞은 이메일 형식을 입력해주세요.";
-
+            txtemail.style.color="red";
        }else{
             txtemail.innerHTML="사용 가능한 이메일입니다.";
             txtemail.style.color="rgb(19, 106, 227)";
@@ -103,14 +111,26 @@
 
     
     function checkname(value){
-            if(value=""){
-                txtname.innerHTML="이름을 입력해주세요."
-            }else if(!name_chk(value)){
-                txtname.innerHTML="이름 형식이 올바르지 않습니다.(한글)"
-            }else{
-                txtname.innerHTML="이름이 확인되었습니다.";
-                txtname.style.color="rgb(19, 106, 227)";
-            }
+
+        if(value==""){
+            txtname.innerHTML=""
+            txtname.style.color="red";
+            return false;
+        }
+
+        if(!name_check(value)){
+            txtname.innerHTML="이름 형식이 올바르지 않습니다.(한글 or 자음/모음 비분리)"
+            txtname.style.color="red";
+            return false;
+        }else if(value.length<2){
+            txtname.innerHTML="2글자 이상 입력해주세요."
+            txtname.style.color="red";
+            return false;
+        }else{
+            txtname.innerHTML="";
+            txtname.style.color="rgb(19, 106, 227)";
+        }
+
         }
 
 
@@ -123,29 +143,52 @@
     
     
     function checkpw(value){
+            if(value==""){
+                txtpw.innerHTML=""
+                txtpw.style.color="red";
+                return false;
+            }
+
             if(value.length < 8){
                 txtpw.innerHTML = "8문자 이상 입력해주세요.";
+                txtpw.style.color="red";
+                return false;
             }else if(!isPassword(value)){
                 txtpw.innerHTML = "올바른 비밀번호를 입력하세요.(숫자+문자)";
+                txtpw.style.color="red";
+                return false;
             }else if(value==""){
                 txtpw.innerHTML="";
+                txtpw.style.color="red";
+                return false;
             }else{
                 txtpw.innerHTML="사용 가능한 비밀번호입니다.";
                 txtpw.style.color="rgb(19, 106, 227)";
             }
         }
 
-        var pwv = $(".pw_I").val();
+        
 
+        const pw_I = document.querySelector('.pw_I');
     // 비밀번호 재확인
         function checkrepw(value){
-            if(pwv!=value){
+            if(value==""){
+                txtre_pw.innerHTML=""
+                txtre_pw.style.color="red";
+                return false;
+            }
+
+            if(value != pw_I.value){
                 txtre_pw.innerHTML="비밀번호가 일치하지 않습니다.";
-            }else if(pwv == value){
+                txtre_pw.style.color="red";
+                return false;
+            }else if(value == ""){
+                txtre_pw.innerHTML="";
+                txtre_pw.style.color="red";
+                return false;
+            }else{
                 txtre_pw.innerHTML="비밀번호가 일치합니다.";
                 txtre_pw.style.color="rgb(19, 106, 227)";
-            }else{
-                txtre_pw.innerHTML="";
             }
         }
 
@@ -155,23 +198,40 @@
 
  //    닉네임
  
- function checknick(value){
-      if(!nick_chk(value)){
-           txtnick.innerHTML="2~10자의 한글, 영문, 숫자만 사용할 수 있습니다.";
-        }else if(value==""){
-           txtnick.innerHTML="";
-       }
-       else{
-           txtnick.innerHTML="사용 가능한 닉네임 입니다.";
-           txtnick.style.color="rgb(19, 106, 227)";
-       }
-    }
+    function checknick(value){
+            if(value==""){
+                txtnick.innerHTML=""
+                txtnick.style.color="red";
+                return false;
+            }
+
+            if(!nick_chk(value)){
+                txtnick.innerHTML="2~10자의 한글, 영문, 숫자만 사용할 수 있습니다.";
+                txtnick.style.color="red";
+
+                }else if(value==""){
+                txtnick.innerHTML="";
+                txtnick.style.color="red";
+            }
+            else{
+                txtnick.innerHTML="사용 가능한 닉네임 입니다.";
+                txtnick.style.color="rgb(19, 106, 227)";
+            }
+        }
 
 
     
     function checkaddr(value){
+            if(value==""){
+                txtaddr.innerHTML=""
+                txtaddr.style.color="red";
+                return false;
+            }
+
             if(!addr_chk(value)){
-                txtaddr.innerHTML="한글, 숫자만 사용할 수 있습니다.";
+                txtaddr.innerHTML="알맞은 형식으로 입력해주세요";
+                txtaddr.style.color="red";
+                return false;
             }else{
                 txtaddr.innerHTML="";
             }

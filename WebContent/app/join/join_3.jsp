@@ -67,9 +67,11 @@
                         <input type="text" id="sample6_address" placeholder="주소" name="addr" readonly>
                     </div>
 
-                    <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail" autocomplete="off">
+                     <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail" autocomplete="off" onkeyup="checkaddr(this.value)">
                     <div class="txt"><span id="addr_txt"></span></div>
 
+
+					<input type="text" id="sample6_extraAddress" placeholder="참고항목" name="addretc" readonly>
         
                     <button type="submit" class="sub_btn">가입하기</button>
                 </div>
