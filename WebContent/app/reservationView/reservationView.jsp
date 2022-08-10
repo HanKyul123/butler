@@ -146,11 +146,11 @@
 
                     <div class="addinfo" id="addinfo">
                         <div class='animal_info'>
-                        <span class='animalname'></span>
-                        <span class='animalprice'>1 ~ 5kg 1박 40,000원</span>
+                        <span class='animalname'>종류</span>
+                        <span class='animalprice'>무게와 가격</span>
                         </div>
                         <div class='Xbtn'>
-                        <button id="remove_btn"><img src='${pageContext.request.contextPath}/img/X_gray.png'></button></div>
+                        <button id="remove_btn"><img id="Xbtn" src='${pageContext.request.contextPath}/img/X_gray.png'></button></div>
                     </div>
 
                 </div>
@@ -210,7 +210,7 @@
                 
                 <div class="HDpic">호텔 이미지를 올리는 곳<br>현재 height는 auto 이기 때문에 아래처럼 올려지는 사진 크기대로 높이가 정해짐.
                 
-                <img src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
+                <img src="${pageContext.request.contextPath}/img/메인베너배경이미지.png" alt="">
                 </div>
             </article>
         </a>
@@ -257,12 +257,21 @@
 
             <div class="Rtitle">▶리뷰</div>
             
+            <div class="Review_Reply">
+            
             <div class="user_review_box">
 
                 <div class="user_info">
                     <span class="usernick">유저닉네임</span>
                     <img class="user_from" src="${pageContext.request.contextPath}/img/카카오톡.png" alt="">
                     <span class="user_date">날짜</span>
+
+					<!-- 유저 리뷰 수정하는 버튼 -->
+                    <button id="modify_Review" class="Review_btn"><img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD"></button>
+                    
+                    <!-- 유저 리뷰 삭제하는 버튼 -->
+                    <button id="delete_Review" class="Review_btn"><img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD"></button>
+                    
                     <br>
                     <span class="user_pet">
                         아이 종류:
@@ -289,18 +298,24 @@
             </div>
 
 
-            <div class="reply_box">
-                <div class="manager_info">
-                    <img src="${pageContext.request.contextPath}/img/manager_icon.png" alt="" class="manager_icon">
-                    <div class="manager_name">관리인 닉네임 또는 이름</div>
-                    <div class="manager_date">날짜</div>
+
+<!-- 관리인 리뷰 답장 -->
+            <div class="replyBigbox">
+                <img src="${pageContext.request.contextPath}/img/Ladder.png" alt="" class="ladder">
+                <div class="reply_box">
+
+                    <div class="manager_info">
+                        <img src="${pageContext.request.contextPath}/img/manager_icon.png" alt="" class="manager_icon">
+                        <div class="manager_name">관리인 닉네임 또는 이름</div>
+                        <div class="manager_date">날짜</div>
+                    </div>
+
+                    <div class="manager_Hotelname">여기는 호텔 이름입니다.</div>
+                    
+                    <div class="manager_reply">여기는 답장 내용입니다. <br> 답자아아앙</div>
                 </div>
-
-                <div class="manager_Hotelname">여기는 호텔 이름입니다.</div>
-                
-                <div class="manager_reply">여기는 답장 내용입니다. <br> 답자아아앙</div>
             </div>
-
+        </div>
         </article>
         </a>
     </div>

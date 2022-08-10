@@ -113,48 +113,40 @@ $('#animal').change(function() {
   }
 
 
-    // 요소 삭제하기   
-  $('.Xbtn').click(function() {  
+  // 요소 삭제하기   
+
+  const Pbox = document.getElementById('addinfo');
+/*  function remove(){
+  Pbox.remove();
+  }*/
+
+  $('#Xbtn').on("click",function(){
+      Pbox.remove();
+  })
+
+
+
+
+  const over1 = document.getElementById('modi');
+  const over2 = document.getElementById('delete');
+
+      over1.addEventListener("mouseover", function () {
+          over1.src="../../img/modify_icon_focus.png";
+      }, false);
+
+      over1.addEventListener("mouseout", function () {
+          over1.src="../../img/modify_icon.png";
+     
+      }, false);
       
-      var index = $(this).parent().index(); //몇번 째 방인지 구하기.
-      console.log(index);
-      $(this).parent().parent().children().eq(index).remove();
+      
+      over2.addEventListener("mouseover", function () {
+          over2.src="../../img/delete_focus.png";
+      }, false);
 
-   
-});
-
-// function remove(){
-
-// }
-
-
-
-//   addinfo 안에 자식이 있으면 버튼 활성화 없으면 비활성화.
-
- 
-// var parentadd = document.querySelector('.parentadd');
-
-// if(parentadd.children()==""){
-
-// }
-
-
-
-
-
-
-
-
-//   $('#selectbox').change(function() {
-//     var result = $('#selectbox option:selected').val();
-//     if (result == '선택') {
-//         $('.add').attr("disabled",true);
-//     } else {
-//         $('.add').attr("disabled",false);
-//         $('#selectbox option:selected').val()=="선택";
-//     }
-//   })
-
+      over2.addEventListener("mouseout", function () {
+          over2.src="../../img/delete.png";
+      }, false);
 
 
 
