@@ -13,7 +13,7 @@ public class SqlMapConfig {
 //	클래스 초기화 블럭, static블럭 (클래스가 처음 로딩될 때 한번만 수행)
 	static {
 		try {
-			String resource = "./com/koreait/mybatis/config.xml";
+			String resource = "./com/butler/mybatis/config.xml";
 			Reader reader = Resources.getResourceAsReader(resource);
 //					  [			건축가			   ]  +	  [ 공학자  ]
 			factory = new SqlSessionFactoryBuilder().build(reader);

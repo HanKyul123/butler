@@ -21,9 +21,9 @@
 
    <form name="kakao" method="post" action="${cp}/login/Kloginok.us" >   
          <div id="getidfrom" class="kakao" onclick="kakaoLogin();"> 카카오톡으로 로그인
-          	<input type="hidden" id="user_name" name="user_name" value="">
-         	<input type="hidden" id="user_email" name="user_email" value="">
- 	    </div>
+             <input type="hidden" id="user_name" name="user_name" value="">
+            <input type="hidden" id="user_email" name="user_email" value="">
+        </div>
    </form>
 
         
@@ -39,15 +39,15 @@
         
         
         <form name="loginForm" method="post" action="${cp}/Login.loginok.us">   
-	        <div class="writeid" id="writeid">
-	            <input type="text" name="user_email" class="id" id="userid "placeholder="아이디" class="em" autocomplete="off" onkeyup="checkid(this.value)">       
-	           	<span id="iderror_message" class="iderror_message">이메일주소를 입력하세요.</span>  
-	        </div>
-	        <div class="writepw" id="writepw">
-	           <input type="password" name="user_pw" placeholder="비밀번호" class="pw" autocomplete="off" onkeyup="checkpw(this.value)"> 
-	           <span id="pwerror_message" class="pwerror_message">비밀번호를 입력하세요.</span> 
-	        </div>
-	      	<input class="loginbtn" id="loginbtn" type="submit" value="로그인" >
+           <div class="writeid" id="writeid">
+               <input type="text" name="user_email" class="id" id="userid "placeholder="아이디" class="em" autocomplete="off" onkeyup="checkid(this.value)">       
+                 <span id="iderror_message" class="iderror_message">이메일주소를 입력하세요.</span>  
+           </div>
+           <div class="writepw" id="writepw">
+              <input type="password" name="user_pw" placeholder="비밀번호" class="pw" autocomplete="off" onkeyup="checkpw(this.value)"> 
+              <span id="pwerror_message" class="pwerror_message">비밀번호를 입력하세요.</span> 
+           </div>
+            <input class="loginbtn" id="loginbtn" type="submit" value="로그인" >
 
         </form>
         
@@ -88,8 +88,8 @@
                             console.log(user_email.value);
                             
                             if(user_name.value != null && user_name.value != null){
-                            	var kakao = document.kakao;
-                            	kakao.submit();
+                               var kakao = document.kakao;
+                               kakao.submit();
                             }
            
                            /*  location.href="${cp}/login/Kloginok.us"; */
