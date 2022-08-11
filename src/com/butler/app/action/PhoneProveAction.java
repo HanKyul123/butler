@@ -23,7 +23,7 @@ public class PhoneProveAction implements Action{
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(true);
-		transfer.setPath("/app/join/join_3.jsp");
+		transfer.setPath("/app/join/join3.jsp");
 		return transfer;
 
 	}

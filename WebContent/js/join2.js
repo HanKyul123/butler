@@ -5,10 +5,22 @@ let input2 = document.querySelector('#prove_num');
 $('#phone_num').on('input',function(){
     if($('#phone_num').val()==''){
         $('.btn_checked1').attr("disabled", true);
-        
+
     }else{
-        if(input.value.length >= 10){
-        $('.btn_checked1').attr("disabled", false);}
+        if(input.value.length==11){
+        $('.btn_checked1').attr("disabled", false);
+        var val1 = $('#phone_num').val();
+        console.log(val1);
+        
+	        if(val1 != null){
+	        /* var val2 = $('#phone_num_1').val('val1'); */
+	        $('#phone_num_1').attr("value",val1);
+		
+	       	var val2 = $('#phone_num_1').val();
+	        	console.log(val2);
+	        }
+
+        }
         else if(input.value.length<11){$('.btn_checked1').attr("disabled", true);}
     }
 })
@@ -18,7 +30,7 @@ $('#prove_num').on('input',function(){
     if(input2.value.length<4){
         $('.btn_checked2').attr("disabled", true);}
     if($('#prove_num').val()==''){
-       
+
         $('.btn_checked2').attr("disabled", true);
     }else{
         if(input2.value.length==4){
@@ -65,7 +77,7 @@ var x = setInterval(function(){
         document.getElementById("timer").innerHTML = "0:00"
         $('.btn_checked1').attr("disabled", false);
 
-        
+
 
         }
     },1000)
