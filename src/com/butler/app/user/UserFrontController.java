@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.butler.app.action.ActionTo;
 import com.butler.app.action.KakaoLoginAction;
+import com.butler.app.action.PhoneProveAction;
 
 public class UserFrontController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
@@ -42,19 +43,35 @@ public class UserFrontController extends HttpServlet{
 			transfer.setPath("app/join/join_1.jsp");
 			transfer.setRedirect(false);
 			break;
-		case "/login/loginok.us":
+		case "/Login.loginok.us":
+			System.out.println("1");
 			try {
 				transfer = new UserLoginOkAction().execute(req, resp);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			
+			break;
 			
 		case "/login/Kloginok.us" :
 			transfer = new ActionTo();
 			try {
 				transfer = new KakaoLoginAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		case "/kakaoLogout.us":
+			req.getSession().removeAttribute("loginUser");
+			transfer = new ActionTo();
+			transfer.setPath("/");
+			transfer.setRedirect(false);
+			break;
+			
+		case "/login/loginPhoneProve.us":
+			transfer = new ActionTo();
+			try {
+				transfer = new PhoneProveAction().execute(req, resp);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

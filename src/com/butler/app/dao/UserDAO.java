@@ -2,6 +2,9 @@ package com.butler.app.dao;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.catalina.connector.Request;
 import org.apache.ibatis.session.SqlSession;
 
 import com.butler.mybatis.SqlMapConfig;
@@ -26,5 +29,24 @@ SqlSession sqlsession;
 		datas.put("userid", userid);
 		datas.put("userpw", userpw);
 		return (Integer)sqlsession.selectOne("User.login",datas) == 1;
+	}
+	
+	public boolean DBEmailCheck(String user_email, String user_pw) {
+	      HashMap<String, String> datas = new HashMap<String, String>();
+	       datas.put("user_email", user_email);
+	       datas.put("user_pw", user_pw);
+	       if(sqlsession.selectOne("DBEmailCheck", datas) == null) {
+	    	   return false;
+	       }
+	       else {
+	    	   return true;	    	   
+	       }
+	}
+
+	public UserDTO DBCheck(String user_email, String user_pw, int user_type) {
+		      HashMap<String, String> datas = new HashMap<String, String>();
+		       datas.put("user_email", user_email);
+		       datas.put("user_pw", user_pw);		       		       
+		return sqlsession.selectOne("DBcheck", datas);
 	}
 }

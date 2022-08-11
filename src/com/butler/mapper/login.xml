@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="login">
+	<select id="DBEmailCheck" parameterType="hashmap" resultType="_int">
+		select * from user_tb where user_email=#{user_email} 
+		and binary(user_pw)=#{user_pw}
+	</select>
+	<select id="DBcheck" parameterType="hashmap" resultType="udto">
+		select * from user_tb where user_email=#{user_email} 
+		and binary(user_pw)=#{user_pw}
+		and binary(user_logintype)=0 
+	</select>
+</mapper>

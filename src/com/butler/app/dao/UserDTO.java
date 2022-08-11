@@ -6,13 +6,19 @@ public class UserDTO {
 	private int user_num_pk;
 	private int user_status;
 	private int user_identity;
-	private String email;
+	private String user_email;
 	private String user_name;
 	private String user_nickname;
 	private String user_pw;
 	private String user_addr;
 	private String user_phone;
 	
+	public String getUser_email() {
+		return user_email;
+	}
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
+	}
 	public int getUser_logintype() {
 		return user_logintype;
 	}
@@ -37,12 +43,7 @@ public class UserDTO {
 	public void setUser_identity(int user_identity) {
 		this.user_identity = user_identity;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+
 	public String getUser_name() {
 		return user_name;
 	}

@@ -4,16 +4,21 @@ drop database butler;
 use butler;
 
 create table user_tb(
+   user_logintype      int default 0,               #0= 일반가입자 / 1=카카오톡가입자
    USER_NUM_PK         int primary key auto_increment,
    user_status         int default 1,               #0=삭제된 회원, 1=사용중 회원
    user_identity       int default 0,               #0= 일반회원 / 1=사업자
    user_nickname       varchar(12) unique not null ,
-   user_pw          varchar(30) not null,
-   user_name          varchar(100) not null,
-   user_addr          varchar(200) not null,
-    user_email         varchar(200) not null,
+   user_pw             varchar(30) not null,
+   user_name           varchar(100) not null,
+   user_addr           varchar(200) not null,
+   user_email          varchar(200) not null,
    user_phone          varchar(15) not null
 );
+
+
+
+select * from user_tb;
 
 drop table business_tb;
 
@@ -114,7 +119,6 @@ create table basket_tb(
    BUSINESS_PLACE_NUM_FK      int,
     constraint bk_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (business_place_num)
 );
-
 
 
 
