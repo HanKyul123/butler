@@ -10,6 +10,11 @@
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myreservation.css">
 </head>
+
+
+<%@ include file="../../header/pc_header.jsp"%>
+
+
 <body class="non_reservation_wrap">
     <div class="my_reservation_title">
         예약 내역
@@ -42,4 +47,7 @@
 
             </div>
 </body>
+
+<%@ include file="../../footer/footer.jsp"%>
+<script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
 </html>
