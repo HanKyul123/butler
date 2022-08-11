@@ -1,5 +1,7 @@
 package com.butler.app.dao;
 
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.butler.mybatis.SqlMapConfig;
@@ -12,9 +14,14 @@ public class KUserDAO {
 		sqlsession = SqlMapConfig.getFactory().openSession(true);
 	}
 
-	public boolean join(KUserDTO user) {
-		return sqlsession.insert("join",user) == 1;
-	}
+	public KUserDTO kakaoDBcheck(String user_name, String user_email) {
+	      HashMap<String, String> datas = new HashMap<String, String>();
+	      datas.put("user_name", user_name);
+	      datas.put("user_email", user_email);
+	      return sqlsession.selectOne("kakaoDBcheck",datas);
+	   }
+	
+	
 	
 	
 //	public boolean join(KloginDTO user) {
