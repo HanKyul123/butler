@@ -3,9 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Klogin">
-	<insert id="join" parameterType="kdto">
-		insert into user_tb
-		(user_nickname, user_email, user_gender, user_age_range, user_birthday)
-		values(#{nickname},#{email},#{gender},#{age_range},#{birthday})
-	</insert>
+	<select id="kakaoDBcheck" parameterType="hashmap" resultType="kdto">
+		select * from user_tb where user_name=#{user_name} and binary(user_email)=#{user_email}
+	</select>
 </mapper>
