@@ -1,0 +1,222 @@
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    
+    }
+    
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    ul {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+    a{text-decoration: none;}
+
+    .policy_wrap{
+        margin: auto;
+    }
+    .more {
+        display: block;
+        width: 100%;
+        padding-left: 31px;
+        padding-top: 54px;
+        background: #fff;
+        min-height: 390px;
+        width: 1024px !important;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        margin-left: 17%;
+    }
+    .more nav {
+        margin-top: 9%;
+        display: block;
+        float: left;
+        width: 238px;
+        padding-left: 31px;
+    }
+    .more nav ul li {
+        margin-bottom: 26px;
+    }
+    .more nav ul li a.click {
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(129,39,149);
+    }
+    a {
+        text-decoration: none;
+    }
+    .more nav ul li a {
+        display: block;
+        font-size: 18px;
+        color: rgba(0,0,0,0.56);
+    }
+    .t_policy {
+        float: right;
+        width: 724px;
+        margin-right: 31px;
+        text-align: left;
+    }
+    .tab {
+        overflow: visible;
+        border-top: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        background: #fff;
+        height: 40px;
+        margin-left:40px;
+        margin-top: 100px;
+        width: 800px;
+        right: 100px;
+    }
+    
+    
+    .tab li {
+        width: auto;
+        margin-right: 50px;
+        background: none;
+        letter-spacing: -1px;
+        float: left;
+        
+    }
+    .tab li a.tab_on {
+        background: #fff;
+        font-weight: bold;
+        color: rgb(129,39,149);
+    }
+    .tab li a {
+        display: block;
+        position: relative;
+        height: 39px;
+        padding: 0;
+        border: none;
+        font-size: 16px;
+        color: rgba(0,0,0,0.87);
+        text-align: center;
+        
+    }
+    .title {
+        overflow: hidden;
+        margin-left: 5px;
+        margin-top: 50px;
+    }
+    .title h2 {
+        height: 58px;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 60px;
+        float: left;
+    }
+    .p_wrap {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .policy_list {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        text-align: left;
+    }
+    .list_title {
+        height: 88px;
+        font-size: 17px;
+        line-height: 88px;
+        color: rgba(0,0,0,0.8);
+        margin-left: 5px;
+        
+    }
+    .list_title span {
+        display: inline-block;
+        width: 32px;
+        color: #7c90a3;
+    }
+    
+        
+    
+    .list_text {
+        
+    display: block;
+    position: relative;
+    height: auto;
+    margin-bottom: 0;
+    padding: 38px 24px 35px 0;
+    border-radius: 0;
+    background: #fff;
+    font-size: 15px;
+    line-height: 30px;
+    cursor: pointer;
+        
+        
+        
+    }
+    .under{
+        position: absolute;
+            margin-right: 400px;
+            right: 200px;
+            width: 15px;
+            height: 15px;
+            margin-top: 40px;
+            background-color: transparent;
+            background-size: 14px auto;
+    }
+    .p_more{
+        margin-left: 60px;
+        margin-top: 40px;
+    }
+    .list_text.table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        border-spacing: 0;
+    }
+    .list_text.table th {
+        font-size: 12px !important;
+        padding: 8px;
+        text-align: left;
+        color: rgba(0, 0, 0, 0.72);
+        background-color: rgba(0, 0, 0, 0.04);
+        border-color: #fafafa;
+    }
+    .list_text.table td{
+        font-size: 12px !important;
+        border-collapse: collapse;
+        text-align: left;
+        padding: 9px 8px 8px 8px;
+        background: rgba(255, 255, 255, 0.8);
+        word-break: break-all;
+        border-color: #fafafa;
+    }
+    .tab .tab_on{
+        display: inline-block;
+        float: none;
+        position: relative;
+        width: auto;
+        height: 40px;
+        font-size: 18px;
+        line-height: normal;
+        text-align: left;
+        cursor: pointer;
+        border-bottom: 2px solid rgba(164, 78, 184);
+        
+    }

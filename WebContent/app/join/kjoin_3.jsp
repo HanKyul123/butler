@@ -12,27 +12,32 @@
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join3.css">
 </head>
-<body>
-    
-     <form id="joinForm" method="post" action="">
+<body>    
+     <form id="joinForm" method="post" action="/user/join.us">
             <div class="wrap">
 
                 <div class="logo">
-                   <a href=""><img class="logo_img" src="${pageContext.request.contextPath}/img/Hotel_width_logo.png" title="Butler 호텔" ></a> 
+                   <a href=""><img class="logo_img" src="${pageContext.request.contextPath}/img/Hotel_width_logo.png" title="Butler 호텔" ></a>
                 </div>
 
                 <div class="title"><strong class="join_title">회원가입</strong></div>
         
                 <div class="join">
                     <div class="sub_title">✉️이메일 아이디</div>
-                    <div class="email_box">
-                        <input type="text" name="email" id="all" class="email_I"  value="${user.User_email}" readonly>
+                        <div class="email_box">
+                            <div class="checkbox"> 
+                                <input type="text" name="email" id="all" placeholder="이메일을 입력해주세요." class="email_I"  autocomplete="off" onkeyup="checkemail(this.value)">
+
+                                <div class="checking">
+                                    <button class="EC">중복확인</button>
+                                </div>
+                            </div>
                         <div class="txt"><span id="email_txt"></span></div>
                     </div>
 
                     <div class="name_box">
                         <div class="sub_title">📋이름</div>
-                        <input type="text" name="user_name" id="all" class="name_I" value="${user.User_name}" readonly>
+                        <input type="text" name="user_name" id="all" placeholder="이름을 입력해주세요." class="name_I" autocomplete="off" onkeyup="checkname(this.value)">
                         <div class="txt">
                             <span id="name_txt"></span>
                         </div>
@@ -40,19 +45,24 @@
         
                     <div class="sub_title">🔒비밀번호</div>
                     <div class="pw">
-                        <input type="password" name="pw" id="all_pw" class="pw_I" value="${user.User_pw}" readonly>
+                        <input type="password" name="pw" placeholder="비밀번호를 입력해주세요." id="all_pw" class="pw_I" onkeyup="checkpw(this.value)">
                         <div class="txt"><span id="pw_txt"></span></div>
                     </div>
         
                     <div class="sub_title">🔒비밀번호 확인</div>
                     <div class="re_pw">
-                        <input type="password" name="re_pw" id="all_pw" class="re_pw_I" value="${user.User_pw}" readonly>
+                        <input type="password" name="re_pw" placeholder="비밀번호를 재입력해주세요." id="all_pw" class="re_pw_I" onkeyup="checkrepw(this.value)">
                         <div class="txt"><span id="re_pw_txt"></span></div>
                     </div>
         
                     <div class="sub_title">😎닉네임</div>
-                    <div class="inp_type_2 form-errors btn-add">
-                        <input type="text" id="all" name="nick" class="nick_I"  maxlength="14" placeholder="닉네임을 입력하세요." onkeyup="checknick(this.value)">
+                   <div class="inp_type_2 form-errors btn-add">
+                        <div class="checkbox">
+                             <input type="text" id="all" name="nick" class="nick_I"  maxlength="14" placeholder="닉네임을 입력하세요." onkeyup="checknick(this.value)" autocomplete="off">
+                            <div class="checking">
+                                <button class="EC">중복확인</button>
+                            </div>
+                        </div>
                         <div class="txt"><span id="nick_txt"></span></div>
                     </div>
 

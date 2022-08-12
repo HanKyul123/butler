@@ -23,8 +23,14 @@
         
                 <div class="join">
                     <div class="sub_title">✉️이메일 아이디</div>
-                    <div class="email_box">
-                        <input type="text" name="email" id="all" placeholder="이메일을 입력해주세요." class="email_I"  autocomplete="off" onkeyup="checkemail(this.value)">
+                        <div class="email_box">
+                            <div class="checkbox"> 
+                                <input type="text" name="email" id="all" placeholder="이메일을 입력해주세요." class="email_I"  autocomplete="off" onkeyup="checkemail(this.value)">
+
+                                <div class="checking">
+                                    <button class="EC">중복확인</button>
+                                </div>
+                            </div>
                         <div class="txt"><span id="email_txt"></span></div>
                     </div>
 
@@ -49,8 +55,13 @@
                     </div>
         
                     <div class="sub_title">😎닉네임</div>
-                    <div class="inp_type_2 form-errors btn-add">
-                        <input type="text" id="all" name="nick" class="nick_I"  maxlength="14" placeholder="닉네임을 입력하세요." onkeyup="checknick(this.value)">
+                   <div class="inp_type_2 form-errors btn-add">
+                        <div class="checkbox">
+                             <input type="text" id="all" name="nick" class="nick_I"  maxlength="14" placeholder="닉네임을 입력하세요." onkeyup="checknick(this.value)" autocomplete="off">
+                            <div class="checking">
+                                <button class="EC">중복확인</button>
+                            </div>
+                        </div>
                         <div class="txt"><span id="nick_txt"></span></div>
                     </div>
 

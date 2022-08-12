@@ -142,7 +142,6 @@ input[type=password]{
     color: white;
     border-radius: 5px;
 }
-
 .checkbox{
     display: flex;
     flex-wrap: nowrap;
@@ -162,6 +161,7 @@ input[type=password]{
     border-radius: 5px;
     margin-left: 3.5px;
 }
+
 
 #sample6_address, #sample6_detailAddress, #sample6_extraAddress{
     font-size: 15px;
