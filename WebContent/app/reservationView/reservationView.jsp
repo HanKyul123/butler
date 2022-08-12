@@ -311,10 +311,10 @@
 
                     <div class="btnbox">
                         <button class="CB" onclick="complete()">
-                            <img src="img/complete_btn.png" alt="" id="Mbtn" class="MCbtn">
+                            <img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" id="Mbtn" class="MCbtn">
                         </button>
                         <button class="CB" onclick="cancel()">
-                            <img src="img/Mdelete_btn.png" alt="" id="Dbtn" class="MCbtn">
+                            <img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" id="Dbtn" class="MCbtn">
                         </button>
                     </div>
                 </div>
