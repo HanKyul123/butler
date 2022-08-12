@@ -12,4 +12,14 @@
 		and binary(user_pw)=#{user_pw}
 		and binary(user_logintype)=0 
 	</select>
+		<insert id="UserJoin" parameterType="udto">
+		insert into user_tb 
+		(user_logintype, user_nickname, user_pw, user_name, 
+		user_zipcode, user_addr, user_addrdetail, user_addretc,
+		user_email, user_phone)
+		values(
+		#{user_logintype},#{user_nickname},#{user_pw},#{user_name},
+		#{user_zipcode},#{user_addr},#{user_addrdetail},#{user_addretc},
+		#{user_email},#{user_phone})
+	</insert>
 </mapper>

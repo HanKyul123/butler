@@ -7,10 +7,12 @@ import javax.servlet.http.HttpSession;
 import org.apache.catalina.connector.Request;
 import org.apache.ibatis.session.SqlSession;
 
+import com.butler.app.action.ActionTo;
 import com.butler.mybatis.SqlMapConfig;
 
 public class UserDAO {
-SqlSession sqlsession;
+
+   SqlSession sqlsession;
    
    public UserDAO() {
       sqlsession = SqlMapConfig.getFactory().openSession(true);
@@ -49,4 +51,26 @@ SqlSession sqlsession;
              datas.put("user_pw", user_pw);                          
       return sqlsession.selectOne("DBcheck", datas);
    }
-}
+
+   public boolean UserJoin(UserDTO user) {
+	      System.out.println("3");
+	      System.out.println(user.getUser_addr());
+	      
+	      try {
+	         if(sqlsession.insert("login.UserJoin", user) == 1) {
+	        	 System.out.println("4");
+	        	 return true;
+	         }
+	      } catch (Exception e) {
+	    	  System.out.println("5");
+	    	  
+	    	  ActionTo transfer = new ActionTo();
+	          transfer.setPath("app/join/join_3.jsp");
+	          transfer.setRedirect(false);
+	         
+	      }
+	      
+	      return false;
+	      
+	   }
+	  }

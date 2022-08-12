@@ -40,12 +40,13 @@ public class UserFrontController extends HttpServlet{
 			break;
 		
 		case "/join1.us":
+			System.out.println("1");
 			transfer = new ActionTo();
 			transfer.setPath("app/join/join_1.jsp");
 			transfer.setRedirect(false);
 			break;
+			
 		case "/Login.loginok.us":
-			System.out.println("1");
 			try {
 				transfer = new UserLoginOkAction().execute(req, resp);
 			} catch (Exception e1) {
@@ -62,6 +63,7 @@ public class UserFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;
+			
 		case "/kakaoLogout.us":
 			req.getSession().removeAttribute("loginUser");
 			transfer = new ActionTo();
@@ -77,6 +79,18 @@ public class UserFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;
+		
+		case "/user/join.us":
+			System.out.println("3-1");
+			transfer = new ActionTo();
+			try {
+				transfer = new UserJoinOkAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		
+		
 			
 		}
 		if(transfer !=null) {

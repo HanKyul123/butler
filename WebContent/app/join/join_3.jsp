@@ -1,7 +1,6 @@
+<%@page import="com.butler.app.dao.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="cp" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,31 +11,22 @@
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join3.css">
 </head>
-<body>
-    
+<body>    
      <form id="joinForm" method="post" action="/user/join.us">
             <div class="wrap">
-		
+
                 <div class="logo">
-                   <a href=""><img class="logo_img" src="${pageContext.request.contextPath}/img/Hotel_width_logo.png" title="Butler 호텔" ></a> 
+                   <a href=""><img class="logo_img" src="${pageContext.request.contextPath}/img/Hotel_width_logo.png" title="Butler 호텔" ></a>
                 </div>
 
                 <div class="title"><strong class="join_title">회원가입</strong></div>
         
                 <div class="join">
                     <div class="sub_title">✉️이메일 아이디</div>
-                        <div class="email_box">
-                            <div class="checkbox"> 
-                                <input type="text" name="email" id="all" placeholder="이메일을 입력해주세요." class="email_I"  autocomplete="off" onkeyup="checkemail(this.value)">
-
-                            <div class="checking">
-                                <button class="EC">중복확인</button>
-                            </div>
-                        </div>
+                    <div class="email_box">
+                        <input type="text" name="email" id="all" placeholder="이메일을 입력해주세요." class="email_I"  autocomplete="off" onkeyup="checkemail(this.value)">
                         <div class="txt"><span id="email_txt"></span></div>
                     </div>
-
-                    
 
                     <div class="name_box">
                         <div class="sub_title">📋이름</div>
@@ -52,7 +42,7 @@
                         <div class="txt"><span id="pw_txt"></span></div>
                     </div>
         
-                    <div class="sub_title">🔒비밀번호 재확인</div>
+                    <div class="sub_title">🔒비밀번호 확인</div>
                     <div class="re_pw">
                         <input type="password" name="re_pw" placeholder="비밀번호를 재입력해주세요." id="all_pw" class="re_pw_I" onkeyup="checkrepw(this.value)">
                         <div class="txt"><span id="re_pw_txt"></span></div>
@@ -60,33 +50,28 @@
         
                     <div class="sub_title">😎닉네임</div>
                     <div class="inp_type_2 form-errors btn-add">
-                        <div class="checkbox">
-                             <input type="text" id="all" name="nick" class="nick_I"  maxlength="14" placeholder="닉네임을 입력하세요." onkeyup="checknick(this.value)" autocomplete="off">
-                            <div class="checking">
-                                <button class="EC">중복확인</button>
-                            </div>
-                        </div>
+                        <input type="text" id="all" name="nick" class="nick_I"  maxlength="14" placeholder="닉네임을 입력하세요." onkeyup="checknick(this.value)">
                         <div class="txt"><span id="nick_txt"></span></div>
                     </div>
-                   
 
                     <div class="sub_title">🏠주소</div>
 
                     <div class="zipcode_area">
-                        <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" readonly required>
+                        <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" readonly>
                          <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"  class="UP_btn">
                     </div>
                     
 
                    
                     <div class="addr_area">
-                        <input type="text" id="sample6_address" placeholder="주소" name="addr" readonly ->
+                        <input type="text" id="sample6_address" placeholder="주소" name="addr" readonly>
                     </div>
 
-                    <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail" autocomplete="off" onkeyup="checkaddr(this.value)">
+                     <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail" autocomplete="off" onkeyup="checkaddr(this.value)">
                     <div class="txt"><span id="addr_txt"></span></div>
 
-                    <input type="text" id="sample6_extraAddress" placeholder="참고항목" name="addretc" readonly>
+
+					<input type="text" id="sample6_extraAddress" placeholder="참고항목" name="addretc" readonly>
         
                     <button type="submit" class="sub_btn">가입하기</button>
                 </div>
@@ -148,4 +133,3 @@
     }
 </script>
 </html>
-
