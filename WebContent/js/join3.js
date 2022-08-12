@@ -44,14 +44,23 @@
             }
 
 
-            function isPassword(password) {
-                var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
-                if(password.search(/\s/) !== -1) {
-                    return false;
-                }
-             
-                return regExp.test(password);
-                }
+         function isPassword(password) {
+             var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
+             var regEx = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g;
+             if(password.search(/\s/) !== -1) {
+                 return false;
+             }
+          
+             if(regExp.test(password)){
+                 return true;
+             }else if(regEx.test(password)){
+                 return true;
+             }
+             else{
+                 return false;
+             }
+
+             }
 
 
                 function nick_chk(nick){
