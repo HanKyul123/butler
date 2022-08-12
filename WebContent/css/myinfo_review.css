@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    a{text-decoration: none;}
+
+    .myinfo_review_wrap {
+         font-family: 'OTWelcomeRA';
+         position: relative;
+         top: 55px;
+        /* padding: 20px; */
+        text-align: center;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 400px;
+    }
+    
+
+  
+
+
+
+    .my_review_title{
+        font-family: 'OTWelcomeRA';
+
+        width: 100%;
+        height: 70px;
+        background-color: rgb(164, 78, 184);
+        color: #fff;
+        font-size: 30px;
+        text-align: left;
+        padding-left: 250px;
+        line-height: 80px;
+
+    }
+
+    .my_review_BigBox{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 12.8%;
+        margin-top: 80px;
+        
+    }
+
+    .my_review_box1{
+        width: 20%;
+        text-align: right;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+/* 링크 박스 호버로 꾸미기 */
+    #all_choice:hover{
+        color: rgb(116, 10, 140);
+    }
+    .my_review_box1>a{
+        color: rgb(132, 132, 132);
+        
+    }
+    a.my_review_info{
+
+        color: rgb(116, 10, 140);
+    }
+
+
+
+
+
+    .my_review_box2{
+        padding: 20px;
+        padding-left: 70px;
+        text-align: left;
+        width: 80%;
+        /* margin: auto;*/
+    }
+
+
+    .myinfo_title{
+        font-size: 25px;
+    }
+
+    .myreview_cnt{
+        margin-top: 20px;
+        margin-left: 1px;
+        color: rgb(115, 115, 115);
+        font-size: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(224, 224, 224);
+    }
+    
+
+    .my_review_box2_1{
+        margin-top: 30px;
+        /* border: 1px solid #000; */
+        width: 100%;
+        margin-bottom: 400px;
+    }
+
+
+
+
+
+
+
+
+
+
+    .review_box{
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(220, 220, 220);
+        margin-bottom: 50px;
+    }
+
+    .img_name_pet{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .Hotel_img{
+        object-fit: contain;
+        width: 120px;
+        height: 82px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    
+
+
+    .name_pet{
+        color: rgb(112, 112, 112);
+        padding: 5px;
+        padding-top: 8px;
+        padding-left: 10px;
+    }
+    .Hname{
+        padding-top: 3px;
+        width: 510px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 23px;
+        color: black;
+        /* border: 1px solid #000; */
+    }
+
+
+
+
+
+
+
+
+
+
+    .content_btn{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .MD{    
+            position: relative;
+            right: 5px;
+            top: 2px;
+            width: 25px;
+            height: 25px;
+        }
+
+
+        .btn{
+            width: 25px;
+        }
+
+        .MDbtn{
+            cursor: pointer;
+            width: 30px;
+            background-color: transparent;
+            border: none;
+
+            position: relative;
+            left: 10px;
+        }
+
+
+
+
+    .review_content{
+        width: 80%;
+        padding: 15px;
+        padding-top: 18px;
+        font-size: 14px;
+        border: 1px solid rgb(255, 237, 248);
+        background-color: rgb(255, 237, 248);
+        border-radius: 4px;
+
+    }

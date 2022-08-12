@@ -18,7 +18,7 @@
 
 <body class="myinfo_reservation_wrap">
     <div class="my_reservation_title">
-        예약 내역
+        내 정보
     </div>
 
     <div class="my_reservation_BigBox">
