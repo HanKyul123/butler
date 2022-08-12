@@ -148,6 +148,25 @@ $('#animal').change(function() {
           over2.src="../../img/delete.png";
       }, false);
 
+      
+      function modify(){
+          $('.Mbox').css('display','block');
+          $('.mask').css('display','block');
+      }
+
+      function delete_review(){
+          $('.Review_Reply').css('display','none');
+      }
+
+      function complete(){
+          $('.Mbox').css('display','none');
+          $('.mask').css('display','none');
+      }
+
+      function cancel(){
+          $('.Mbox').css('display','none');
+          $('.mask').css('display','none');
+      }
 
 
 

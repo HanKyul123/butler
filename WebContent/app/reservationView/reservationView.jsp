@@ -267,14 +267,14 @@
                     <span class="user_date">날짜</span>
 
 					<!-- 유저 리뷰 수정하는 버튼 -->
-                    <button id="modify_Review" class="Review_btn"><img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD"></button>
+                    <button id="modify_Review" class="Review_btn" onclick="modify()"><img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD"></button>
                     
                     <!-- 유저 리뷰 삭제하는 버튼 -->
-                    <button id="delete_Review" class="Review_btn"><img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD"></button>
+                    <button id="delete_Review" class="Review_btn" onclick="delete_review()"><img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD"></button>
                     
                     <br>
                     <span class="user_pet">
-                        아이 종류:
+                       	 아이 종류:
                     </span>
                     <span class="user_pet_what">강아지</span>
 
@@ -285,7 +285,7 @@
                     </div>
 
                     <div id="Rbox" class="user_contents">여기는 리뷰내용 입니다. <br>
-                    리뷰를 마음껏 작성하세요.</div>
+                  	 	 리뷰를 마음껏 작성하세요.</div>
                 </div>
 
                 <!-- 유저가 올리는 사진 -->
@@ -297,7 +297,29 @@
 
             </div>
 
+			<!-- 수정박스 -->
+            <div class="Mbox">
+                <div class="flex_go">
+                    <div>
+                        <span id="user_pet_M" class="Mall">
+                            	아이 종류:
+                        </span>
+                        <span id="user_pet_what_M" class="Mall">강아지</span>
+                        <br>
+                        <span id="price_prod" class="Mall">무게와 가격</span>
+                    </div>
 
+                    <div class="btnbox">
+                        <button class="CB" onclick="complete()">
+                            <img src="img/complete_btn.png" alt="" id="Mbtn" class="MCbtn">
+                        </button>
+                        <button class="CB" onclick="cancel()">
+                            <img src="img/Mdelete_btn.png" alt="" id="Dbtn" class="MCbtn">
+                        </button>
+                    </div>
+                </div>
+                <textarea name="" id="Mnew_review" cols="30" rows="10"></textarea>
+            </div>
 
 <!-- 관리인 리뷰 답장 -->
             <div class="replyBigbox">
