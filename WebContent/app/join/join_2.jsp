@@ -27,8 +27,8 @@
                <strong class="bold">휴대폰 번호</strong>
                <section>
                   <div class="Wtext">
-                     <input id="phone_num" name="user_phone" type="tel" minlength="11" maxlength="13">
-                     <button type="button" class=" btn_checked1" id="click_btn" onclick="sendcode()">인증번호 전송</button>
+                     <input id="phone_num" name="user_phone" type="tel" minlength="10" maxlength="11">
+                     <button type="button" class=" btn_checked1" id="click_btn" onclick="sendcode()"  disabled="disabled">인증번호 전송</button>
                      <input type="hidden" id="phone_num_1" name="user_phone_1" value="">
                   </div>
                </section>

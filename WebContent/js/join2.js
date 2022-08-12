@@ -7,13 +7,13 @@ $('#phone_num').on('input',function(){
         $('.btn_checked1').attr("disabled", true);
 
     }else{
-        if(input.value.length==11){
+        if(input.value.length>=10){
         $('.btn_checked1').attr("disabled", false);
         var val1 = $('#phone_num').val();
         console.log(val1);
         
 	        if(val1 != null){
-	        /* var val2 = $('#phone_num_1').val('val1'); */
+	      
 	        $('#phone_num_1').attr("value",val1);
 		
 	       	var val2 = $('#phone_num_1').val();
@@ -21,7 +21,7 @@ $('#phone_num').on('input',function(){
 	        }
 
         }
-        else if(input.value.length<11){$('.btn_checked1').attr("disabled", true);}
+        else if(input.value.length<10){$('.btn_checked1').attr("disabled", true);}
     }
 })
 
