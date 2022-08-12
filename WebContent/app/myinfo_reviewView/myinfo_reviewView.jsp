@@ -69,13 +69,29 @@
                             </div>
                             <div class="btn">
                                 <!-- 수정 버튼 -->
-                                <button class="MDbtn" id="Mbtn">
+                                <button class="MDbtn" id="Mbtn" onclick="modyfy()">
                                     <img class="MD" id="modify_btn" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="">
                                 </button>
 
                                 <!-- 삭제 버튼 -->
-                                <button class="MDbtn" id="Dbtn">
+                                <button class="MDbtn" id="Dbtn" onclick="delete_review()">
                                     <img class="MD" id="delete_btn" src="${pageContext.request.contextPath}/img/delete.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!--  리뷰 수정 완료 또는 취소하면 display:none;  -->
+                        <div class="newreview_btn">
+                            <textarea name="" id="new_review" cols="30" rows="10"></textarea>
+                            
+                            <div>
+                                <div>
+                                    <button class="MDBP" id="complete" onclick="complete()">
+                                        <img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" class="MDB">
+                                    </button>
+                                </div>
+                                <button class="MDBP" id="cancel" onclick="cancel()">
+                                    <img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" class="MDB" id="CB">
                                 </button>
                             </div>
                         </div>
