@@ -1,4 +1,9 @@
 function GetShow(){
+	
+//	아래화살표 이미지 가져오기(객체명=document)
+//	객체명.src="이미지경로"; 적어서 > 화살표로 바꾸기
+//	다시 접을 때 원래 화살표 방향의 이미지로 바꾸기.
+	
     var con = document.getElementById("list_text");
     if(con.style.display == "none"){
         con.style.display = "block";
