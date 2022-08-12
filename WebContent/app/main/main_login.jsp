@@ -12,7 +12,7 @@
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 </head>
-    	<%@ include file="../../header/pc_header_login.jsp" %>
+    	<%@ include file="../../header/pc_header_login.jsp"%>
 		<!-- Body -->
             <body>
             <!-- 헤더  -->

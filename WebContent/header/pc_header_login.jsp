@@ -52,7 +52,7 @@
 					<div id="more_inside" class="more_list_1">
 						<a href="">공지사항</a>
 					</div>
-					<div id="more_inside" class="more_list_2">
+					<div id="more_inside" class="more_list_2"> 
 						<a href="">자주 묻는 질문</a>
 					</div>
 					<div id="more_inside" class="more_list_3">

@@ -6,6 +6,6 @@
 	session.invalidate();
 %>
 <script>
-	alert("다음에 꼭 다시오세요...☆");
+	alert("다음에 꼭 다시오세요...☆"); 
 	location.href = "${pageContext.request.contextPath}/../index.jsp";
 </script>
