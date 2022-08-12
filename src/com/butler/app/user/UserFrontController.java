@@ -33,6 +33,11 @@ public class UserFrontController extends HttpServlet{
 		String path="";
 		boolean isRedirect;
 		switch (command) {
+		case "/main.logout.us":
+			transfer = new ActionTo();
+			transfer.setPath("app/main/main_logout.jsp");
+			transfer.setRedirect(false);
+			break;
 		case "/login.login.us":
 			transfer = new ActionTo();
 			transfer.setPath("app/login/login.jsp");

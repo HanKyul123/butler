@@ -201,7 +201,7 @@
 		<%@ include file="../footer/footer.jsp" %>
 
  <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
-<script> $js = jQuery.noConflict(); </script>
+ <script> $js = jQuery.noConflict(); </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 

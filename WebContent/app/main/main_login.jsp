@@ -11,17 +11,14 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
-    
-    
 </head>
-
-	
-
-            <body>
-           <form action="">       
     	<%@ include file="../../header/pc_header_login.jsp" %>
-
-		<div class="Etitle">이번주 인기 호텔 Top 5</div>
+		<!-- Body -->
+            <body>
+            <!-- 헤더  -->
+    <form action="">       
+   
+  	<div class="Etitle">이번주 인기 호텔 Top 5</div>
 
 
                 <div class="eventbox">
@@ -37,7 +34,7 @@
                             <span class="Ename">호텔이름</span></div>
                             
                             <div class="Eheartbox">
-                            <img class="Eheartimg"  src="img/heart_full.png" alt="">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
                             ">좋아요수</span></div>
 
@@ -58,7 +55,7 @@
                             <span class="Ename">호텔이름</span></div>
                             
                             <div class="Eheartbox">
-                            <img class="Eheartimg"  src="img/heart_full.png" alt="">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
                             ">좋아요수</span></div>
 
@@ -77,7 +74,7 @@
                             <span class="Ename">호텔이름</span></div>
                             
                             <div class="Eheartbox">
-                            <img class="Eheartimg"  src="img/heart_full.png" alt="">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
                             ">좋아요수</span></div>
 
@@ -96,7 +93,7 @@
                             <span class="Ename">호텔이름</span></div>
                             
                             <div class="Eheartbox">
-                            <img class="Eheartimg"  src="img/heart_full.png" alt="">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
                             ">좋아요수</span></div>
 
@@ -115,7 +112,7 @@
                             <span class="Ename">호텔이름</span></div>
                             
                             <div class="Eheartbox">
-                            <img class="Eheartimg"  src="img/heart_full.png" alt="">
+                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
                             ">좋아요수</span></div>
 
@@ -127,9 +124,8 @@
                     </div></a>
                 </div>
             </div>
-			
-			<div class="main">
             
+            	<div class="main">
                 <div class="slice">
                     <img class="mainimg" src="${pageContext.request.contextPath}/img/메인베너배경이미지.jpg" alt="">
                 </div>
@@ -193,20 +189,14 @@
                         </a>
                     </div>
                 </div>
-               </div> 
-                <!-- Footer -->
-
-			</form>              
+              </div>
+			</form>
             </body>
 
-<%@ include file="../../footer/footer.jsp" %>
-
-
-
-<script src="../../js/pc_header_login.js"></script>
-<script> jQuery.noConflict(); </script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
+	<!-- Footer -->
+		<%@ include file="../../footer/footer.jsp" %> 
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/pc_header_login.js"></script>
+		<script> $js = jQuery.noConflict(); </script>
 
 </html>
