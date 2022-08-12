@@ -16,7 +16,7 @@
     
      <form id="joinForm" method="post" action="">
             <div class="wrap">
-
+		
                 <div class="logo">
                    <a href=""><img class="logo_img" src="${pageContext.request.contextPath}/img/Hotel_width_logo.png" title="Butler 호텔" ></a> 
                 </div>
@@ -135,3 +135,4 @@
     }
 </script>
 </html>
+

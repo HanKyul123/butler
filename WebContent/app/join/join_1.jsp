@@ -54,7 +54,7 @@
 
                             
                           </div>
-                        <a href="join_2.jsp"><button id="join1" type="button" class="next" value="다음" disabled="disabled" onclick="next1()">
+                        <a href="/app/join/join_2.jsp"><button id="join1" type="button" class="next" value="다음" disabled="disabled" onclick="next1()">
                         다음
                         </button></a>
                 
