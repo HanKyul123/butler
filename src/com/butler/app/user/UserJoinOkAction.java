@@ -34,7 +34,6 @@ public class UserJoinOkAction implements Action {
 		System.out.println(user_logintype);
 		System.out.println(user_phone);
 		
-
 		
 		String user_email = req.getParameter("email");
 		String user_name = req.getParameter("user_name");
@@ -45,9 +44,19 @@ public class UserJoinOkAction implements Action {
 		String user_addr = req.getParameter("addr");
 		String user_addrdetail = req.getParameter("addrdetail");
 		String user_addretc = req.getParameter("addretc");
-
 		
+		System.out.println(user_pw);
+		PrintWriter out = resp.getWriter();
 		
+		 if(useruser.getUser_email() != null && useruser.getUser_name() != null) {
+	         if(user_pw == "" || user_nickname == "" || user_zipcode == "" || user_addr == "") {
+	            System.out.println("6");
+	        	out.print("<script>");
+	            out.print("location.href = '"+req.getContextPath()+"/app/join/kjoin_3.jsp';");
+	            out.print("</script>");
+	            
+	         }
+	      }
 		user.setUser_logintype(user_logintype);
 		user.setUser_nickname(user_nickname);
 		user.setUser_pw(user_pw);
@@ -58,37 +67,43 @@ public class UserJoinOkAction implements Action {
 		user.setUser_addretc(user_addretc);
 		user.setUser_email(user_email);
 		user.setUser_phone(user_phone);
-
-		PrintWriter out = resp.getWriter();
-		
-		System.out.println(user.getUser_logintype());
-		System.out.println(user.getUser_nickname());
-		System.out.println(user.getUser_pw());
-		System.out.println(user.getUser_name());
-		System.out.println(user.getUser_zipcode());
-		System.out.println(user.getUser_addr());
-		System.out.println(user.getUser_addrdetail());
-		System.out.println(user.getUser_addretc());
-		System.out.println(user.getUser_email());
-		System.out.println(user.getUser_phone());
 		
 		
 		
 		if(udao.UserJoin(user)) {
-			session.setAttribute("LoginUser", user);
-			UserDTO loginUser = (UserDTO)session.getAttribute("LoginUser");
-			System.out.println(loginUser.getUser_addr());
-			
-			out.print("<script>");
-			//alert('apple님 어서오세요~!');
-			out.print("alert('"+useruser.getUser_nickname()+"님 어서오세요~!');");
-			//location.href = '???/app/board/main.jsp';
-			out.print("location.href = '"+req.getContextPath()+"/';");
-			out.print("</script>");
-			
-		}
-
-		return null;
+	         session.setAttribute("LoginUser", user);
+	         UserDTO loginUser = (UserDTO)session.getAttribute("LoginUser");
+	         System.out.println(loginUser.getUser_addr());
+	         
+	         out.print("<script>");
+	         //alert('apple님 어서오세요~!');
+	         out.print("alert('"+useruser.getUser_nickname()+"님 어서오세요~!');");
+	         //location.href = '???/app/board/main.jsp';
+	         out.print("location.href = '"+req.getContextPath()+"/';");
+	         out.print("</script>");
+	         
+	       }
+	      
+		 else { // != 
+	    	 if(useruser.getUser_email().equals(user_email) || useruser.getUser_nickname().equals(user_nickname)) {
+	    		 System.out.println("7");
+		         out.print("<script>");
+		         //alert('apple님 어서오세요~!');
+		         out.print("alert('이메일 및 닉네임 중복검사를 진행해 주세요');");
+		         //location.href = '???/app/board/main.jsp';
+		         out.print("location.href = '"+req.getContextPath()+"/app/join/join_3.jsp';");
+		         out.print("</script>");
+	    	 }
+		         
+//	         ActionTo transfer = new ActionTo();
+//	         transfer.setPath("/app/join/join_3.jsp");
+//	         transfer.setRedirect(false);
+//	         return transfer;
+	    	 }
+	    	 	 
+	    	 
+		 return null;	
+		 }
 	}
 
-}
+

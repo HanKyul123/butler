@@ -15,6 +15,7 @@ public class UserDTO {
 	private String user_email;
 	private String user_phone;
 	
+	
 	public int getUser_logintype() {
 		return user_logintype;
 	}

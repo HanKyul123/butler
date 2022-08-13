@@ -44,14 +44,14 @@ public class UserDAO {
              return true;             
           }
    }
-
-   public UserDTO DBCheck(String user_email, String user_pw, int user_type) {
+  public UserDTO DBCheck(String user_email, String user_pw, int user_type) {
             HashMap<String, String> datas = new HashMap<String, String>();
              datas.put("user_email", user_email);
              datas.put("user_pw", user_pw);                          
       return sqlsession.selectOne("DBcheck", datas);
    }
 
+  
    public boolean UserJoin(UserDTO user) {
 	      System.out.println("3");
 	      System.out.println(user.getUser_addr());
@@ -62,13 +62,13 @@ public class UserDAO {
 	        	 return true;
 	         }
 	      } catch (Exception e) {
-	    	  System.out.println("5");
 	    	  
-	    	  ActionTo transfer = new ActionTo();
-	          transfer.setPath("app/join/join_3.jsp");
-	          transfer.setRedirect(false);
-	         
-	      }
+	   	  System.out.println("5");
+	    	  
+	    	  
+	          return false;
+	       }
+	      
 	      
 	      return false;
 	      

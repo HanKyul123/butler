@@ -33,7 +33,7 @@
                   </div>
                </section>
             </div>
-            <div class="Prove_box">
+              <div class="Prove_box">
                <strong class="bold2">인증번호</strong>
                <div class="Wnum">
                   <input id="prove_num" type="tel" minlength="4" maxlength="4" autocomplete="off">
@@ -41,7 +41,7 @@
                   <div class="time">
                      <span id="timer" class="timer">3:00</span>
                   </div>
-                  <div class="warytxtbox">
+                   <div class="warytxtbox">
                      <span class="warytxt"></span>
                   </div>
                </div>

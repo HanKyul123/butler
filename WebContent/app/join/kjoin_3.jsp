@@ -1,3 +1,4 @@
+<%@page import="com.butler.app.dao.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -13,7 +14,11 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join3.css">
 </head>
 <body>    
-     <form id="joinForm" method="post" action="/user/join.us">
+     <% 
+      UserDTO user = (UserDTO)session.getAttribute("LoginUser");
+     %>
+     
+        <form id="joinForm" method="post" action="/user/join.us">
             <div class="wrap">
 
                 <div class="logo">
@@ -26,7 +31,8 @@
                     <div class="sub_title">✉️이메일 아이디</div>
                         <div class="email_box">
                             <div class="checkbox"> 
-                                <input type="text" name="email" id="all" placeholder="이메일을 입력해주세요." class="email_I"  autocomplete="off" onkeyup="checkemail(this.value)">
+                                <input type="text" name="email" id="all" placeholder="이메일을 입력해주세요." class="email_I"  autocomplete="off" onkeyup="checkemail(this.value)"
+                               value= <%= user.getUser_email()%> readonly>
 
                                 <div class="checking">
                                     <button class="EC">중복확인</button>
@@ -37,7 +43,8 @@
 
                     <div class="name_box">
                         <div class="sub_title">📋이름</div>
-                        <input type="text" name="user_name" id="all" placeholder="이름을 입력해주세요." class="name_I" autocomplete="off" onkeyup="checkname(this.value)">
+                        <input type="text" name="user_name" id="all" placeholder="이름을 입력해주세요." class="name_I" autocomplete="off" onkeyup="checkname(this.value)"
+                        value= <%= user.getUser_name() %> readonly>
                         <div class="txt">
                             <span id="name_txt"></span>
                         </div>

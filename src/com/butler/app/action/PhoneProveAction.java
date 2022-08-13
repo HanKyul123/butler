@@ -54,9 +54,9 @@ public class PhoneProveAction implements Action{
 			transfer.setPath("/app/join/kjoin_3.jsp");
 			return transfer;
 			
-		}
+	 }
 		
 
-	}
+	 }
 	
 }

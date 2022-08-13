@@ -19,34 +19,29 @@ create table user_tb(
    user_phone          varchar(15) not null
 );
 
+
 drop table business_tb;
 
 
 
-
 create table business_tb(
-   USER_NUM_FK            int,
-    constraint bs_tb_USER_NUM_FK   foreign key (USER_NUM_FK) references  user_tb (USER_NUM_PK),
-   business_place_num      int unique key auto_increment not null,
+    business_place_num_pk    int primary key auto_increment not null,
     business_name         varchar(200) not null,
     business_addr         varchar(200) not null,
     business_phone         varchar(15)   not null,
     business_email         varchar(200),
-    business_category      int not null
-);
-
-create table business_workplace_tb(
-   BUSINESS_PLACE_NUM_FK      int,
-    constraint b_w_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (USER_NUM_FK),
-    BUSINESS_CATEGORY_FK       int,
-    constraint b_w_tb_BUSINESS_CATEGORY_FK   foreign key(BUSINESS_CATEGORY_FK) references business_tb (USER_NUM_FK),
-    business_workplace_detail   text(10000),
+    business_category      int not null,
+    business_hashtag       varchar(200),
+    business_main_intro       varchar(200),         #호텔 메인 소개말
+    business_workplace_detail   text(10000),         #호텔 상세 소개글
     business_workplace_rule      text(10000),
-    business_workplace_score   int   default 0
+    business_workplace_score   int   default 0,         #호텔 별점
+    USER_NUM_FK            int,
+    constraint bs_tb_USER_NUM_FK   foreign key (USER_NUM_FK) references  user_tb (USER_NUM_PK)
 );
 
 
-create table book_tb (
+ create table book_tb (
    BOOK_NUM_PK               int primary key auto_increment,
     BUSINESS_PLACE_NUM_FK      int,
    constraint b_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (USER_NUM_FK),
