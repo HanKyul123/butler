@@ -98,12 +98,16 @@
             </div>
 
     </div>
-
-
-
-
-
 </body>
+<!-- 문서수정할때는주석처리를 하고 진행하세요 -->
+<%-- <c:choose>
+    	<c:when test="${sessionScope.loginUser eq null}">
+			<script>
+				alert("login후에 이용하세요.");
+				window.location.href="/index.jsp"
+			</script>
+    	</c:when>
+	</c:choose> --%>
 
 <script src="${pageContext.request.contextPath}/js/myinfo_reservation_detail.js"></script>
 </html>

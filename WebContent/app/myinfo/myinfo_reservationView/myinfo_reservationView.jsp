@@ -12,7 +12,7 @@
 </head>
 
 
-<%@ include file="../../header/pc_header.jsp"%>
+<%@ include file="../../../header/pc_header.jsp"%>
 
 
 
@@ -160,8 +160,17 @@
 
             </div>
 </body>
+<!-- 문서수정할때는주석처리를 하고 진행하세요 -->
+<%-- 	<c:choose>
+    	<c:when test="${sessionScope.loginUser eq null}">
+			<script>
+				alert("login후에 이용하세요.");
+				window.location.href="/index.jsp"
+			</script>
+    	</c:when>
+	</c:choose> --%>
 
-<%@ include file="../../footer/footer.jsp"%>
+<%@ include file="../../../footer/footer.jsp"%>
 <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
 
 <script src="${pageContext.request.contextPath}/js/myinfo_reservation.js"></script>
