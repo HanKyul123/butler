@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
-    
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
 </head>
 <!--  -->
 	<%@ include file="../header/pc_header.jsp" %> 

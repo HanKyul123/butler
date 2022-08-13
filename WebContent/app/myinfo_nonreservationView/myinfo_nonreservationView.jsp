@@ -12,9 +12,6 @@
 </head>
 
 
-<%@ include file="../../header/pc_header.jsp"%>
-
-
 <body class="non_reservation_wrap">
     <div class="my_reservation_title">
         내 정보
@@ -33,6 +30,7 @@
             </div>
 
             <!-- 내용 공간 -->
+            <!-- 조건문으로 다른 이미지 넣기 -->
             <div class="my_reservation_box2">
 
                 <div class="non_contents">
