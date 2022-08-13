@@ -86,10 +86,26 @@ public class UserFrontController extends HttpServlet{
 			try {
 				transfer = new UserJoinOkAction().execute(req, resp);
 			} catch (Exception e) {
+				System.out.println("0");
 				e.printStackTrace();
 			}
 			break;
-		
+		case "/user/checkemailok.us":
+	         System.out.println("4-1");
+	         try {
+	            new CheckEmailOkAction().execute(req,resp);
+	         } catch (Exception e) {
+	        	 e.printStackTrace();
+	         }
+	         break;
+	      case "/user/checknicknameok.us":
+	         System.out.println("5-1");
+	         try {
+	            new CheckNicknameOkAction().execute(req,resp);
+	         } catch (Exception e) {
+	        	 e.printStackTrace();
+	         }
+	         break;
 		
 	 }
 		if(transfer !=null) {

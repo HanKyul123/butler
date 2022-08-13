@@ -31,11 +31,11 @@
                     <div class="sub_title">✉️이메일 아이디</div>
                         <div class="email_box">
                             <div class="checkbox"> 
-                                <input type="text" name="email" id="all" placeholder="이메일을 입력해주세요." class="email_I"  autocomplete="off" onkeyup="checkemail(this.value)"
+                                <input type="text" name="email" class="user_email" id="all" placeholder="이메일을 입력해주세요." class="email_I"  autocomplete="off" onkeyup="checkemail(this.value)"
                                value= <%= user.getUser_email()%> readonly>
 
                                 <div class="checking">
-                                    <button class="EC">중복확인</button>
+                                    <button class="EC" type="button" onclick="checkemailok()">중복확인</button>
                                 </div>
                             </div>
                         <div class="txt"><span id="email_txt"></span></div>
@@ -67,7 +67,7 @@
                         <div class="checkbox">
                              <input type="text" id="all" name="nick" class="nick_I"  maxlength="14" placeholder="닉네임을 입력하세요." onkeyup="checknick(this.value)" autocomplete="off">
                             <div class="checking">
-                                <button class="EC">중복확인</button>
+                                <button class="EC" type="button" onclick="checknicknameok()">중복확인</button>
                             </div>
                         </div>
                         <div class="txt"><span id="nick_txt"></span></div>
@@ -150,5 +150,72 @@
             }
         }).open();
     }
+</script>
+<script>
+function checkemailok(){
+	   const xhr = new XMLHttpRequest();
+	   const result = document.getElementById("email_txt");
+	   const user_email = document.getElementsByClassName('user_email');
+	   const cp = "${cp}";
+	   console.log(user_email[0].value);
+	   
+	   if(user_email[0].value == ""){
+	      console.log("tlqkf")
+	      alert("아이디를 입력하세요!")
+	      return false;
+	   }
+	   
+	   xhr.onreadystatechange = function(){
+	      console.log("4-4");
+	      if(xhr.readyState == 4){
+	         if(xhr.status == 200){
+	            let txt = xhr.responseText;
+	            txt = txt.trim();
+	            if(txt == 'O'){
+	               alert("사용가능한 이메일입니다.")
+	            }
+	            else if(txt == 'X') {
+	               alert("중복된 이메일입니다.")
+	            }
+	         }
+	      }
+	   }
+	   xhr.open("GET",cp+"/user/checkemailok.us?user_email="+user_email[0].value);
+	   xhr.send();
+	}   
+	   
+</script>
+<script>
+function checknicknameok(){
+   const xhr = new XMLHttpRequest();
+   const result = document.getElementById("nick_txt");
+   const user_nickname = document.getElementsByClassName('nick_I');
+   const cp = "${cp}";
+   console.log(user_nickname[0].value);
+   
+   if(user_nickname[0].value == ""){
+      console.log("tlqkf")
+      alert("닉네임을 입력하세요!")
+      return false;
+   }
+   
+   xhr.onreadystatechange = function(){
+      console.log("5-4");
+      if(xhr.readyState == 4){
+         if(xhr.status == 200){
+            let txt = xhr.responseText;
+            txt = txt.trim();
+            if(txt == 'O'){
+               alert("사용가능한 닉네임입니다.")
+            }
+            else if(txt == 'X') {
+               alert("중복된 닉네임입니다.")
+            }
+         }
+      }
+   }
+   xhr.open("GET",cp+"/user/checknicknameok.us?user_nickname="+user_nickname[0].value);
+   xhr.send();
+}
 </script>
 </html>

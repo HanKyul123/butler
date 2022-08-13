@@ -22,4 +22,11 @@
 		#{user_zipcode},#{user_addr},#{user_addrdetail},#{user_addretc},
 		#{user_email},#{user_phone})
 	 </insert>
+	 
+	 <select id="checkemail" parameterType="string" resultType="_int">
+      select count(*) from user_tb where user_email = #{user_email}
+    </select>
+    <select id="checknickname" parameterType="string" resultType="_int">
+      select count(*) from user_tb where user_nickname = #{user_nickname}
+    </select>
 </mapper>

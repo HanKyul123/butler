@@ -50,7 +50,8 @@ public class UserDAO {
              datas.put("user_pw", user_pw);                          
       return sqlsession.selectOne("DBcheck", datas);
    }
-
+  
+ 
   
    public boolean UserJoin(UserDTO user) {
 	      System.out.println("3");
@@ -71,6 +72,24 @@ public class UserDAO {
 	      
 	      
 	      return false;
-	      
+	       }
+   public boolean Checkemail(String user_email) {
+	      System.out.println("4-2-1");
+	      try {
+	         return (Integer)sqlsession.selectOne("login.checkemail",user_email) == 0;
+	         
+	      } catch (Exception e) {
+	         return false;
+	      }
+	   }
+
+	   public boolean CheckNickname(String user_nickname) {
+	      System.out.println("4-2-1");
+	      try {
+	         return (Integer)sqlsession.selectOne("login.checknickname",user_nickname) == 0;
+	         
+	      } catch (Exception e) {
+	         return false;
+	      }
 	   }
 	  }

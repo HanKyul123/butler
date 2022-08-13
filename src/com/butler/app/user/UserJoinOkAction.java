@@ -77,33 +77,33 @@ public class UserJoinOkAction implements Action {
 	         
 	         out.print("<script>");
 	         //alert('apple님 어서오세요~!');
-	         out.print("alert('"+useruser.getUser_nickname()+"님 어서오세요~!');");
+	         out.print("alert('"+loginUser.getUser_nickname()+"님 어서오세요~!');");
 	         //location.href = '???/app/board/main.jsp';
 	         out.print("location.href = '"+req.getContextPath()+"/';");
 	         out.print("</script>");
 	         
 	       }
 	      
-		 else { // != 
-	    	 if(useruser.getUser_email().equals(user_email) || useruser.getUser_nickname().equals(user_nickname)) {
-	    		 System.out.println("7");
-		         out.print("<script>");
-		         //alert('apple님 어서오세요~!');
-		         out.print("alert('이메일 및 닉네임 중복검사를 진행해 주세요');");
-		         //location.href = '???/app/board/main.jsp';
-		         out.print("location.href = '"+req.getContextPath()+"/app/join/join_3.jsp';");
-		         out.print("</script>");
-	    	 }
-		         
-//	         ActionTo transfer = new ActionTo();
-//	         transfer.setPath("/app/join/join_3.jsp");
-//	         transfer.setRedirect(false);
-//	         return transfer;
-	    	 }
-	    	 	 
-	    	 
+		else { 
+			 if (useruser.getUser_email() == null || useruser.getUser_nickname() == null) {
+		            System.out.println("7");
+		            out.print("<script>");
+		            // alert('apple님 어서오세요~!');
+		            out.print("alert('이메일 및 닉네임 중복검사를 진행해 주세요');");
+		            out.print("</script>");            
+		               if (useruser.getUser_logintype() == 0) {
+		                  out.print("location.href = '" + req.getContextPath() + "/app/join/join_3.jsp';");
+		               } else {
+		                  out.print("location.href = '" + req.getContextPath() + "/app/join/kjoin_3.jsp';");
+		               }
+		            out.print("</script>");
+
+		         }
+		}
 		 return null;	
-		 }
+		 
+		
 	}
+}
 
 
