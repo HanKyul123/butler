@@ -9,23 +9,23 @@ import org.apache.ibatis.session.SqlSession;
 public class ReplyDAO {
 	SqlSession sqlsession;	
 	public boolean insertReply(ReplyDTO reply) {
-		return sqlsession.insert("Review.insertReply",reply) == 1;
+		return sqlsession.insert("review.insertReply",reply) == 1;
 	}
 
-	public List<ReplyDTO> getReplies(int reviewdnum) {
-		return sqlsession.selectList("Review.getReplies",reviewdnum);
+	public List<ReplyDTO> getReplies(int review_num) {
+		return sqlsession.selectList("review.getReplies",review_num);
 	}
 
-	public boolean updateReply(int replynum, String replycontents) {
+	public boolean updateReply(int reply_num, String reply_contents) {
 		HashMap<String, Object> datas = new HashMap<String, Object>();
-		datas.put("replynum",replynum);
-		datas.put("replycontents", replycontents);
+		datas.put("reply_num", reply_num);
+		datas.put("reply_contents", reply_contents);
 		
-		return sqlsession.update("Review.updateReply",datas) == 1;
+		return sqlsession.update("review.updateReply",datas) == 1;
 	}
 
-	public boolean removeReply(int replynum) {
-		return sqlsession.delete("Review.removeReply",replynum) == 1;
+	public boolean removeReply(int reply_num) {
+		return sqlsession.delete("review.removeReply",reply_num) == 1;
 	}
 
 }

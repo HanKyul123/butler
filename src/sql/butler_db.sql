@@ -87,13 +87,13 @@ create table reply_tb(
    reply_contents            varchar(3000) not null,
     reply_regdate            datetime default now(),
     BUSINESS_PLACE_NUM_FK      int,
-   constraint rp_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (business_place_num)
+   constraint rp_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (BUSINESS_PLACE_NUM_PK)
 );
 
 
 create table file_business_tb(
    BUSINESS_PLACE_NUM_FK      int,
-   constraint fb_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (business_place_num),
+   constraint fb_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (BUSINESS_PLACE_NUM_PK),
    file_workplace_systemname   varchar(2000),
    file_workplace_orgname   varchar(2000)
 );
@@ -116,5 +116,5 @@ create table basket_tb(
    USER_NUM_FK            int,
     constraint bk_tb_USER_NUM_FK   foreign key(USER_NUM_FK) references  user_tb (USER_NUM_PK),   
    BUSINESS_PLACE_NUM_FK      int,
-    constraint bk_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (business_place_num)
+    constraint bk_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (BUSINESS_PLACE_NUM_PK)
 );

@@ -30,7 +30,7 @@
 						&nbsp;&nbsp;&nbsp;<br><br>
 					</button>
 					<div class="searchBar_box">
-						<input class="search" type="text" placeholder="지역, 호텔명">
+						<input id="keyword" class="search" type="text" placeholder="지역, 호텔명" onkeyup="if(event.keyCode==13){search()}">
 					</div>
 				</label> 
 				<img id="X" class="X" src="${pageContext.request.contextPath}/img/X.png" alt="" onclick="tog2()">
@@ -121,7 +121,13 @@
     	</c:otherwise>
 	</c:choose>
 </header>
-
+<script>
+	function search(){
+		const keyword = document.getElementById("keyword");
+		const cp = "${cp}";
+		location.href=cp+"/hotel/searchkeyword.ho?keyword="+keyword.value;
+	}
+</script>
 </html>
       
 

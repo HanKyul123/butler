@@ -15,30 +15,21 @@ SqlSession sqlsession;
 		sqlsession = SqlMapConfig.getFactory().openSession(true);
 	}
 	
-	public ReviewDTO getDetail(int reviewnum) {
-		return sqlsession.selectOne("Review.getDetail",reviewnum);
-	}
-
 	public boolean insertReview(ReviewDTO review) {
-		return sqlsession.insert("Review.insertBoard",review) == 1;
+		return sqlsession.insert("review.insertBoard",review) == 1;
 	}
 
-	public int getLastNum(String userid) {
-		return sqlsession.selectOne("Review.getLastNum",userid);
+	public boolean removeReview(int review_num) {
+		return sqlsession.delete("review.removeReview", review_num) == 1;
 	}
 
-	public void updateReadCount(int reviewnum) {
-		sqlsession.update("Review.updateReadCount",reviewnum);
+	public boolean updateReview(int review_num, String review_contents) {
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("review_num",review_num);
+		datas.put("review_contents", review_contents);
+		
+		return sqlsession.update("review.updateReply",datas) == 1;
 	}
-
-	public boolean removeReview(int reviewnum) {
-		return sqlsession.delete("Review.removeReview", reviewnum) == 1;
-	}
-
-	public boolean updateReview(ReviewDTO review) {
-		return sqlsession.update("Review.updateReview",review) == 1;
-	}
-
 }
 
 
