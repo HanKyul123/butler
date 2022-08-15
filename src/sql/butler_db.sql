@@ -11,7 +11,7 @@ create table user_tb(
    user_nickname       varchar(12) unique not null ,
    user_pw             varchar(30) not null,
    user_name           varchar(100) not null,
-   user_zipcode        varchar(200) not null,			#우편번호
+   user_zipcode        varchar(12) not null,			#우편번호
    user_addr           varchar(200) not null,
    user_addrdetail     varchar(200),			#상세주소
    user_addretc		   varchar(200),
@@ -25,9 +25,12 @@ drop table business_tb;
 
 
 create table business_tb(
-    business_place_num_pk    int primary key auto_increment not null,
+    BUSINESS_PLACE_NUM_PK    int primary key auto_increment not null,
     business_name         varchar(200) not null,
+    business_zipcode     varchar(12) not null,   
     business_addr         varchar(200) not null,
+    business_addrdetail     varchar(200),
+    business_addretc       varchar(200),
     business_phone         varchar(15)   not null,
     business_email         varchar(200),
     business_category      int not null,
@@ -73,8 +76,8 @@ create table review_tb(
     BUSINESS_PLACE_NUM_FK      int,
    constraint r_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (USER_NUM_FK),
     review_contents            varchar(5000),
-    review_writer            varchar(12),
-   review_regdate            datetime   default now()
+    review_nickname            varchar(12),
+    review_regdate            datetime   default now()
 );
 
 create table reply_tb(
