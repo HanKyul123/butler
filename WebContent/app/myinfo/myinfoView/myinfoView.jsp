@@ -56,18 +56,19 @@
 
                 <div id="all_info" class="user_nick_box">
                     <div id="title_box" class="user_nick_title">닉네임</div>
-                    <div id="modify_contents" class="user_nick_name"><span class="user_nick">mbtiCUTE</span>
+                    <div id="modify_contents" class="user_nick_name"><span class="user_nick" id="user_nick">mbtiCUTE</span>
                         </div>
                 </div>
 
-               <div class="flexMody">
+                 <div class="flexMody">
                     
                     <input class="write_new_nick" type="text" name="" id="WNN" onkeyup="checknick(this.value)"  autocomplete="off">
                     <button class="modify_nick_btn" id="MNB" onclick="myFunction()">수정하기</button>
+                    <button class="complete_nick_btn" id="CMB" onclick="myFunction_1()">수정완료</button>
                     <button id="XB1" onclick="myFunction2_2()">X</button>
                 </div>
 
-                <div id="wary">
+                <div class="wary" id="wary1">
                     <span class="wary_nick" id="WN"></span>
                 </div>
                 
@@ -97,21 +98,21 @@
                     <input class="write_new_phone" type="tel" name="" id="WNP" minlength="10" maxlength="11" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     <button class="modify_phone_btn" onclick="myFunction2()" id="MPB">수정하기</button>
                     <button class="send_code" onclick="myFunction3()" id="SC" disabled="disabled">인증번호 전송</button>
-                    <button id="XB">X</button>
+                    <button id="XB" onclick="myFunction2_1()">X</button>
                     
                 </div>
-               <!-- 누르면 수정하기 -> 인증번호 전송 -->
-                <div id="wary">
+                <!-- 누르면 수정하기 -> 인증번호 전송 -->
+                <div class="wary"  id="wary2">
                     <span class="wary_phone"></span>
                 </div>
 
                 <div class="flexMody">
                     <input class="write_phone_code" type="tel" name="" id="WPC" maxlength="4" >
-                    <button class="phone_code_btn" id="PCB" disabled="disabled">인증하기</button>
+                    <button class="phone_code_btn" id="PCB" disabled="disabled" onclick="myFunction3()">인증하기</button>
                 </div>
                 <div class="time" id="time"><span id="timer" class="timer">3:00</span></div>
                 
-                <div id="wary">
+                <div class="wary"  id="wary3">
                     <span class="wary_code"></span>
                 </div>
 
@@ -119,13 +120,10 @@
                 
                 <div id="all_info" class="user_addr_box">
                     <div class="user_addr_title" id="title_box">주소</div>
-                    <div id="modify_contents" class="modify_addr">서울특별시 강남구 밤고개로 21길 25</div>
+                    <div id="modify_addr" class="modify_contents">서울특별시 강남구 밤고개로 21길 25</div>
                 </div>
 
 
-                
-
-                
                     <div class="zipcode_area">
                         <div class="flexMody">
                             <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" readonly required>
@@ -145,6 +143,11 @@
                     <input type="text" id="sample6_extraAddress" placeholder="참고항목" name="addretc" readonly>
                     <br>
                     <button class="modify_addr_btn" id="MAB" onclick="myFunction4()">수정하기</button>
+
+                    <div class="flexMody">
+                        <button class="complete_addr_btn" id="CAB" onclick="myFunction4_1()">수정완료</button>
+                        <button id="XB2" onclick="myFunction4_2()">X</button>
+                    </div>
                 
 
                 <a href="" ><div class="modify_pw">비밀번호 변경 ></div></a>

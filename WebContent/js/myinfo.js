@@ -1,25 +1,123 @@
+const txtnick = document.getElementById("WN");
+const txtnickname = document.getElementById("user_nick");
+const txtaddrs = document.getElementById("modify_addr");
+const txtaddr = document.getElementById("addr_txt");
+function nick_chk(nick){
+  if(nick.length < 2 || nick.length > 10) {
+  return false;
+  }
+  else if(nick.search(/\s/) !== -1) {
+      return false;
+  }
+  var chk = /[0-9]|[a-z]|[A-Z]|[가-힣]/;
+
+  for( var i = 0; i <= nick.length -1 ; i++ ){if(chk.test(nick.charAt(i))){
+  }
+  else{
+  return false;
+      }
+  }   
+return true;
+}
+
+  //    닉네임
+function checknick(value){
+  if(value==""){
+      txtnick.innerHTML="";
+      txtnick.style.color="red";
+      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+      $('.modify_nick_btn').attr("disabled",true);
+      return false;
+    }
+
+  if(!nick_chk(value)){
+      txtnick.innerHTML="2~10자의 한글, 영문, 숫자만 사용할 수 있습니다.";
+      txtnick.style.color="red";
+      $('.write_new_nick').css("border","1px solid red")
+      $('.modify_nick_btn').attr("disabled",true);
+
+      }else if(value==""){
+      txtnick.innerHTML="";
+      txtnick.style.color="red";
+      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+      $('.modify_nick_btn').attr("disabled",true);
+  }
+  else{
+      txtnick.innerHTML="사용 가능한 닉네임 입니다.";
+      txtnick.style.color="rgb(19, 106, 227)";
+      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+      $('.modify_nick_btn').attr("disabled",false);
+  }
+}
+
 
 // 닉네임 수정
 function myFunction() {
     var x = document.getElementById("WNN");
     var y = document.getElementById("MNB");
-    var n = document.getElementsByClassName("user_nick");
+    var z = document.getElementById("CMB");
     var d = document.getElementById("XB1");
+    var w = document.getElementById("wary1");
 
 
-    if (x.style.display === "none") {
       x.style.display = "block";
       d.style.display = "block";
-      y.innerHTML="수정완료"
-      x.focus();
-      
+      y.style.display = "none";
+      z.style.display = "block";
+      w.style.display = "block";
 
-    } else {
+      x.focus();
+  }
+function myFunction_1() {
+    var x = document.getElementById("WNN");
+    var n = document.getElementsByClassName("user_nick");
+    var d = document.getElementById("XB1");
+    var y = document.getElementById("MNB");
+    var z = document.getElementById("CMB");
+    var w = document.getElementById("wary1");
+
       x.style.display = "none";
-      style.display = "none";
-      y.innerHTML="수정하기"
-    
+      d.style.display = "none";
+      n.innerHTML=$('#WNN').val();
+      y.style.display = "block";
+      z.style.display = "none";
+      w.style.display = "none";
+
+      if(x.value!=""){
+        user_nick.innerHTML=x.value;
+      }
+
+
+      
+      $('#MNB').attr("disabled",false);
+    x.value="";
+    txtnick.innerHTML="";
+    if(value==""){
+      txtnick.innerHTML="";
+      txtnick.style.color="red";
+      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+      $('.modify_nick_btn').attr("disabled",true);
+      return false;
     }
+
+  if(!nick_chk(value)){
+      txtnick.innerHTML="2~10자의 한글, 영문, 숫자만 사용할 수 있습니다.";
+      txtnick.style.color="red";
+      $('.write_new_nick').css("border","1px solid red")
+      $('.modify_nick_btn').attr("disabled",true);
+
+      }else if(value==""){
+      txtnick.innerHTML="";
+      txtnick.style.color="red";
+      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+      $('.modify_nick_btn').attr("disabled",true);
+  }
+  else{
+      txtnick.innerHTML="사용 가능한 닉네임 입니다.";
+      txtnick.style.color="rgb(19, 106, 227)";
+      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+      $('.modify_nick_btn').attr("disabled",false);
+  }
   }
 
 
@@ -58,12 +156,45 @@ function myFunction2_2() {
     var x = document.getElementById("WNN");
     var d = document.getElementById("XB1");
     var y = document.getElementById("MNB");
+    var z = document.getElementById("CMB");
+    var w = document.getElementById("wary1");
 
     
     
     x.style.display = "none";
     d.style.display = "none";
-    y.innerHTML="수정하기"
+    y.style.display = "block";
+    z.style.display = "none";
+    w.style.display = "none";
+    $('#MNB').attr("disabled",false);
+    x.value="";
+    txtnick.innerHTML="";
+    if(value==""){
+      txtnick.innerHTML="";
+      txtnick.style.color="red";
+      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+      $('.modify_nick_btn').attr("disabled",true);
+      return false;
+    }
+
+  if(!nick_chk(value)){
+      txtnick.innerHTML="2~10자의 한글, 영문, 숫자만 사용할 수 있습니다.";
+      txtnick.style.color="red";
+      $('.write_new_nick').css("border","1px solid red")
+      $('.modify_nick_btn').attr("disabled",true);
+
+      }else if(value==""){
+      txtnick.innerHTML="";
+      txtnick.style.color="red";
+      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+      $('.modify_nick_btn').attr("disabled",true);
+  }
+  else{
+      txtnick.innerHTML="사용 가능한 닉네임 입니다.";
+      txtnick.style.color="rgb(19, 106, 227)";
+      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+      $('.modify_nick_btn').attr("disabled",false);
+  }
       
     }
     
@@ -112,81 +243,111 @@ var x = setInterval(function(){
         var y = document.getElementById("MAB");
         var c = document.getElementById("sample6_postcode");
         var d = document.getElementById("SEB");
+        var a = document.getElementById("CAB");
         var e = document.getElementById("sample6_address");
         var f = document.getElementById("sample6_detailAddress");
         var g = document.getElementById("sample6_extraAddress");
+        var x = document.getElementById("XB2");
 
-
-        if (c.style.display === "none") {
-          y.innerHTML="수정완료"
+        $('.complete_addr_btn').attr("disabled", true);
           c.style.display = "block";
           d.style.display = "block";
           e.style.display = "block";
           f.style.display = "block";
           g.style.display = "block";
-          f.focus();
+          a.style.display = "block";
+          y.style.display = "none";
+          x.style.display = "block";
 
-        } else {
-          y.innerHTML="수정하기"
+       
+      }
+// 주소 수정 완료
+
+      function myFunction4_1() {
+        var y = document.getElementById("MAB");
+        var c = document.getElementById("sample6_postcode");
+        var d = document.getElementById("SEB");
+        var a = document.getElementById("CAB");
+        var x = document.getElementById("XB2");
+        var e = document.getElementById("sample6_address");
+        var f = document.getElementById("sample6_detailAddress");
+        var g = document.getElementById("sample6_extraAddress");
+
+        if(e.value!=""&&f.value!=""){
+          
+          txtaddrs.innerHTML=e.value+" "+f.value;
+
+        }
+
+        
           c.style.display = "none";
           d.style.display = "none";
           e.style.display = "none";
           f.style.display = "none";
           g.style.display = "none";
+          a.style.display = "none";
+          x.style.display = "none";
+          y.style.display = "block";
+
+          c.value="";
+          e.value="";
+          f.value="";
+          g.value="";
+
+       
+      }
+
+      $('#sample6_address').on("input",function(){        
+          if($('#sample6_address').value==""){
+            $('.complete_addr_btn').attr("disabled", true);
+          }
+          else{
+          $('.complete_addr_btn').attr("disabled", false);
         }
+      })
+      $('#sample6_detailAddress').on("input",function(){        
+          if($('#sample6_detailAddress').value==""){
+            $('.complete_addr_btn').attr("disabled", true);
+          }
+          else{
+          $('.complete_addr_btn').attr("disabled", false);
+        }
+      })
+
+
+
+      function myFunction4_2() {
+        var y = document.getElementById("MAB");
+        var c = document.getElementById("sample6_postcode");
+        var d = document.getElementById("SEB");
+        var a = document.getElementById("CAB");
+        var x = document.getElementById("XB2");
+        var e = document.getElementById("sample6_address");
+        var f = document.getElementById("sample6_detailAddress");
+        var g = document.getElementById("sample6_extraAddress");
+
+
+        
+          c.style.display = "none";
+          d.style.display = "none";
+          e.style.display = "none";
+          f.style.display = "none";
+          g.style.display = "none";
+          a.style.display = "none";
+          x.style.display = "none";
+          y.style.display = "block";
+
+          c.value="";
+          e.value="";
+          f.value="";
+          g.value="";
+
+       
       }
 
 
-      const txtnick = document.getElementById("WN");
 
-      function nick_chk(nick){
-        if(nick.length < 2 || nick.length > 10) {
-        return false;
-        }
-        else if(nick.search(/\s/) !== -1) {
-            return false;
-        }
-        var chk = /[0-9]|[a-z]|[A-Z]|[가-힣]/;
-
-        for( var i = 0; i <= nick.length -1 ; i++ ){if(chk.test(nick.charAt(i))){
-        }
-        else{
-        return false;
-            }
-        }   
-     return true;
-    }
-
-        //    닉네임
-    function checknick(value){
-        if(value==""){
-            txtnick.innerHTML=""
-            txtnick.style.color="red";
-            $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
-            $('.modify_nick_btn').attr("disabled",true);
-            return false;
-          }
-
-        if(!nick_chk(value)){
-            txtnick.innerHTML="2~10자의 한글, 영문, 숫자만 사용할 수 있습니다.";
-            txtnick.style.color="red";
-            $('.write_new_nick').css("border","1px solid red")
-            $('.modify_nick_btn').attr("disabled",true);
-
-            }else if(value==""){
-            txtnick.innerHTML="";
-            txtnick.style.color="red";
-            $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
-            $('.modify_nick_btn').attr("disabled",true);
-        }
-        else{
-            txtnick.innerHTML="사용 가능한 닉네임 입니다.";
-            txtnick.style.color="rgb(19, 106, 227)";
-            $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
-            $('.modify_nick_btn').attr("disabled",false);
-        }
-    }
-
+      
 
 
     var cs = document.querySelector("#WNP");
@@ -221,7 +382,7 @@ $('.write_phone_code').on('input',function(){
 })
 
 
-const txtaddr = document.getElementById("addr_txt");
+
   function addr_chk(addr){
     var chk = /[0-9]|[가-힣]|[\s]/gi;
 

@@ -95,7 +95,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         /* border: 1px solid #000; */
     }
 
-      #wary, .txt{
+      .wary, .txt{
         font-size: 12px;
         margin-top: 5px;
         color: red;
@@ -131,7 +131,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         margin-top: 50px;
     }
 
-    #modify_contents{
+    #modify_contents, .modify_contents{
         color:rgb(112, 112, 112);
         font-size: 15px;
     }
@@ -221,6 +221,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
         
         
+        .complete_nick_btn{
+            display: none;
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 10px;
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
         .modify_phone_btn{
             font-family: 'OTWelcomeRA';
             padding-top: 5px;
@@ -252,6 +266,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             margin-left: 5px;
         }
         
+        #XB2{
+            display: none;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            font-family: 'OTWelcomeRA';
+            position: relative;
+            top: 1.5px;
+            padding-top: 5px;
+            color: rgb(189, 189, 189);
+            background-color: #fff;
+            border: 1px solid rgb(189, 189, 189);
+            border-radius: 3px;
+            margin-left: 5px;
+        }
 
         .send_code{
             display: none;
@@ -275,6 +304,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             background-color: rgb(255, 255, 255);
             color: rgb(179, 179, 179);
         }
+        
 
         .write_phone_code{
             display: none;
@@ -322,6 +352,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 
+        .complete_addr_btn{
+            display: none;
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            /* margin-top: 10px; */
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
         .modify_addr_btn{
             font-family: 'OTWelcomeRA';
             padding-top: 5px;
@@ -335,6 +379,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             background-color: rgb(116, 10, 140);
             color: #fff;
         }
+        .complete_addr_btn:disabled{
+            cursor: default;
+            border: 1px solid rgb(179, 179, 179);
+            border-radius: 3px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(179, 179, 179);
+        }
 
         .time{
             display: none;
@@ -343,6 +394,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             left: 73px;
             font-size: 14px;
             color: red;
+            width: 30px;
         }
 
 
