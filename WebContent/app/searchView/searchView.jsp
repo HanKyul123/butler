@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,7 @@
 <body>
     <!-- 검색 키워드 -->
     <div class="SearchWord">
-        <span class="">'검색어'</span>
+        <span class="">${keyword}</span>
     </div>
 
     <div class="wrap1">
@@ -73,34 +74,44 @@
 
             <!-- 호텔란 -->
             
-            <a href=""><div class="prodbox">
-                <table class="prodtable">
-                    
-                    <!-- 호텔사진, 안쪽에 좋아요 버튼 -->
-                    <div class="HotelPic">배경에사진
-                        <div class="heart">
-                            <img src="" alt="">
-                        </div>  
-                    </div>
-
-                    <!-- 호텔 소개란 -->
-                    <div class="Hotelprodbox">
-                        <!-- 호텔 이름 -->
-                        <div class="Hotelname"><span>호텔명</span></div>
-                        <div class="famousbox">
-                            <div class="star">별점</div>
-                            <div class="reviewcnt"><span id="reviewcnt">리뷰수</span></div>
-                        </div>
-                        <div class="address"><span id="address">서울 강동구 머시기</span></div>
-                        <div class="Hotelinfo"><span id="Hotelinfo">이호텔짱좋음오셈</span></div>
-                        <div class="Hotelprice">
-                            <span class="price"><span id="price"></span>1000</span>
-                            <span class="won">원</span>
-                        </div>
-                    </div>
-                </table>
-            </div></a>
-
+            <c:choose>
+            	<c:when test="${list != null and list.size()>0 }">
+            		<c:forEach items="${list}" var="result">
+            		
+            			<a href=""><div class="prodbox">
+		                <table class="prodtable">		                  
+		                    <!-- 호텔사진, 안쪽에 좋아요 버튼 -->
+		                    <div class="HotelPic">배경에사진
+		                        <div class="heart">
+		                            <img src="" alt="">
+		                        </div>  
+		                    </div>
+		
+		                    <!-- 호텔 소개란 -->
+		                    <div class="Hotelprodbox">
+		                        <!-- 호텔 이름 -->
+		                        <div class="Hotelname"><span>${result.business_name}</span></div>
+		                        <div class="famousbox">
+		                            <div class="star">별점</div>
+		                            <div class="starresult">${result.business_workplace_score}</div>
+		                            <!-- <div class="reviewcnt"><span id="reviewcnt">리뷰수</span></div> -->
+		                        </div>
+		                        <div class="address"><span id="address">
+		                        ${result.business_addr} ${result.business_addrdetail}</span></div>
+		                        <div class="Hotelinfo"><span id="Hotelinfo">${result.business_main_intro}</span></div>
+		                        <div class="Hotelprice">
+		                            <span class="price"><span id="price"></span>1000</span>
+		                            <span class="won">원</span>
+		                        </div>
+		                    </div>
+		                </table>
+           			 </div></a>
+            		</c:forEach>
+            	</c:when>
+            	<c:otherwise>
+					<div style="text-align: center; font-size: 20px;">검색된 결과가 없습니다.</div>
+				</c:otherwise>
+            </c:choose>
 
         </div>
 
