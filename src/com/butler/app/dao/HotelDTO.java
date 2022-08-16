@@ -1,7 +1,7 @@
 package com.butler.app.dao;
 
 public class HotelDTO {
-	private int business_palce_num_pk;
+	private int business_place_num_pk;
 	private String business_name;
 	private String business_zipcode;
 	private String business_addr;
@@ -17,11 +17,11 @@ public class HotelDTO {
 	private int    business_workplace_score;
 	private int    user_num_fk;
 	
-	public int getBusiness_palce_num_pk() {
-		return business_palce_num_pk;
+	public int getBusiness_place_num_pk() {
+		return business_place_num_pk;
 	}
-	public void setBusiness_palce_num_pk(int business_palce_num_pk) {
-		this.business_palce_num_pk = business_palce_num_pk;
+	public void setBusiness_place_num_pk(int business_place_num_pk) {
+		this.business_place_num_pk = business_place_num_pk;
 	}
 	public String getBusiness_name() {
 		return business_name;

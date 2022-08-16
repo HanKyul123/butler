@@ -77,11 +77,14 @@
             <c:choose>
             	<c:when test="${list != null and list.size()>0 }">
             		<c:forEach items="${list}" var="result">
-            		
+<%-- 					      <% 
+					      out.print(${result.business_place_num_pk});
+					      %> --%>
             			<a href=""><div class="prodbox">
 		                <table class="prodtable">		                  
 		                    <!-- 호텔사진, 안쪽에 좋아요 버튼 -->
-		                    <div class="HotelPic">배경에사진
+		                    <div class="HotelPic">
+		                    <img id="Hotelimg" src="${pageContext.request.contextPath}/img/business_place_img/${result.business_place_num_pk}/${result.business_place_num_pk}_1.png" alt="">
 		                        <div class="heart">
 		                            <img src="" alt="">
 		                        </div>  
@@ -109,7 +112,11 @@
             		</c:forEach>
             	</c:when>
             	<c:otherwise>
-					<div style="text-align: center; font-size: 20px;">검색된 결과가 없습니다.</div>
+					<div class="whitediv" style="width: 55%; height: 400px;">
+                		<div class="herespan" style="position: relative; top: 170px; left: 150px;">
+                    		<span class="nonsearch">검색 결과가 없습니다.</span>
+                		</div>
+            		</div>
 				</c:otherwise>
             </c:choose>
 

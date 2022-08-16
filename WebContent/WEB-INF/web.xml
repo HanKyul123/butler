@@ -25,7 +25,7 @@
       <servlet-name>EtcFrontController</servlet-name>
       <url-pattern>*.etc</url-pattern>
   </servlet-mapping>
-  <servlet>
+    <servlet>
       <servlet-name>HotelFrontController</servlet-name>
       <servlet-class>com.butler.app.hotel.HotelFrontController</servlet-class>
   </servlet>
@@ -33,4 +33,4 @@
       <servlet-name>HotelFrontController</servlet-name>
       <url-pattern>*.ho</url-pattern>
   </servlet-mapping>
- </web-app>
+</web-app>
