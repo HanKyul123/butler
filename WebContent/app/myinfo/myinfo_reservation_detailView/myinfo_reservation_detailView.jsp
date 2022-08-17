@@ -40,6 +40,8 @@
 
                 <!-- 이용 중 / 이용 완료 / 예약 취소 -->
                 <div class="detail_now">이용 중</div>
+                <!-- <div class="detail_ed">이용 완료</div> -->
+                <!-- <div class="detail_cancel">예약 취소</div> -->
 
                 <!-- 고른 날짜 -->
                 <div class="detail_date">8월 10일 수 ~ 8월 12일 금</div>
@@ -87,7 +89,7 @@
                             무게: <span id="PW">1~5kg 50000원</span>
                         </div>
                         
-                    </div>-
+                    </div>
                     <!-- ------------------------ -->
 
 
