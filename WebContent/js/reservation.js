@@ -1,4 +1,5 @@
 
+
 $('#animal').change(function() {
     var result = $('#animal option:selected').val();
     var resultT = $('#animal option:selected').text();
@@ -27,7 +28,13 @@ $('#animal').change(function() {
       $('.dog_weight').show();
       $('.cat_weight').hide();
       $('.else_weight').hide();
-      $('.else_weight').hide();
+
+      $('.dog_weight').css("display", "block");
+      $('.cat_weight').css("display", "none");
+      $('.else_weight').css("display", "none");
+
+      result="강아지";
+      
             
         } 
 
@@ -38,6 +45,10 @@ $('#animal').change(function() {
         $('.dog_weight').hide();
         $('.else_weight').hide();
 
+        $('.cat_weight').css("display", "block");
+        $('.dog_weight').css("display", "none");
+        $('.else_weight').css("display", "none");
+        result="고양이";
 
         }
     else if (result == '그 외') {
@@ -46,6 +57,12 @@ $('#animal').change(function() {
         $('.cat_weight').hide();
         $('.dog_weight').hide();
 
+        $('.else_weight').css("display", "block");
+        $('.cat_weight').css("display", "none");
+        $('.dog_weight').css("display", "none");
+
+
+        result="그 외";
 
 
     } else {
@@ -56,30 +73,7 @@ $('#animal').change(function() {
         
       }
       
-      if (dog =="선택") {
-                $('.add').attr("disabled",true);
-            } else {
-                $('.add').attr("disabled",false);
-                dog=="선택";
-            }
-
-
-            if (cat =='선택') {
-                $('.add').attr("disabled",true);
-                
-            } else {
-                $('.add').attr("disabled",false);
-                
-            }
-
-
-        if (elseA =='선택') {
-            $('.add').attr("disabled",true);
-            
-        } else {
-            $('.add').attr("disabled",false);
-            
-        }
+      
 
 
   });  
@@ -100,77 +94,128 @@ $('#animal').change(function() {
   });
 
 
-
+  
+// 장바구니 추가하기
   function copyDiv()  {
-    // 'test' node 선택
-    const parentbox = document.getElementsByClassName('addinfo')[0];
-    // 노드 복사하기
-    const newNode = parentbox.cloneNode(true);
+
+    if($('#animal option:selected').val()=="강아지"){
+        $("#parentadd").append(
+            "<div id='bigadd' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
+            "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
+            "<span>"+
     
-    // 복사한 노드 붙여넣기
-    parentbox.after(newNode);
-    parentbox.style.display = "flex";
+            $('#animal option:selected').val()
+            
+            +"</span>"
+            +"&nbsp;"+"<span>"+
+            
+            
+            $('.dog_weight option:selected').text()
+            
+            +"</span>"+"</div>"+"<button id='Xbtn' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+        );
+
+    }else if($('#animal option:selected').val()=="그 외"){
+        $("#parentadd").append(
+            "<div id='bigadd' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
+            "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
+            "<span>"+
+    
+            $('#animal option:selected').val()
+            
+            +"</span>"
+            +"&nbsp;"+"<span>"+
+            
+            
+            $('.else_weight option:selected').text()
+            
+            +"</span>"+"</div>"+"<button id='Xbtn' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+        );
+
+    }
+    else if($('#animal option:selected').val()=="고양이"){
+        $("#parentadd").append(
+            "<div id='bigadd' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
+            "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
+            "<span>"+
+    
+            $('#animal option:selected').val()
+            
+            +"</span>"
+            +"&nbsp;"+"<span>"+
+            
+            
+            $('.cat_weight option:selected').text()
+            
+            +"</span>"+"</div>"+"<button id='Xbtn' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+        );
+
+    }
+    
   }
 
-
-  // 요소 삭제하기   
-
-  const Pbox = document.getElementById('addinfo');
-/*  function remove(){
-  Pbox.remove();
-  }*/
-
-  $('#Xbtn').on("click",function(){
-      Pbox.remove();
-  })
+  
 
 
+    // 요소 삭제하기   
 
+const Pbox = document.getElementById('bigadd');
+// function remove(){
+//     Pbox.remove();
+    
+// }
 
-  const over1 = document.getElementById('modi');
-  const over2 = document.getElementById('delete');
-
-      over1.addEventListener("mouseover", function () {
-          over1.src="../../img/modify_icon_focus.png";
-      }, false);
-
-      over1.addEventListener("mouseout", function () {
-          over1.src="../../img/modify_icon.png";
-     
-      }, false);
-      
-      
-      over2.addEventListener("mouseover", function () {
-          over2.src="../../img/delete_focus.png";
-      }, false);
-
-      over2.addEventListener("mouseout", function () {
-          over2.src="../../img/delete.png";
-      }, false);
-
-      
-      function modify(){
-          $('.Mbox').css('display','block');
-          $('.mask').css('display','block');
-      }
-
-      function delete_review(){
-          $('.Review_Reply').css('display','none');
-      }
-
-      function complete(){
-          $('.Mbox').css('display','none');
-          $('.mask').css('display','none');
-      }
-
-      function cancel(){
-          $('.Mbox').css('display','none');
-          $('.mask').css('display','none');
-      }
+$('#Xbtn').on("click",function(){
+    $(this).parent().parent().remove();
+})
 
 
 
 
+const over1 = document.getElementById('modi');
+const over2 = document.getElementById('delete');
+
+    over1.addEventListener("mouseover", function () {
+        over1.src="../../img/modify_icon_focus.png";
+    }, false);
+
+    over1.addEventListener("mouseout", function () {
+        over1.src="../../img/modify_icon.png";
+   
+    }, false);
+    
+    
+    over2.addEventListener("mouseover", function () {
+        over2.src="../../img/delete_focus.png";
+    }, false);
+
+    over2.addEventListener("mouseout", function () {
+        over2.src="../../img/delete.png";
+    }, false);
 
 
 
+
+    function modify(){
+        $('.Mbox').css('display','block');
+        $('.mask').css('display','block');
+    }
+
+    function delete_review(){
+        $('.Review_Reply').css('display','none');
+    }
+
+    function complete(){
+        $('.Mbox').css('display','none');
+        $('.mask').css('display','none');
+    }
+
+    function cancel(){
+        $('.Mbox').css('display','none');
+        $('.mask').css('display','none');
+    }
+
+    
+
+
+  

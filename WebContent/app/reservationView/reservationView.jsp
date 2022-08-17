@@ -74,7 +74,7 @@
 
 
 <body class="reservation_wrap">
-
+<div class="mask"></div>
    
 
     <div class="box1">
@@ -144,14 +144,14 @@
 
                  <div id="parentadd" class="parentadd">
 
-                    <div class="addinfo" id="addinfo">
+                    <!-- <div class='addinfo' id='addinfo'>
                         <div class='animal_info'>
                         <span class='animalname'>종류</span>
                         <span class='animalprice'>무게와 가격</span>
                         </div>
                         <div class='Xbtn'>
-                        <button id="remove_btn"><img id="Xbtn" src='${pageContext.request.contextPath}/img/X_gray.png'></button></div>
-                    </div>
+                        <img id='Xbtn' src='img/X_gray.png'><button id='remove_btn'></button></div>
+                    </div> -->
 
                 </div>
 

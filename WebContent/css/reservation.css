@@ -27,7 +27,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     a{text-decoration: none;}
 
     .reservation_wrap {
-        padding: 20px;
         text-align: center;
         width: 100%;
         background: #fff;
@@ -481,7 +480,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 
-/* ------------리뷰 상세박스 ---------------*/
+    /* ------------리뷰 상세박스 ---------------*/
     
     .review_info_box{
         width: 100%;
@@ -547,13 +546,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     text-align: left;
    }
 
-   .user_title{
-    position: relative;
-    left: 2px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
-   }
+ 
 
    .user_contents{
     padding: 10px;
@@ -565,7 +558,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
    }
 
    .user_review_pic{
-  	margin-top: 5px;
+    margin-top: 5px;
     border: 1px solid rgb(205, 205, 205);
     border-radius: 5px;
     width: 100%;
@@ -594,7 +587,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     border: none;
     left: 40px;
 }
-
    /* ------------- 수정 박스 ------------- */
 
 .Mbox{
@@ -667,8 +659,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     bottom: 3px;
     width: 25px;
  }
-
-
 
    /* ------------- 호텔 관리인 답변 ------------- */
 
