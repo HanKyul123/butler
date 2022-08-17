@@ -33,13 +33,13 @@
             </div>
             
 
-            <!-- -------------------내용 공간------------------- -->
+           <!-- -------------------내용 공간------------------- -->
             <div class="my_review_box2">
 
                 <div class="myinfo_title">내가 쓴 리뷰</div>
                 <div class="myreview_cnt">
                     <!-- 만약에 0건이면 nonreview 창 띄어주기 -->
-                    	작성한 리뷰 
+                   	 작성한 리뷰 
                     <span id="MRC_n">n</span>건
                 </div>
 
@@ -48,7 +48,7 @@
                 <!-- --------------- 리뷰들이 있는 박스 --------------- -->
                 <div class="my_review_box2_1">
        
-            <!-- ---------------리뷰 박스------------- -->
+            <!-- ---------------한 개의 리뷰 박스------------- -->
                     <div class="review_box">
                         <div class="img_name_pet">
                             <!-- 호텔 이미지 -->
@@ -62,24 +62,27 @@
                                 <div class="Pprice">동물 무게와 가격</div>
                             </div>
                         </div>
+
+
                         <!-- 리뷰 내용과 수정/삭제 버튼 -->
+                        <!--  리뷰 수정 누르면 display:none;  -->
                         <div class="content_btn">
                             <div class="review_content">
                                 	여기 완전 최고임
                             </div>
                             <div class="btn">
                                 <!-- 수정 버튼 -->
-                                <button class="MDbtn" id="Mbtn" onclick="modyfy()">
-                                    <img class="MD" id="modify_btn" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="">
+                                <button class="MDbtn" id="Mbtn" onclick="modify()" >
+                                    <img class="MD" id="modify_btn" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" title="수정하기">
                                 </button>
 
                                 <!-- 삭제 버튼 -->
                                 <button class="MDbtn" id="Dbtn" onclick="delete_review()">
-                                    <img class="MD" id="delete_btn" src="${pageContext.request.contextPath}/img/delete.png" alt="">
+                                    <img src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD" id="delete_btn" title="삭제하기">
                                 </button>
                             </div>
                         </div>
-                        
+
                         <!--  리뷰 수정 완료 또는 취소하면 display:none;  -->
                         <div class="newreview_btn">
                             <textarea name="" id="new_review" cols="30" rows="10"></textarea>
@@ -87,11 +90,11 @@
                             <div>
                                 <div>
                                     <button class="MDBP" id="complete" onclick="complete()">
-                                        <img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" class="MDB">
+                                        <img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" class="MDB" title="수정완료">
                                     </button>
                                 </div>
                                 <button class="MDBP" id="cancel" onclick="cancel()">
-                                    <img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" class="MDB" id="CB">
+                                    <img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" class="MDB" id="CB" title="취소">
                                 </button>
                             </div>
                         </div>
@@ -121,7 +124,6 @@
 
 <%@ include file="../../../footer/footer.jsp"%>
 <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
-
 <script src="${pageContext.request.contextPath}/js/myinfo_review.js"></script>
-<script src="script/myinfo_reservation_detail.js"></script>
+
 </html>

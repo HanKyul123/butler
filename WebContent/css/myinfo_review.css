@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 웰컴체 */
 @font-face {
     font-family: 'OTWelcomeRA';
@@ -26,7 +27,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     a{text-decoration: none;}
 
-    .myinfo_review_wrap {
+    .myinfo_reservation_wrap {
          font-family: 'OTWelcomeRA';
          position: relative;
          top: 55px;
@@ -34,7 +35,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         text-align: center;
         width: 100%;
         background: #fff;
-        margin-bottom: 400px;
+        margin-bottom: 350px;
     }
     
 
@@ -42,7 +43,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 
-    .my_review_title{
+    .my_reservation_title{
         font-family: 'OTWelcomeRA';
 
         width: 100%;
@@ -56,7 +57,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
     }
 
-    .my_review_BigBox{
+    .my_reservation_BigBox{
         display: flex;
         flex-wrap: wrap;
         padding: 0 12.8%;
@@ -64,7 +65,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         
     }
 
-    .my_review_box1{
+    .my_reservation_box1{
         width: 20%;
         text-align: right;
         padding: 10px;
@@ -75,11 +76,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     #all_choice:hover{
         color: rgb(116, 10, 140);
     }
-    .my_review_box1>a{
+    .my_reservation_box1>a{
         color: rgb(132, 132, 132);
         
     }
-    a.my_review_info{
+    a.my_reservation_info{
 
         color: rgb(116, 10, 140);
     }
@@ -88,178 +89,255 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 
-    .my_review_box2{
+    .my_reservation_box2{
         padding: 20px;
         padding-left: 70px;
         text-align: left;
         width: 80%;
+        /* margin: auto;*/
     }
-
-
-    .myinfo_title{
-        font-size: 25px;
-    }
-
-    .myreview_cnt{
-        margin-top: 20px;
-        margin-left: 1px;
-        color: rgb(115, 115, 115);
-        font-size: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgb(224, 224, 224);
+   
+    .my_reservation_box2>span{
+        font-size: 18px;
     }
     
+    .boxs{
+        z-index: 10;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-bottom: 30px;
+        }
 
-    .my_review_box2_1{
-        margin-top: 30px;
-        width: 100%;
-        margin-bottom: 400px;
+
+    #ingboxs{
+        transition: all 1s;
     }
 
+    /* #ing_box{
+        transform: translateX(-390px);
+    } */
 
-
-
-
-
-
-
-
-
-    .review_box{
-        width: 100%;
-        padding-bottom: 20px;
-        border-bottom: 1px solid rgb(220, 220, 220);
-        margin-bottom: 50px;
+    .in_boxs{
+        cursor: pointer;
+        z-index: 150;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 378px;
+        height: 98.5px;
+        border-radius: 3px;
+        transition: 0.15s;
+        margin-right: 10px;
     }
 
-    .img_name_pet{
+    .flex{
+        
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 
-    .Hotel_img{
-        object-fit: contain;
-        width: 120px;
-        height: 82px;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
+
+    .in_boxs:hover{
+        box-shadow: 0px 0px 8px 1px rgb(227, 218, 230);
     }
 
     
 
-
-    .name_pet{
-        color: rgb(112, 112, 112);
-        padding: 5px;
-        padding-top: 8px;
-        padding-left: 10px;
+    .hotelimg{
+        object-fit: cover;
+        width: 150px;
+        height: 98.5px;
     }
-    .Hname{
-        padding-top: 3px;
-        width: 510px;
+    .in_contents{
+        border-right: 1px solid rgb(142, 142, 142);
+        border-top: 1px solid rgb(142, 142, 142);
+        border-bottom: 1px solid rgb(142, 142, 142);
+        border-radius: 3px;
+        width: 228px;
+        padding: 22px;
+        padding-top: 19px;
+        height: 98.5px;
+        
+    }
+    
+    .all_name{
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        font-size: 23px;
-        color: black;
-    }
-
-
-
-
-
-
-
-
-
-/* 리뷰 수정 누르면 display:none; */
-    .content_btn{
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .MD{    
-            position: relative;
-            right: 5px;
-            top: 2px;
-            width: 25px;
-            height: 25px;
-        }
-
-
-        .btn{
-            width: 25px;
-        }
-
-        .MDbtn{
-            cursor: pointer;
-            width: 30px;
-            background-color: transparent;
-            border: none;
-
-            position: relative;
-            left: 10px;
-        }
-
-
-
-
-
-
-
-
-    .review_content{
-        width: 80%;
-        padding: 15px;
-        padding-top: 18px;
-        font-size: 14px;
-        border: 1px solid rgb(255, 237, 248);
-        background-color: rgb(255, 237, 248);
-        border-radius: 4px;
-
-    }
-
-
-
-
-
-    .newreview_btn{
         width: 100%;
-        display: none;
-        flex-wrap: wrap;
+        font-size: 17px;
+        font-weight: bold;
+        margin-bottom: 3px;
+        padding-top: 5px;
+        color: rgb(58, 58, 58);
+
     }
 
+    .all_contents{
+        font-size: 14px;
+        color: rgb(121, 121, 121);
+    }
+    
+    .all_date{
+        font-size: 13.5px;
+        color: rgb(88, 88, 88);
+    }
 
-    .MDBP{
+    #left_btn1{
         cursor: pointer;
-        width: 23px;
-        height: 23px;
         background-color: transparent;
+        width: 30px;
+        height: 30px;
         border: none;
-        margin-right: 10px;
-        position: relative;
-        left: 10px;
+        /* border: 1px solid #000; */
+        border-radius: 30px;
+        position: absolute;
+        top: 235px;
+        left: 497px;
+
+        transition: 0.2s;
     }
-    .MDB{
-        position: relative;
-        right: 7px;
-        width: 27px;
-        bottom: 2px;
+    #left_btn1:hover{
+        box-shadow: 0px 0px 4px 4px #fff;
     }
-    #CB{
+    .left_btn{
         position: relative;
-        right: 7px;
-        bottom: 2px;
+        right: 11px;
+        bottom: 6px;
+        width: 40px;
+    }
+
+    #right_btn1{
+        cursor: pointer;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        border: none;
+        /* border: 1px solid #000; */
+        border-radius: 30px;
+        position: absolute;
+        top: 235px;
+        right: 223px;
+
+    }
+
+    #right_btn1:hover{
+        box-shadow: 0px 0px 4px 4px #fff;
+    }
+
+    .right_btn{
+        position: relative;
+        right: 11px;
+        bottom: 6px;
+        width: 40px;
     }
 
 
-    #new_review{
-        font-family: 'OTWelcomeRA';
-        border: 1px solid rgb(255, 237, 248);
-        background-color: rgb(255, 237, 248);
-        border-radius: 4px;
-        padding: 10px;
-        width: 80%;
-        height: 80px;
-        resize: none;
-        font-size: 16px;
+
+
+
+
+    
+    #left_btn2{
+        cursor: pointer;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        border: none;
+        /* border: 1px solid #000; */
+        border-radius: 30px;
+        position: absolute;
+        top: 415px;
+        left: 497px;
+
+        transition: 0.2s;
+    }
+    #left_btn2:hover{
+        box-shadow: 0px 0px 4px 4px #fff;
+    }
+    .left_btn{
+        position: relative;
+        right: 11px;
+        bottom: 6px;
+        width: 40px;
+    }
+
+    #right_btn2{
+        cursor: pointer;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        border: none;
+        /* border: 1px solid #000; */
+        border-radius: 30px;
+        position: absolute;
+        top: 415px;
+        right: 223px;
+
+    }
+
+    #right_btn2:hover{
+        box-shadow: 0px 0px 4px 4px #fff;
+    }
+
+    .right_btn{
+        position: relative;
+        right: 11px;
+        bottom: 6px;
+        width: 40px;
+    }
+
+
+
+
+
+
+
+    #left_btn3{
+        cursor: pointer;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        border: none;
+        /* border: 1px solid #000; */
+        border-radius: 30px;
+        position: absolute;
+        top: 595px;
+        left: 497px;
+
+        transition: 0.2s;
+    }
+    #left_btn3:hover{
+        box-shadow: 0px 0px 4px 4px #fff;
+    }
+    .left_btn{
+        position: relative;
+        right: 11px;
+        bottom: 6px;
+        width: 40px;
+    }
+
+    #right_btn3{
+        cursor: pointer;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        border: none;
+        /* border: 1px solid #000; */
+        border-radius: 30px;
+        position: absolute;
+        top: 595px;
+        right: 223px;
+
+    }
+
+    #right_btn3:hover{
+        box-shadow: 0px 0px 4px 4px #fff;
+    }
+
+    .right_btn{
+        position: relative;
+        right: 11px;
+        bottom: 6px;
+        width: 40px;
     }
