@@ -93,31 +93,40 @@ $('#animal').change(function() {
     }
   });
 
+let i = 0;
+var array=[];
 
-  
 // 장바구니 추가하기
   function copyDiv()  {
 
     if($('#animal option:selected').val()=="강아지"){
         $("#parentadd").append(
-            "<div id='bigadd' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
+            "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
             "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
             "<span>"+
+            
     
             $('#animal option:selected').val()
+            // 동물 종류 value 값
             
             +"</span>"
             +"&nbsp;"+"<span>"+
             
             
             $('.dog_weight option:selected').text()
+            // 무게와 가격 value 값
             
-            +"</span>"+"</div>"+"<button id='Xbtn' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
-        );
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+            );
+
+            array.push("bigadd"+i);
+            console.log(array);
+            console.log($(".bigadd"+i).index());
+            i=i+1;
 
     }else if($('#animal option:selected').val()=="그 외"){
         $("#parentadd").append(
-            "<div id='bigadd' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
+            "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
             "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
             "<span>"+
     
@@ -129,13 +138,17 @@ $('#animal').change(function() {
             
             $('.else_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
         );
 
+        array.push("bigadd"+i);
+            console.log(array);
+            console.log($(".bigadd"+i).index());
+            i=i+1;
     }
     else if($('#animal option:selected').val()=="고양이"){
         $("#parentadd").append(
-            "<div id='bigadd' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
+            "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
             "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
             "<span>"+
     
@@ -147,27 +160,29 @@ $('#animal').change(function() {
             
             $('.cat_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
         );
 
+        array.push("bigadd"+i);
+        console.log(array);
+        console.log($(".bigadd"+i).index());
+        i=i+1;
     }
-    
+   
   }
 
-  
 
 
-    // 요소 삭제하기   
+// 쌤이 주신거
+function removethis(i){
+    $(".bigadd"+i).remove();
+}
 
-const Pbox = document.getElementById('bigadd');
-// function remove(){
-//     Pbox.remove();
-    
-// }
 
-$('#Xbtn').on("click",function(){
-    $(this).parent().parent().remove();
-})
+
+
+
+
 
 
 
@@ -176,21 +191,21 @@ const over1 = document.getElementById('modi');
 const over2 = document.getElementById('delete');
 
     over1.addEventListener("mouseover", function () {
-        over1.src="../../img/modify_icon_focus.png";
+        over1.src="img/modify_icon_focus.png";
     }, false);
 
     over1.addEventListener("mouseout", function () {
-        over1.src="../../img/modify_icon.png";
+        over1.src="img/modify_icon.png";
    
     }, false);
     
     
     over2.addEventListener("mouseover", function () {
-        over2.src="../../img/delete_focus.png";
+        over2.src="img/delete_focus.png";
     }, false);
 
     over2.addEventListener("mouseout", function () {
-        over2.src="../../img/delete.png";
+        over2.src="img/delete.png";
     }, false);
 
 
