@@ -18,6 +18,7 @@
 
 <!-- 헤더  -->
 <header>
+<div class="srh_mask" onclick="tog2()">&nbsp;</div>
    <section>
       <a href="#">
          <div class="top">
@@ -102,7 +103,7 @@
             </div> <a href=""></a>
          </li>
       </ul>
-      <div class="srh_mask" onclick="tog2()">&nbsp;</div>
+      
    </section>
    <c:choose>
        <c:when test="${sessionScope.loginUser eq null}">

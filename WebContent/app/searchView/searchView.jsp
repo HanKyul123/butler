@@ -88,16 +88,20 @@
 <%-- 					      <% 
 					      out.print(${result.business_place_num_pk});
 					      %> --%>
-            			<a href=""><div class="prodbox">
-		                <table class="prodtable">		                  
+					      
+					  <div class="prod_heart">
+                		
+                		<button id="heart_btn"><img id="heart" src="${pageContext.request.contextPath}/img/heart.png" alt=""></button>
+                		 
+            			<a href="">
+            			<div class="prodbox">
+		                	<table class="prodtable">		                  
 		                    <!-- 호텔사진, 안쪽에 좋아요 버튼 -->
 		                    <div class="HotelPic">
 		                    <img id="Hotelimg" src="${pageContext.request.contextPath}/img/business_place_img/${result.business_place_num_pk}/${result.business_place_num_pk}_1.png" alt="">
-		                        <div class="heart">
-		                            <img src="" alt="">
-		                        </div>  
+		                        
 		                    </div>
-		
+								
 		                    <!-- 호텔 소개란 -->
 		                    <div class="Hotelprodbox">
 		                        <!-- 호텔 이름 -->
@@ -117,6 +121,7 @@
 		                    </div>
 		                </table>
            			 </div></a>
+           			 </div>
             		</c:forEach>
             	</c:when>
             	<c:otherwise>

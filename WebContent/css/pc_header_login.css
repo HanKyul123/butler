@@ -266,6 +266,9 @@ header {
 .scroll .searchBar_box>input:focus {
 	border-bottom: 1px solid rgb(164, 78, 184);
 }
+.scroll .search{
+            color: rgb(164, 78, 184);
+            }
 
 .scroll .searchBar_box>input::placeholder {
 	color: rgb(245, 191, 255);
