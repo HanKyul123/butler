@@ -60,7 +60,15 @@
                 </div>
             </div>
 
+			<!-- 검색 버튼 -->
+            <button id="hashsearch">선택</button>
+
         </div>
+
+
+
+
+
 
         <!-- 검색 결과 상품들 -->
         <div class="prod">

@@ -116,7 +116,7 @@ var array=[];
             $('.dog_weight option:selected').text()
             // 무게와 가격 value 값
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
             );
 
             array.push("bigadd"+i);
@@ -138,7 +138,7 @@ var array=[];
             
             $('.else_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
         );
 
         array.push("bigadd"+i);
@@ -160,7 +160,7 @@ var array=[];
             
             $('.cat_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
         );
 
         array.push("bigadd"+i);

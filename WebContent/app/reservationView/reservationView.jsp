@@ -170,7 +170,7 @@
             <div class="totaldate">총 기간 몇박 몇일</div>
             <div class="pricetitle">가격</div>
             <div class="totalprice">
-                <span class="pricecontent">100000</span>
+                <span class="pricecontent">0</span>
                 <span class="pricewon">원</span>
             </div>
             <div class="reserbtnflex">
