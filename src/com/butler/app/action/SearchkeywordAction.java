@@ -1,7 +1,6 @@
 package com.butler.app.action;
 
 import java.io.PrintWriter;
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,20 +22,32 @@ public class SearchkeywordAction implements Action{
 		HotelDAO hdao = new HotelDAO();
 		
 		List<HotelDTO> searchResult = hdao.SearchkeywordOK(keyword);
-		if(searchResult != null) {
-			System.out.println("여기니?");
-		}
-		else {
-			System.out.println("오니?");
-			PrintWriter out = resp.getWriter();
-			out.print("<script>");
-			out.print("alert('이메일 및 닉네임 중복검사를 진행해 주세요');");
-			out.print("</script>");				
-			out.print("location.href = '" + req.getContextPath() + "/app/searchView/searchView.jsp';");
-			out.print("</script>");
-		}
-
-		return null;
+		
+		System.out.println(searchResult);
+		
+		req.setAttribute("list", searchResult);
+		req.setAttribute("keyword", keyword);
+		
+		ActionTo transfer = new ActionTo();
+		transfer.setRedirect(false);
+		transfer.setPath("/app/searchView/searchView.jsp");
+		return transfer;
+		
+		
+//		if(searchResult != null) {
+//			System.out.println("여기니?");
+//		}
+//		else {
+//			System.out.println("오니?");
+//			PrintWriter out = resp.getWriter();
+//			out.print("<script>");
+//			out.print("alert('이메일 및 닉네임 중복검사를 진행해 주세요');");
+//			out.print("</script>");				
+//			out.print("location.href = '" + req.getContextPath() + "/app/searchView/searchView.jsp';");
+//			out.print("</script>");
+//		}
+//
+//		return null;
 	}
 	
 }

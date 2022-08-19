@@ -6,7 +6,8 @@
   <typeAliases>  
   	<typeAlias type="com.butler.app.dao.KUserDTO" alias="kdto"/>  
   	<typeAlias type="com.butler.app.dao.UserDTO" alias="udto"/>  
-  	<typeAlias type="com.butler.app.dao.HotelDTO" alias="hdto"/>  
+  	<typeAlias type="com.butler.app.dao.HotelDTO" alias="hdto"/> 
+  	
   </typeAliases>
   <environments default="development">
     <environment id="development">

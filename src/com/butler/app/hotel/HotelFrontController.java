@@ -2,14 +2,13 @@ package com.butler.app.hotel;
 
 import java.io.IOException;
 
-
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.butler.app.action.ActionTo;
+import com.butler.app.action.HoteldetailAction;
 import com.butler.app.action.KakaoLoginAction;
 import com.butler.app.action.PhoneProveAction;
 import com.butler.app.action.SearchkeywordAction;
@@ -43,7 +42,21 @@ public class HotelFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;
-			
+		case "/hotel/searchevent.ho":
+			try {
+				transfer = new SearchkeywordAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+//		case "/hotel/hoteldetail.ho":
+//			try {
+//				transfer = new HoteldetailAction().execute(req, resp);
+//			} catch (Exception e) {
+//				
+//				e.printStackTrace();
+//			}
+//			break;
 			
 			
 
