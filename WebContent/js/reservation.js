@@ -95,6 +95,10 @@ $('#animal').change(function() {
 
 let i = 0;
 var array=[];
+var arrayprice=[];
+let totalprice = 0;
+let txttotalprice = document.getElementById("pricecontent");
+let addprice = 0;
 
 // 장바구니 추가하기
   function copyDiv()  {
@@ -116,11 +120,26 @@ var array=[];
             $('.dog_weight option:selected').text()
             // 무게와 가격 value 값
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"
             );
 
+            var selected = $('.dog_weight option:selected').val();
+            console.log(selected);
+
+            let pricenum = parseInt(selected);
+            totalprice=totalprice+pricenum;
+            txttotalprice.innerHTML=totalprice;
+            console.log(totalprice);
+    
+            var minusprice = $("#thisprice"+i).val();
+            minusprice = selected;
+            console.log("가격 :"+minusprice);
+    
             array.push("bigadd"+i);
+            arrayprice.push(minusprice);
+    
             console.log(array);
+            console.log(arrayprice);
             console.log($(".bigadd"+i).index());
             i=i+1;
 
@@ -138,11 +157,25 @@ var array=[];
             
             $('.else_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"
         );
+            var selected = $('.else_weight option:selected').val();
+            console.log(selected);
 
-        array.push("bigadd"+i);
+            let pricenum = parseInt(selected);
+            totalprice=totalprice+pricenum;
+            txttotalprice.innerHTML=totalprice;
+            console.log(totalprice);
+
+            var minusprice = $("#thisprice"+i).val();
+            minusprice = selected;
+            console.log("가격 :"+minusprice);
+
+            array.push("bigadd"+i);
+            arrayprice.push(minusprice);
+
             console.log(array);
+            console.log(arrayprice);
             console.log($(".bigadd"+i).index());
             i=i+1;
     }
@@ -160,11 +193,26 @@ var array=[];
             
             $('.cat_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"
         );
 
+        var selected = $('.cat_weight option:selected').val();
+        console.log(selected);
+        
+        let pricenum = parseInt(selected);
+        totalprice=totalprice+pricenum;
+        txttotalprice.innerHTML=totalprice;
+        console.log(totalprice);
+
+        var minusprice = $("#thisprice"+i).val();
+        minusprice = selected;
+        console.log("가격 :"+minusprice);
+
         array.push("bigadd"+i);
+        arrayprice.push(minusprice);
+
         console.log(array);
+        console.log(arrayprice);
         console.log($(".bigadd"+i).index());
         i=i+1;
     }
@@ -175,6 +223,13 @@ var array=[];
 
 // 쌤이 주신거
 function removethis(i){
+    // 총가격과 #thisprice+i 의 value 값을 parseint 로 변환해 빼어 계산한다.
+    console.log(arrayprice[i]);
+    totalprice=totalprice-arrayprice[i];
+
+    console.log(totalprice);
+    txttotalprice.innerHTML=totalprice;
+
     $(".bigadd"+i).remove();
 }
 
