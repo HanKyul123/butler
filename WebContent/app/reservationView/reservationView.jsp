@@ -80,12 +80,26 @@
     <div class="box1">
         <div class="Hotel_pic">
 
-            <div class="bigpic"></div>
+            <div class="bigpic">
+                <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
+            </div>
             <div class="small">
-                <div id="smallpic" class="smallpic1"></div>
-                <div id="smallpic" class="smallpic2"></div>
-                <div id="smallpic" class="smallpic3"></div>
-                <div id="smallpic" class="smallpic4"></div>
+                <div  id="smallpic">
+                    <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
+
+                </div>
+                <div  id="smallpic">
+                <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
+                    
+                </div>
+                <div  id="smallpic">
+                    <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
+
+                </div>
+                <div  id="smallpic">
+                    <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
+
+                </div>
             </div>
             
         </div>
@@ -255,7 +269,9 @@
 <a id="aa" name="D3">
         <article class="review_info_box">
 
-            <div class="Rtitle">▶리뷰</div>
+            <div class="Rtitle">▶리뷰
+                <button id="go_reservation_info">리뷰 쓰러 가기</button>
+            </div>
             
             <div class="Review_Reply">
             
@@ -281,8 +297,6 @@
                 </div>
 
                 <div id="Rbox" class="user_review">
-                    <div id="Rbox" class="user_title">여기는 리뷰제목입니다.
-                    </div>
 
                     <div id="Rbox" class="user_contents">여기는 리뷰내용 입니다. <br>
                   	 	 리뷰를 마음껏 작성하세요.</div>
@@ -338,6 +352,9 @@
                 </div>
             </div>
         </div>
+        <!-- <div id="emty_review">
+                <div id="ER">아직 리뷰가 없습니다.</div>
+            </div> -->
         </article>
         </a>
     </div>

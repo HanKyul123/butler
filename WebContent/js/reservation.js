@@ -96,6 +96,7 @@ $('#animal').change(function() {
 let i = 0;
 var array=[];
 var arrayprice=[];
+var arraypet=[];
 let totalprice = 0;
 let txttotalprice = document.getElementById("pricecontent");
 let addprice = 0;
@@ -120,28 +121,40 @@ let addprice = 0;
             $('.dog_weight option:selected').text()
             // 무게와 가격 value 값
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"
             );
 
-            var selected = $('.dog_weight option:selected').val();
-            console.log(selected);
+         // 상품 가격 가져오기
+         var selected = $('.dog_weight option:selected').val();
 
-            let pricenum = parseInt(selected);
-            totalprice=totalprice+pricenum;
-            txttotalprice.innerHTML=totalprice;
-            console.log(totalprice);
-    
-            var minusprice = $("#thisprice"+i).val();
-            minusprice = selected;
-            console.log("가격 :"+minusprice);
-    
-            array.push("bigadd"+i);
-            arrayprice.push(minusprice);
-    
-            console.log(array);
-            console.log(arrayprice);
-            console.log($(".bigadd"+i).index());
-            i=i+1;
+
+         // 총 가격 구하기
+         let pricenum = parseInt(selected);
+         totalprice=totalprice+pricenum;
+         txttotalprice.innerHTML=totalprice;
+ 
+         // 상품가격 hidden input value 에 넣기
+         var minusprice = $("#thisprice"+i).val();
+         minusprice = selected;
+ 
+         // 펫 종류 구하기
+         var petname = $('#animal option:selected').val();
+         
+ 
+ 
+         arraypet.push(petname);
+         array.push("bigadd"+i);
+         arrayprice.push(minusprice);
+ 
+ 
+ 
+         console.log("총 가격 :"+totalprice);
+         console.log("상품 가격 :"+minusprice);
+         console.log("펫 종류 :"+petname);
+
+         console.log("[담긴 것들] :"+array);
+         console.log("\n");
+         i=i+1;
 
     }else if($('#animal option:selected').val()=="그 외"){
         $("#parentadd").append(
@@ -157,27 +170,39 @@ let addprice = 0;
             
             $('.else_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"
         );
-            var selected = $('.else_weight option:selected').val();
-            console.log(selected);
+        // 상품 가격 가져오기
+        var selected = $('.else_weight option:selected').val();
 
-            let pricenum = parseInt(selected);
-            totalprice=totalprice+pricenum;
-            txttotalprice.innerHTML=totalprice;
-            console.log(totalprice);
 
-            var minusprice = $("#thisprice"+i).val();
-            minusprice = selected;
-            console.log("가격 :"+minusprice);
+        // 총 가격 구하기
+        let pricenum = parseInt(selected);
+        totalprice=totalprice+pricenum;
+        txttotalprice.innerHTML=totalprice;
 
-            array.push("bigadd"+i);
-            arrayprice.push(minusprice);
+        // 상품가격 hidden input value 에 넣기
+        var minusprice = $("#thisprice"+i).val();
+        minusprice = selected;
 
-            console.log(array);
-            console.log(arrayprice);
-            console.log($(".bigadd"+i).index());
-            i=i+1;
+        // 펫 종류 구하기
+        var petname = $('#animal option:selected').val();
+        
+
+
+        arraypet.push(petname);
+        array.push("bigadd"+i);
+        arrayprice.push(minusprice);
+
+
+
+        console.log("총 가격 :"+totalprice);
+        console.log("상품 가격 :"+minusprice);
+        console.log("펫 종류 :"+petname);
+
+        console.log("[담긴 것들] :"+array);
+        console.log("\n");
+        i=i+1;
     }
     else if($('#animal option:selected').val()=="고양이"){
         $("#parentadd").append(
@@ -193,49 +218,127 @@ let addprice = 0;
             
             $('.cat_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='thispetname"+i+"' type='hidden'>"
         );
 
+        // 상품 가격 가져오기
         var selected = $('.cat_weight option:selected').val();
-        console.log(selected);
-        
+
+
+        // 총 가격 구하기
         let pricenum = parseInt(selected);
         totalprice=totalprice+pricenum;
         txttotalprice.innerHTML=totalprice;
-        console.log(totalprice);
 
+        // 상품가격 hidden input value 에 넣기
         var minusprice = $("#thisprice"+i).val();
         minusprice = selected;
-        console.log("가격 :"+minusprice);
 
+        // 펫 종류 구하기
+        var petname = $('#animal option:selected').val();
+        const hidden = document.getElementById("thispetname"+i);
+        hidden.value=petname;
+        console.log(hidden.value);
+
+        
+
+
+        arraypet.push(petname);
         array.push("bigadd"+i);
         arrayprice.push(minusprice);
 
-        console.log(array);
-        console.log(arrayprice);
-        console.log($(".bigadd"+i).index());
+
+
+        console.log("총 가격 :"+totalprice);
+        console.log("상품 가격 :"+minusprice);
+        console.log("펫 종류 :"+petname);
+
+        console.log("[담긴 것들] :"+array);
+        console.log("\n");
         i=i+1;
     }
-   
-  }
+    
+}
+function goreservation(){
+    console.log("[담긴 것들] :"+array);
+
+}
 
 
+var totalarray=[];
 
 // 쌤이 주신거
 function removethis(i){
     // 총가격과 #thisprice+i 의 value 값을 parseint 로 변환해 빼어 계산한다.
-    console.log(arrayprice[i]);
+    console.log("삭제 한 상품 가격 :"+arrayprice[i]);
     totalprice=totalprice-arrayprice[i];
 
-    console.log(totalprice);
+    console.log("현재 총 가격 :"+totalprice);
     txttotalprice.innerHTML=totalprice;
 
+
+    // 담긴 상품들 어레이에서 삭제하기
+    let idx = array.indexOf("bigadd"+i);
+    while(idx>-1){
+        array.splice(idx, 1);
+        idx = array.indexOf("bigadd"+i);
+    }
+
+    
+    console.log("\n");
+
+
     $(".bigadd"+i).remove();
+
+    console.log(arraypet[i]);
+
+
+
+        if(arraypet[i]=='고양이'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+
+        }else if(arraypet[i]=='강아지'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+
+        }else if(arraypet[i]=='그 외'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+        }
+
+
+    console.log(arraypet);
+
+}
+
+
+// 예약하기
+function reservation(){
+    
+    for(let i = 0; i < arraypet.length; i++) {
+        if(arraypet[i] === '삭제')  {
+            arraypet.splice(i,1);
+            i--;
+        }
+      }
+
+    console.log(arraypet);
 }
 
 
 
+let dateval = document.getElementById("demo");
 
+$(".applyBtn btn btn-sm btn-primary").on("click",function(){
+    let totaldate = document.getElementById("spandate");
+    
+    console.log("기간: "+dateval.value);
+
+    totaldate.innerHTML=dateval.value;
+
+
+})
 
 
 
@@ -246,21 +349,21 @@ const over1 = document.getElementById('modi');
 const over2 = document.getElementById('delete');
 
     over1.addEventListener("mouseover", function () {
-        over1.src="img/modify_icon_focus.png";
+        over1.src="../../img/modify_icon_focus.png";
     }, false);
 
     over1.addEventListener("mouseout", function () {
-        over1.src="img/modify_icon.png";
+        over1.src="../../img/modify_icon.png";
    
     }, false);
     
     
     over2.addEventListener("mouseover", function () {
-        over2.src="img/delete_focus.png";
+        over2.src="../../img/delete_focus.png";
     }, false);
 
     over2.addEventListener("mouseout", function () {
-        over2.src="img/delete.png";
+        over2.src="../../img/delete.png";
     }, false);
 
 

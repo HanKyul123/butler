@@ -46,6 +46,9 @@
                 <!-- 고른 날짜 -->
                 <div class="detail_date">8월 10일 수 ~ 8월 12일 금</div>
 
+				<!-- 이용 완료일 때 리뷰 쓰러가는 버튼 -->
+                <a href=""><button id="write_review">리뷰 쓰기</button></a>
+
                 <!-- 예약 번호 -->
                 <div class="detail_reserv_num all" >
                     <div class="title">예약 번호 

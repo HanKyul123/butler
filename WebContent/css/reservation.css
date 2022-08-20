@@ -73,6 +73,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
 
 
+    #pictures{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
 
 
 
@@ -722,3 +728,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     left: 10px;
     width: 40px;
    }
+
+
+   #go_reservation_info{
+    font-family: 'OTWelcomeRA';
+
+    background-color: transparent;
+    border: 1px solid rgb(190, 117, 206);
+    height: 30px;
+    width: 140px;
+    margin-left: 20px;
+    border-radius: 5px;
+    position: relative;
+    line-height: 32px;
+    bottom: 2px;
+    color: rgb(131, 51, 149);
+    cursor: pointer;
+    transition: 0.2s;
+}
+#go_reservation_info:hover{
+    background-color: rgb(253, 246, 255);
+}
+#emty_review{
+    width: 100%;
+    height: 300px;
+}
+
+#ER{
+    margin-top: 100px;
+    color: rgb(145, 145, 145);
+}
