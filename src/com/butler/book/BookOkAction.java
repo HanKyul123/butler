@@ -61,8 +61,6 @@ public class BookOkAction implements Action{
 			out.print("location.href = '"+req.getContextPath()+"/index.jsp';");
 			out.print("</script>");
 		}
-		
-		
 		//데이터베이스에 올릴 PETDTO 생성부분
 		
 		
