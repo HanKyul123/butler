@@ -65,15 +65,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         justify-content: space-between;
     }
 
-    #smallpic{
+    /* #으로 바꿔서 경운님 주기 */
+    .smallpic{ 
         width: 23.5%;
         height: 120px;
         background-color: rgb(211, 211, 211);
 
     }
 
-
-    #pictures{
+    /* pictures로 바꿔서 경운님 주기 */
+    #bigpic{
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -632,8 +633,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     font-family: 'OTWelcomeRA';
     font-size: 16px;
     padding: 20px;
-    width: 94%;
-    height: 60%;
+    width: 94.55%;
+    height: 30%;
     margin-top: 20px;
     resize: none;
     border: 1px solid #f0f0f0;
@@ -665,6 +666,44 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     bottom: 3px;
     width: 25px;
  }
+
+ .modypic{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+ }
+ .pick{
+    width: auto;
+    height: 80px;
+ }
+ #modypic{
+     width: auto;
+    height: 100%;
+    object-fit: cover;
+ }
+
+ #Deletepic{
+    cursor: pointer;
+    width: 5px;
+    height: 15px;
+    margin-right: -10px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    bottom: 60px;
+    right: 20px;
+}
+
+ #X{
+    position: relative;
+    right: 7px;
+    bottom: 2.5px;
+    width: 15px;
+ }
+
 
    /* ------------- 호텔 관리인 답변 ------------- */
 

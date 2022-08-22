@@ -2,13 +2,14 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+
+<%@ include file="../../header/pc_header.jsp" %>
+
 <head>
-    <meta charset="UTF-8">
+      <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약하기</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservation.css">
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
@@ -54,22 +55,18 @@
 
 
         $('#demo').daterangepicker('setDate', 'today');
-           
+        
+        $('.applyBtn btn').on("click",function(){
+        console.log(startDate.format('D MMMM YYYY') + ' - ' + endDate.format('D MMMM YYYY'));
+    });
         
     });
-    
-    // let startdate = $('#demo').data('daterangepicker').startDate;
-    // let enddate =$('#demo').data('daterangepicker').endDate;
-
-    // console.log(startdate);
-
-
 
     </script>
 </head>
 
 
-<%@ include file="../../header/pc_header.jsp" %>
+
 
 
 
@@ -81,33 +78,29 @@
         <div class="Hotel_pic">
 
             <div class="bigpic">
-                <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
+                <img id="pictures" src="${pageContext.request.contextPath}/img/business_place_img/${hotelresult.business_place_num_pk}/${hotelresult.business_place_num_pk}_1.png" alt="">
             </div>
             <div class="small">
-                <div  id="smallpic">
-                    <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
-
+                <div id="smallpic">
+                	<img id="pictures" src="${pageContext.request.contextPath}/img/business_place_img/${hotelresult.business_place_num_pk}/${hotelresult.business_place_num_pk}_1.png" alt="">
                 </div>
-                <div  id="smallpic">
-                <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
-                    
+                <div id="smallpic">
+                	<img id="pictures" src="${pageContext.request.contextPath}/img/business_place_img/${hotelresult.business_place_num_pk}/${hotelresult.business_place_num_pk}_2.png" alt="">
                 </div>
-                <div  id="smallpic">
-                    <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
-
+                <div id="smallpic">
+                	<img id="pictures" src="${pageContext.request.contextPath}/img/business_place_img/${hotelresult.business_place_num_pk}/${hotelresult.business_place_num_pk}_3.png" alt="">
                 </div>
-                <div  id="smallpic">
-                    <img id="pictures" src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="">
-
+                <div id="smallpic">
+                	<img id="pictures" src="${pageContext.request.contextPath}/img/business_place_img/${hotelresult.business_place_num_pk}/${hotelresult.business_place_num_pk}_4.png" alt="">
                 </div>
             </div>
             
         </div>
 
         <div class="Hotel_explain">
-            <div class="Hotel_name">호텔이름</div>
-            <div class="Hotel_addr">호텔주소</div>
-            <div class="Hotel_info">호텔정보</div>
+            <div class="Hotel_name">${hotelresult.business_name}</div>
+            <div class="Hotel_addr">${hotelresult.business_addr} ${hotelresult.business_addrdetail} </div>
+            <div class="Hotel_info">${hotelresult.business_main_intro}</div>
         </div>
     </div>
 
@@ -116,19 +109,24 @@
     <div class="box2">
         <div class="addanimal">
             <div class="selectanimal">우리 아이는</div>
-                <select name="반려동물 종류" id="animal">
+                <select name="animal" id="animal">
                    
                     <option class="uderline" value="선택" selected="selected">선택</option>
-                    <option value="강아지">강아지</option>
-                    <option value="고양이">고양이</option>
-                    <option value="그 외">그 외 (소동물)</option>
+                    <option value="0">강아지</option>
+                    <option value="1">고양이</option>
+                    <option value="2">새</option>
+                    <option value="3">파충류</option>
+                    <option value="4">패럿</option>
+                    <option value="5">토끼</option>
+                    <option value="6">햄스터</option>
+                    <option value="7">그 외</option>
                 </select>
             
             <div class="selectprice">몸무게는요</div>
-            <!-- 강아지 무게 -->
+             <!-- 강아지 무게 -->
                 <select name="상세정보" id="selectbox" class="dog_weight">
                     
-                    <option value="50000">1 ~ 5kg 1박 50000원</option>
+                    <option value="40000">1 ~ 5kg 1박 40000원</option>
                     <option value="80000">6 ~ 10kg 1박 80,000원</option>
                     <option value="120000">11 ~ 15kg 1박 120,000원</option>
                     <option value="150000">16 ~ 20kg 1박 150,000원</option>
@@ -143,7 +141,49 @@
                     <option value="80000">10kg 이상 1박 80,000원</option>
                 </select>
                 
-            <!-- 소동물 무게 -->
+            <!-- 새 무게 -->
+                <select name="상세정보" id="selectbox" class="bird_weight">
+                    
+                    <option value="20000">1 ~ 3kg 1박 20000원</option>
+                </select>
+
+            <!-- 파충류 무게 -->
+                <select name="상세정보" id="selectbox" class="reptile_weight">
+                    
+                    <option value="20000">1 ~ 5kg 1박 20000원</option>
+                    <option value="40000">5 ~ 10kg 1박 40000원</option>
+                    <option value="60000">10 ~ 15kg 1박 60000원</option>
+                    <option value="80000">15kg 이상 1박 80000원</option>
+                </select>
+
+
+             <!-- 패럿 무게  -->
+                <select name="상세정보" id="selectbox" class="Farad_weight">
+                    
+                    <option value="20000">1 ~ 3kg 1박 20000원</option>
+                    <option value="40000">3 ~ 6kg 1박 40000원</option>
+                </select>
+
+
+            <!-- 토끼 무게 -->
+                <select name="상세정보" id="selectbox" class="rabbit_weight">
+                    
+                    <option value="20000">1 ~ 3kg 1박 20000원</option>
+                    <option value="40000">3 ~ 6kg 1박 40000원</option>
+                    <option value="60000">6 ~ 9kg 1박 60000원</option>
+                    <option value="80000">10kg 이상 1박 80000원</option>
+                </select>
+
+
+            <!-- 햄스터 무게 -->
+                <select name="상세정보" id="selectbox" class="hamster_weight">
+                    
+                    <option value="10000"> ~ 1kg 1박 10000원</option>
+                    <option value="15000"> 1kg ~ 2kg 1박 15000원</option>
+                </select>
+
+            
+            <!-- 그 외 몸무게 -->
                 <select name="상세정보" id="selectbox" class="else_weight">
                     
                     <option value="20000">1 ~ 3kg 1박 20000원</option>
@@ -184,7 +224,7 @@
             <div class="totaldate">총 기간 몇박 몇일</div>
             <div class="pricetitle">가격</div>
             <div class="totalprice">
-                <span class="pricecontent">0</span>
+                <span id="pricecontent" class="pricecontent">0</span>
                 <span class="pricewon">원</span>
             </div>
             <div class="reserbtnflex">
@@ -219,12 +259,15 @@
                 </span>호텔/동물병원의 상세정보 입니다.※</div>
 
                 <div class="HD_explain">
-                    <span class="HDE">이 칸은 호텔 정보를 자유롭게 적습니다.</span>
+                    <span class="HDE">
+                    ${hotelresult.business_workplace_detail}<br>
+                    ${hotelresult.business_workplace_rule}
+                    </span>
                 </div>
                 
                 <div class="HDpic">호텔 이미지를 올리는 곳<br>현재 height는 auto 이기 때문에 아래처럼 올려지는 사진 크기대로 높이가 정해짐.
                 
-                <img src="${pageContext.request.contextPath}/img/메인베너배경이미지.png" alt="">
+                <img src="${pageContext.request.contextPath}/img/business_place_img/${hotelresult.business_place_num_pk}/${hotelresult.business_place_num_pk}_1.png" alt="">
                 </div>
             </article>
         </a>
@@ -238,19 +281,19 @@
                 <table>
                     <tr id="Etr">
                         <td id="Etitle" class="ET">사업자</td>
-                        <td class="ET">김아무개</td>
+                        <td class="ET">${ownerResult.user_name}</td>
                     </tr>
                     <tr id="Etr">
                         <td id="Etitle" class="ET">사업자 등록번호</td>
-                        <td class="ET">00000000</td>
+                        <td class="ET">${ownerResult.user_business_num}</td>
                     </tr>
                     <tr id="Etr">
                         <td id="Etitle" class="ET">E-mail</td>
-                        <td class="ET">이메일</td>
+                        <td class="ET">${hotelresult.business_email}</td>
                     </tr>
                     <tr>
                         <td id="Etitle" class="ET">영업 소재지</td>
-                        <td class="ET">북한</td>
+                        <td class="ET">${hotelresult.business_addr} ${hotelresult.business_addrdetail}</td>
                     </tr>
                 </table>
 
@@ -283,10 +326,10 @@
                     <span class="user_date">날짜</span>
 
 					<!-- 유저 리뷰 수정하는 버튼 -->
-                    <button id="modify_Review" class="Review_btn" onclick="modify()"><img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD"></button>
+                    <button id="modify_Review" class="Review_btn" onclick="modify()" title="수정하기"><img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD"></button>
                     
                     <!-- 유저 리뷰 삭제하는 버튼 -->
-                    <button id="delete_Review" class="Review_btn" onclick="delete_review()"><img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD"></button>
+                    <button id="delete_Review" class="Review_btn" onclick="delete_review()" title="삭제하기"><img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD"></button>
                     
                     <br>
                     <span class="user_pet">
@@ -297,6 +340,7 @@
                 </div>
 
                 <div id="Rbox" class="user_review">
+                    
 
                     <div id="Rbox" class="user_contents">여기는 리뷰내용 입니다. <br>
                   	 	 리뷰를 마음껏 작성하세요.</div>
@@ -333,6 +377,17 @@
                     </div>
                 </div>
                 <textarea name="" id="Mnew_review" cols="30" rows="10"></textarea>
+                <div class="modypic">
+                        <div class="pick">
+                            <img src="img/example_hotel.webp" alt="" id="modypic">
+                            <button id="Deletepic"><img id="X" src="img/X_black.png" alt=""></button>
+                        </div>
+                        <div class="pick">
+                            <img src="img/example_hotel.webp" alt="" id="modypic">
+                            <button id="Deletepic"><img id="X" src="img/X_black.png" alt=""></button>
+
+                        </div>
+                    </div>
             </div>
 
 <!-- 관리인 리뷰 답장 -->
@@ -352,9 +407,11 @@
                 </div>
             </div>
         </div>
-        <!-- <div id="emty_review">
+
+            <!-- <div id="emty_review">
                 <div id="ER">아직 리뷰가 없습니다.</div>
             </div> -->
+
         </article>
         </a>
     </div>
