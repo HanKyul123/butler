@@ -379,12 +379,12 @@
                 <textarea name="" id="Mnew_review" cols="30" rows="10"></textarea>
                 <div class="modypic">
                         <div class="pick">
-                            <img src="img/example_hotel.webp" alt="" id="modypic">
-                            <button id="Deletepic"><img id="X" src="img/X_black.png" alt=""></button>
+                            <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="modypic">
+                            <button id="Deletepic"><img id="X" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
                         </div>
                         <div class="pick">
-                            <img src="img/example_hotel.webp" alt="" id="modypic">
-                            <button id="Deletepic"><img id="X" src="img/X_black.png" alt=""></button>
+                            <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="modypic">
+                            <button id="Deletepic"><img id="X" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
 
                         </div>
                     </div>
