@@ -46,11 +46,11 @@ create table business_tb(
 
  create table book_tb (
    BOOK_NUM_PK               int primary key auto_increment,
-    BUSINESS_PLACE_NUM_FK      int,
+   BUSINESS_PLACE_NUM_FK      int,
    constraint b_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (USER_NUM_FK),
    USER_NUM_FK             int,
    constraint b_tb_USER_NUM_FK   foreign key(USER_NUM_FK) references  user_tb (USER_NUM_PK),
-    book_status               int,
+    book_status               int default 1,     	#1= 예약중 / 2= 취소 / 3= 사용완료
     book_regdate            datetime default now(),
     book_checkin_date         datetime not null,
     book_checkout_date         datetime not null,
