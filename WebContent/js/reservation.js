@@ -231,7 +231,7 @@ let i = 0;
 var array=[];
 var arrayprice=[];
 var arraypet=[];
-let totalprice = 0;
+let book_charge = 0;
 let txttotalprice = document.getElementById("pricecontent");
 let addprice = 0;
 
@@ -256,7 +256,7 @@ let addprice = 0;
             
             $('.dog_weight option:selected').text()
             // 무게와 가격 value 값
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pet_type"+i+"' type='hidden' value = '"+$('#animal option:selected').val()+"'>"+"<input id='pet_weight"+i+"' type='hidden' value = '"+$('.dog_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value = '"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value = '"+$('.dog_weight option:selected').text()+"'>"
             
         
             );
@@ -267,8 +267,8 @@ let addprice = 0;
 
          // 총 가격 구하기
          let pricenum = parseInt(selected);
-         totalprice=totalprice+pricenum;
-         txttotalprice.innerHTML=totalprice;
+         book_charge=book_charge+pricenum;
+         txttotalprice.innerHTML=book_charge;
  
          // 상품가격 hidden input value 에 넣기
          var minusprice = $("#thisprice"+i).val();
@@ -285,7 +285,7 @@ let addprice = 0;
  
  
  
-         console.log("총 가격 :"+totalprice);
+         console.log("총 가격 :"+book_charge);
          console.log("상품 가격 :"+minusprice);
          console.log("펫 종류 :"+petname);
 
@@ -308,7 +308,7 @@ let addprice = 0;
             
             $('.bird_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pet_type"+i+"' type='hidden' value = '"+$('#animal option:selected').val()+"'>"+"<input id='pet_weight"+i+"' type='hidden' value = '"+$('.bird_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value = '"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value = '"+$('.bird_weight option:selected').text()+"'>"
         );
         // 상품 가격 가져오기
         var selected = $('.bird_weight option:selected').val();
@@ -316,8 +316,8 @@ let addprice = 0;
 
         // 총 가격 구하기
         let pricenum = parseInt(selected);
-        totalprice=totalprice+pricenum;
-        txttotalprice.innerHTML=totalprice;
+        book_charge=book_charge+pricenum;
+        txttotalprice.innerHTML=book_charge;
 
         // 상품가격 hidden input value 에 넣기
         var minusprice = $("#thisprice"+i).val();
@@ -334,7 +334,7 @@ let addprice = 0;
 
 
 
-        console.log("총 가격 :"+totalprice);
+        console.log("총 가격 :"+book_charge);
         console.log("상품 가격 :"+minusprice);
         console.log("펫 종류 :"+petname);
 
@@ -358,7 +358,7 @@ let addprice = 0;
             
             $('.cat_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pet_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pet_weight"+i+"' type='hidden' value='"+$('.cat_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.cat_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -367,8 +367,8 @@ let addprice = 0;
 
         // 총 가격 구하기
         let pricenum = parseInt(selected);
-        totalprice=totalprice+pricenum;
-        txttotalprice.innerHTML=totalprice;
+        book_charge=book_charge+pricenum;
+        txttotalprice.innerHTML=book_charge;
 
         // 상품가격 hidden input value 에 넣기
         var minusprice = $("#thisprice"+i).val();
@@ -383,7 +383,7 @@ let addprice = 0;
 
 
 
-        console.log("총 가격 :"+totalprice);
+        console.log("총 가격 :"+book_charge);
         console.log("상품 가격 :"+minusprice);
         console.log("펫 종류 :"+petname);
 
@@ -405,7 +405,7 @@ let addprice = 0;
             
             $('.reptile_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pet_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pet_weight"+i+"' type='hidden' value='"+$('.reptile_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.reptile_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -414,8 +414,8 @@ let addprice = 0;
 
         // 총 가격 구하기
         let pricenum = parseInt(selected);
-        totalprice=totalprice+pricenum;
-        txttotalprice.innerHTML=totalprice;
+        book_charge=book_charge+pricenum;
+        txttotalprice.innerHTML=book_charge;
 
         // 상품가격 hidden input value 에 넣기
         var minusprice = $("#thisprice"+i).val();
@@ -430,7 +430,7 @@ let addprice = 0;
 
 
 
-        console.log("총 가격 :"+totalprice);
+        console.log("총 가격 :"+book_charge);
         console.log("상품 가격 :"+minusprice);
         console.log("펫 종류 :"+petname);
 
@@ -453,7 +453,7 @@ let addprice = 0;
             
             $('.Farad_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pet_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pet_weight"+i+"' type='hidden' value='"+$('.Farad_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.Farad_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -462,8 +462,8 @@ let addprice = 0;
 
         // 총 가격 구하기
         let pricenum = parseInt(selected);
-        totalprice=totalprice+pricenum;
-        txttotalprice.innerHTML=totalprice;
+        book_charge=book_charge+pricenum;
+        txttotalprice.innerHTML=book_charge;
 
         // 상품가격 hidden input value 에 넣기
         var minusprice = $("#thisprice"+i).val();
@@ -478,7 +478,7 @@ let addprice = 0;
 
 
 
-        console.log("총 가격 :"+totalprice);
+        console.log("총 가격 :"+book_charge);
         console.log("상품 가격 :"+minusprice);
         console.log("펫 종류 :"+petname);
 
@@ -501,7 +501,7 @@ let addprice = 0;
             
             $('.rabbit_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pet_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pet_weight"+i+"' type='hidden' value='"+$('.rabbit_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.rabbit_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -510,8 +510,8 @@ let addprice = 0;
 
         // 총 가격 구하기
         let pricenum = parseInt(selected);
-        totalprice=totalprice+pricenum;
-        txttotalprice.innerHTML=totalprice;
+        book_charge=book_charge+pricenum;
+        txttotalprice.innerHTML=book_charge;
 
         // 상품가격 hidden input value 에 넣기
         var minusprice = $("#thisprice"+i).val();
@@ -526,7 +526,7 @@ let addprice = 0;
 
 
 
-        console.log("총 가격 :"+totalprice);
+        console.log("총 가격 :"+book_charge);
         console.log("상품 가격 :"+minusprice);
         console.log("펫 종류 :"+petname);
 
@@ -549,7 +549,7 @@ let addprice = 0;
             
             $('.hamster_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pet_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pet_weight"+i+"' type='hidden' value='"+$('.hamster_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.hamster_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -558,8 +558,8 @@ let addprice = 0;
 
         // 총 가격 구하기
         let pricenum = parseInt(selected);
-        totalprice=totalprice+pricenum;
-        txttotalprice.innerHTML=totalprice;
+        book_charge=book_charge+pricenum;
+        txttotalprice.innerHTML=book_charge;
 
         // 상품가격 hidden input value 에 넣기
         var minusprice = $("#thisprice"+i).val();
@@ -574,7 +574,7 @@ let addprice = 0;
 
 
 
-        console.log("총 가격 :"+totalprice);
+        console.log("총 가격 :"+book_charge);
         console.log("상품 가격 :"+minusprice);
         console.log("펫 종류 :"+petname);
 
@@ -597,7 +597,7 @@ let addprice = 0;
             
             $('.else_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pet_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pet_weight"+i+"' type='hidden' value='"+$('.else_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.else_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -606,8 +606,8 @@ let addprice = 0;
 
         // 총 가격 구하기
         let pricenum = parseInt(selected);
-        totalprice=totalprice+pricenum;
-        txttotalprice.innerHTML=totalprice;
+        book_charge=book_charge+pricenum;
+        txttotalprice.innerHTML=book_charge;
 
         // 상품가격 hidden input value 에 넣기
         var minusprice = $("#thisprice"+i).val();
@@ -622,7 +622,7 @@ let addprice = 0;
 
 
 
-        console.log("총 가격 :"+totalprice);
+        console.log("총 가격 :"+book_charge);
         console.log("상품 가격 :"+minusprice);
         console.log("펫 종류 :"+petname);
 
@@ -644,10 +644,10 @@ var totalarray=[];
 function removethis(i){
     // 총가격과 #thisprice+i 의 value 값을 parseint 로 변환해 빼어 계산한다.
     console.log("삭제 한 상품 가격 :"+arrayprice[i]);
-    totalprice=totalprice-arrayprice[i];
+    book_charge=book_charge-arrayprice[i];
 
-    console.log("현재 총 가격 :"+totalprice);
-    txttotalprice.innerHTML=totalprice;
+    console.log("현재 총 가격 :"+book_charge);
+    txttotalprice.innerHTML=book_charge;
 
 
     // 담긴 상품들 어레이에서 삭제하기
@@ -776,13 +776,7 @@ const over2 = document.getElementById('delete');
         $('.mask').css('display','none');
     }
 
-    const totaldate = document.getElementById("totaldate");
-    var choicedate = document.getElementsByClassName('drp-selected');
-
-    $('.applyBtn btn').on("click",function(){
-        console.log(choicedate.val());
-        totaldate.innerHTML=choicedate.val();
-    });
+    
     
 
 

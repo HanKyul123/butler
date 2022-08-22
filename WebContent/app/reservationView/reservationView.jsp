@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
     <script>
         
         $(function () {
@@ -56,13 +57,25 @@
 
         $('#demo').daterangepicker('setDate', 'today');
         
-        $('.applyBtn btn').on("click",function(){
-        console.log(startDate.format('D MMMM YYYY') + ' - ' + endDate.format('D MMMM YYYY'));
     });
         
-    });
+        
+        const totaldate = document.getElementById("totaldate");
+        
+        $(".applyBtn btn").on("click",function(){
+        	
+        	const book_checkin_date =startDate.format('D MMMM YYYY');
+        	const book_checkout_date = endDate.format('D MMMM YYYY');
+        	
+        	totaldate.innerHTML=book_checkin_date+" ~ "+book_checkout_date;
+        	console.log(totaldate);
+        	
+        })
+
+        
 
     </script>
+
 </head>
 
 
@@ -417,7 +430,16 @@
     </div>
     
 </body>
-
+<!-- 문서수정할때는주석처리를 하고 진행하세요 -->
+<%--     <c:choose>
+        <c:when test="${sessionScope.loginUser eq null}">
+            <script>
+                alert("login후에 이용하세요.");
+                window.location.href="/index.jsp"
+            </script>
+        </c:when>
+    </c:choose>
+ --%>
 <%@ include file="../../footer/footer.jsp" %>
 
 
