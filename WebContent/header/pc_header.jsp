@@ -26,7 +26,7 @@
          </div>
       </a>
       <!-- 헤더 로고 -->
-      <a href="index.jsp">
+      <a href="/">
             <img id="H_logo" class="header_logo" src="${pageContext.request.contextPath}/img/Hotel_width_white_logo.png" alt="">            
         </a>
       <!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
