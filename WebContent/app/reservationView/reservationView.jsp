@@ -336,6 +336,11 @@
 				<c:choose>
 					<c:when test="${reviewResult != null and reviewResult.size()>0 }">
 						<c:forEach items="${reviewResult}" var="reviewResult">
+						<!-- 유저 리뷰와 관리인 답글 포함한 박스
+                 			  유저 리뷰를 지으면 관리인 답글까지 같이 지워진다.
+                 			  관리인이 답장을 달지 않았으면 
+                 			 .replyBigbox display:none 으로 해놓기
+            			-->
 							<div class="Review_Reply">
 							
 								<div class="user_review_box">
@@ -354,7 +359,7 @@
 
 										<!-- 유저 리뷰 삭제하는 버튼 -->
 										<button id="delete_Review" class="Review_btn"
-											onclick="delete_review()" title="삭제하기">
+											onclick="delete_review(this)" title="삭제하기">
 											<img id="delete"
 												src="${pageContext.request.contextPath}/img/delete.png"
 												alt="" class="MD">
@@ -374,12 +379,8 @@
 									</div>
 
 									<!-- 유저가 올리는 사진 -->
-									<div class="user_review_pic">
-										<div class="user_pic">
-											<img class="user_pic"
-												src="${pageContext.request.contextPath}/img/메인베너배경이미지.jpg"
-												alt="">
-										</div>
+									<div class="user_review_pic" id="URP">
+										
 									</div>
 
 								</div>
@@ -407,17 +408,15 @@
 										<input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}">
 										<input type="hidden" id="business_place_num_pk" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">
 										
-							<div class="modypic">
-                        		<div class="pick">
-                            		<img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="modypic">
-                            		<button id="Deletepic"><img id="X2" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
-                       		 	</div>
-                        		<div class="pick">
-                            		<img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="modypic">
-                            		<button id="Deletepic"><img id="X2" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
+									<!-- 사진 추가하면 사진이 담긴 자식 생성됨. -->
+									<div class="modypic" id="ele">
+                       
+                    				</div>
 
-                        		</div>
-                    		</div>
+                    					<div class="addpic">
+                        					<input type="file" name="file" id="file">
+                							<input type="button" value="이미지 추가" id="addpic_btn" class="CaddB">
+                    					</div>
 										
 									</div>
 								</form>

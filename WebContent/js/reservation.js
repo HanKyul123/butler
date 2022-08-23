@@ -678,21 +678,6 @@ function removethis(i){
         }else if(arraypet[i]=='그 외'){
             arraypet.splice(i,1);
             arraypet.splice(i,0,'삭제');
-        }else if(arraypet[i]=='새'){
-            arraypet.splice(i,1);
-            arraypet.splice(i,0,'삭제');
-        }else if(arraypet[i]=='파충류'){
-            arraypet.splice(i,1);
-            arraypet.splice(i,0,'삭제');
-        }else if(arraypet[i]=='패럿'){
-            arraypet.splice(i,1);
-            arraypet.splice(i,0,'삭제');
-        }else if(arraypet[i]=='토끼'){
-            arraypet.splice(i,1);
-            arraypet.splice(i,0,'삭제');
-        }else if(arraypet[i]=='햄스터'){
-            arraypet.splice(i,1);
-            arraypet.splice(i,0,'삭제');
         }
 
 
@@ -757,27 +742,107 @@ const over2 = document.getElementById('delete');
 
 
 
+ // 수정하기
     function modify(){
         $('.Mbox').css('display','block');
         $('.mask').css('display','block');
     }
-
-    function delete_review(){
-        $('.Review_Reply').css('display','none');
+// 리뷰 삭제하기
+    function delete_review(i){
+        i.parentNode.parentNode.parentNode.remove();
     }
 
+    //    유저가 올린 사진 갯수 구하고 css 적용
+   var pic=document.getElementById("URP");
+   var picCount = pic.childElementCount;
+   console.log(picCount)
+
+   if(picCount==0){
+    $(".user_review_pic").css("border","none");
+    $(".replyBigbox").css("bottom","6px")
+   }
+// 수정 완료
     function complete(){
         $('.Mbox').css('display','none');
         $('.mask').css('display','none');
-    }
+        let before_review = document.getElementById("R_box");
+        let new_review = document.getElementById("Mnew_review");
 
+        before_review.innerHTML=new_review.value;
+        
+        new_review.value="";
+
+        $(".user_pic").css("display", "block");
+        picCount=picCount+1;
+        if(picCount>0){
+            $(".user_review_pic").css("border","1px solid rgb(205, 205, 205)");
+            $(".replyBigbox").css("bottom","0px")
+           }
+
+    }
+// 수정 삭제
     function cancel(){
         $('.Mbox').css('display','none');
         $('.mask').css('display','none');
+        new_review.value="";
     }
+
 
     
     
+    
+    
+
+   
+   $('#addpic_btn').on("click",function(){
+       var ele = document.getElementById("ele");
+      var eleCount = ele.childElementCount;
+
+    let thisvalue = picklink.value.substr(12, picklink.value.length-1)
+
+    console.log(picklink.value);
+    console.log(thisvalue);
+    console.log(eleCount);
+    console.log();
+
+    if(picklink.value!==""){
+
+        $(".modypic").append(
+            "<div class = 'pick'>"+"<img src='../../img/"+thisvalue+"' id='modypic'>"+"<button id='Deletepic' onclick='deletethispic(this)'>"+"<img id='X2' src='../../img/X_black.png'>"+"</button>"+"</div>"
+            )
+            
+        }
+        if(picklink.value!==""){
+
+            $(".user_review_pic").append(
+                "<img class='user_pic' src='../../img/"+thisvalue+"'>"
+                )
+            }
+    
+        if(eleCount>=8){
+        $(".CaddB").attr("disabled",true);
+            
+        }
+        else if(eleCount<9){
+        $(".CaddB").attr("disabled",false);
+
+        }
+    picklink.value="";
+   
+   })
+
+   // 사진 지우기
+   function deletethispic(i){
+    var ele = document.getElementById("ele");
+      var eleCount = ele.childElementCount;
+    console.log(i.parentNode);
+
+    i.parentNode.remove();
+
+    eleCount=eleCount-1;
+    console.log(eleCount);
+    $(".CaddB").attr("disabled",false);
+   }
 
 
   
