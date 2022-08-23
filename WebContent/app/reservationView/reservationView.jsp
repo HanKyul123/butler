@@ -406,6 +406,19 @@
 										<textarea name="Mnew_review" id="Mnew_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>										
 										<input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}">
 										<input type="hidden" id="business_place_num_pk" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">
+										
+							<div class="modypic">
+                        		<div class="pick">
+                            		<img src="img/example_hotel.webp" alt="" id="modypic">
+                            		<button id="Deletepic"><img id="X2" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
+                       		 	</div>
+                        		<div class="pick">
+                            		<img src="img/example_hotel.webp" alt="" id="modypic">
+                            		<button id="Deletepic"><img id="X2" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
+
+                        		</div>
+                    		</div>
+										
 									</div>
 								</form>
 
