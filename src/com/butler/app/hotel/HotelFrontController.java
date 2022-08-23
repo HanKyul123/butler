@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.butler.app.action.ActionTo;
+import com.butler.app.action.ChoiceAction;
 import com.butler.app.action.HoteldetailAction;
 import com.butler.app.action.KakaoLoginAction;
 import com.butler.app.action.PhoneProveAction;
@@ -66,7 +67,13 @@ public class HotelFrontController extends HttpServlet{
 //				e.printStackTrace();
 //			}
 //			break;
-			
+		case "/hotel/choice.ho":
+	         try {
+	            transfer = new ChoiceAction().execute(req, resp);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	         break;
 			
 
 	 }

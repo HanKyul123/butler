@@ -23,15 +23,16 @@
 
     <div class="wrap1">
         <!-- 태그 고르기 -->
+    <form method="post" action="/hotel/choice.ho">
         <div class="Tagbox">
-
+           <input type="hidden" id="keyword" value="${keyword}" name="keyword">
             <!-- 날짜 -->
             <div id="Tagin" class="datebox">
                 <div class="datetitle">날짜</div>
                 <div class="today">오늘 날짜 : <span id="today"></span></div> 
-                <input type="text" id="datepicker1" readonly >
+                <input type="text" id="datepicker1" name="dateOne" readonly>
                 ~
-                <input type="text" id="datepicker2" readonly>
+                <input type="text" id="datepicker2" name="dateTwo" readonly>
           
           
                 <img id="calender" src="${pageContext.request.contextPath}/img/calender.png" alt="">
@@ -44,9 +45,9 @@
             <div id="Tagin" class="Type">
                 <div id="TypeTitle" class="petType">반려동물 분류</div>
                 <div class="checkbox1">
-                    <label><input type="checkbox" name="dog" id="pet">강아지</label>
-                    <label><input type="checkbox" name="cat" id="pet">고양이</label>
-                    <label><input type="checkbox" name="else_pet" id="pet">그 외</label>
+                    <label><input type="checkbox" name="dog" id="pet" value="0">강아지</label>
+                    <label><input type="checkbox" name="cat" id="pet" value="1">고양이</label>
+                    <label><input type="checkbox" name="else_pet" id="pet" value="8">그 외</label>
                 </div>
             </div>
 
@@ -55,16 +56,16 @@
             <div id="Tagin" class="Type">
                 <div id="TypeTitle" class="HotelType">숙소 분류</div>
                 <div class="checkbox2">
-                    <label><input type="checkbox" name="Hotel" id="Hotel">호텔</label><br>
-                    <label><input type="checkbox" name="Hospital" id="Hotel">동물병원</label>
-                </div>
+                    <label><input type="checkbox" name="Hotel" id="Hotel" value="4">호텔</label><br>
+                    <label><input type="checkbox" name="Hospital" id="Hotel" value="5">동물병원</label>
+                </div>         
             </div>
-
 			<!-- 검색 버튼 -->
-            <button id="hashsearch">선택</button>
+            <button type="submit" id="hashsearch" >선택</button>
+       </form>
 
         </div>
-
+       
 
 
 

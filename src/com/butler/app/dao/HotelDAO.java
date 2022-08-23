@@ -56,6 +56,12 @@ public class HotelDAO {
 	      datas.put("review_num", review_num);
 		return sqlsession.update("Hotel.Review_modifyAction", datas) == 1;
 	}
+
+	public List<HotelDTO> choiseOK(HashMap<String, String> datas) {
+		List<HotelDTO> list;
+		list = sqlsession.selectList("Hotel.choiseOK", datas);
+		return list;
+	}
 	
 		
 

@@ -24,4 +24,12 @@
 		update review_tb set review_contents = #{Mnew_review}, review_regdate=now()
 		where REVIEW_NUM_PK=#{review_num}
 	</update>
+	<select id="choiseOK" parameterType="hashMap" resultType="hdto">
+		select * from business_tb where 
+		business_hashtag like('%${pet1}%') or 
+		business_hashtag like('%${pet2}%') or 
+		business_hashtag like('%${pet3}%') or
+		business_category = #{category1} or
+		business_category = #{category2}
+	</select>
 </mapper>
