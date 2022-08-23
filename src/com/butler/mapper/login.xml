@@ -9,8 +9,8 @@
 	</select>
 	<select id="DBcheck" parameterType="hashmap" resultType="udto">
 		select * from user_tb where user_email=#{user_email} 
-		and binary(user_pw)=#{user_pw}
-		and binary(user_logintype)=0 
+		and user_pw=#{user_pw}
+		and user_logintype=#{user_logintype}
 	</select>
 	<insert id="UserJoin" parameterType="udto">
 		insert into user_tb 

@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Klogin">
-	<select id="kakaoDBcheck" parameterType="hashmap" resultType="kdto">
+	<select id="kakaoDBcheck" parameterType="hashmap" resultType="udto">
 		select * from user_tb where user_name=#{user_name} and binary(user_email)=#{user_email}
 	</select>
 </mapper>

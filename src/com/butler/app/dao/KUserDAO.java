@@ -14,11 +14,11 @@ public class KUserDAO {
 		sqlsession = SqlMapConfig.getFactory().openSession(true);
 	}
 
-	public KUserDTO kakaoDBcheck(String user_name, String user_email) {
+	public UserDTO kakaoDBcheck(String user_name, String user_email) {
 	      HashMap<String, String> datas = new HashMap<String, String>();
 	      datas.put("user_name", user_name);
 	      datas.put("user_email", user_email);
-	      return sqlsession.selectOne("kakaoDBcheck",datas);
+	      return sqlsession.selectOne("Klogin.kakaoDBcheck",datas);
 	   }
 	
 	

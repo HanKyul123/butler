@@ -2,12 +2,8 @@ package com.butler.app.dao;
 
 import java.util.HashMap;
 
-import javax.servlet.http.HttpSession;
-
-import org.apache.catalina.connector.Request;
 import org.apache.ibatis.session.SqlSession;
 
-import com.butler.app.action.ActionTo;
 import com.butler.mybatis.SqlMapConfig;
 
 public class UserDAO {
@@ -19,25 +15,25 @@ public class UserDAO {
    }
    
    public boolean join(UserDTO user) {
-      return sqlsession.insert("User.join",user) == 1;
+      return sqlsession.insert("login.join",user) == 1;
    }
 
    public boolean checkId(String userid) {
-      return (Integer)sqlsession.selectOne("User.checkId",userid) == 0;
+      return (Integer)sqlsession.selectOne("login.checkId",userid) == 0;
    }
 
    public boolean login(String userid, String userpw) {
       HashMap<String, String> datas = new HashMap<String, String>();
       datas.put("userid", userid);
       datas.put("userpw", userpw);
-      return (Integer)sqlsession.selectOne("User.login",datas) == 1;
+      return (Integer)sqlsession.selectOne("login.login",datas) == 1;
    }
    
    public boolean DBEmailCheck(String user_email, String user_pw) {
          HashMap<String, String> datas = new HashMap<String, String>();
           datas.put("user_email", user_email);
           datas.put("user_pw", user_pw);
-          if(sqlsession.selectOne("DBEmailCheck", datas) == null) {
+          if(sqlsession.selectOne("login.DBEmailCheck", datas) == null) {
              return false;
           }
           else {
@@ -45,10 +41,11 @@ public class UserDAO {
           }
    }
   public UserDTO DBCheck(String user_email, String user_pw, int user_type) {
-            HashMap<String, String> datas = new HashMap<String, String>();
+            HashMap<String, Object> datas = new HashMap<String, Object>();
              datas.put("user_email", user_email);
-             datas.put("user_pw", user_pw);                          
-      return sqlsession.selectOne("DBcheck", datas);
+             datas.put("user_pw", user_pw);
+             datas.put("user_logintype", user_type);            
+      return sqlsession.selectOne("login.DBcheck", datas);
    }
   
  
