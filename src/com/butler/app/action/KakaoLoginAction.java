@@ -52,7 +52,7 @@ public class KakaoLoginAction implements Action {
 			out.print("location.href = '"+req.getContextPath()+"/';");
 			out.print("</script>");
 				
-		}
+		} 
 		else {
 			//신규 가입자
 			System.out.println("3");

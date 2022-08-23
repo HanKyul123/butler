@@ -30,7 +30,7 @@ public class UserLoginOkAction implements Action{
 		
 		System.out.println("2");
 		
-		
+		 
 		PrintWriter out = resp.getWriter();
 		
 		if(!udao.DBEmailCheck(user_email, user_pw)) {

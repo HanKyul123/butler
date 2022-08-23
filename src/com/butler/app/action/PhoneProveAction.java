@@ -40,7 +40,7 @@ public class PhoneProveAction implements Action{
 			String user_phone = req.getParameter("user_phone_1");
 			System.out.println(user_phone);
 			
-			
+			 
 			
 			user.setUser_phone(user_phone);
 			user.setUser_email(useruser.getUser_email());
