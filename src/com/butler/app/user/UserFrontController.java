@@ -64,8 +64,16 @@ public class UserFrontController extends HttpServlet{
 			}
 			break;
 			
+		case "/main.logout.us" :
+			req.getSession().removeAttribute("LoginUser");
+			transfer = new ActionTo();
+			transfer.setPath("/");
+			transfer.setRedirect(false);
+			break;
+			
+			
 		case "/kakaoLogout.us":
-			req.getSession().removeAttribute("loginUser");
+			req.getSession().removeAttribute("LoginUser");
 			transfer = new ActionTo();
 			transfer.setPath("/");
 			transfer.setRedirect(false);
