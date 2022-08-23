@@ -5,13 +5,13 @@ public class PetsDTO {
 	int PETS_NUM_PK;
 	int USER_NUM_FK;
 	int pets_type;
-	int pets_weight;
+	String pets_weight;
 	int BOOK_NUM_FK;
 
 	public PetsDTO() {
 	}
 
-	public PetsDTO(int PETS_NUM_PK, int USER_NUM_FK, int pets_type, int pets_weight, int BOOK_NUM_FK) {
+	public PetsDTO(int PETS_NUM_PK, int USER_NUM_FK, int pets_type, String pets_weight, int BOOK_NUM_FK) {
 		PETS_NUM_PK = this.PETS_NUM_PK;
 		USER_NUM_FK = this.USER_NUM_FK;
 		pets_type = this.pets_type;
@@ -19,7 +19,7 @@ public class PetsDTO {
 		BOOK_NUM_FK = this.BOOK_NUM_FK;
 	}
 	
-	public PetsDTO(int USER_NUM_FK, int pets_type, int pets_weight) {
+	public PetsDTO(int USER_NUM_FK, int pets_type, String pets_weight) {
 		USER_NUM_FK = this.USER_NUM_FK;
 		pets_type = this.pets_type;
 		pets_weight = this.pets_weight;
@@ -50,11 +50,11 @@ public class PetsDTO {
 		this.pets_type = pets_type;
 	}
 
-	public int getPets_weight() {
+	public String getPets_weight() {
 		return pets_weight;
 	}
 
-	public void setPets_weight(int pets_weight) {
+	public void setPets_weight(String pets_weight) {
 		this.pets_weight = pets_weight;
 	}
 
