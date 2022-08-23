@@ -34,9 +34,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         visibility: hidden;
     }
 
-
-
-
     /* @media (min-with: 1024px){ */
     header{
         z-index: 200;
