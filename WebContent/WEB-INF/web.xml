@@ -25,12 +25,20 @@
       <servlet-name>EtcFrontController</servlet-name>
       <url-pattern>*.etc</url-pattern>
   </servlet-mapping>
-    <servlet>
+   <servlet>
       <servlet-name>HotelFrontController</servlet-name>
       <servlet-class>com.butler.app.hotel.HotelFrontController</servlet-class>
   </servlet>
   <servlet-mapping>
       <servlet-name>HotelFrontController</servlet-name>
       <url-pattern>*.ho</url-pattern>
+  </servlet-mapping>
+   <servlet>
+      <servlet-name>BookFrontController</servlet-name>
+      <servlet-class>com.butler.book.BookFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>BookFrontController</servlet-name>
+      <url-pattern>*.book</url-pattern>
   </servlet-mapping>
 </web-app>

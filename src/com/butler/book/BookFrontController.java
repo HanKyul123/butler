@@ -31,12 +31,13 @@ public class BookFrontController extends HttpServlet{
 		String path="";
 		boolean isRedirect;
 		switch (command) {
-		case "/noticeView.etc":
-			transfer = new ActionTo();
-			transfer.setPath("app/noticeView/noticeView.jsp");
-			transfer.setRedirect(false);
+			case "/book/BookOk.book":
+			try {
+				transfer = new BookOkAction().execute(req, resp);		
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			break;
-			
 		}
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {

@@ -4,6 +4,9 @@ package com.butler.book;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -63,30 +66,21 @@ public class BookOkAction implements Action{
 		}
 		//데이터베이스에 올릴 PETDTO 생성부분
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		int pets_type1 = Integer.parseInt(req.getParameter("pets_type1"));
+		String pets_weight1 = req.getParameter("pets_weight1");
+				
 		
 		BookDTO bdto = new BookDTO(BUSINESS_PLACE_NUM_FK, USER_NUM_FK,book_regdate, book_checkin_date, book_checkout_date, book_charge, book_request);
 		System.out.println(bdto);
 		
+		HashMap<String,Object> PetsMap = new HashMap<String,Object>();
+		Iterator<String> petsIter = req.getParameterMap().keySet().stream().filter(t->t.contains("pets")).sorted().iterator();
 		
-		
-		
+		while(petsIter.hasNext()) {
+			String key=petsIter.next();
+			System.out.println(key);
+//			PetsMap.put(key,req.getParameter(key));
+		}
 
 		return null;
 
