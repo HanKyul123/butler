@@ -409,11 +409,11 @@
 										
 							<div class="modypic">
                         		<div class="pick">
-                            		<img src="img/example_hotel.webp" alt="" id="modypic">
+                            		<img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="modypic">
                             		<button id="Deletepic"><img id="X2" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
                        		 	</div>
                         		<div class="pick">
-                            		<img src="img/example_hotel.webp" alt="" id="modypic">
+                            		<img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="modypic">
                             		<button id="Deletepic"><img id="X2" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
 
                         		</div>
