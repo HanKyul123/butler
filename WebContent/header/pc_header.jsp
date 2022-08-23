@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header_login_front</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">   
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header_login.css">   
     <link href="${pageContext.request.contextPath}/css/jquery-ui.css" rel="stylesheet">
     
    
@@ -106,7 +106,7 @@
       
    </section>
    <c:choose>
-       <c:when test="${sessionScope.loginUser eq null}">
+       <c:when test="${sessionScope.LoginUser eq null}">
          <script>
             function statusChangelogoutHeader(){
                document.getElementById("status_logout").style.display="block";

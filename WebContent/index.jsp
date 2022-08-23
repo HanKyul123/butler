@@ -1,3 +1,4 @@
+<%@page import="com.butler.app.dao.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler-Animal Hotel</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header_login.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
@@ -165,7 +166,6 @@
                     </div>
                 </div>
                 </a>
-
 
                 <div class="Notice">
                     <div class="new">
