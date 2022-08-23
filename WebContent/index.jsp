@@ -39,7 +39,7 @@
                             <div class="Eheartbox">
                             <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
-                            ">좋아요수</span></div>
+                            ">별점</span></div>
 
                             <div class="Epricebox">
                                 <span class="Eprice">가격</span>
@@ -60,7 +60,7 @@
                             <div class="Eheartbox">
                             <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
-                            ">좋아요수</span></div>
+                            ">별점</span></div>
 
                             <div class="Epricebox">
                                 <span class="Eprice">가격</span>
@@ -79,7 +79,7 @@
                             <div class="Eheartbox">
                             <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
-                            ">좋아요수</span></div>
+                            ">별점</span></div>
 
                             <div class="Epricebox">
                                 <span class="Eprice">가격</span>
@@ -98,7 +98,7 @@
                             <div class="Eheartbox">
                             <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
-                            ">좋아요수</span></div>
+                            ">별점</span></div>
 
                             <div class="Epricebox">
                                 <span class="Eprice">가격</span>
@@ -117,7 +117,7 @@
                             <div class="Eheartbox">
                             <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
                                 <span class="Eheart
-                            ">좋아요수</span></div>
+                            ">별점</span></div>
 
                             <div class="Epricebox">
                                 <span class="Eprice">가격</span>
