@@ -26,7 +26,7 @@ function checknick(value){
       txtnick.innerHTML="";
       txtnick.style.color="red";
       $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
-      $('.modify_nick_btn').attr("disabled",true);
+      $('.complete_nick_btn').attr("disabled",true);
       return false;
     }
 
@@ -34,20 +34,23 @@ function checknick(value){
       txtnick.innerHTML="2~10자의 한글, 영문, 숫자만 사용할 수 있습니다.";
       txtnick.style.color="red";
       $('.write_new_nick').css("border","1px solid red")
-      $('.modify_nick_btn').attr("disabled",true);
+      $('.complete_nick_btn').attr("disabled",true);
+      return false;
 
       }else if(value==""){
-      txtnick.innerHTML="";
-      txtnick.style.color="red";
-      $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
-      $('.modify_nick_btn').attr("disabled",true);
-  }
+          txtnick.innerHTML="";
+          txtnick.style.color="red";
+          $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
+          $('.complete_nick_btn').attr("disabled",true);
+          return false;
+        }
   else{
       txtnick.innerHTML="사용 가능한 닉네임 입니다.";
       txtnick.style.color="rgb(19, 106, 227)";
       $('.write_new_nick').css("border","1px solid rgb(166, 166, 166)")
-      $('.modify_nick_btn').attr("disabled",false);
+      $('.complete_nick_btn').attr("disabled",false);
   }
+  return true;
 }
 
 
@@ -138,20 +141,21 @@ function myFunction2() {
   }
 
   const Pvalue = document.getElementById("WNP");
-function myFunction2_1() {
-    var x = document.getElementById("WNP");
-    var y = document.getElementById("MPB");
-    var c = document.getElementById("SC");
-    var d = document.getElementById("XB");
-    
-    
-    x.style.display = "none";
-    y.style.display="block";
-    c.style.display = "none";
-      d.style.display = "none";
-      Pvalue.innerHTML="";
-      
-    }
+  function myFunction2_1() {
+	    var x = document.getElementById("WNP");
+	    var y = document.getElementById("MPB");
+	    var c = document.getElementById("SC");
+	    var d = document.getElementById("XB");
+	    
+	    
+	    Pvalue.value="";
+	    Pvalue.style.border="1px solid rgb(166, 166, 166)";
+	    x.style.display = "none";
+	    y.style.display="block";
+	    c.style.display = "none";
+	      d.style.display = "none";
+	      
+	    }
 function myFunction2_2() {
     var x = document.getElementById("WNN");
     var d = document.getElementById("XB1");
@@ -297,22 +301,7 @@ var x = setInterval(function(){
        
       }
 
-      $('#sample6_address').on("input",function(){        
-          if($('#sample6_address').value==""){
-            $('.complete_addr_btn').attr("disabled", true);
-          }
-          else{
-          $('.complete_addr_btn').attr("disabled", false);
-        }
-      })
-      $('#sample6_detailAddress').on("input",function(){        
-          if($('#sample6_detailAddress').value==""){
-            $('.complete_addr_btn').attr("disabled", true);
-          }
-          else{
-          $('.complete_addr_btn').attr("disabled", false);
-        }
-      })
+
 
 
 
@@ -384,13 +373,17 @@ $('.write_phone_code').on('input',function(){
 
 
   function addr_chk(addr){
-    var chk = /[0-9]|[가-힣]|[\s]/gi;
+    // 한글,띄어쓰기 가능
+    var chk = /[0-9]|[가-힣]|[\s]/g;
+    // 자음, 모음만은 불가능   
+    var pattern = /([^가-힣\x20])/i;
 
-    if(addr.length > 0){
-
+    if(addr.length==0){
+      $('.complete_addr_btn').attr("disabled", true);
+      return false;
     }
 
-    if(chk.test(addr)){
+    if(!pattern.test(addr)&&chk.test(addr)){
 
     }else{
         return false;
@@ -398,11 +391,38 @@ $('.write_phone_code').on('input',function(){
   return true;
   }
 
+  function addr_chk2(addr){
+    if(addr.length==0){
+      $('.complete_addr_btn').attr("disabled", true);
+      return false;
+    }else{
+
+    }
+    return true;
+    
+  }
+
+  function checkaddr2(value){
+    if(!addr_chk2(value)){
+      $('.complete_addr_btn').attr("disabled", true);
+      return false;
+    }else{
+      $('.complete_addr_btn').attr("disabled", false);
+      
+    }
+
+  }
+
+
+
+
   function checkaddr(value){
     if(value==""){
         txtaddr.innerHTML=""
         txtaddr.style.color="red";
         $('#sample6_detailAddress').css("border","1px solid rgb(166, 166, 166)");
+        $('.complete_addr_btn').attr("disabled", true);
+
         return false;
     }
 
@@ -410,11 +430,26 @@ $('.write_phone_code').on('input',function(){
         txtaddr.innerHTML="알맞은 형식으로 입력해주세요";
         txtaddr.style.color="red";
         $('#sample6_detailAddress').css("border","1px solid red")
+        $('.complete_addr_btn').attr("disabled", true);
         return false;
-    }else{
+    }else if(value.length<1){
         txtaddr.innerHTML="";
         $('#sample6_detailAddress').css("border","1px solid rgb(166, 166, 166)");
+        $('.complete_addr_btn').attr("disabled", true);
+        return false;
+
+        
+    }else if($('#sample6_address').val()==""){
+      $('.complete_addr_btn').attr("disabled", true);
+      return false;
+
+    }else{
+        $('.complete_addr_btn').attr("disabled", false);
     }
+        
+
+    
 }
+
 
 

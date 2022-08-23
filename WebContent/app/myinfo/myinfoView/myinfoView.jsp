@@ -134,7 +134,7 @@
 
                    
                     <div class="addr_area">
-                        <input type="text" id="sample6_address" placeholder="주소" name="addr" readonly ->
+                        <input type="text" id="sample6_address" placeholder="주소" name="addr" readonly onkeyup="checkaddr2(this.value)">
                     </div>
 
                     <input type="text" id="sample6_detailAddress" placeholder="상세주소" name="addrdetail" autocomplete="off" onkeyup="checkaddr(this.value)">
