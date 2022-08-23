@@ -39,6 +39,23 @@ public class HotelDAO {
 //	}
 
 	}
+
+	public HotelDTO ReservationViewActionOK(int num) {
+		return sqlsession.selectOne("reservationViewActionOK", num);
+	}
+
+	public List<ReviewDTO> ReviewResultOK(int num) {
+		List<ReviewDTO> list;
+		list = sqlsession.selectList("Hotel.ReviewResultOK", num);
+		return list;
+	}
+
+	public boolean Review_modifyAction(String Mnew_review, int review_num) {
+		 HashMap<String, Object> datas = new HashMap<String, Object>();
+	      datas.put("Mnew_review", Mnew_review);
+	      datas.put("review_num", review_num);
+		return sqlsession.update("Hotel.Review_modifyAction", datas) == 1;
+	}
 	
 		
 

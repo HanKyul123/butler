@@ -11,6 +11,7 @@ import com.butler.app.action.ActionTo;
 import com.butler.app.action.HoteldetailAction;
 import com.butler.app.action.KakaoLoginAction;
 import com.butler.app.action.PhoneProveAction;
+import com.butler.app.action.ReservationViewAction;
 import com.butler.app.action.SearchkeywordAction;
 
 public class HotelFrontController extends HttpServlet{
@@ -49,6 +50,14 @@ public class HotelFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;
+		case "/hotel/reservationViewAction.ho":
+			try {
+				transfer = new ReservationViewAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		
 //		case "/hotel/hoteldetail.ho":
 //			try {
 //				transfer = new HoteldetailAction().execute(req, resp);

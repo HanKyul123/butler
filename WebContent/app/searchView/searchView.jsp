@@ -84,16 +84,11 @@
             
             <c:choose>
             	<c:when test="${list != null and list.size()>0 }">
-            		<c:forEach items="${list}" var="result">
-<%-- 					      <% 
-					      out.print(${result.business_place_num_pk});
-					      %> --%>
-					      
-					  <div class="prod_heart">
-                		
+            		<c:forEach items="${list}" var="result">				      
+					  <div class="prod_heart">              		
                 		<button id="heart_btn"><img id="heart" src="${pageContext.request.contextPath}/img/heart.png" alt=""></button>
                 		 
-            			<a href="">
+            			<a href="/hotel/reservationViewAction.ho?business_place_num_pk=${result.business_place_num_pk}">
             			<div class="prodbox">
 		                	<table class="prodtable">		                  
 		                    <!-- 호텔사진, 안쪽에 좋아요 버튼 -->

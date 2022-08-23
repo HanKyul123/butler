@@ -92,4 +92,8 @@ public class UserDAO {
 	         return false;
 	      }
 	   }
+
+	public UserDTO SearchOwnerResult(int num) {
+		return sqlsession.selectOne("Hotel.SearchOwnerResult", num);
+	}
 	  }

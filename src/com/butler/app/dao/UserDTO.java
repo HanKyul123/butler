@@ -14,8 +14,14 @@ public class UserDTO {
 	private String user_addretc;
 	private String user_email;
 	private String user_phone;
+	private String user_business_num;
 	
-	
+	public String getUser_business_num() {
+		return user_business_num;
+	}
+	public void setUser_business_num(String user_business_num) {
+		this.user_business_num = user_business_num;
+	}
 	public int getUser_logintype() {
 		return user_logintype;
 	}
@@ -94,10 +100,6 @@ public class UserDTO {
 	public void setUser_phone(String user_phone) {
 		this.user_phone = user_phone;
 	}
-	
-	
-	
-	
-	
+
 
 }

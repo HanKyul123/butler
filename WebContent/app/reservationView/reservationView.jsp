@@ -313,9 +313,11 @@
             <!-- GSP 들어가는 공간 -->
             </div>
             <div class="Hotel_map_title">⭐ 오시는 길</div>
-            <div class="Hotel_map">
-                호텔 GPS가 들어가는 공간입니다.
+            <div id="map" class="Hotel_map">
+              
             </div>
+            <input type="hidden" id="Hotel_address" name="Hotel_address" value="${hotelresult.business_addr} ${hotelresult.business_addrdetail}">
+            <input type="hidden" id="Hotel_name" name="Hotel_name" value="${hotelresult.business_name}">
 
         </article>
     </a>
@@ -323,110 +325,123 @@
     
 <!-- 유저가 올리는 리뷰 -->
 <a id="aa" name="D3">
-        <article class="review_info_box">
+			<article class="review_info_box">
 
-            <div class="Rtitle">▶리뷰
-                <button id="go_reservation_info">리뷰 쓰러 가기</button>
-            </div>
-            
-            <div class="Review_Reply">
-            
-            <div class="user_review_box">
+				<div class="Rtitle">
+					▶리뷰
+					<button id="go_reservation_info">리뷰 쓰러 가기</button>
+				</div>
 
-                <div class="user_info">
-                    <span class="usernick">유저닉네임</span>
-                    <img class="user_from" src="${pageContext.request.contextPath}/img/카카오톡.png" alt="">
-                    <span class="user_date">날짜</span>
 
-					<!-- 유저 리뷰 수정하는 버튼 -->
-                    <button id="modify_Review" class="Review_btn" onclick="modify()" title="수정하기"><img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD"></button>
-                    
-                    <!-- 유저 리뷰 삭제하는 버튼 -->
-                    <button id="delete_Review" class="Review_btn" onclick="delete_review()" title="삭제하기"><img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD"></button>
-                    
-                    <br>
-                    <span class="user_pet">
-                       	 아이 종류:
-                    </span>
-                    <span class="user_pet_what">강아지</span>
+				<c:choose>
+					<c:when test="${reviewResult != null and reviewResult.size()>0 }">
+						<c:forEach items="${reviewResult}" var="reviewResult">
+							<div class="Review_Reply">
+							
+								<div class="user_review_box">
+									<div class="user_info">
+										<span class="usernick">${reviewResult.review_nickname}</span> 
+										<img class="user_from" src="${pageContext.request.contextPath}/img/카카오톡.png" alt="">
+										<span class="user_date">${reviewResult.review_regdate}</span>
 
-                </div>
+										<!-- 유저 리뷰 수정하는 버튼 -->
+										<button id="modify_Review" class="Review_btn"
+											onclick="modify()" title="수정하기">
+											<img id="modi"
+												src="${pageContext.request.contextPath}/img/modify_icon.png"
+												alt="" class="MD">
+										</button>
 
-                <div id="Rbox" class="user_review">
-                    
+										<!-- 유저 리뷰 삭제하는 버튼 -->
+										<button id="delete_Review" class="Review_btn"
+											onclick="delete_review()" title="삭제하기">
+											<img id="delete"
+												src="${pageContext.request.contextPath}/img/delete.png"
+												alt="" class="MD">
+										</button>
 
-                    <div id="Rbox" class="user_contents">여기는 리뷰내용 입니다. <br>
-                  	 	 리뷰를 마음껏 작성하세요.</div>
-                </div>
+										<br> <span class="user_pet"> 아이 종류: </span> <span
+											class="user_pet_what">강아지</span>
 
-                <!-- 유저가 올리는 사진 -->
-                <div class="user_review_pic">
-                    <div class="user_pic">
-                        <img class="user_pic" src="${pageContext.request.contextPath}/img/메인베너배경이미지.jpg" alt="">
-                    </div>
-                </div>
+									</div>
 
-            </div>
+									<div id="Rbox" class="user_review">
+										<!-- <div id="Rbox" class="user_title">여기는 리뷰제목입니다.</div> -->
 
-			<!-- 수정박스 -->
-            <div class="Mbox">
-                <div class="flex_go">
-                    <div>
-                        <span id="user_pet_M" class="Mall">
-                            	아이 종류:
-                        </span>
-                        <span id="user_pet_what_M" class="Mall">강아지</span>
-                        <br>
-                        <span id="price_prod" class="Mall">무게와 가격</span>
-                    </div>
+										<div id="Rbox" class="user_contents">
+											${reviewResult.review_contents}
+										</div>
+									</div>
 
-                    <div class="btnbox">
-                        <button class="CB" onclick="complete()">
-                            <img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" id="Mbtn" class="MCbtn">
-                        </button>
-                        <button class="CB" onclick="cancel()">
-                            <img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" id="Dbtn" class="MCbtn">
-                        </button>
-                    </div>
-                </div>
-                <textarea name="" id="Mnew_review" cols="30" rows="10"></textarea>
-                <div class="modypic">
-                        <div class="pick">
-                            <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="modypic">
-                            <button id="Deletepic"><img id="X" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
-                        </div>
-                        <div class="pick">
-                            <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="modypic">
-                            <button id="Deletepic"><img id="X" src="${pageContext.request.contextPath}/img/X_black.png" alt=""></button>
+									<!-- 유저가 올리는 사진 -->
+									<div class="user_review_pic">
+										<div class="user_pic">
+											<img class="user_pic"
+												src="${pageContext.request.contextPath}/img/메인베너배경이미지.jpg"
+												alt="">
+										</div>
+									</div>
 
-                        </div>
-                    </div>
-            </div>
+								</div>
 
-<!-- 관리인 리뷰 답장 -->
-            <div class="replyBigbox">
-                <img src="${pageContext.request.contextPath}/img/Ladder.png" alt="" class="ladder">
-                <div class="reply_box">
+								<!-- 수정박스 -->
+								<form id="review_modify_Form" method="post" action="/user/review_modifyAction.us">
+									<div class="Mbox">
+										<div class="flex_go">
+											<div>
+												<span id="user_pet_M" class="Mall"> 아이 종류:</span>
+												<span id="user_pet_what_M" class="Mall">강아지</span><br> 
+												<span id="price_prod" class="Mall">무게와 가격</span>
+											</div>
+	
+											<div class="btnbox">
+												<button type="submit" class="CB" onclick="complete()">
+													<img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" id="Mbtn" class="MCbtn">
+												</button>
+												<button class="CB" onclick="cancel()">
+													<img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" id="Dbtn" class="MCbtn">
+												</button>
+											</div>
+										</div>
+										<textarea name="Mnew_review" id="Mnew_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>										
+										<input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}">
+										<input type="hidden" id="business_place_num_pk" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">
+									</div>
+								</form>
 
-                    <div class="manager_info">
-                        <img src="${pageContext.request.contextPath}/img/manager_icon.png" alt="" class="manager_icon">
-                        <div class="manager_name">관리인 닉네임 또는 이름</div>
-                        <div class="manager_date">날짜</div>
-                    </div>
+								<!-- 관리인 리뷰 답장 -->
+								<div class="replyBigbox">
+									<img src="${pageContext.request.contextPath}/img/Ladder.png"
+										alt="" class="ladder">
+									<div class="reply_box">
 
-                    <div class="manager_Hotelname">여기는 호텔 이름입니다.</div>
-                    
-                    <div class="manager_reply">여기는 답장 내용입니다. <br> 답자아아앙</div>
-                </div>
-            </div>
-        </div>
+										<div class="manager_info">
+											<img
+												src="${pageContext.request.contextPath}/img/manager_icon.png"
+												alt="" class="manager_icon">
+											<div class="manager_name">관리인 닉네임 또는 이름</div>
+											<div class="manager_date">날짜</div>
+										</div>
 
-            <!-- <div id="emty_review">
-                <div id="ER">아직 리뷰가 없습니다.</div>
-            </div> -->
+										<div class="manager_Hotelname">여기는 호텔 이름입니다.</div>
 
-        </article>
-        </a>
+										<div class="manager_reply">
+											여기는 답장 내용입니다. <br> 답자아아앙
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<div id="emty_review">
+							<div id="ER">아직 리뷰가 없습니다.</div>
+						</div>
+					</c:otherwise>
+				</c:choose>
+
+			</article>
+		</a>
     </div>
     
 </body>
@@ -453,6 +468,50 @@
         <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8371f82865e1a5caad2fb3821aba3a1a&libraries=services"></script>
+<script>
+var Hotel_address = document.getElementById('Hotel_address')
+var Hotel_name = document.getElementById('Hotel_name')
 
+console.log(Hotel_address.value)
+console.log(Hotel_name.value)
+
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 4 // 지도의 확대 레벨
+    };  
+
+// 지도를 생성합니다    
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
+
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch(Hotel_address.value, function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
+
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+Hotel_name.value+'</div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
+</script>
 
 </html>

@@ -106,6 +106,14 @@ public class UserFrontController extends HttpServlet{
 	        	 e.printStackTrace();
 	         }
 	         break;
+	         
+	      case "/user/review_modifyAction.us":
+		     try {
+		        new Review_modifyAction().execute(req,resp);
+		     } catch (Exception e) {
+		    	 e.printStackTrace();
+			 }
+			 break;
 		
 	 }
 		if(transfer !=null) {
