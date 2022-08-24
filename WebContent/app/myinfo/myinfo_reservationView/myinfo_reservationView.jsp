@@ -9,6 +9,8 @@
     <title>Reservation</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myinfo_reservation.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
 </head>
 
 

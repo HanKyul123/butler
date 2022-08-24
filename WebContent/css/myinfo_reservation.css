@@ -14,7 +14,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
     box-sizing: border-box;
     }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, hgroup, menu, nav, section {
     display: block;
     }
 
@@ -30,7 +30,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .myinfo_reservation_wrap {
          font-family: 'OTWelcomeRA';
          position: relative;
-         top: 55px;
+         top: 35px;
         /* padding: 20px; */
         text-align: center;
         width: 100%;
@@ -159,6 +159,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         height: 98.5px;
         
     }
+    #ing_contents{
+        color: rgb(255, 61, 174);
+        animation-name: NU;
+        animation: NU 0.6s infinite alternate;
+    }
+    @keyframes NU{
+        0%{color: rgb(255, 148, 210);}
+        50%{color: rgb(255, 103, 192);}
+        100%{color: rgb(255, 61, 174);}
+    }
     
     .all_name{
         overflow: hidden;
@@ -192,7 +202,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         /* border: 1px solid #000; */
         border-radius: 30px;
         position: absolute;
-        top: 235px;
+        top: 255px;
         left: 497px;
 
         transition: 0.2s;
@@ -216,7 +226,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         /* border: 1px solid #000; */
         border-radius: 30px;
         position: absolute;
-        top: 235px;
+        top: 255px;
         right: 223px;
 
     }
@@ -247,7 +257,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         /* border: 1px solid #000; */
         border-radius: 30px;
         position: absolute;
-        top: 415px;
+        top: 435px;
         left: 497px;
 
         transition: 0.2s;
@@ -271,7 +281,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         /* border: 1px solid #000; */
         border-radius: 30px;
         position: absolute;
-        top: 415px;
+        top: 435px;
         right: 223px;
 
     }
@@ -302,7 +312,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         /* border: 1px solid #000; */
         border-radius: 30px;
         position: absolute;
-        top: 595px;
+        top: 615px;
         left: 497px;
 
         transition: 0.2s;
@@ -326,7 +336,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         /* border: 1px solid #000; */
         border-radius: 30px;
         position: absolute;
-        top: 595px;
+        top: 615px;
         right: 223px;
 
     }
