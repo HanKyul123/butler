@@ -90,8 +90,8 @@
 
 
 <body class="reservation_wrap">
+
 <div class="mask"></div>
-   
 
     <div class="box1">
         <div class="Hotel_pic">
@@ -123,7 +123,7 @@
         </div>
     </div>
 
-
+<form action="" onsubmit="return reservation()">
 <!-- 예약 종류 선택하기 -->
     <div class="box2">
         <div class="addanimal">
@@ -208,7 +208,7 @@
                     <option value="20000">1 ~ 3kg 1박 20000원</option>
                 </select>
 
-                <button class="add" disabled="disabled" onclick="copyDiv()">추가하기</button>
+                <button type="button" class="add" disabled="disabled" onclick="copyDiv()">추가하기</button>
 
 
 
@@ -251,14 +251,16 @@
                 <span id="pricecontent" class="pricecontent">0</span>
                 <span class="pricewon">원</span>
             </div>
+
+			<!-- 제출 버튼 -->
             <div class="reserbtnflex">
             <button type="submit" class="reservation_btn" onclick="reservation()">예약하기</button>
             <img src="${pageContext.request.contextPath}/img/reservationCart.png" alt="" class="cart">
-        </div>
+            
+        	</div>
+    	</div>
     </div>
-
-    </div>
-
+</form>
 
 <!-- 호텔정보 / 사업자정보 / 리뷰 버튼 -->
     <div class="box3">
@@ -466,7 +468,7 @@
 			</article>
 		</a>
     </div>
-    
+
 </body>
 <!-- 문서수정할때는주석처리를 하고 진행하세요 -->
 <%--     <c:choose>
