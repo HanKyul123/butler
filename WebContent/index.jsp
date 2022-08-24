@@ -8,10 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Butler-Animal Hotel</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header_login.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slick.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slick-theme.css">
 </head>
 <!--  -->
 	<%@ include file="../header/pc_header.jsp" %> 
@@ -19,114 +21,113 @@
 
 		<!-- Body -->
             <body>
-            <!-- 헤더  -->
-    <form action="">       
-   
-  	<div class="Etitle">이번주 인기 호텔 Top 5</div>
+            
+                <div class="Etitle">이번주 인기 호텔 Top 5</div>
 
 
                 <div class="eventbox">
-                    <div class="Egroup">
+                    <section class="center slider">
+                        <div>
+                            <div class="Egroup">
+                            <a href=""><div id="Ebox" class="Ebox5">
 
-                    <a href="">  
-                    <div id="Ebox" class="Ebox1">
-                        <div class="Epic">
-                            
+                                <!-- id 이름 : Hotel_pic -->
+                                <div class="Epic">
+                                    <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="Hotel_pic">
+                                </div>
+                                <div class="Einfo">
+                                    <div class="Enamebox">
+                                        <span class="Ename">호텔 이름</span></div>
+                                        
+                                        <div class="Eheartbox">
+                                            <img src="${pageContext.request.contextPath}/img/Star.png" alt="" class="Eheartimg" style="width: 18px; position: relative; bottom: 4px; margin-right: 5px;">
+                                            <span class="Eheart
+                                        ">별점</span></div>
+                        
+                                    <div class="Epricebox">
+                                        <span class="Eprice">가격</span>
+                                        <span class="Ewon">원</span>
+                                    </div>
+                                </div>
+                            </div></a>
                         </div>
-                        <div class="Einfo">
-                            <div class="Enamebox">
-                            <span class="Ename">호텔이름</span></div>
-                            
-                            <div class="Eheartbox">
-                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
-                                <span class="Eheart
-                            ">별점</span></div>
+                      </div>
+                        <div>
+                            <div class="Egroup">
+                            <a href=""><div id="Ebox" class="Ebox5">
 
-                            <div class="Epricebox">
-                                <span class="Eprice">가격</span>
-                                <span class="Ewon">원</span>
-                            </div>
+                                <!-- id 이름 : Hotel_pic -->
+                                <div class="Epic">
+                                    <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="Hotel_pic">
+                                </div>
+                                <div class="Einfo">
+                                    <div class="Enamebox">
+                                        <span class="Ename">호텔 이름</span></div>
+                                        
+                                        <div class="Eheartbox">
+                                            <img src="${pageContext.request.contextPath}/img/Star.png" alt="" class="Eheartimg" style="width: 18px; position: relative; bottom: 4px; margin-right: 5px;">
+                                            <span class="Eheart
+                                        ">별점</span></div>
+                        
+                                    <div class="Epricebox">
+                                        <span class="Eprice">가격</span>
+                                        <span class="Ewon">원</span>
+                                    </div>
+                                </div>
+                            </div></a>
                         </div>
-                    </div>
-                </a>
+                      </div>
+                        <div>
+                            <div class="Egroup">
+                            <a href=""><div id="Ebox" class="Ebox5">
 
-                    <a href=""><div id="Ebox" class="Ebox2">
-                        <div class="Epic">
-                            
+                                <!-- id 이름 : Hotel_pic -->
+                                <div class="Epic">
+                                    <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="Hotel_pic">
+                                </div>
+                                <div class="Einfo">
+                                    <div class="Enamebox">
+                                        <span class="Ename">호텔 이름</span></div>
+                                        
+                                        <div class="Eheartbox">
+                                            <img src="${pageContext.request.contextPath}/img/Star.png" alt="" class="Eheartimg" style="width: 18px; position: relative; bottom: 4px; margin-right: 5px;">
+                                            <span class="Eheart
+                                        ">별점</span></div>
+                        
+                                    <div class="Epricebox">
+                                        <span class="Eprice">가격</span>
+                                        <span class="Ewon">원</span>
+                                    </div>
+                                </div>
+                            </div></a>
                         </div>
-                        <div class="Einfo">
-                            <div class="Enamebox">
-                            <span class="Ename">호텔이름</span></div>
-                            
-                            <div class="Eheartbox">
-                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
-                                <span class="Eheart
-                            ">별점</span></div>
+                      </div>
+                        <div>
+                            <div class="Egroup">
+                            <a href=""><div id="Ebox" class="Ebox5">
 
-                            <div class="Epricebox">
-                                <span class="Eprice">가격</span>
-                                <span class="Ewon">원</span>
-                            </div>
+                                <!-- id 이름 : Hotel_pic -->
+                                <div class="Epic">
+                                    <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="Hotel_pic">
+                                </div>
+                                <div class="Einfo">
+                                    <div class="Enamebox">
+                                        <span class="Ename">호텔 이름</span></div>
+                                        
+                                        <div class="Eheartbox">
+                                            <img src="${pageContext.request.contextPath}/img/Star.png" alt="" class="Eheartimg" style="width: 18px; position: relative; bottom: 4px; margin-right: 5px;">
+                                            <span class="Eheart
+                                        ">별점</span></div>
+                        
+                                    <div class="Epricebox">
+                                        <span class="Eprice">가격</span>
+                                        <span class="Ewon">원</span>
+                                    </div>
+                                </div>
+                            </div></a>
                         </div>
-                    </div></a>
-                    <a href=""><div id="Ebox" class="Ebox3">
-                        <div class="Epic">
-                            
-                        </div>
-                        <div class="Einfo">
-                            <div class="Enamebox">
-                            <span class="Ename">호텔이름</span></div>
-                            
-                            <div class="Eheartbox">
-                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
-                                <span class="Eheart
-                            ">별점</span></div>
-
-                            <div class="Epricebox">
-                                <span class="Eprice">가격</span>
-                                <span class="Ewon">원</span>
-                            </div>
-                        </div>
-                    </div></a>
-                    <a href=""><div id="Ebox" class="Ebox4">
-                        <div class="Epic">
-                            
-                        </div>
-                        <div class="Einfo">
-                            <div class="Enamebox">
-                            <span class="Ename">호텔이름</span></div>
-                            
-                            <div class="Eheartbox">
-                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
-                                <span class="Eheart
-                            ">별점</span></div>
-
-                            <div class="Epricebox">
-                                <span class="Eprice">가격</span>
-                                <span class="Ewon">원</span>
-                            </div>
-                        </div>
-                    </div></a>
-                    <a href=""><div id="Ebox" class="Ebox5">
-                        <div class="Epic">
-                            
-                        </div>
-                        <div class="Einfo">
-                            <div class="Enamebox">
-                            <span class="Ename">호텔이름</span></div>
-                            
-                            <div class="Eheartbox">
-                            <img class="Eheartimg"  src="${pageContext.request.contextPath}/img/heart_full.png" alt="">
-                                <span class="Eheart
-                            ">별점</span></div>
-
-                            <div class="Epricebox">
-                                <span class="Eprice">가격</span>
-                                <span class="Ewon">원</span>
-                            </div>
-                        </div>
-                    </div></a>
-                </div>
+                      </div>
+                    </section>
             </div>
             
             	<div class="main">
@@ -200,11 +201,19 @@
 		<%@ include file="../footer/footer.jsp" %>
 
  <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
- <script> $js = jQuery.noConflict(); </script>
  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-
-
-
+ <script> $js = jQuery.noConflict(); </script>
+ <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+ <script src="${pageContext.request.contextPath}/js/slick_copy.js" type="text/javascript" charset="utf-8"></script>
+ <script type="text/javascript">
+   $(document).on('ready', function() {
+     $(".center").slick({
+       dots: false,
+       infinite: false,
+       centerMode: true,
+       slidesToShow: 3,
+       slidesToScroll: 3
+     });
+   });
+</script>
 </html>
