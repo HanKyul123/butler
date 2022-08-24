@@ -19,13 +19,16 @@
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     
-
     <script>
-        
-        $(function () {
-        
+        let nowdate =0;
 
+    $(function () {
+        let txttotalprice = document.getElementById("pricecontent");
+
+        let nowdate2 = document.getElementById("nowdate");
+        nowdate2.value=1;
         $('#demo').daterangepicker({
+            
             "locale": {
                 "format": "YYYY-MM-DD",
                 "separator": " ~ ",
@@ -37,51 +40,102 @@
                 "weekLabel": "W",
                 "daysOfWeek": ["월", "화", "수", "목", "금", "토", "일"],
                 "monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-                "firstDay": 1,
-                "mindate" : 0
-
-                ,onClose: function( selectedDate ) {    
-            // 시작일(fromDate) datepicker가 닫힐때
-            // 종료일(toDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정
-            $("#demo").datepicker( "option", "minDate", selectedDate );
+                "firstDay": 1
+                
             },
-
-            "startDate":0,
-            "endDate":0,
+           
+            "startDate": 0,
+            "endDate": 0,
             "drops": "down"
-
-        }
-        
         }, function (start, end, label) {
-        	console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+
+
+            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
             let totaldate = document.getElementById("totaldate");
             let totaldate2 = document.getElementById("totaldate2");
             console.log(end.format('DD')-start.format('DD'));
 
-            let nowdate = end.format('DD')-start.format('DD');
+
+
+            // 기간
+            nowdate = end.format('DD')-start.format('DD');
+            nowdate2.value = nowdate;
+
             totaldate.innerHTML="체크인 : "+start.format('MM-DD')+" ~ "+"체크 아웃 : "+end.format('MM-DD')
             totaldate2.innerHTML="총 "+nowdate+"박 "+(nowdate+1)+"일";
-        });   
-        
+
+
+            // 날짜 가져오기
+            let book_checkin_date  = document.getElementById("book_checkin_date");
+            book_checkin_date.value= start.format('YYYY-MM-DD');
+
+            let book_checkout_date = document.getElementById("book_checkout_date");
+            book_checkout_date.value= end.format('YYYY-MM-DD');
+
+            console.log(book_checkin_date.value);
+            console.log(book_checkout_date.value);
+
+            let xcount = nowdate;
+            let nd = document.getElementById("nowdate");
+            nd.value=xcount;
+
+            
+            // 총 기간과 총합의 값
+            console.log("총 기간과 총합의 값 : "+fullcharge*xcount);
+
+            // 프론트 상에 보여주기
+            txttotalprice.innerHTML=fullcharge*xcount;
+            // input value에 담아주기
+            toprice.value=fullcharge*xcount;
+            book_charge= fullcharge*xcount;
+            console.log(book_charge+"="+fullcharge+"X"+xcount);
+            
+
+            
+            
+            $("#add").on("click",function(){
+                if($('#animal option:selected').text()=="강아지"){
+
+                    var charge = parseInt($('.dog_weight option:selected').val());
+                    txttotalprice.innerHTML=toprice.value;
+                    
+                    
+                }else if($('#animal option:selected').text()=="고양이"){
+                    var charge = parseInt($('.cat_weight option:selected').val());
+
+
+                }else if($('#animal option:selected').text()=="새"){
+                   var charge = parseInt($('.bird_weight option:selected').val());
+
+                }else if($('#animal option:selected').text()=="파충류"){
+                    var charge = parseInt($('.reptile_weight option:selected').val());
+
+                }else if($('#animal option:selected').text()=="패럿"){
+                   var charge = parseInt($('.Farad_weight option:selected').val());
+
+                }else if($('#animal option:selected').text()=="토끼"){
+                    var charge = parseInt($('.rabbit_weight option:selected').val());
+
+                }else if($('#animal option:selected').text()=="햄스터"){
+                   var charge = parseInt($('.hamster_weight option:selected').val());
+
+                }else if($('#animal option:selected').text()=="그 외"){
+                    var charge = parseInt($('.else_weight option:selected').val());
+
+                }
+            })
+
     });
         
-        
-        const totaldate = document.getElementById("totaldate");
-        
-        $(".applyBtn btn").on("click",function(){
-        	
-        	const book_checkin_date =startDate.format('D MMMM YYYY');
-        	const book_checkout_date = endDate.format('D MMMM YYYY');
-        	
-        	totaldate.innerHTML=book_checkin_date+" ~ "+book_checkout_date;
-        	console.log(totaldate);
-        	
+        $('#demo').datepicker({
+            mindate:0,
+            maxdate:+"2y"
         })
 
-        
+    });
 
+ 
     </script>
-
 </head>
 
 
@@ -208,7 +262,7 @@
                     <option value="20000">1 ~ 3kg 1박 20000원</option>
                 </select>
 
-                <button type="button" class="add" disabled="disabled" onclick="copyDiv()">추가하기</button>
+                <button type="button" class="add" id="add" disabled="disabled" onclick="copyDiv()">추가하기</button>
 
 
 
@@ -234,6 +288,9 @@
             <div class="datecontent">
                 <label><img src="${pageContext.request.contextPath}/img/calender.png" alt="" class="calender_img">
                 <input type="text" id="demo" name="demo" value="" readonly></label>
+                <input type="hidden" id="book_checkin_date" readonly>
+                <input type="hidden" id="book_checkout_date" readonly>
+                <input type="hidden" id="nowdate" readonly>
             </div>
 
         </div>
@@ -251,7 +308,8 @@
                 <span id="pricecontent" class="pricecontent">0</span>
                 <span class="pricewon">원</span>
             </div>
-
+			<input type="hidden" name="book_charge" id="book_charge">
+			
 			<!-- 제출 버튼 -->
             <div class="reserbtnflex">
             <button type="submit" class="reservation_btn" onclick="reservation()">예약하기</button>
@@ -419,7 +477,7 @@
 										</div>
 										<textarea name="Mnew_review" id="Mnew_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>										
 										<input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}">
-										<input type="hidden" id="business_place_num_pk" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">
+										<input type="hidden" id="business_place_num_fk" name="business_place_num_fk" value="${hotelresult.business_place_num_pk}">
 										
 									<!-- 사진 추가하면 사진이 담긴 자식 생성됨. -->
 									<div class="modypic" id="ele">
@@ -538,5 +596,94 @@ geocoder.addressSearch(Hotel_address.value, function(result, status) {
     } 
 });    
 </script>
+<script>
+
+    if($("#parentadd").val()==""){
+        book_charge = 0;
+        fullcharge = 0;
+    }
+function removethis(i){
+    // 총가격과 #thisprice+i 의 value 값을 parseint 로 변환해 빼어 계산한다.
+    console.log("삭제 한 상품 가격 :"+arrayprice[i]);
+            let txttotalprice = document.getElementById("pricecontent");
+            let nd = document.getElementById("nowdate");
+            let xcount = parseInt(nd.value);
+
+            let disprice = parseInt(arrayprice[i]);
+            console.log(disprice);
+            console.log(xcount);
+            console.log(book_charge);
+            
+            console.log(book_charge+"-"+disprice+"*"+xcount);
+
+            book_charge=book_charge-disprice*xcount;
+            fullcharge= fullcharge-disprice;
+            txttotalprice.innerHTML=book_charge;
+
+            console.log(book_charge);
+            console.log(fullcharge);
+
+            
+
+
+            
+
+
+    // 담긴 상품들 어레이에서 삭제하기
+    let idx = array.indexOf("bigadd"+i);
+    while(idx>-1){
+        array.splice(idx, 1);
+        idx = array.indexOf("bigadd"+i);
+    }
+
+    
+    console.log("\n");
+
+
+    $(".bigadd"+i).remove();
+
+    console.log(arraypet[i]);
+
+
+
+        if(arraypet[i]=='고양이'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+
+        }else if(arraypet[i]=='강아지'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+
+        }else if(arraypet[i]=='그 외'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+        }else if(arraypet[i]=='새'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+
+        }else if(arraypet[i]=='파충류'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+
+        }else if(arraypet[i]=='패럿'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+
+        }else if(arraypet[i]=='토끼'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+
+        }else if(arraypet[i]=='햄스터'){
+            arraypet.splice(i,1);
+            arraypet.splice(i,0,'삭제');
+
+        }
+
+
+    console.log(arraypet);
+
+}
+</script>
+
 
 </html>
