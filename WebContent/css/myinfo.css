@@ -188,6 +188,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         color: #fff;
     }
 
+    #checknick{
+        display: none;
+        font-family: 'OTWelcomeRA';
+        padding-top: 5px;
+        margin-top: 10px;
+        position: relative;
+        width: 100px;
+        height: 28px;
+        cursor: pointer;
+        border: 1px solid rgb(160, 30, 189);
+        border-radius: 3px;
+        background-color: rgb(160, 30, 189);
+        color: #fff;
+        margin-right: 5px;
+    }
+
 
 
 
@@ -198,7 +214,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         }
 
 
-        .write_new_phone{
+        .write_new_phone,.write_new_phone2{
             display: none;
             margin-right: 5px;
             margin-top: 10px;
@@ -214,7 +230,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             background-color: #fff;
         }
     
-        .write_new_phone:focus{
+        .write_new_phone:focus,.write_new_phone2:focus{
             background-color: rgb(246, 246, 246);
         }
 
@@ -266,7 +282,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             margin-left: 5px;
         }
         
-        #XB2{
+        #XB2,#XB3{
             display: none;
             cursor: pointer;
             width: 25px;
@@ -282,7 +298,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             margin-left: 5px;
         }
 
-        .send_code{
+        .send_code,.send_code2{
             display: none;
             font-family: 'OTWelcomeRA';
             padding-top: 5px;
@@ -297,7 +313,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             color: #fff;
         }
 
-        .send_code:disabled{
+        .send_code:disabled,.send_code2:disabled{
             cursor: default;
             border: 1px solid rgb(179, 179, 179);
             border-radius: 3px;
@@ -306,7 +322,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         }
         
 
-        .write_phone_code{
+        .write_phone_code,.write_phone_code2{
             display: none;
             margin-right: 5px;
             margin-top: 10px;
@@ -322,11 +338,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             background-color: #fff;
         }
     
-        .write_phone_code:focus{
+        .write_phone_code:focus,.write_phone_code2:focus{
             background-color: rgb(246, 246, 246);
         }
 
-        .phone_code_btn{
+        .phone_code_btn,.phone_code_btn2{
             display: none;
 
             font-family: 'OTWelcomeRA';
@@ -342,7 +358,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             color: #fff;
         }
 
-        .phone_code_btn:disabled{
+        .phone_code_btn:disabled,.phone_code_btn2:disabled{
             cursor: default;
             border: 1px solid rgb(179, 179, 179);
             border-radius: 3px;
@@ -379,15 +395,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             background-color: rgb(116, 10, 140);
             color: #fff;
         }
-        .complete_addr_btn:disabled{
-            cursor: default;
-            border: 1px solid rgb(179, 179, 179);
-            border-radius: 3px;
-            background-color: rgb(255, 255, 255);
-            color: rgb(179, 179, 179);
-        }
+        
 
-        .time{
+        .time,.time2{
             display: none;
             position: relative;
             bottom: 20px;
@@ -400,10 +410,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 
+        .modify_pw2{
+            display: none;
+        }
 
 
-
-        .modify_pw{
+        .modify_pw,.modify_pw2{
             cursor: pointer;
             width: 90px;
             margin-top: 50px;
@@ -411,7 +423,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             font-size: 14px;
         }
 
-        .modify_pw:hover{
+        .modify_pw:hover,.modify_pw2:hover{
             text-decoration: underline;
         }
 
@@ -554,4 +566,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             color: #fff;
         }
 
-        
+        .explaintitle{
+            display: none;
+            margin-left: 1px;
+            margin-top: 5px;
+            margin-bottom: -5px;
+            font-size: 13px;
+            color: rgb(113, 113, 113);
+        }
