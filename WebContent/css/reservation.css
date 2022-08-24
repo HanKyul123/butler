@@ -289,11 +289,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
 
     .totaldate{
+        font-family: 'OTWelcomeRA';
+
         padding: 5px;
         /* border: 1px solid #000; */
-        font-size: 23px;
+        font-size: 20px;
         height: 30px;
         margin-bottom: 90px;
+    }
+    .totaldate2{
+
+        padding: 5px;
+        /* border: 1px solid #000; */
+        font-size: 25px;
+        height: 30px;
+        position: relative;
+        bottom: 90px;
+        color: red;
     }
 
     .pricetitle{

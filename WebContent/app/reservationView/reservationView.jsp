@@ -11,11 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약하기</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservation.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
     <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    
 
     <script>
         
@@ -50,12 +53,15 @@
         }
         
         }, function (start, end, label) {
-            console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-        });
+        	console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+            let totaldate = document.getElementById("totaldate");
+            let totaldate2 = document.getElementById("totaldate2");
+            console.log(end.format('DD')-start.format('DD'));
 
-
-
-        $('#demo').daterangepicker('setDate', 'today');
+            let nowdate = end.format('DD')-start.format('DD');
+            totaldate.innerHTML="체크인 : "+start.format('MM-DD')+" ~ "+"체크 아웃 : "+end.format('MM-DD')
+            totaldate2.innerHTML="총 "+nowdate+"박 "+(nowdate+1)+"일";
+        });   
         
     });
         
@@ -234,14 +240,19 @@
 
 <!-- 총 기간과 가격 -->
         <div class="buy">
-            <div class="totaldate">총 기간 몇박 몇일</div>
+            <div id="totaldate" class="totaldate">
+                
+            </div>
+            <div id="totaldate2" class="totaldate2">
+                
+            </div>
             <div class="pricetitle">가격</div>
             <div class="totalprice">
                 <span id="pricecontent" class="pricecontent">0</span>
                 <span class="pricewon">원</span>
             </div>
             <div class="reserbtnflex">
-            <button class="reservation_btn">예약하기</button>
+            <button type="submit" class="reservation_btn" onclick="reservation()">예약하기</button>
             <img src="${pageContext.request.contextPath}/img/reservationCart.png" alt="" class="cart">
         </div>
     </div>

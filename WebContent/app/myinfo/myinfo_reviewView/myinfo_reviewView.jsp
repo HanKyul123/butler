@@ -9,6 +9,8 @@
     <title>myReview</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myinfo_review.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
 </head>
 
 <%@ include file="../../../header/pc_header.jsp"%>

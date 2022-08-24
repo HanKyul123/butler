@@ -6,14 +6,12 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="under1"
+<link rel="under1"S
 	href="${pageContext.request.contextPath}/img/under1.png">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/notice.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/footer.css">
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/pc_header.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
 <title>공지사항</title>
 <%@ include file="../../header/pc_header.jsp"%>
 </head>

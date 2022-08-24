@@ -38,14 +38,14 @@ window.addEventListener("scroll", ()=>{
        icon.src="../../img/Hotel_width_logo.png";
        Xicon.src="../../img/X_pupple.png";
        cPF.src="../../img/click_profile_P.png";
-       Sbtn.src="../../img/검색_모바일.png"
+       Sbtn.src="../../img/검색_모바일.png";
        
     }else{
         header.classList.remove('scroll');
         icon.src="../../img/Hotel_width_white_logo.png";
         Xicon.src="../../img/X.png";
         cPF.src="../../img/click_profile.png";
-        Sbtn.src="../../img/검색.png"
+        Sbtn.src="../../img/검색.png";
       
     }
 });
@@ -55,14 +55,14 @@ window.addEventListener("scroll", ()=>{
        icon.src="../../img/Hotel_width_logo.png";
        Xicon.src="../../img/X_pupple.png";
        cPF.src="../../img/click_profile_P.png";
-       Sbtn.src="../../img/검색_모바일.png"
+       Sbtn.src="../../img/검색_모바일.png";
        
     }else{
         header.classList.remove('scroll');
         icon.src="../../img/Hotel_width_white_logo.png";
         Xicon.src="../../img/X.png";
         cPF.src="../../img/click_profile.png";
-        Sbtn.src="../../img/검색.png"
+        Sbtn.src="../../img/검색.png";
       
     }
 });
