@@ -34,8 +34,6 @@ public class BookOkAction implements Action{
 		BookDAO bdao = new BookDAO();
 		PetsDAO pdao = new PetsDAO();
 		
-		
-		
 		//데이터베이스에 올릴 호텔 DTO 생성부분		
 		//호텔넘버를 가져오는 부분
 		int BUSINESS_PLACE_NUM_FK = Integer.parseInt(req.getParameter("BUSINESS_PLACE_NUM_FK"));
@@ -80,12 +78,11 @@ public class BookOkAction implements Action{
 		}
 		//데이터베이스에 올릴 PETDTO 생성부분
 		
-		BookDTO bdto = new BookDTO(BUSINESS_PLACE_NUM_FK, USER_NUM_FK,book_regdate, book_checkin_date, book_checkout_date, book_charge);
-		System.out.println(bdto);
+		BookDTO newbook = new BookDTO(BUSINESS_PLACE_NUM_FK, USER_NUM_FK,book_regdate, book_checkin_date, book_checkout_date, book_charge);
 		
 		Map<String, String[]> allParameterMap = req.getParameterMap();
 		Map<String, String> petsMap = new HashMap<String, String>();
-		ArrayList<PetsDTO> PetsDTOs = new ArrayList<PetsDTO>();
+		ArrayList<PetsDTO> petsDTOs = new ArrayList<PetsDTO>();
 		Iterator<String> petsIter = req.getParameterMap().keySet().stream().filter(t->t.contains("pets")).sorted().iterator();
 		
 		while(petsIter.hasNext()) {
@@ -93,18 +90,41 @@ public class BookOkAction implements Action{
 			System.out.println(allParameterMap.get(key)[0]);
 			petsMap.put(key, allParameterMap.get(key)[0]);
 		}
-
-		for (int i = 0; i < petsMap.size()/2; i++) {
-			String pets_type = "pets_type"+i;			
-			String pets_weight = "pets_weight"+i;
-			int pets_typev = Integer.parseInt(petsMap.get(pets_type));
-			String pets_pets_weightv = petsMap.get(pets_weight);		
-			PetsDTO petDTO = new PetsDTO(USER_NUM_FK, pets_typev, pets_pets_weightv);
-			PetsDTOs.add(petDTO);
+		
+		
+		
+		int BOOK_NUM_PK = 0;				
+		if(bdao.booking(newbook)) {
+			//예약 성공시
+			BOOK_NUM_PK = bdao.findBookNum(newbook);	
+			System.out.println(BOOK_NUM_PK);
+			for (int i = 0; i < petsMap.size()/2; i++) {
+				String pets_type = "pets_type"+i;			
+				String pets_weight = "pets_weight"+i;
+				int pets_typev = Integer.parseInt(petsMap.get(pets_type));
+				String pets_pets_weightv = petsMap.get(pets_weight);		
+				PetsDTO petDTO = new PetsDTO(USER_NUM_FK, pets_typev, pets_pets_weightv,BOOK_NUM_PK);
+				petsDTOs.add(petDTO);
+			}
+			for (int i = 0; i < petsDTOs.size(); i++) {
+				System.out.println(petsDTOs.get(i));
+				if(pdao.insertPets(petsDTOs.get(i))) {
+					System.out.println("petDto"+i+"번 방 DB입력완료");
+				}else {
+					System.out.println("petDto"+i+"번 방 DB입력실패");
+				}
+			}
+			ActionTo transfer = new ActionTo();
+			transfer.setRedirect(false);
+			transfer.setPath("/app/myinfo/myinfo_reservationView/myinfo_reservationView.jsp");
+			return transfer;
+		}else {
+			//예약실패시
+			ActionTo transfer = new ActionTo();
+			transfer.setRedirect(false);
+			transfer.setPath("/app/error/Error.jsp");
+			System.out.println("예약에 실패하였습니다.");
+			return transfer;
 		}
-		
-		
-		
-		return null;
 	}
 }

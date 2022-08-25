@@ -13,12 +13,12 @@ public class BookDAO {
 		sqlsession = SqlMapConfig.getFactory().openSession(true);
 	}
 	
-	public boolean SearchkeywordOK(BookDTO newBook) {
-
-		
-		
-		return false;
-	
-	
+	public boolean booking(BookDTO newBook) {
+		 return (Integer)sqlsession.insert("book.book",newBook) == 1;
 	}
+	
+	public int findBookNum(BookDTO Book) {
+		 return (Integer)sqlsession.selectOne("book.findBookNum",Book);
+	}
+	
 }

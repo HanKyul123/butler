@@ -19,10 +19,11 @@ public class PetsDTO {
 		this.BOOK_NUM_FK = BOOK_NUM_FK;
 	}
 	
-	public PetsDTO(int USER_NUM_FK, int pets_type, String pets_weight) {
+	public PetsDTO(int USER_NUM_FK, int pets_type, String pets_weight,int BOOK_NUM_FK) {
 		this.USER_NUM_FK = USER_NUM_FK;
 		this.pets_type = pets_type;
 		this.pets_weight = pets_weight;
+		this.BOOK_NUM_FK = BOOK_NUM_FK;
 	}
 	
 

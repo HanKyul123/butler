@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="book">
+	<insert id="book" parameterType="bdto" >
+		INSERT INTO butler.book_tb
+		(BUSINESS_PLACE_NUM_FK,
+		USER_NUM_FK,
+		book_regdate,
+		book_checkin_date,
+		book_checkout_date,
+		book_charge)
+		VALUES
+		(#{BUSINESS_PLACE_NUM_FK},
+		#{USER_NUM_FK},
+		#{book_regdate},
+		#{book_checkin_date},
+		#{book_checkout_date},
+		#{book_charge}
+		);
+	</insert>
+	<select id="findBookNum" parameterType="bdto" resultType="_int">
+	SELECT book_tb.BOOK_NUM_PK FROM butler.book_tb where book_regdate =
+	#{book_regdate} and USER_NUM_FK = #{USER_NUM_FK} and
+	book_tb.book_checkin_date= #{book_checkin_date} and
+	book_tb.book_checkout_date = #{book_checkout_date} and
+	book_tb.book_charge =#{book_charge} ;
+	</select>
+</mapper>
