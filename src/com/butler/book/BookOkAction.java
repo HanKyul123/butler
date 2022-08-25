@@ -3,25 +3,25 @@ package com.butler.book;
 
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Set;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.javassist.Loader.Simple;
-
 import com.butler.app.action.Action;
 import com.butler.app.action.ActionTo;
+import com.butler.app.dao.BookDAO;
 import com.butler.app.dao.BookDTO;
+import com.butler.app.dao.PetsDAO;
+import com.butler.app.dao.PetsDTO;
 import com.butler.app.dao.UserDTO;
 
 public class BookOkAction implements Action{
-	
-	
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		resp.setCharacterEncoding("utf-8");
@@ -30,22 +30,28 @@ public class BookOkAction implements Action{
 		Date nowDate = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");		
 		PrintWriter out = resp.getWriter();
+		int USER_NUM_FK = 0;
+		BookDAO bdao = new BookDAO();
+		PetsDAO pdao = new PetsDAO();
 		
-		//데이터베이스에 올릴 호텔 DTO 생성부분
 		
-		System.out.println("BookOkAction 클래스 도착");
+		
+		//데이터베이스에 올릴 호텔 DTO 생성부분		
 		//호텔넘버를 가져오는 부분
 		int BUSINESS_PLACE_NUM_FK = Integer.parseInt(req.getParameter("BUSINESS_PLACE_NUM_FK"));
 		System.out.println("BUSINESS_PLACE_NUM_FK = "+ BUSINESS_PLACE_NUM_FK);
 		//예약 입실일 받아오는 부분
+		
 		String checkInDateStr= req.getParameter("book_checkin_date") ;
+		System.out.println("checkInDateStr : "+checkInDateStr);
 		Date checkInDatetypeDate = sdf.parse(checkInDateStr);
 		//sql에 들어갈수 있도록 형변환
 		java.sql.Date book_checkin_date = java.sql.Date.valueOf(sdf.format(checkInDatetypeDate));
 		System.out.println("book_checkin_date = "+ book_checkin_date);
 		//예약 퇴실일 받아오는 부분
 		//예약 입실일 받아오는 부분
-		String checkOutDateStr= req.getParameter("book_checkin_date") ;
+		String checkOutDateStr= req.getParameter("book_checkout_date") ;
+		System.out.println("checkOutDateStr : "+checkOutDateStr);
 		Date checkOutDatetypeDate = sdf.parse(checkOutDateStr);
 		//sql에 들어갈수 있도록 형변환
 		java.sql.Date book_checkout_date = java.sql.Date.valueOf(sdf.format(checkOutDatetypeDate));
@@ -58,7 +64,6 @@ public class BookOkAction implements Action{
 		System.out.println("book_charge = "+ book_charge);
 		//예약 요청사항
 		//세션에서 로그인 유저넘버 가져오기		
-		int USER_NUM_FK = 0;
 		
 		if(session!=null) {
 			UserDTO loginUser = (UserDTO)session.getAttribute("LoginUser");
@@ -73,17 +78,33 @@ public class BookOkAction implements Action{
 			out.print("location.href = '"+req.getContextPath()+"/index.jsp';");
 			out.print("</script>");
 		}
-		//데이터베이스에 올릴 PETSDTO 생성부분
+		//데이터베이스에 올릴 PETDTO 생성부분
 		
 		BookDTO bdto = new BookDTO(BUSINESS_PLACE_NUM_FK, USER_NUM_FK,book_regdate, book_checkin_date, book_checkout_date, book_charge);
 		System.out.println(bdto);
 		
+		Map<String, String[]> allParameterMap = req.getParameterMap();
+		Map<String, String> petsMap = new HashMap<String, String>();
+		ArrayList<PetsDTO> PetsDTOs = new ArrayList<PetsDTO>();
+		Iterator<String> petsIter = req.getParameterMap().keySet().stream().filter(t->t.contains("pets")).sorted().iterator();
+		
+		while(petsIter.hasNext()) {
+			String key=petsIter.next();
+			System.out.println(allParameterMap.get(key)[0]);
+			petsMap.put(key, allParameterMap.get(key)[0]);
+		}
 
+		for (int i = 0; i < petsMap.size()/2; i++) {
+			String pets_type = "pets_type"+i;			
+			String pets_weight = "pets_weight"+i;
+			int pets_typev = Integer.parseInt(petsMap.get(pets_type));
+			String pets_pets_weightv = petsMap.get(pets_weight);		
+			PetsDTO petDTO = new PetsDTO(USER_NUM_FK, pets_typev, pets_pets_weightv);
+			PetsDTOs.add(petDTO);
+		}
 		
 		
-
+		
 		return null;
-
 	}
-	
 }

@@ -18,25 +18,25 @@ public class BookDTO {
 
 	public BookDTO(int BOOK_NUM_PK, int BUSINESS_PLACE_NUM_FK, int USER_NUM_FK, int book_status, Date book_regdate,
 			Date book_checkin_date, Date book_checkout_date, int book_charge, String book_request) {
-		BOOK_NUM_PK = this.BOOK_NUM_PK;
-		BUSINESS_PLACE_NUM_FK = this.BUSINESS_PLACE_NUM_FK;
-		USER_NUM_FK = this.USER_NUM_FK;
-		book_status = this.book_status;
-		book_regdate = this.book_regdate;
-		book_checkin_date = this.book_checkin_date;
-		book_checkout_date = this.book_checkout_date;
-		book_charge = this.book_charge;
-		book_request = this.book_request;
+		this.BOOK_NUM_PK = BOOK_NUM_PK;
+		this.BUSINESS_PLACE_NUM_FK = BUSINESS_PLACE_NUM_FK;
+		this.USER_NUM_FK = USER_NUM_FK;
+		this.book_status = book_status;
+		this.book_regdate = book_regdate;
+		this.book_checkin_date = book_checkin_date;
+		this.book_checkout_date = book_checkout_date;
+		this.book_charge = book_charge;
+		this.book_request = book_request;
 	}
 	
 	public BookDTO(int BUSINESS_PLACE_NUM_FK, int USER_NUM_FK, Date book_regdate,
 		Date book_checkin_date, Date book_checkout_date, int book_charge) {
-		BUSINESS_PLACE_NUM_FK = this.BUSINESS_PLACE_NUM_FK;
-		USER_NUM_FK = this.USER_NUM_FK;
-		book_regdate = this.book_regdate;
-		book_checkin_date = this.book_checkin_date;
-		book_checkout_date = this.book_checkout_date;
-		book_charge = this.book_charge;
+		this.BUSINESS_PLACE_NUM_FK = BUSINESS_PLACE_NUM_FK;
+		this.USER_NUM_FK = USER_NUM_FK;
+		this.book_regdate = book_regdate;
+		this.book_checkin_date = book_checkin_date;
+		this.book_checkout_date = book_checkout_date;
+		this.book_charge = book_charge;
 	}
 	
 	

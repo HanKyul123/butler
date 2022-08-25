@@ -12,17 +12,17 @@ public class PetsDTO {
 	}
 
 	public PetsDTO(int PETS_NUM_PK, int USER_NUM_FK, int pets_type, String pets_weight, int BOOK_NUM_FK) {
-		PETS_NUM_PK = this.PETS_NUM_PK;
-		USER_NUM_FK = this.USER_NUM_FK;
-		pets_type = this.pets_type;
-		pets_weight = this.pets_weight;
-		BOOK_NUM_FK = this.BOOK_NUM_FK;
+		this.PETS_NUM_PK = PETS_NUM_PK;
+		this.USER_NUM_FK = USER_NUM_FK;
+		this.pets_type = pets_type;
+		this.pets_weight = pets_weight;
+		this.BOOK_NUM_FK = BOOK_NUM_FK;
 	}
 	
 	public PetsDTO(int USER_NUM_FK, int pets_type, String pets_weight) {
-		USER_NUM_FK = this.USER_NUM_FK;
-		pets_type = this.pets_type;
-		pets_weight = this.pets_weight;
+		this.USER_NUM_FK = USER_NUM_FK;
+		this.pets_type = pets_type;
+		this.pets_weight = pets_weight;
 	}
 	
 
@@ -64,6 +64,19 @@ public class PetsDTO {
 
 	public void setBOOK_NUM_FK(int bOOK_NUM_FK) {
 		BOOK_NUM_FK = bOOK_NUM_FK;
+	}
+	
+	@Override
+	public String toString() {
+		String message = "";
+
+		message = 	"PETS_NUM_PK : " + PETS_NUM_PK+
+					"\nUSER_NUM_FK : " + USER_NUM_FK+
+					"\npets_type : " + pets_type+
+					"\npets_weight : " + pets_weight+
+					"\nBOOK_NUM_FK : " + BOOK_NUM_FK;
+		
+		return message;
 	}
 
 }
