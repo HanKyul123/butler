@@ -15,6 +15,7 @@
 <link rel="stylesheet"
    href="${pageContext.request.contextPath}/css/join2.css">
 </head>
+
 <body>
    <div class="wrap">
       <div class="phone_title">
@@ -28,7 +29,7 @@
                <section>
                   <div class="Wtext">
                      <input id="phone_num" name="user_phone" type="tel" minlength="10" maxlength="11">                  
-                     <button type="button" class=" btn_checked1" id="click_btn" onclick="sendcode()"  disabled="disabled">인증번호 전송</button>
+                     <button type="button" class=" btn_checked1" id="click_btn" onclick="sendcode(); sendcode2();"  disabled="disabled">인증번호 전송</button>
                      <!-- smsClass 로 value값을 user_phone 으로 넘겨서 실행 -->
                      <input type="hidden" id="phone_num_1" name="user_phone_1" value="">
                   </div>
@@ -55,4 +56,34 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src = "${pageContext.request.contextPath}/js/join2.js"></script>
+<script>
+   function sendcode2(){
+         const xhr = new XMLHttpRequest();
+         const phone_num = document.getElementById("phone_num");
+         const cp = "${cp}";
+         console.log(phone_num.value);
+
+
+         xhr.onreadystatechange = function(){
+            console.log("5-4");
+            if(xhr.readyState == 4){
+               if(xhr.status == 200){
+                  let txt = xhr.responseText;
+                  txt = txt.trim();
+                  if(txt == 'O'){
+                     alert("인증번호 전송이 완료되었습니다.")
+                  }
+                  else if(txt == 'X') {
+                     alert("인증번호 전송을 다시 확인해 주세요.")
+                  }
+               }
+            }
+         }
+         xhr.open("GET",cp+"/user/phone_numChack.us?phone_num="+phone_num.value);
+         xhr.send();   
+   }
+
+
+</script>
+
 </html>

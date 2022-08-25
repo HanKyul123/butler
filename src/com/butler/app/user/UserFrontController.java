@@ -122,6 +122,16 @@ public class UserFrontController extends HttpServlet{
 		    	 e.printStackTrace();
 			 }
 			 break;
+			 
+		case "/user/phone_numChack.us":
+
+			System.out.println("1");
+			try {
+				new phone_numChackAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 		
 	 }
 		if(transfer !=null) {
