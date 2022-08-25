@@ -10,7 +10,7 @@
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myinfo_reservation.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
 </head>
 
 
@@ -48,12 +48,7 @@
                 
             <!-- ----------예약중 박스---------- -->
                 <span class="ing">예약 중</span>
-                    <button id="left_btn1" >
-                    <img class="left_btn" src="${pageContext.request.contextPath}/img/left_btn.png" alt="">
-                    </button>
-                    <button id="right_btn1">
-                    <img class="right_btn" src="${pageContext.request.contextPath}/img/right_btn.png" alt="">
-                    </button>
+                    
 
                     <div class="boxs" id="ingboxs">
 
@@ -66,15 +61,15 @@
                                     <div class="in_contents">
                                         <!-- 호텔 이름 가져오기 -->
                                         <div id="ing_hotelname" class="all_name">
-                                            		호텔 이름
+                                                  호텔 이름
                                         </div>
 
                                         <!-- 이용 중 / 이용 완료 / 예약 취소 -->
                                         <div id="ing_contents" class="all_contents">
-                                                	이용 중
+                                                   이용 중
                                         </div>
                                         <div id="ing_date"  class="all_date">
-                                                	아이 맡긴 기간
+                                                   아이 맡긴 기간
                                         </div>
                                     </div>
                                 </div>
@@ -87,13 +82,7 @@
             <!-- ----------이용완료 박스---------- -->
                 <span class="ed">이용 완료</span>
 
-                    <button id="left_btn2">
-                    <img class="left_btn" src="${pageContext.request.contextPath}/img/left_btn.png" alt="">
-                    </button>
-                    <button id="right_btn2">
-                    <img class="right_btn" src="${pageContext.request.contextPath}/img/right_btn.png" alt="">
-                    </button>
-
+                    
 
                 <div class="boxs" id="edboxs">
 
@@ -105,18 +94,19 @@
                                 </div>
                                 <div class="in_contents">
                                     <div id="ed_hotelname" class="all_name">
-                                        		호텔 이름
+                                              호텔 이름
                                     </div>
                                     <div id="ed_contents" class="all_contents">
-                                            	이용 완료
+                                               이용 완료
                                     </div>
                                     <div id="ed_date"  class="all_date">
-                                            	아이 맡긴 기간
+                                               아이 맡긴 기간
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </a>
+                    
                    
                 </div>
                 
@@ -124,12 +114,7 @@
             <!-- ----------예약취소 박스---------- -->
                 <span class="cancel">예약 취소</span>
 
-                    <button id="left_btn3">
-                    <img class="left_btn" src="${pageContext.request.contextPath}/img/left_btn.png" alt="">
-                    </button>
-                    <button id="right_btn3">
-                    <img class="right_btn" src="${pageContext.request.contextPath}/img/right_btn.png" alt="">
-                    </button>
+                    
                 
                     <div class="boxs" id="cancelboxs">
 
@@ -141,13 +126,13 @@
                                     </div>
                                     <div class="in_contents">
                                         <div id="cancel_hotelname" class="all_name">
-                                            	호텔 이름
+                                               호텔 이름
                                         </div>
                                         <div id="cancel_contents" class="all_contents">
-                                               	 예약 취소
+                                                   예약 취소
                                         </div>
                                         <div id="cancel_date"  class="all_date">
-                                               	 아이 맡긴 기간
+                                                   아이 맡긴 기간
                                         </div>
                                     </div>
                                 </div>
@@ -163,14 +148,14 @@
             </div>
 </body>
 <!-- 문서수정할때는주석처리를 하고 진행하세요 -->
-<%-- 	<c:choose>
-    	<c:when test="${sessionScope.loginUser eq null}">
-			<script>
-				alert("login후에 이용하세요.");
-				window.location.href="/index.jsp"
-			</script>
-    	</c:when>
-	</c:choose> --%>
+<%--    <c:choose>
+       <c:when test="${sessionScope.loginUser eq null}">
+         <script>
+            alert("login후에 이용하세요.");
+            window.location.href="/index.jsp"
+         </script>
+       </c:when>
+   </c:choose> --%>
 
 <%@ include file="../../../footer/footer.jsp"%>
 <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>

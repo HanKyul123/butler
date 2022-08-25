@@ -103,8 +103,7 @@ article, aside, details, figcaption, figure, hgroup, menu, nav, section {
     
     .boxs{
         z-index: 10;
-        white-space: nowrap;
-        overflow: hidden;
+        
         margin-bottom: 30px;
         }
 
@@ -120,7 +119,7 @@ article, aside, details, figcaption, figure, hgroup, menu, nav, section {
     .in_boxs{
         cursor: pointer;
         z-index: 150;
-        display: inline-block;
+        display: block;
         margin-top: 10px;
         margin-bottom: 20px;
         width: 378px;

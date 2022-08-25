@@ -30,7 +30,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .non_reservation_wrap {
          font-family: 'OTWelcomeRA';
          position: relative;
-         top: 55px;
+         top: 35px;
         /* padding: 20px; */
         text-align: center;
         width: 100%;
