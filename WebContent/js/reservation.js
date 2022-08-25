@@ -257,7 +257,7 @@ let toprice = document.getElementById("book_charge");
             
             $('.dog_weight option:selected').text()
             // 무게와 가격 value 값
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value = '"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value = '"+$('.dog_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value = '"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value = '"+$('.dog_weight option:selected').text()+"'>"
             
         
             );
@@ -312,7 +312,7 @@ let toprice = document.getElementById("book_charge");
             
             $('.bird_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value = '"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value = '"+$('.bird_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value = '"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value = '"+$('.bird_weight option:selected').text()+"'>"
         );
         // 상품 가격 가져오기
         var selected = $('.bird_weight option:selected').val();
@@ -366,7 +366,7 @@ let toprice = document.getElementById("book_charge");
             
             $('.cat_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.cat_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.cat_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -417,7 +417,7 @@ let toprice = document.getElementById("book_charge");
             
             $('.reptile_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.reptile_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.reptile_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -468,7 +468,7 @@ let toprice = document.getElementById("book_charge");
             
             $('.Farad_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.Farad_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.Farad_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -520,7 +520,7 @@ let toprice = document.getElementById("book_charge");
             
             $('.rabbit_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.rabbit_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.rabbit_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -572,7 +572,7 @@ let toprice = document.getElementById("book_charge");
             
             $('.hamster_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.hamster_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.hamster_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
@@ -624,7 +624,7 @@ let toprice = document.getElementById("book_charge");
             
             $('.else_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input id='pets_weight"+i+"' type='hidden' value='"+$('.else_weight option:selected').text()+"'>"
+            +"</span>"+"</div>"+"<button id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"</div>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.else_weight option:selected').text()+"'>"
         );
 
         // 상품 가격 가져오기
