@@ -281,6 +281,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             border-radius: 3px;
             margin-left: 5px;
         }
+        #XB5{
+        	display: none;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            margin-top: 10px;
+            font-family: 'OTWelcomeRA';
+            position: relative;
+            top: 1.5px;
+            padding-top: 5px;
+            color: rgb(189, 189, 189);
+            background-color: #fff;
+            border: 1px solid rgb(189, 189, 189);
+            border-radius: 3px;
+            margin-left: 5px;
+        }
         
         #XB2,#XB3{
             display: none;
@@ -573,4 +589,108 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             margin-bottom: -5px;
             font-size: 13px;
             color: rgb(113, 113, 113);
+        }
+
+
+        /* -------------- 비밀번호 재설정 -------------- */
+
+        #re_new_pw{
+            margin-left: 5px;
+            margin-top: 5px;
+            padding-left: 5px;
+            width: 170px;
+            height: 25px;
+            font-size: 13px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: #fff;
+        }
+    
+        #re_new_pw:focus{
+            background-color: rgb(246, 246, 246);
+        }
+
+        #re_new_pw::placeholder{
+            font-family: 'OTWelcomeRA';
+        }
+        
+        #new_pw{
+            position: relative;
+            left: 23.5px;
+            margin-left: 5px;
+            margin-top: 20px;
+            padding-left: 5px;
+            width: 170px;
+            height: 25px;
+            font-size: 13px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: #fff;
+        }
+    
+        #new_pw:focus{
+            background-color: rgb(246, 246, 246);
+        }
+
+        #new_pw::placeholder{
+            font-family: 'OTWelcomeRA';
+        }
+
+
+        .re_new_pw, .new_pw{
+            display: none;
+            font-size: 14px;
+        }
+
+        #see_pw{
+            position: relative;
+            top: 5px;
+            margin-left: 25px;
+        }
+
+        #see_pw,#see_pw2{
+            cursor: pointer;
+            width: 22px;
+        }
+
+        #see_pw2{
+            position: relative;
+            top: 6px;
+            margin-left: 2px;
+        }
+
+        #clear_change_pw{
+
+            display: none;
+
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+
+            position: relative;
+            width: 300px;
+            height: 35px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+
+
+        #clear_change_pw:disabled{
+            cursor: default;
+            border: 1px solid rgb(179, 179, 179);
+            border-radius: 3px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(179, 179, 179);
+        }
+        .txt2{
+            font-size: 12px;
+            margin-top: 6px;
+            margin-left: 94.5px;
+            color: red;
         }

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="cp" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +21,7 @@
 
 
 <body class="my_info_wrap">
-    
+   
     <div class="my_info_title">
         내 정보
     </div>
@@ -44,28 +46,40 @@
                 <div class="profile">
                     <img class="profile" src="${pageContext.request.contextPath}/img/profile1.png" alt="">
                 </div>
-
+              
+              
+           <form method="post" action="/user/user_modifyAction.us">
+                <input type="hidden" name="user_num_pk" value="${LoginUser.user_num_pk}">
+                <input type="hidden" name="user_logintype" value="${LoginUser.user_logintype}">
+                
                 <div class="user_email_box">
-                	<!-- 버틀러 회원/카카오 회원 구별하여 해당하는 아이콘으로 하기 -->
+                   <!-- 버틀러 회원/카카오 회원 구별하여 해당하는 아이콘으로 하기 -->
                     <img src="${pageContext.request.contextPath}/img/Hotel_icon.png" alt="" class="user_from" id="Butler">
                     <img src="${pageContext.request.contextPath}/img/카카오톡.png" alt="" class="user_from" id="Kakao">
                     <!-- 유저 버틀러/카카오 이메일 아이디 정보 넣기 -->
-                    <div class="user_email">goldbaby1@naver.com</div>
+                    <div class="user_email" name="user_email">${LoginUser.user_email}</div>
                 </div>
-
-
+  
+                 
+            
                 <div id="all_info" class="user_nick_box">
                     <div id="title_box" class="user_nick_title">닉네임</div>
-                    <div id="modify_contents" class="user_nick_name"><span class="user_nick" id="user_nick">mbtiCUTE</span>
-                        </div>
+                    <div id="modify_contents" class="user_nick_name">
+                    <span class="user_nick" id="user_nickname">${LoginUser.user_nickname}</span>
+                    <input type="hidden" id="user_nickname2" name="user_nickname2" value="${LoginUser.user_nickname}">
+                    <input type="hidden" id="user_nickname" name="user_nickname" value="">
+                </div>
                 </div>
 
                  <div class="flexMody">
                     
-                    <input class="write_new_nick" type="text" name="" id="WNN" onkeyup="checknick(this.value)"  autocomplete="off">
-                    <button class="modify_nick_btn" id="MNB" onclick="myFunction()">수정하기</button>
-                    <button class="complete_nick_btn" id="CMB" onclick="myFunction_1()">수정완료</button>
-                    <button id="XB1" onclick="myFunction2_2()">X</button>
+                    <input class="write_new_nick" type="text" id="WNN" onkeyup="checknick(this.value)"  autocomplete="off">
+                    
+                    <button type="button" class="modify_nick_btn" id="MNB" onclick="myFunction()">수정하기</button>
+                    <button type="button"  id="checknick">중복확인</button>
+                    <button type="button" class="complete_nick_btn" id="CMB" onclick="myFunction_1()">수정완료</button>
+                   
+                    <button type="button" id="XB1" onclick="myFunction2_2()">X</button>
                 </div>
 
                 <div class="wary" id="wary1">
@@ -77,7 +91,7 @@
                 <div id="all_info" class="user_name_box">
 
                     <div id="title_box" class="user_name_title">예약자 이름</div>
-                    <div id="modify_contents" class="user_name">강예은</div>
+                    <div id="modify_contents" class="user_name">${LoginUser.user_name}</div>
 
                 </div>
 
@@ -87,7 +101,7 @@
                 <div id="all_info" class="user_phone_box">
 
                     <div id="title_box" class="user_phone_title">휴대폰 번호</div>
-                    <div id="modify_contents" class="modfiy_phone"><span  class="user_phone">010-9632-8595</span></div>
+                    <div id="modify_contents" class="modfiy_phone"><span id="USP" class="user_phone" name="user_phone">${LoginUser.user_phone}</span></div>
 
                 </div>
 
@@ -95,10 +109,13 @@
 
 
                 <div class="flexMody">
-                    <input class="write_new_phone" type="tel" name="" id="WNP" minlength="10" maxlength="11" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                    <button class="modify_phone_btn" onclick="myFunction2()" id="MPB">수정하기</button>
-                    <button class="send_code" onclick="myFunction3()" id="SC" disabled="disabled">인증번호 전송</button>
-                    <button id="XB" onclick="myFunction2_1()">X</button>
+                    <input class="write_new_phone" type="tel" id="WNP" minlength="10" maxlength="11" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <button type="button" class="modify_phone_btn" onclick="myFunction2()" id="MPB">수정하기</button>
+                 <input type="hidden" name="user_phone" value="${LoginUser.user_phone}">
+                 <input type="hidden" name="user_phone2" id="user_phone2" value="">
+                
+                    <button type="button" class="send_code" onclick="myFunction3()" id="SC" disabled="disabled">인증번호 전송</button>
+                    <button type="button" id="XB" onclick="myFunction2_1()">X</button>
                     
                 </div>
                 <!-- 누르면 수정하기 -> 인증번호 전송 -->
@@ -108,7 +125,8 @@
 
                 <div class="flexMody">
                     <input class="write_phone_code" type="tel" name="" id="WPC" maxlength="4" >
-                    <button class="phone_code_btn" id="PCB" disabled="disabled" onclick="myFunction3()">인증하기</button>
+                    <button type="button" class="phone_code_btn" id="PCB" disabled="disabled" onclick="finish_prove()">인증하기</button>
+                    <button type="button" id="XB5" onclick="cancel_phone()">X</button>
                 </div>
                 <div class="time" id="time"><span id="timer" class="timer">3:00</span></div>
                 
@@ -116,14 +134,23 @@
                     <span class="wary_code"></span>
                 </div>
 
-
+			
                 
                 <div id="all_info" class="user_addr_box">
                     <div class="user_addr_title" id="title_box">주소</div>
-                    <div id="modify_addr" class="modify_contents">서울특별시 강남구 밤고개로 21길 25</div>
+                    <div id="modify_addr" class="modify_contents" name="user_addr">${LoginUser.user_addr} ${LoginUser.user_addrdetail}</div>
+                    <input type="hidden" name="user_zipcode" value="${LoginUser.user_zipcode}">
+                    <input type="hidden" name="user_addr" value="${LoginUser.user_addr}">
+                    <input type="hidden" name="user_addrdetail" value="${LoginUser.user_addrdetail}">
+                    <input type="hidden" name="user_addretc" value="${LoginUser.user_addretc}">
+                    
+                    <input type="hidden" id="user_zipcode2" name="user_zipcode2" value="">
+                    <input type="hidden" id="user_addr2" name="user_addr2" value="">
+                    <input type="hidden" id="user_addrdetail2" name="user_addrdetail2" value="">
+                    <input type="hidden" id="user_addretc2" name="user_addretc2" value="">
                 </div>
-
-
+                   <!-- 주소 수정 -->
+                  
                     <div class="zipcode_area">
                         <div class="flexMody">
                             <input type="text" id="sample6_postcode" placeholder="우편번호" name="zipcode" readonly required>
@@ -142,25 +169,64 @@
 
                     <input type="text" id="sample6_extraAddress" placeholder="참고항목" name="addretc" readonly>
                     <br>
-                    <button class="modify_addr_btn" id="MAB" onclick="myFunction4()">수정하기</button>
+                    <button type="button" class="modify_addr_btn" id="MAB" onclick="myFunction4()">수정하기</button>
 
                     <div class="flexMody">
-                        <button class="complete_addr_btn" id="CAB" onclick="myFunction4_1()">수정완료</button>
-                        <button id="XB2" onclick="myFunction4_2()">X</button>
+                        <button type="button" class="complete_addr_btn" id="CAB" onclick="myFunction4_1()">수정완료</button>
+                        <button type="button" id="XB2" onclick="myFunction4_2()">X</button>
                     </div>
-                
+                   
+             
+               
+                <div class="modify_pw" id="MDPW" onclick="change_pw()">비밀번호 변경 ></div>
+                <div class="modify_pw2" id="MDPW2" onclick="cancel_pw()">비밀번호 변경∨</div>
+                <div class="explaintitle" id="ELT">전화번호 인증을 해주세요</div>
+                <div class="flexMody">
+                    <input class="write_new_phone2" type="tel" name="" id="WNP2" minlength="10" maxlength="11" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                    <button type="button" class="send_code2" onclick="myFunction3_2()" id="SC2" disabled="disabled">인증번호 전송</button>
+                </div>
+                <div class="flexMody">
+                    <input class="write_phone_code2" type="tel" name="" id="WPC2" maxlength="4" autocomplete="off">
+                    <button type="button" class="phone_code_btn2" id="PCB2" disabled="disabled" onclick="prove_user_code()">인증하기</button>
+                </div>
+                <div class="time2" id="time2"><span id="timer2" class="timer2">3:00</span></div>
 
-                <a href="" ><div class="modify_pw">비밀번호 변경 ></div></a>
+                <!-- 새 비밀번호 설정 -->
+                <div class="new_pw">
+                          새 비밀번호
+                    <input id="new_pw" type="password" name="new_pw" placeholder="새 비밀번호를 입력해주세요." id="all_pw" class="pw_I" onkeyup="checkpw(this.value)">
+                    <img src="${pageContext.request.contextPath}/img/eye.png" alt="" id="see_pw" class="see_pw">
+
+                    <div class="txt2"><span id="new_pw_txt"></span></div>
+                </div>
+
+                <!-- 새 비밀번호 재입력 -->
+                <div class="re_new_pw" >
+                          비밀번호 재입력
+                    <input id="re_new_pw" type="password" name="re_new_pw" placeholder="비밀번호를 재입력해주세요." id="all_pw" class="re_pw_I" onkeyup="checkrepw(this.value)">
+                    <img src="${pageContext.request.contextPath}/img/eye.png" alt="" id="see_pw2" class="see_pw2">
+
+
+                    <div class="txt2"><span id="re_new_pw_txt"></span></div>
+                </div>
+
+                <!-- 비밀번호 변경 완료 버튼 -->
+                <button type="button" id="clear_change_pw" disabled="disabled" onclick="clear_chage_pw()">비밀번호 변경 완료</button>
+                <!-- 새로운 비밀번호 저장하는 input -->
+                <input type="hidden" id="user_new_pw">
+                
 
 
                 <div class="ask_to_user">
 
                     <span>Butler를 이용하고싶지 않으신가요?</span>
-                    <a href="">로그아웃</a>
-                    <a href="">회원탈퇴</a>
+                    <a href="/main.logout.us">로그아웃</a>
+                    <a href="/user/userResign.us">회원탈퇴</a>
                 </div>
+                </form>
                 
             </div>
+            
 
     </div>
 </body>

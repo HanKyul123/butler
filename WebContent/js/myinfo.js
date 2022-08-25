@@ -74,6 +74,9 @@ function myFunction() {
 
       x.focus();
   }
+
+
+
 function myFunction_1() {
     var x = document.getElementById("WNN");
     var n = document.getElementsByClassName("user_nick");
@@ -82,6 +85,10 @@ function myFunction_1() {
     var z = document.getElementById("CMB");
     var w = document.getElementById("wary1");
     var m = document.getElementById("checknick");
+
+    var user_nickname2 = document.getElementById("user_nickname");
+    
+    $('input[name=user_nickname2]').attr('value',x.value);
 
     $(".modify_phone_btn").attr("disabled",false);
     $(".modify_addr_btn").attr("disabled",false);
@@ -99,7 +106,7 @@ function myFunction_1() {
 
 
       if(x.value!=""){
-        user_nick.innerHTML=x.value;
+        user_nickname2.innerHTML=x.value;
       }
 
 
@@ -233,12 +240,15 @@ function myFunction2_2() {
       var x = document.getElementById("WPC");
       var y = document.getElementById("PCB");
       var d = document.getElementById("XB");
+      var d5 = document.getElementById("XB5");
       var e = document.getElementById("time");
+      
       
       $('.send_code').attr("disabled", true);
         e.style.display="block";
         x.style.display = "block";
         y.style.display="block";
+        d5.style.display="block";
         d.style.display = "none";
         x.value="";
         x.focus();
@@ -265,6 +275,20 @@ var x = setInterval(function(){
         
 
         }
+    $(".phone_code_btn").on("click",function(){
+
+        clearInterval(x); //setInterval() 실행을 끝내기
+        document.getElementById("timer").innerHTML = "3:00";
+        $('.send_code').attr("disabled", true);
+
+      })
+    $("#XB5").on("click",function(){
+
+        clearInterval(x); //setInterval() 실행을 끝내기
+        document.getElementById("timer").innerHTML = "3:00";
+        $('.send_code').attr("disabled", true);
+
+      })
     },1000)
         
     }
@@ -311,6 +335,17 @@ var x = setInterval(function(){
           $('.send_code2').attr("disabled", true);
   
         })
+
+        $(".phone_code_btn2").on("click",function(){
+
+          clearInterval(x); //setInterval() 실행을 끝내기
+          document.getElementById("timer2").innerHTML = min +":"+sec;
+          $('.send_code2').attr("disabled", true);
+  
+        })
+        
+        
+        
     },1000)
         
     }
@@ -361,9 +396,25 @@ var x = setInterval(function(){
         $(".modify_phone_btn").attr("disabled",false);
         $(".modify_pw").attr("onclick","change_pw()");
 
+        var user_zipcode2 = document.getElementById("user_zipcode2");
+        var user_addr2 = document.getElementById("user_addr2");
+        var user_addrdetail2 = document.getElementById("user_addrdetail2");
+        var user_addretc2 = document.getElementById("user_addretc2");
+        
+        
+        
+        console.log(user_zipcode2.value);
+        console.log(user_addr2.value);
+        console.log(user_addrdetail2.value);
+        console.log(user_addretc2.value);
+        
         if(e.value!=""){
           
           txtaddrs.innerHTML=e.value+" "+f.value;
+          user_zipcode2.value = c.value;
+          user_addr2.value = e.value;
+          user_addrdetail2.value = f.value;
+          user_addretc2.value = g.value;
 
         }
 
@@ -429,9 +480,15 @@ var x = setInterval(function(){
         var m = document.getElementById("MPB");
         var s = document.getElementById("SC");
         var u = document.getElementById("USP");
+        var v = document.getElementById("XB5");
+        
+        var user_phone2 = document.getElementById("user_phone2");
+        
+        user_phone2.value = w.value;
 
         $(".modify_nick_btn").attr("disabled",false);
         $(".modify_addr_btn").attr("disabled",false);
+        $(".phone_code_btn").attr("disabled",true);
         $(".modify_pw").attr("onclick","change_pw()");
 
         let str = w.value;
@@ -444,6 +501,7 @@ var x = setInterval(function(){
         e.style.display="none";
         w.style.display="none";
         s.style.display="none";
+        v.style.display="none";
         x.value="";
 
         if(w.value!==""){
@@ -487,6 +545,9 @@ $('.write_phone_code').on('input',function(){
       }
   }
 })
+
+
+
 var wc2 = document.querySelector("#WPC2");
 function change_pw(){
 
@@ -498,7 +559,7 @@ function change_pw(){
 
         $(".modify_nick_btn").attr("disabled",true);
         $(".modify_addr_btn").attr("disabled",true);
-        $(".modify_phone_btn").attr("onclick",true);
+        $(".modify_phone_btn").attr("disabled",true);
 
 
   z.style.display="none";
@@ -508,6 +569,8 @@ function change_pw(){
   a.style.display="block";
 
 }
+var txtre_pw = document.getElementById("re_new_pw_txt");
+var txtpw = document.getElementById("new_pw_txt");
 
 function cancel_pw(){
   let x = document.getElementById("WNP2");
@@ -518,10 +581,24 @@ function cancel_pw(){
   let q = document.getElementById("PCB2");
   let r = document.getElementById("WPC2");
   var e = document.getElementById("time2");
+  var h = document.getElementById("new_pw");
+  var j = document.getElementById("re_new_pw");
 
-        $(".modify_nick_btn").attr("disabled",false);
-        $(".modify_addr_btn").attr("disabled",false);
-        $(".modify_phone_btn").attr("onclick",false);
+		  $(".modify_nick_btn").attr("disabled",false);
+		  $(".modify_addr_btn").attr("disabled",false);
+		  $(".modify_phone_btn").attr("disabled",false);
+		  $(".modify_pw").attr("onclick","change_pw()");
+
+        $("#WNP2").attr("disabled",false);
+        $("#SC2").attr("disabled",true);
+        $("#time2").attr("disabled",false);
+        $("#PCB2").attr("disabled",true);
+        $("#WPC2").attr("disabled",false);
+        $("#clear_change_pw").attr("disabled",true);
+
+        $("#clear_change_pw").css("display","none")
+        $(".re_new_pw").css("display","none")
+        $(".new_pw").css("display","none")
 
 
   z.style.display="block";
@@ -533,9 +610,18 @@ function cancel_pw(){
   q.style.display="none";
   e.style.display="none";
 
-  $(".write_new_phone2").css("border","1px solid rgb(166, 166, 166)");
   x.value="";
   wc2.value="";
+  h.value ="";
+  j.value="";
+  $(".write_new_phone2").css("border","1px solid rgb(166, 166, 166)");
+  txtre_pw.innerHTML=""
+  txtre_pw.style.color="red";
+  
+  txtpw.innerHTML=""
+  txtpw.style.color="red";
+
+  $("#clear_change_pw").attr("disabled",true);
 }
 
 
@@ -569,5 +655,273 @@ $('.write_phone_code2').on('input',function(){
       }
   }
 })
+
+
+// 새 비밀번호 눈에 보여주기
+$(document).ready(function(){
+  $('.see_pw').on('click',function(){
+      $('#new_pw').toggleClass('active');
+      if($('#new_pw').hasClass('active')){
+          $(this).attr('class',"see_pw")
+          .prev('#new_pw').attr('type',"text");
+      }else{
+          $(this).attr('class',"see_pw")
+          .prev('#new_pw').attr('type','password');
+      }
+  });
+});
+
+// 재입력 비밀번호 눈에 보여주기
+$(document).ready(function(){
+  $('.see_pw2').on('click',function(){
+      $('#re_new_pw').toggleClass('active');
+      if($('#re_new_pw').hasClass('active')){
+          $(this).attr('class',"see_pw2")
+          .prev('#re_new_pw').attr('type',"text");
+      }else{
+          $(this).attr('class',"see_pw2")
+          .prev('#re_new_pw').attr('type','password');
+      }
+  });
+});
+
+
+
+
+
+// 눈 모양 아이콘 마우스 오버 효과
+const over1 = document.getElementById('see_pw');
+const over2 = document.getElementById('see_pw2');
+
+    over1.addEventListener("mouseover", function () {
+        over1.src="../../img/eye_gray.png";
+    }, false);
+
+    over1.addEventListener("mouseout", function () {
+        over1.src="../../img/eye.png";
+   
+    }, false);
+    
+    
+    over2.addEventListener("mouseover", function () {
+        over2.src="../../img/eye_gray.png";
+    }, false);
+
+    over2.addEventListener("mouseout", function () {
+        over2.src="../../img/eye.png";
+    }, false);
+
+
+    //    비밀번호
+
+          // 정규화
+    function isPassword(password) {
+      var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
+      var regEx = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g;
+      if(password.search(/\s/) !== -1) {
+          return false;
+      }
+   
+      if(regExp.test(password)){
+          return true;
+      }else if(regEx.test(password)){
+          return true;
+      }
+      else{
+          return false;
+      }
+
+      }
+
+      // 비밀번호 정규화 확인
+
+      function checkpw(value){
+        if(value==""){
+            txtpw.innerHTML=""
+            txtpw.style.color="red";
+            return false;
+        }
+
+        if(value.length < 8){
+            txtpw.innerHTML = "8문자 이상 입력해주세요.";
+            txtpw.style.color="red";
+            return false;
+        }else if(!isPassword(value)){
+            txtpw.innerHTML = "올바른 비밀번호를 입력하세요.(숫자+문자)";
+            txtpw.style.color="red";
+            return false;
+        }else if(value==""){
+            txtpw.innerHTML="";
+            txtpw.style.color="red";
+            return false;
+        }else{
+            txtpw.innerHTML="사용 가능한 비밀번호입니다.";
+            txtpw.style.color="rgb(19, 106, 227)";
+        }
+
+        
+    }
+
+    // 비밀번호 재확인
+        const new_pw = document.querySelector('#new_pw');
+        
+        
+        function checkrepw(value){
+            if(value==""){
+                txtre_pw.innerHTML=""
+                txtre_pw.style.color="red";
+                $("#clear_change_pw").attr("disabled",true);
+                return false;
+            }
+
+            if(value != new_pw.value){
+                txtre_pw.innerHTML="비밀번호가 일치하지 않습니다.";
+                txtre_pw.style.color="red";
+                $("#clear_change_pw").attr("disabled",true);
+                return false;
+            }else if(value == ""){
+                txtre_pw.innerHTML="";
+                txtre_pw.style.color="red";
+                $("#clear_change_pw").attr("disabled",true);
+
+                return false;
+            }else if(value.length<8){
+              $("#clear_change_pw").attr("disabled",true);
+              return false;
+
+            }else{
+              $("#clear_change_pw").attr("disabled",false);
+                txtre_pw.innerHTML="비밀번호가 일치합니다.";
+                txtre_pw.style.color="rgb(19, 106, 227)";
+            }
+        }
+
+        let thispw = document.getElementById("new_pw");
+        let thisrepw = document.getElementById("re_new_pw");
+
+        
+
+        function prove_user_code(){
+
+        // let x = document.getElementById("WNP2");
+        // let y = document.getElementById("SC2");
+        // let b = document.getElementById("new_pw");
+        // let c = document.getElementById("re_new_pw");
+        // let d = document.getElementById("time2");
+        // let e = document.getElementById("PCB2");
+        // let f = document.getElementById("WPC2");
+
+        $("#WNP2").attr("disabled",true);
+        $("#SC2").attr("disabled",true);
+        $("#time2").attr("disabled",true);
+        $("#PCB2").attr("disabled",true);
+        $("#WPC2").attr("disabled",true);
+
+          
+
+
+        $("#clear_change_pw").css("display","block")
+        $(".re_new_pw").css("display","block")
+        $(".new_pw").css("display","block")
+
+
+
+       
+        }
+
+ 
+
+        
+        function clear_chage_pw(){
+          let a = document.getElementById("MDPW");
+          let b = document.getElementById("MDPW2");
+          let c = document.getElementById("ELT");
+          let d = document.getElementById("WNP2");
+          let e = document.getElementById("SC2");
+          let f = document.getElementById("WPC2");
+          let g = document.getElementById("PCB2");
+          let h = document.getElementById("time2");
+          let i = document.getElementById("new_pw");
+          let j = document.getElementById("re_new_pw");
+          let k = document.getElementById("clear_change_pw");
+          let l = document.getElementById("user_new_pw");
+
+
+          a.style.display="block";
+          b.style.display="none";
+          c.style.display="none";
+          d.style.display="none";
+          e.style.display="none";
+          f.style.display="none";
+          g.style.display="none";
+          h.style.display="none";
+          k.style.display="none";
+          $(".new_pw").css("display","none");
+          $(".re_new_pw").css("display","none");
+
+          l.value=i.value;
+          d.value="";
+          f.value="";
+          i.value="";
+          j.value="";
+          h.value="3:00";
+
+          $(".write_new_phone2").css("border","1px solid rgb(166, 166, 166)");
+          txtre_pw.innerHTML=""
+          txtre_pw.style.color="red";
+          
+          txtpw.innerHTML=""
+          txtpw.style.color="red";
+
+          $(".modify_nick_btn").attr("disabled",false);
+          $(".modify_addr_btn").attr("disabled",false);
+          $(".modify_phone_btn").attr("disabled",false);
+
+          $("#WNP2").attr("disabled",false);
+          $("#SC2").attr("disabled",true);
+          $("#time2").attr("disabled",false);
+          $("#PCB2").attr("disabled",true);
+          $("#WPC2").attr("disabled",false);
+          $("#clear_change_pw").attr("disabled",true);
+
+          
+        }
+        
+        
+        function cancel_phone() {
+        	let a = document.getElementById("WNP");
+        	let b = document.getElementById("MPB");
+        	let c = document.getElementById("SC");
+        	let d = document.getElementById("WPC");
+        	let e = document.getElementById("PCB");
+        	let f = document.getElementById("XB5");
+        	let g = document.getElementById("time");
+        	
+        	
+        	a.style.display="none";
+        	b.style.display="block";
+        	c.style.display="none";
+        	d.style.display="none";
+        	e.style.display="none";
+        	f.style.display="none";
+        	g.style.display="none";
+        	
+        	
+        	a.value="";
+        	d.value="";
+        	
+        	a.style.border="1px solid rgb(166, 166, 166)";
+        	d.style.border="1px solid rgb(166, 166, 166)";
+        	
+        	$(".modify_nick_btn").attr("disabled",false);
+            $(".modify_addr_btn").attr("disabled",false);
+            $(".modify_pw").attr("onclick","change_pw()");
+        	
+        	
+		}
+
+
+
+ 
 
 

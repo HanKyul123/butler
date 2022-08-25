@@ -27,8 +27,9 @@
                <strong class="bold">휴대폰 번호</strong>
                <section>
                   <div class="Wtext">
-                     <input id="phone_num" name="user_phone" type="tel" minlength="10" maxlength="11">
+                     <input id="phone_num" name="user_phone" type="tel" minlength="10" maxlength="11">                  
                      <button type="button" class=" btn_checked1" id="click_btn" onclick="sendcode()"  disabled="disabled">인증번호 전송</button>
+                     <!-- smsClass 로 value값을 user_phone 으로 넘겨서 실행 -->
                      <input type="hidden" id="phone_num_1" name="user_phone_1" value="">
                   </div>
                </section>
@@ -37,6 +38,7 @@
                <strong class="bold2">인증번호</strong>
                <div class="Wnum">
                   <input id="prove_num" type="tel" minlength="4" maxlength="4" autocomplete="off">
+                  <!-- code_num 과 적은 value 값이 같은지 확인 -->
                   <button type="submit" class="btn_checked2" id="click_btn" disabled="disabled">확인</button>
                   <div class="time">
                      <span id="timer" class="timer">3:00</span>
