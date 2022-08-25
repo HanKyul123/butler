@@ -177,7 +177,7 @@
         </div>
     </div>
 
-<form action="" onsubmit="return reservation()">
+<form action="/book/BookOk.book" type="post" onsubmit="return reservation()">
 <!-- 예약 종류 선택하기 -->
     <div class="box2">
         <div class="addanimal">
@@ -288,8 +288,8 @@
             <div class="datecontent">
                 <label><img src="${pageContext.request.contextPath}/img/calender.png" alt="" class="calender_img">
                 <input type="text" id="demo" name="demo" value="" readonly></label>
-                <input type="hidden" id="book_checkin_date" readonly>
-                <input type="hidden" id="book_checkout_date" readonly>
+                <input type="hidden" id="book_checkin_date" name="book_checkin_date" readonly>
+                <input type="hidden" id="book_checkout_date" name="book_checkout_date" readonly>
                 <input type="hidden" id="nowdate" readonly>
             </div>
 
@@ -297,6 +297,7 @@
 
 <!-- 총 기간과 가격 -->
         <div class="buy">
+        <input type="hidden" id="BUSINESS_PLACE_NUM_FK" name="BUSINESS_PLACE_NUM_FK" value="${hotelresult.business_place_num_pk}">
             <div id="totaldate" class="totaldate">
                 
             </div>
@@ -477,7 +478,7 @@
 										</div>
 										<textarea name="Mnew_review" id="Mnew_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>										
 										<input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}">
-										<input type="hidden" id="business_place_num_fk" name="business_place_num_fk" value="${hotelresult.business_place_num_pk}">
+										<input type="hidden" id="BUSINESS_PLACE_NUM_FK" name="BUSINESS_PLACE_NUM_FK" value="${hotelresult.business_place_num_pk}">
 										
 									<!-- 사진 추가하면 사진이 담긴 자식 생성됨. -->
 									<div class="modypic" id="ele">

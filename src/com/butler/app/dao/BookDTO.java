@@ -30,14 +30,13 @@ public class BookDTO {
 	}
 	
 	public BookDTO(int BUSINESS_PLACE_NUM_FK, int USER_NUM_FK, Date book_regdate,
-		Date book_checkin_date, Date book_checkout_date, int book_charge, String book_request) {
+		Date book_checkin_date, Date book_checkout_date, int book_charge) {
 		BUSINESS_PLACE_NUM_FK = this.BUSINESS_PLACE_NUM_FK;
 		USER_NUM_FK = this.USER_NUM_FK;
 		book_regdate = this.book_regdate;
 		book_checkin_date = this.book_checkin_date;
 		book_checkout_date = this.book_checkout_date;
 		book_charge = this.book_charge;
-		book_request = this.book_request;
 	}
 	
 	
