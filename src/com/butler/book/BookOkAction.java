@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -91,7 +92,12 @@ public class BookOkAction implements Action{
 			petsMap.put(key, allParameterMap.get(key)[0]);
 		}
 		
-		
+		List<String> rc = bdao.findRC(USER_NUM_FK);
+		List<String> rip = bdao.findRIP(USER_NUM_FK);
+		List<String> ucBook = bdao.findUCBook(USER_NUM_FK);
+		req.setAttribute("rc", rc);
+		req.setAttribute("ucBook",rip);
+		req.setAttribute("ucBook", ucBook);
 		
 		int BOOK_NUM_PK = 0;				
 		if(bdao.booking(newbook)) {
