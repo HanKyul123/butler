@@ -18,20 +18,46 @@ public class SearchkeywordAction implements Action{
 		String keyword = req.getParameter("keyword");
 		System.out.println(keyword);
 		
+		
+		
 		HotelDTO hdto = new HotelDTO();
 		HotelDAO hdao = new HotelDAO();
 		
-		List<HotelDTO> searchResult = hdao.SearchkeywordOK(keyword);
 		
-		System.out.println(searchResult);
+		if(keyword == null || keyword == "") {
+			//초기페이지
+			//별점 기준 상위 5개 호텔 검색
+			int topnum = 5; 
+			
+			List<HotelDTO> recommandResult = hdao.recommandResult(topnum);
+			
+			System.out.println(recommandResult);
+			
+			req.setAttribute("recommandResult", recommandResult);
+			
+			System.out.println("초기 2");
+			
+			ActionTo transfer = new ActionTo();
+			transfer.setRedirect(false);
+			transfer.setPath("/home.jsp");
+			return transfer;
+			
+		}
+		else {
+			//키워드 검색
+			List<HotelDTO> searchResult = hdao.SearchkeywordOK(keyword);
+			
+			System.out.println(searchResult);
+			
+			req.setAttribute("list", searchResult);
+			req.setAttribute("keyword", keyword);
+			
+			ActionTo transfer = new ActionTo();
+			transfer.setRedirect(false);
+			transfer.setPath("/app/searchView/searchView.jsp");
+			return transfer;
+		}
 		
-		req.setAttribute("list", searchResult);
-		req.setAttribute("keyword", keyword);
-		
-		ActionTo transfer = new ActionTo();
-		transfer.setRedirect(false);
-		transfer.setPath("/app/searchView/searchView.jsp");
-		return transfer;
 		
 		
 //		if(searchResult != null) {

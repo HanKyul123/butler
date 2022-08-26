@@ -104,13 +104,19 @@
                 <input type="hidden" name="user_num_pk" value="${LoginUser.user_num_pk}">
                 <input type="hidden" name="user_logintype" value="${LoginUser.user_logintype}">
                 
-                <div class="user_email_box">
+                 <div class="user_email_box">
                    <!-- 버틀러 회원/카카오 회원 구별하여 해당하는 아이콘으로 하기 -->
+		<c:choose>
+		<c:when test="${LoginUser.user_logintype == 0}">
                     <img src="${pageContext.request.contextPath}/img/Hotel_icon.png" alt="" class="user_from" id="Butler">
+		</c:when>
+		<c:otherwise>
                     <img src="${pageContext.request.contextPath}/img/카카오톡.png" alt="" class="user_from" id="Kakao">
+		</c:otherwise>
+						</c:choose>
                     <!-- 유저 버틀러/카카오 이메일 아이디 정보 넣기 -->
                     <div class="user_email" name="user_email">${LoginUser.user_email}</div>
-                </div>
+                </div>			
   
                  
             	

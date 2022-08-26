@@ -33,4 +33,7 @@
 		business_category = #{category1} or
 		business_category = #{category2}
 	</select>
+	<select id="recommandResult" parameterType="_int" resultType="hdto">
+		select * from business_tb order by business_workplace_score desc limit #{topnum};
+	</select>
 </mapper>

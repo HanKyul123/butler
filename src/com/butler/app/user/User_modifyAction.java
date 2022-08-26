@@ -90,7 +90,7 @@ public class User_modifyAction implements Action{
 		
 		if(user_zipcode2 == null || user_zipcode2 == "" || user_addr2 == null || user_addr2 == "") {
 			// 주소 수정 안됨
-			System.out.println("에헤이 조졌네 이거~");
+			System.out.println("98");
 			user.setUser_zipcode(user_zipcode);
 			user.setUser_addr(user_addr);
 			user.setUser_addretc(user_addretc);
@@ -98,7 +98,7 @@ public class User_modifyAction implements Action{
 		}
 		else {
 			//신규 주소
-			System.out.println("에반데");
+			System.out.println("18");
 			user.setUser_zipcode(user_zipcode2);
 			user.setUser_addr(user_addr2);
 			user.setUser_addretc(user_addretc2);
@@ -116,7 +116,7 @@ public class User_modifyAction implements Action{
 	         
 				out.print("<script>");
 		        out.print("alert('내 정보 수정이 완료되었습니다.');");
-		        out.print("location.href = '/app/myinfo/myinfoView/myinfoView.jsp';");
+		        out.print("location.href = '/app/myinfo/myinfoView.jsp';");
 		        out.print("</script>");
 	         
 	       }

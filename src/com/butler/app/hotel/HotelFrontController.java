@@ -74,7 +74,16 @@ public class HotelFrontController extends HttpServlet{
 	            e.printStackTrace();
 	         }
 	         break;
-			
+	   
+	   case "/indexPage.ho":
+		   System.out.println("초기페이지");
+			try {
+				transfer = new SearchkeywordAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+
 
 	 }
 		if(transfer !=null) {
