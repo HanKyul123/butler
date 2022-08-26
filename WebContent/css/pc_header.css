@@ -374,19 +374,30 @@ header {
    transition: 1s;
 }
 
+
+
+
 .scroll #login_search>input:focus {
    border-bottom: 1px solid rgb(164, 78, 184);
 }
 .scroll #login_search>input:focus {
    border-bottom: 1px solid rgb(164, 78, 184);
 }
-.scroll .search2{
+
+.scroll #login_search>input::placeholder{
+            color:rgb(245, 191, 255);
+        }
+
+.scroll input.search2{
             color: rgb(164, 78, 184);
             }
 
-.scroll .#login_search>input::placeholder {
-   color: rgb(245, 191, 255);
-}
+
+
+
+
+
+
 
 .scroll #logout_search>input:focus {
    border-bottom: 1px solid rgb(164, 78, 184);
@@ -394,13 +405,16 @@ header {
 .scroll #logout_search>input:focus {
    border-bottom: 1px solid rgb(164, 78, 184);
 }
-.scroll .search1{
+.scroll #logout_search>input::placeholder{
+            color:rgb(245, 191, 255);
+        }
+.scroll input.search{
             color: rgb(164, 78, 184);
             }
 
-.scroll .#logout_search>input::placeholder {
-   color: rgb(245, 191, 255);
-}
+
+
+
 
 
 
