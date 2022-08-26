@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header_login_front</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header_login.css">   
+<%--     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">    --%>
     <link href="${pageContext.request.contextPath}/css/jquery-ui.css" rel="stylesheet">
     
    
@@ -32,15 +32,25 @@
       <!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
       <ul class="over_list01">
          <li class="Sclick">
-            <label>
-               <button type="button" class="btn_search" value="검색" onclick="tog1()">
+            <label id="one">
+               <button id="btn1" type="button" class="btn_search" value="검색" onclick="tog1()">
                   &nbsp;&nbsp;&nbsp;<br><br>
                </button>
-               <div class="searchBar_box">
+                <div id=logout_search class="searchBar_box">
                   <input id="keyword" class="search" type="text" placeholder="지역, 호텔명" onkeyup="if(event.keyCode==13){search()}">
+               </div>
+               </label>
+               <label id="two">
+                <button id="btn2" type="button" class="btn_search" value="검색" onclick="tog1_1()">
+                  &nbsp;&nbsp;&nbsp;<br><br>
+               </button>
+               <div id=login_search class="searchBar_box">
+                  <input id="keyword" class="search2" type="text" placeholder="지역, 호텔명" onkeyup="if(event.keyCode==13){search()}">
                </div>
             </label> 
             <img id="X" class="X" src="${pageContext.request.contextPath}/img/X.png" alt="" onclick="tog2()">
+            <img id="X2" class="X2" src="${pageContext.request.contextPath}/img/X.png" alt="" onclick="tog2()">
+            
 <!--             <div id="text1" class="recommend_box">
                반복문으로 추천 검색어 가져오기
                <div id="recommend" class="Rcontents1">
@@ -71,7 +81,9 @@
          <li class="list">
             <a href="">내주변</a>
          </li>
-         <li id="status_logout" class="list" ><a class="text" href="/login.login.us">로그인</a>
+         <li id="status_logout" class="list" ><a class="text" href="/login.login.us">로그인</a></li>
+         
+         <li id="status_login_empty" class="list" >빈</li>
          <li id="status_login" class="list" >
             <div class="set_profile">
                <div class="profile">
@@ -108,9 +120,18 @@
    <c:choose>
        <c:when test="${sessionScope.LoginUser eq null}">
          <script>
-            function statusChangelogoutHeader(){
-               document.getElementById("status_logout").style.display="block";
-               document.getElementById("status_login").style.display="none";
+            function statusChangelogoutHeader(){login_search
+               document.getElementById("status_logout").style.display="none";
+               document.getElementById("logout_search").style.display="none";
+               document.getElementById("btn1").style.display="none";
+               
+            
+              
+               document.getElementById("btn2").style.display="block";
+               document.getElementById("login_search").style.display="block";
+               document.getElementById("status_login").style.display="block";
+               
+               document.getElementById("status_login_empty").style.display="block";
                console.log(11);
             };
             statusChangelogoutHeader();
@@ -119,8 +140,15 @@
        <c:otherwise>
          <script>
             function statusChangeloginHeader(){
+               
                document.getElementById("status_logout").style.display="none";
+               document.getElementById("logout_search").style.display="none";
+               document.getElementById("one").style.display="none";
+               
+               document.getElementById("two").style.display="block";
+               document.getElementById("login_search").style.display="block";
                document.getElementById("status_login").style.display="block";
+               document.getElementById("status_login_empty").style.display="block";
                console.log(22);
             }
          statusChangeloginHeader();
@@ -136,6 +164,7 @@
    }
 </script>
 <script src="${pageContext.request.contextPath}/js/List.js"></script>
+<%-- <script src="${pageContext.request.contextPath}/js/pc_header.js"></script> --%>
     <script src="https://code.jquery.com/jquery-1.12.4.js">
     </script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
