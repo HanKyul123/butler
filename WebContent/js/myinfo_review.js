@@ -40,6 +40,7 @@
         $('.newreview_btn').css('display','none');
     }
 
-    function delete_review(){
-        $('.review_box').remove();
+    function delete_review(i){
+        i.parentNode.parentNode.parentNode.remove();
+        console.log(i.parentNode.parentNode.parentNode);
     }

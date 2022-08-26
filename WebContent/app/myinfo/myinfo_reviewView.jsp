@@ -79,7 +79,7 @@
                                 </button>
 
                                 <!-- 삭제 버튼 -->
-                                <button class="MDbtn" id="Dbtn" onclick="delete_review()">
+                                <button class="MDbtn" id="Dbtn" onclick="delete_review(this)">
                                     <img src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD" id="delete_btn" title="삭제하기">
                                 </button>
                             </div>
