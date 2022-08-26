@@ -136,25 +136,25 @@
                 </div>
 
                 <div class="menuBanner">
-                <a href="">
+                <a href="/hotel/searchkeyword.ho?keyword=병원">
                     <div id="menuB" class="menu1">
                         <img class="pic" src="${pageContext.request.contextPath}/img/animal_hospital.png" alt="">
                         <span class="Mtitle">동물병원</span>
                     </div>
-                </a>
-                <a href="">
+                </a> 
+                <a href="/hotel/searchkeyword.ho?keyword=호텔">
                     <div id="menuB" class="menu2">
                         <img class="pic" src="${pageContext.request.contextPath}/img/animal_Hotel.png" alt="">
                         <span class="Mtitle">호텔</span>
                     </div>
                 </a>
-                <a href="">
+                <a href="/hotel/searchkeyword.ho?keyword=강아지">
                     <div id="menuB" class="menu3">
                         <img class="pic" src="${pageContext.request.contextPath}/img/animal_Dog.png" alt="">
                         <span class="Mtitle">강아지</span>
                     </div>
                 </a>
-                <a href="">
+                <a href="/hotel/searchkeyword.ho?keyword=고양이">
                     <div id="menuB" class="menu4">
                         <img class="pic" src="${pageContext.request.contextPath}/img/animal_Cat.png" alt="">
                         <span class="Mtitle">고양이</span>
