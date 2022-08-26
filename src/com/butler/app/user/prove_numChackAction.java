@@ -39,7 +39,6 @@ public class prove_numChackAction implements Action{
 		if(prove_num.equals(session.getAttribute("certiNum"))) {
 			
 			System.out.println("5-4-o");
-			
 			out.write("O");
 		}
 		else {
