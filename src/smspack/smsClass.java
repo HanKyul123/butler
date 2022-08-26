@@ -3,7 +3,11 @@ package smspack;
 import java.util.HashMap;
 import java.util.Random;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONObject;
+
+import com.mysql.cj.Session;
 
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
@@ -43,6 +47,8 @@ public class smsClass {
 			System.out.println(e);	
 			return null;
 		}
+		
+		
 		return code_number;
 		}
 	}

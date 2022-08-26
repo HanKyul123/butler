@@ -132,6 +132,16 @@ public class UserFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;
+			
+		case "/user/prove_numChack.us":
+			
+			System.out.println("1-5");
+			try {
+				new prove_numChackAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;	
 		
 	 }
 		if(transfer !=null) {

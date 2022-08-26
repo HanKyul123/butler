@@ -40,7 +40,7 @@
                <div class="Wnum">
                   <input id="prove_num" type="tel" minlength="4" maxlength="4" autocomplete="off">
                   <!-- code_num 과 적은 value 값이 같은지 확인 -->
-                  <button type="submit" class="btn_checked2" id="click_btn" disabled="disabled">확인</button>
+                  <button type="submit" class="btn_checked2" id="click_btn" disabled="disabled" onclick="check_code()">확인</button>
                   <div class="time">
                      <span id="timer" class="timer">3:00</span>
                   </div>
@@ -63,6 +63,7 @@
          const cp = "${cp}";
          console.log(phone_num.value);
 
+     
 
          xhr.onreadystatechange = function(){
             console.log("5-4");
@@ -79,11 +80,42 @@
                }
             }
          }
-         xhr.open("GET",cp+"/user/phone_numChack.us?phone_num="+phone_num.value);
+         xhr.open("GET",cp +"/user/phone_numChack.us?phone_num="+phone_num.value);
          xhr.send();   
    }
+   
+</script>
+<script>
 
+function check_code(){
+    /* 유효성 검사 */
+	 const xhr = new XMLHttpRequest(); 
+     const prove_num = document.getElementById("prove_num");
+      const cp = "${cp}";
+     console.log(prove_num.value);
 
+   xhr.onreadystatechange = function(){
+         console.log("5-5");
+         if(xhr.readyState == 4){
+            if(xhr.status == 200){
+               let txt = xhr.responseText;
+               txt = txt.trim();
+               if(txt == 'O'){
+                  alert("휴대전화 인증이 완료되었습니다.")
+                  
+               }
+               else if(txt == 'X') {
+                  alert("인증번호가 일치하지 않습니다.")
+                  
+               }
+            }
+         }
+      }
+      xhr.open("GET",cp+"/user/prove_numChack.us?prove_num="+prove_num.value);
+      xhr.send();
+      
+}
+	
 </script>
 
 </html>

@@ -103,11 +103,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
    
 
-    .detail_hotel_name{
+    .detail_hotel_name>a{
         font-size: 25px;
+        color:black;
         transition: 0.2s;
     }
-    .detail_hotel_name:hover{
+    .detail_hotel_name>a:hover{
         color: rgb(116, 10, 140);
     }
 
@@ -172,6 +173,33 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
     a>#write_review:hover{
         margin-bottom: 25px;
+
+        width: 125px;
+        height: 35px;
+        line-height: 37px;
+        background-color: rgb(255, 241, 250);
+        color: rgb(255, 0, 170);
+    }
+    
+    #reserve_cancel{
+     	font-family: 'OTWelcomeRA';
+
+        border: 1px solid rgb(255, 25, 178);
+        margin-left: 10px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        border-radius: 3px;
+        width: 120px;
+        height: 30px;
+        background-color: transparent;
+        line-height: 32px;
+        cursor: pointer;
+        color: rgb(255, 25, 178);
+        
+        transition: 0.3s;
+    }
+    #reserve_cancel:hover{
+    	margin-bottom: 25px;
 
         width: 125px;
         height: 35px;

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,10 @@
     <title>NonReservation</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myinfo_reservation_detail.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
 </head>
+<%@ include file="/../../header/pc_header.jsp" %>
 <body class="myinfo_reservation_detail_wrap">
     <div class="my_reservation_title">
         내 정보
@@ -32,44 +36,62 @@
             <div class="my_reservation_box2">
 
                 <!-- 호텔 이름 -->
-                <a href="">
+                
                     <div class="detail_hotel_name">
+                        <a href="">
                         (호텔 이름)우리 아이 호강하는 세계 최고 호텔
+                        </a>
                     </div>
-                </a>
-
-                <!-- 이용 중 / 이용 완료 / 예약 취소 -->
-                <div class="detail_now">이용 중</div>
-                <!-- <div class="detail_ed">이용 완료</div> -->
-                <!-- <div class="detail_cancel">예약 취소</div> -->
+                    
+                    
+                
+				<!-- 상태에 따라  -->
+                <!-- 예약 중 / 이용 완료 / 예약 취소 -->
+                <div id="detail_now" class="detail_now">예약 중</div>
+                <!-- <div id="detail_ed" class="detail_ed">이용 완료</div> -->
+                <!-- <div id="detail_cancel" class="detail_cancel">예약 취소</div> -->
 
                 <!-- 고른 날짜 -->
                 <div class="detail_date">8월 10일 수 ~ 8월 12일 금</div>
+                
+                
+                
+                
 
 				<!-- 이용 완료일 때 리뷰 쓰러가는 버튼 -->
-                <a href=""><button id="write_review">리뷰 쓰기</button></a>
-
+				<a href=""><button id="write_review">리뷰 쓰기</button></a>
+                
+                <!-- 예약 중 일 때 예약 취소할 수 있는 버튼 -->
+                <div id="cancel_btn">
+                	<button type="button" id="reserve_cancel">예약 취소</button>
+				</div>
+				
+				
+				
                 <!-- 예약 번호 -->
                 <div class="detail_reserv_num all" >
-                    <div class="title">예약 번호 
-                    </div>
+                
+                    <div class="title">예약 번호</div>
                     <span class="reserv_num detail_content">758495</span>
+                    
                 </div>
+                
                 
                 <!-- 예약자 이름 -->
                 <div class="detail_reserv_name all">
-                    <div class="title">예약자 이름 
-                    </div>
-                    <span class="reserv_name detail_content">강예은</span>
+                
+                    <div class="title">예약자 이름</div>
+                    <span class="reserv_name detail_content">${LoginUser.user_name}</span>
+                    
                 </div>
+                
                 
                 <!-- 예약자 핸드폰 번호 -->
                 <div class="detail_reserv_phone all">
-                    <div class="title">핸드폰 번호  
-                    </div>
-                    <span class="reserv_phone detail_content">
-                        010-9632-8595
-                    </span>
+                
+                    <div class="title">핸드폰 번호</div>
+	                <span class="reserv_phone detail_content">${LoginUser.user_phone}</span>
+	                
                 </div>
 
                 <!-- 고른 옵션의 반려동물 정보 박스 -->
@@ -104,6 +126,8 @@
 
     </div>
 </body>
+
+
 <!-- 문서수정할때는주석처리를 하고 진행하세요 -->
 <%-- <c:choose>
     	<c:when test="${sessionScope.loginUser eq null}">
@@ -113,6 +137,9 @@
 			</script>
     	</c:when>
 	</c:choose> --%>
+<%@ include file="../../../footer/footer.jsp"%>
+<script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
 
 <script src="${pageContext.request.contextPath}/js/myinfo_reservation_detail.js"></script>
+
 </html>
