@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Hotel">
+	<select id="Searchkeyword" parameterType="String" resultType="hdto">
+		select * from business_tb where business_name like('%${keyword}%')
+		or business_hashtag like('%${keyword}%')
+		or business_addr like('%${keyword}%')
+		or business_addretc like('%${keyword}%')
+	</select>
+	<select id="reservationViewActionOK" parameterType="_int" resultType="hdto">
+		select * from business_tb where business_place_num_pk=#{business_place_num_pk}
+	</select>
+	<select id="SearchOwnerResult" parameterType="_int" resultType="udto">
+		select * 
+		from business_tb join user_tb on user_tb.USER_NUM_PK = business_tb.USER_NUM_FK
+		where business_place_num_pk=#{business_place_num_pk};
+	</select>
+	<select id="ReviewResultOK" parameterType="_int" resultType="rdto">
+		select * from review_tb rev join reply_tb rep 
+		where rev.business_place_num_fk = ${business_place_num_fk} and rep.business_place_num_fk = ${business_place_num_fk}
+	</select>
+	<update id="Review_modifyAction" parameterType="hashMap">
+		update review_tb set review_contents = #{Mnew_review}, review_regdate=now()
+		where REVIEW_NUM_PK=#{review_num}
+	</update>
+	<select id="choiseOK" parameterType="hashMap" resultType="hdto">
+		select * from business_tb where 
+		business_hashtag like('%${pet1}%') or 
+		business_hashtag like('%${pet2}%') or 
+		business_hashtag like('%${pet3}%') or
+		business_category = #{category1} or
+		business_category = #{category2}
+	</select>
+</mapper>

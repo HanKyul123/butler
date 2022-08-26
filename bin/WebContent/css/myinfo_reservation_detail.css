@@ -1,0 +1,243 @@
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    a{text-decoration: none;}
+
+    .myinfo_reservation_detail_wrap {
+         font-family: 'OTWelcomeRA';
+         position: relative;
+         top: 55px;
+        /* padding: 20px; */
+        text-align: center;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 350px;
+        margin-bottom: 400px;
+    }
+    
+
+  
+
+
+
+    .my_reservation_title{
+        font-family: 'OTWelcomeRA';
+
+        width: 100%;
+        height: 70px;
+        background-color: rgb(164, 78, 184);
+        color: #fff;
+        font-size: 30px;
+        text-align: left;
+        padding-left: 250px;
+        line-height: 80px;
+
+    }
+
+    .my_reservation_BigBox{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 12.8%;
+        margin-top: 80px;
+        
+    }
+
+    .my_reservation_box1{
+        width: 20%;
+        text-align: right;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+/* 링크 박스 호버로 꾸미기 */
+    #all_choice:hover{
+        color: rgb(116, 10, 140);
+    }
+    .my_reservation_box1>a{
+        color: rgb(132, 132, 132);
+        
+    }
+    a.my_reservation_info{
+
+        color: rgb(116, 10, 140);
+    }
+
+
+
+
+
+    .my_reservation_box2{
+        padding: 20px;
+        padding-left: 70px;
+        text-align: left;
+        width: 80%;
+        /* margin: auto;*/
+    }
+
+    .my_reservation_box2>a{
+        color: black;
+    }
+
+   
+
+    .detail_hotel_name{
+        font-size: 25px;
+        transition: 0.2s;
+    }
+    .detail_hotel_name:hover{
+        color: rgb(116, 10, 140);
+    }
+
+    .detail_now, .detail_date{
+        font-size: 15px;
+        margin: 10px;
+    }
+    .detail_now{
+        color: rgb(255, 61, 174);
+        animation-name: DN;
+        animation: DN 0.6s infinite alternate;
+    }
+    @keyframes DN{
+        0%{color: rgb(255, 148, 210);}
+        50%{color: rgb(255, 103, 192);}
+        100%{color: rgb(255, 61, 174);}
+    }
+    
+    .detail_ed{
+        font-size: 15px;
+        margin: 10px;
+        color: rgb(104, 104, 104);
+        animation-name: DN;
+        animation: DE 0.6s infinite alternate;
+    }
+  
+    .detail_cancel{
+        font-size: 15px;
+        margin: 10px;
+        color: rgb(104, 104, 104);
+        animation-name: DC;
+        animation: DE 0.6s infinite alternate;
+    }
+  
+
+
+
+
+    .detail_date{
+        color: rgb(147, 147, 147);
+        margin-bottom: 30px;
+    }
+    
+    
+        a>#write_review{
+        font-family: 'OTWelcomeRA';
+
+        border: 1px solid rgb(255, 25, 178);
+        margin-left: 10px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        border-radius: 3px;
+        width: 120px;
+        height: 30px;
+        background-color: transparent;
+        line-height: 32px;
+        cursor: pointer;
+        color: rgb(255, 25, 178);
+        
+        transition: 0.3s;
+    }
+
+    a>#write_review:hover{
+        margin-bottom: 25px;
+
+        width: 125px;
+        height: 35px;
+        line-height: 37px;
+        background-color: rgb(255, 241, 250);
+        color: rgb(255, 0, 170);
+    }
+    
+    
+
+    .title, .detail_content{
+        font-size: 17px;
+        margin: 10px;
+        margin-top: 30px;
+    }
+
+    .all{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    
+    .title{
+        width: 100px;
+    }
+    
+    .detail_content{
+        color: rgb(85, 85, 85);
+    }
+    
+    
+    #detail_animal{
+        width: 500px;
+        font-weight: bold;
+    }
+    
+    
+    
+    
+    
+    .detail_animal_box{
+        margin: 10px;
+        /* border: 1px solid #000; */
+        display: flex;
+        flex-wrap: wrap;
+        width: 420px;
+        justify-content: space-between;
+
+    }
+
+    .detail_pet_box{
+        width: 200px;
+        padding: 20px;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 3px;
+        margin-bottom: 20px;
+    }
+
+    #PK, #PW{
+        color: rgb(70, 70, 70);
+    }
+
+    .pet_kind{
+        margin-bottom: 5px;
+    }
+    .treats{
+        position: relative;
+        top: 4.5px;
+        width: 20px;
+    }

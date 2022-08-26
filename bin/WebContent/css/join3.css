@@ -1,0 +1,178 @@
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+.wrap{
+    font-family: 'OTWelcomeRA';
+    text-align: center;
+    margin-bottom: 100px;
+
+}
+.join{
+    /* border: 1px solid #000; */
+    width: 300px;
+    text-align: left;
+    margin: auto;
+}
+.title{
+    position: relative;
+    top: 10px;
+}
+
+.join_title{
+    font-size: 25px;
+}
+.sub_title{
+    margin-bottom: 3px;
+    margin-top: 20px;
+    font-size: 17px;
+}
+
+#all{
+    font-size: 15px;
+    padding-top: 6px;
+    padding-left: 10px;
+    width: 285px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 184, 184);
+}
+#all:focus{
+    outline: none;
+}
+
+#all_pw{
+    font-size: 15px;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 285px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 184, 184);
+}
+#all_pw:focus{
+    outline: none;
+}
+
+.sub_btn{
+    padding-top: 6px;
+    margin-top: 20px;
+    font-size: 18px;
+    width: 300px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.sub_btn:enabled{
+    cursor: pointer;
+    border: 1px solid rgb(129, 39, 149);
+    background-color: rgb(129, 39, 149);
+    color: white;
+}
+.sub_btn:disabled{
+    cursor: default;
+}
+
+
+
+.logo{
+    margin-top: 2.4%;
+    position: relative;
+    top: 5px;
+    left: 19px;
+}
+
+.logo_img{
+    width: 350px;
+}
+
+.txt{
+    /* color: rgb(19, 106, 227); */
+    position: relative;
+    top: 5px;
+    left: 2px;
+}
+span{
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+input[type=password]{
+    font-family:'Eco';
+}
+
+
+#sample6_postcode{
+    font-size: 15px;
+    padding-left: 10px;
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 184, 184);
+}
+#sample6_postcode:focus{
+    outline: none;
+}
+
+
+.UP_btn{
+    width: 102px;
+    height: 44px;
+    cursor: pointer;
+    border: 1px solid rgb(129, 39, 149);
+    background-color: rgb(129, 39, 149);
+    color: white;
+    border-radius: 5px;
+}
+.checkbox{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.checking{
+    position: relative;
+    text-align: right;
+}
+.EC{
+    width: 99px;
+    height: 44px;
+    cursor: pointer;
+    border: 1px solid rgb(129, 39, 149);
+    background-color: rgb(129, 39, 149);
+    color: white;
+    border-radius: 5px;
+    margin-left: 3.5px;
+}
+
+
+#sample6_address, #sample6_detailAddress, #sample6_extraAddress{
+    font-size: 15px;
+    padding-top: 6px;
+    padding-left: 10px;
+    width: 285px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(184, 184, 184);
+    margin-top: 5px;
+}
+#sample6_address:focus,#sample6_detailAddress:focus, #sample6_extraAddress:focus{
+    outline: none;
+}

@@ -1,0 +1,275 @@
+@charset "UTF-8";
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    a{text-decoration: none;}
+
+    .myinfo_writereview_wrap {
+         font-family: 'OTWelcomeRA';
+         position: relative;
+         top: 35px;
+        /* padding: 20px; */
+        text-align: center;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 350px;
+        margin-bottom: 400px;
+    }
+    
+
+  
+
+
+
+    .my_reservation_title{
+        font-family: 'OTWelcomeRA';
+
+        width: 100%;
+        height: 70px;
+        background-color: rgb(164, 78, 184);
+        color: #fff;
+        font-size: 30px;
+        text-align: left;
+        padding-left: 250px;
+        line-height: 80px;
+
+    }
+
+    .my_writereview_BigBox{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 12.8%;
+        margin-top: 80px;
+        
+    }
+
+    .my_writereview_box1{
+        width: 20%;
+        text-align: right;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+/* 링크 박스 호버로 꾸미기 */
+    #all_choice:hover{
+        color: rgb(116, 10, 140);
+    }
+    .my_writereview_box1>a{
+        color: rgb(132, 132, 132);
+        
+    }
+    a.my_reservation_info{
+
+        color: rgb(116, 10, 140);
+    }
+
+
+    .reviewtitle{
+        font-size: 23px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+
+    .my_writereview_box2{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-left: 70px;
+        text-align: left;
+        width: 80%;
+        /* margin: auto;*/
+    }
+
+    .my_writereview_box2>a{
+        color: black;
+    }
+
+    a>.bringHotel{
+        
+        display: flex;
+        flex-wrap: wrap;
+        width: 350px;
+        height: 100px;
+    }
+
+    .Hotelpic{
+        width: 28%;
+        height: 100%;
+    }
+    
+    #Hotelimg{
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .textHotelinfo{
+        width: 70%;
+        height: 100%;
+        border: 1px solid rgb(138, 138, 138);
+        border-left: 1px solid rgb(208, 208, 208);
+
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+
+        padding: 18px;
+    }
+    #hotelname{
+        width: 100%;
+        margin-bottom: 10px;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        color: rgb(0, 0, 0);
+        
+    }
+
+
+
+    #pet{
+        margin-bottom: 5px;
+    }
+    
+    #pet, #reserveDate{
+        color: rgb(108, 108, 108);
+        font-size: 13px;
+    }
+
+    #write_review{
+        font-family: 'OTWelcomeRA';
+        border: 1px solid rgb(255, 237, 248);
+        background-color: rgb(255, 237, 248);
+        border-radius: 4px;
+        padding: 10px;
+        width: 80%;
+        height: 150px;
+        resize: none;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    #write_review:focus{
+        border: 1px solid rgb(255, 167, 220);
+
+    }
+
+
+   
+    input[type=file]::file-selector-button {
+        cursor: pointer;
+        margin-top: 2px;
+        font-family: 'OTWelcomeRA';
+        margin-right: 10px;
+        text-align: center;
+        width: 100px;
+        height: 30px;
+        line-height: 33px;
+        border: 1px solid rgb(255, 154, 214);
+        background-color: rgb(255, 154, 214);
+        border-radius: 4px;
+        color: #fff;
+       
+      }
+
+      .getpic{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            width: 82.7%;
+            height: 100px;
+            /* border: 1px solid #000; */
+            /* background-color: rgb(255, 246, 251); */
+            border: 1px solid rgb(255, 208, 236);
+            border-radius: 4px;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            white-space: nowrap;  
+        }
+
+        .imgbox{
+            width: 75px;
+            height: 100%;
+        }
+    #getpic{
+        width: 75px;
+        height: 100%;
+        object-fit: cover;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 4px;
+    }
+
+    #imgbox{
+        background-color: transparent;
+        border: none;
+    }
+    #Dbtn{
+        cursor: pointer;
+        position: relative;
+        width: 15px;
+        height: 17.8px;
+        border: none;
+        background-color: transparent;
+        bottom: 59px;
+        right: 22px;
+    }
+    .X{
+        position: relative;
+        right: 6.5px;
+        bottom: 2px;
+        width: 15px;
+    }
+
+    .SC{
+        cursor: pointer;
+        font-family: 'OTWelcomeRA';
+        margin-top: 30px;
+        width: 140px;
+        height: 45px;
+        background-color: transparent;
+        border: 1px solid rgb(255, 154, 214);
+        background-color: rgb(255, 154, 214);
+        border-radius: 4px;
+        color: #fff;
+        line-height: 50px;
+        font-size: 18px;
+    }
+    #DE{
+        width: 100px;
+        border: 1px solid rgb(255, 185, 227);
+        background-color: rgb(255, 185, 227);
+        border-radius: 4px;
+        margin-left: 3px;
+    }
+
+    .upload{
+        width: 82.7%;
+        text-align: right;
+         margin-bottom: 50px;
+    }

@@ -1,0 +1,869 @@
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    a{text-decoration: none;}
+
+    .reservation_wrap {
+        text-align: center;
+        width: 100%;
+        background: #fff;
+    }
+
+   .box1{
+        font-family: 'OTWelcomeRA';
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        /* background-color: rgb(218, 209, 199); */
+    }
+
+    /* 호텔사진란 */
+ 
+    .Hotel_pic{
+        padding: 10px;
+        width: 40%;
+        height: 450px;
+    }
+
+    .Hotel_pic>.bigpic{
+        width: 100%;
+        height: 300px;
+        background-color: rgb(211, 211, 211);
+        
+    }
+
+    .Hotel_pic>.small{
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* #으로 바꿔서 경운님 주기 */
+    #smallpic{ 
+        width: 23.5%;
+        height: 120px;
+        background-color: rgb(211, 211, 211);
+
+    }
+
+    /* pictures로 바꿔서 경운님 주기 */
+    #pictures{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+
+
+    /* 호텔정보란 */
+    .Hotel_explain{
+        text-align: left;
+        width: 60%;
+        padding: 10px;
+        height: 450px;
+    }
+    
+    .Hotel_name{
+        padding-left: 10px;
+        border: 1px solid rgb(206, 206, 206);
+        border-radius: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 50px;
+        font-size: 28px;
+        line-height: 60px;
+        background-color: #fff;
+    }
+
+    .Hotel_addr{
+        padding:8px 10px;
+        margin-bottom: 10px;
+        background-color: rgb(245, 245, 245);
+        font-size: 16px;
+        height: 28px;
+        color: rgb(89, 89, 89);
+    }
+
+    .Hotel_info{
+        font-size: 16px;
+        padding-left: 10px;
+        padding-top: 10px;
+        background-color: rgb(245, 245, 245);
+        height: 332px;
+        color: rgb(89, 89, 89);
+    }
+
+    .box2{
+        font-family: 'OTWelcomeRA';
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+        border-bottom: 1px solid rgb(208, 208, 208);
+        /* background-color: rgb(237, 233, 227); */
+    }
+
+    /* 반려추가란 */
+    .addanimal{
+       padding: 10px;
+       width: 25%;
+       text-align: left;
+       display: block;
+       background-color: #fff;
+    }
+
+    .selectanimal{
+        font-size: 19px;
+    }
+    .selectprice{
+        display: none;
+        font-size: 19px;
+    }
+
+    #copyA{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .addanimal>select{
+        display: block;
+        width: 180px;
+        height: 25px;
+        margin-bottom: 15px;
+        border: 1px solid rgb(162, 162, 162);
+        border-radius: 3px;
+    }
+
+    #selectbox{
+        display: none;
+    }
+
+    .addanimal>button{
+        width: 180px;
+        height: 40px;
+        
+    }
+
+    .addanimal>button:enabled{
+        cursor: pointer;
+        border: 1px solid rgb(116, 10, 140);
+        border-radius: 5px;
+        background-color: rgb(116, 10, 140);
+        color: #fff;
+    }
+
+                /* 무게창 고르면 display:flex 로 바꾸기 */
+    .addinfo{
+        display: none;
+        flex-wrap: wrap;
+        
+        width: 100%;
+        /* background-color: antiquewhite; */
+        
+    }
+
+    .animal_info{
+        padding-left: 5px;
+        font-size: 12px;
+        margin-top: 10px;
+        /* margin-bottom: 5px; */
+        width: 180px;
+        height: 30px;
+        line-height: 32px;
+        border: 1px solid rgb(173, 173, 173);
+        border-radius: 3px;
+        color:rgb(125, 125, 125);
+    }
+    
+    .Xbtn{
+        position: relative;
+        top: 3px;
+        width: 20px;
+    }
+    .addinfo>.Xbtn>button{
+
+        margin-top: 13px;
+        margin-left: 5px;
+        width: 17px;
+        height: 22px;
+        background-color: transparent;
+        border: none;
+    }
+
+    .addinfo>.Xbtn>button>img{
+        position: relative;
+        bottom: 3px;
+        right: 10px;
+        cursor: pointer;
+        /* margin-bottom: 5px; */
+        width: 20px;
+        height: 23px;
+    }
+
+    .pickdate{
+        padding-left: 9px;
+        text-align: left;
+        margin-top: 10px;
+        width: 25%;
+        /* border: 2px solid rgb(139, 139, 139); */
+        border-radius: 5px;
+        height: 34px;
+    }
+
+
+    #datepicker{
+        font-family: 'OTWelcomeRA';
+        position: relative;
+        top: 8px;
+        width: 97%;
+        border: none;
+        background-color: transparent;
+    }
+
+    .datecontent{
+        width: 100%;
+        height: 30px;
+        border: 2px solid rgb(214, 214, 214);
+        border-radius: 4px;
+        padding-left: 10px;
+        background-color: #FFF;
+    }
+    
+    .datecontent>label>img.calender_img{
+        z-index: 100;
+        position: relative;
+        top: 3px;
+        width: 18px;
+        margin-right: 8px;
+    }
+    .datecontent>label{
+        position: relative;
+        left: 26px;
+    }
+
+    #demo{
+        position: relative;
+        bottom: 1px;
+        /* right: 40px; */
+        /* padding-left: 40px; */
+        font-family: 'OTWelcomeRA';
+        width: 70%;
+        border: none;
+    }
+
+
+    .buy{
+        width: 50%;
+        text-align: left;
+        padding: 10px;
+        padding-left: 50px;
+    }
+
+    .totaldate{
+        font-family: 'OTWelcomeRA';
+
+        padding: 5px;
+        /* border: 1px solid #000; */
+        font-size: 20px;
+        height: 30px;
+        margin-bottom: 90px;
+    }
+    .totaldate2{
+
+        padding: 5px;
+        /* border: 1px solid #000; */
+        font-size: 25px;
+        height: 30px;
+        position: relative;
+        bottom: 90px;
+        color: red;
+    }
+
+    .pricetitle{
+        padding-left: 5px;
+        font-size: 23px;
+        margin-bottom: 30px;
+    }
+
+    .totalprice{
+        text-align: right;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .pricecontent{
+        color: red;
+    }
+
+    .reservation_btn{
+        font-family: 'OTWelcomeRA';
+        width: 89.3%;
+        height: 64px;
+        line-height: 64px;
+        font-size: 20px;
+
+    }
+    .reservation_btn:enabled{
+        cursor: pointer;
+        border: 1px solid rgb(116, 10, 140);
+        border-radius: 5px;
+        background-color: rgb(116, 10, 140);
+        color: #fff;
+    }
+
+    .cart{
+        cursor: pointer;
+        position: relative;
+        top: 20px;
+        left: 10px;
+        width: 10%;
+    }
+
+
+
+
+    .box3{
+        font-family: 'OTWelcomeRA';
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        /* background-color: rgb(237, 233, 227); */
+    }
+    .Dtail_btn{
+        text-align: left;
+        width: 100%;
+        border-bottom: 1px solid rgb(208, 208, 208);
+    }
+
+    .Dtail_btn>a>button{
+        font-family: 'OTWelcomeRA';
+        font-size: 20px;
+        cursor: pointer;
+        width: 11%;
+        height: 60px;
+        line-height: 65px;
+        border: none;
+        background-color: transparent;
+    }
+
+    
+   
+
+    .Dtail_btn>a>button:hover{
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: rgb(252, 242, 255);
+        border-bottom: 3px solid rgb(116, 10, 140);
+    }
+
+
+
+
+
+    /* ------------호텔정보 상세박스 ---------------*/
+
+    a>.HotelDtail_box{
+        /* border: 1px solid #000; */
+        width: 100%;
+    }
+    .startHD{
+        padding-left: 30px;
+        font-size: 18px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        text-align: left;
+        width: 100%;
+        color: gray;
+
+    }
+
+    .HDpic{
+        width: 100%;
+        /* height: 900px; */
+        background-color: rgb(243, 243, 243);
+    }
+    .HDpic>img{
+        width: 100%;
+    }
+
+    .HD_explain{
+        text-align: left;
+        width: 100%;
+        margin-bottom: 10px;
+        border: 1px solid rgb(187, 187, 187);
+        border-radius: 4px;
+        padding-top: 19px;
+        padding-left: 15px;
+        padding-bottom: 15px;
+        padding-right: 15px;
+        /* line-height: 30px; */
+    }
+
+
+
+
+    /* ------------사업자정보 상세박스 ---------------*/
+    a#aa{
+        width: 100%;
+    }
+    .Einfotitle{
+         text-align: left;
+        margin-top: 60px;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    a>.Entrepreneur_info_box{
+        margin-top: 20px;
+        width: 100%;
+    }
+    .Entrepreneur_box{
+        margin-bottom: 20px;
+        border: 1px solid rgb(86, 86, 86); 
+         border-radius: 4px;
+
+    }
+    
+    .Entrepreneur_box>table{
+        
+        border-collapse: collapse;
+        text-align: left;
+        width: 100%;
+    }
+    
+    
+    td.ET{
+
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+    }
+    #Etitle{
+        border-right: 1px solid rgb(213, 213, 213);
+
+        width: 30%;
+        background-color: rgb(239, 239, 239);
+        
+    }
+
+    tr#Etr{
+        border-bottom: 1px solid rgb(213, 213, 213);
+    }
+
+    .Hotel_map_title{
+        padding-left: 114.5px;
+        margin-top: 40px;
+        font-size: 24px;
+        text-align: left;
+        margin-bottom: 10px;
+        color: rgb(0, 0, 0);
+    }
+ 
+    .Hotel_map{
+        margin: auto;
+        width: 80%;
+        height: 500px;
+        border: 1px solid #000;
+        margin-bottom: 50px;
+    }
+
+
+
+    /* ------------리뷰 상세박스 ---------------*/
+    
+    .review_info_box{
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    .Rtitle{
+        position: relative;
+        width: 100%;
+        text-align: left;
+       margin-top: 60px;
+       font-size: 28px;
+       padding-top: 10px;
+       padding-bottom: 10px;
+       margin-bottom: 20px;
+       border-bottom: 2px solid rgb(194, 194, 194);
+   }
+
+
+   .Review_Reply{
+    margin-bottom: 50px;
+   }
+
+
+
+
+    /* ------------- 유저 리뷰 ------------- */
+   .user_review_box{
+    width: 100%;
+   }
+
+   .user_info{
+    margin-bottom: 10px;
+    text-align: left;
+   }
+
+   .usernick{
+    font-size: 18px;
+    color: rgb(111, 5, 135);
+   }
+
+   .user_date{
+    color: rgb(141, 141, 141);
+   }
+
+   .user_pet, .user_pet_what{
+    position: relative;
+    left: 1.5px;
+    font-size: 15px;
+    color: rgb(141, 141, 141);
+   
+   }
+   
+   .user_from{
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+    width: 20px;
+   }
+
+
+   #Rbox{
+    text-align: left;
+   }
+
+ 
+
+   .user_contents{
+    padding: 10px;
+    padding-top: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(243, 243, 243);
+    font-size: 15px;
+   }
+
+   .user_review_pic{
+    margin-top: 5px;
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+   }
+
+   .user_pic{
+    display: none;
+    width: auto;
+    height: 80px;
+    object-fit: cover;
+    
+   }
+
+   .MD{
+    position: relative;
+    right: 2px;
+    cursor: pointer;
+    width: 20px;
+}
+
+.Review_btn{
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    width: 30px;
+    border: none;
+    left: 40px;
+}
+   /* ------------- 수정 박스 ------------- */
+
+.Mbox{
+    display: none;
+    padding: 20px;
+    text-align: left;
+    z-index: 150;
+    position: fixed;
+    border: 1px solid rgb(93, 46, 105);
+    border-radius: 5px;
+    width: 800px;
+    height: 380px;
+    top: 155px;
+    right: 355px;
+    background-color: rgba(255, 255, 255, 0.944);
+    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.149);
+}
+.mask{
+    z-index: 140;
+     display: none;
+     position: fixed;
+     background-color: rgba(0, 0, 0, 0.352);
+     width: 100%;
+     height: 100%;
+ }
+.Mall{
+    color: rgb(131, 51, 149);
+    
+}
+#price_prod{
+    font-size: 14px;
+    color: rgb(213, 147, 228);
+}
+
+#Mnew_review{
+    
+    font-family: 'OTWelcomeRA';
+    font-size: 16px;
+    padding: 20px;
+    width: 94.55%;
+    height: 30%;
+    margin-top: 20px;
+    resize: none;
+    border: 1px solid #f0f0f0;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+
+}
+
+
+
+.flex_go{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.CB{
+    cursor: pointer;
+    position: relative;
+    left: 590px;
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+    background-color: transparent;
+    border: none;
+}
+ .MCbtn{
+    position: relative;
+    right: 8px;
+    bottom: 3px;
+    width: 25px;
+ }
+
+ .modypic{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+ }
+ .pick{
+    width: auto;
+    height: 80px;
+ }
+ #modypic{
+     width: auto;
+    height: 100%;
+    object-fit: cover;
+ }
+
+ #Deletepic{
+    cursor: pointer;
+    width: 5px;
+    height: 15px;
+    margin-right: -10px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    bottom: 60px;
+    right: 20px;
+}
+
+ #X2{
+    position: relative;
+    right: 7px;
+    bottom: 2.5px;
+    width: 15px;
+ }
+ input[type=file]::file-selector-button {
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'OTWelcomeRA';
+    margin-right: 10px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 33px;
+    border: 1px solid rgb(131, 51, 149);
+    background-color: rgb(131, 51, 149);
+    border-radius: 4px;
+    color: #fff;
+   
+  }
+  .addpic{
+    width: 100%;
+  }
+  input[type=file]{
+    width: 86.3%;
+  }
+  #addpic_btn:disabled{
+    cursor: default;
+    margin-top: 10px;
+    font-family: 'OTWelcomeRA';
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 33px;
+    border: 1px solid rgb(173, 173, 173);
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    color: rgb(159, 159, 159);
+  }
+  #addpic_btn{
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'OTWelcomeRA';
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 33px;
+    border: 1px solid rgb(131, 51, 149);
+    background-color: rgb(131, 51, 149);
+    border-radius: 4px;
+    color: #fff;
+    
+  }
+  
+
+
+
+  .hiddenpick{
+    visibility: hidden;
+  }
+
+   /* ------------- 호텔 관리인 답변 ------------- */
+
+.replyBigbox{
+    position: relative;
+    left: 30px;
+    text-align: left;
+}
+
+   .reply_box{
+    position: relative;
+    bottom: 8.1px;
+    border: 1px solid rgb(166, 166, 166);
+    border-radius: 5px;
+    width: 97.5%;
+    padding: 10px;
+    padding-top: 14px;
+   }
+
+   .manager_icon{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    bottom: 2px;
+    margin-right: 5px;
+   }
+
+   .manager_info{
+    display: flex;
+    flex-wrap: wrap;
+   }
+
+   .manager_name{
+    font-size: 18px;
+    margin-right: 10px;
+   }
+
+   .manager_date{
+    line-height: 21px;
+    color: rgb(141, 141, 141);
+   }
+
+   .manager_Hotelname{
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: rgb(154, 134, 158);
+   }
+
+   .manager_reply{
+    padding: 10px;
+    padding-top: 14px;
+    font-size: 15px;
+    width: 100%;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+   }
+
+   .ladder{
+    position: relative;
+    left: 10px;
+    width: 40px;
+   }
+
+
+   #go_reservation_info{
+    font-family: 'OTWelcomeRA';
+
+    background-color: transparent;
+    border: 1px solid rgb(190, 117, 206);
+    height: 30px;
+    width: 140px;
+    margin-left: 20px;
+    border-radius: 5px;
+    position: relative;
+    line-height: 32px;
+    bottom: 2px;
+    color: rgb(131, 51, 149);
+    cursor: pointer;
+    transition: 0.2s;
+}
+#go_reservation_info:hover{
+    background-color: rgb(253, 246, 255);
+}
+#emty_review{
+    width: 100%;
+    height: 300px;
+}
+
+#ER{
+    margin-top: 100px;
+    color: rgb(145, 145, 145);
+}

@@ -1,0 +1,696 @@
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    * {
+        outline: 0;
+    }
+
+    ul, ol, li {
+        list-style: none;
+    }
+    a{text-decoration: none;}
+
+    .my_info_wrap {
+         font-family: 'OTWelcomeRA';
+         position: relative;
+         top: 35px;
+        /* padding: 20px; */
+        text-align: center;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 350px;
+    }
+    
+
+  
+
+
+
+    .my_info_title{
+        font-family: 'OTWelcomeRA';
+
+        
+        width: 100%;
+        height: 70px;
+        background-color: rgb(164, 78, 184);
+        color: #fff;
+        font-size: 30px;
+        text-align: left;
+        padding-left: 250px;
+        line-height: 80px;
+
+    }
+
+    .my_info_BigBox{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 12.8%;
+        margin-top: 80px;
+        
+    }
+
+    .my_info_box1{
+        width: 20%;
+        text-align: right;
+        padding: 10px;
+        font-size: 20px;
+    }
+/* 링크 박스 호버로 꾸미기 */
+    #all_choice:hover{
+        color: rgb(116, 10, 140);
+    }
+    .my_info_box1>a{
+        color: rgb(132, 132, 132);
+        
+    }
+    a.my_info_manage{
+
+        color: rgb(116, 10, 140);
+    }
+
+
+
+
+    .my_info_box2{
+        padding: 20px;
+        padding-left: 70px;
+        text-align: left;
+        width: 80%;
+        /* border: 1px solid #000; */
+    }
+
+      .wary, .txt{
+        font-size: 12px;
+        margin-top: 5px;
+        color: red;
+    }
+
+    .modify_title{
+        font-size: 20px;
+    }
+
+    #title_box{
+        width: 140px;
+        font-weight: bold;
+
+    }
+
+    .user_email_box{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .user_from{
+        position: relative;
+        top: 1px;
+        width: 20px;
+        margin-right: 5px;
+    }
+    
+ 
+
+    #all_info{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+
+    #modify_contents, .modify_contents{
+        color:rgb(112, 112, 112);
+        font-size: 15px;
+    }
+
+    .flexMody{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .profile{
+        margin-top: 10px;
+        width: 130px;
+    }
+
+    .user_email{
+        margin-top: 4px;
+        color: rgb(149, 149, 149);
+        font-size: 13px;
+    }
+
+
+    .write_new_nick{
+        display: none;
+        margin-right: 5px;
+        margin-top: 10px;
+        font-family: 'OTWelcomeRA';
+        padding-top:5px;
+        padding-left: 5px;
+        width: 170px;
+        height: 20px;
+        font-size: 16px;
+        border: 1px solid rgb(166, 166, 166);
+        border-radius: 2px;
+
+        background-color: #fff;
+    }
+
+    .write_new_nick:focus{
+        background-color: rgb(246, 246, 246);
+    }
+    
+    .modify_nick_btn{
+        font-family: 'OTWelcomeRA';
+        padding-top: 5px;
+        margin-top: 10px;
+        position: relative;
+        width: 100px;
+        height: 28px;
+        cursor: pointer;
+        border: 1px solid rgb(116, 10, 140);
+        border-radius: 3px;
+        background-color: rgb(116, 10, 140);
+        color: #fff;
+    }
+
+    #checknick{
+        display: none;
+        font-family: 'OTWelcomeRA';
+        padding-top: 5px;
+        margin-top: 10px;
+        position: relative;
+        width: 100px;
+        height: 28px;
+        cursor: pointer;
+        border: 1px solid rgb(160, 30, 189);
+        border-radius: 3px;
+        background-color: rgb(160, 30, 189);
+        color: #fff;
+        margin-right: 5px;
+    }
+
+
+
+
+        .phone_notice{
+            margin-top: 5px;
+            font-size: 12px;
+            color:rgb(151, 151, 151);
+        }
+
+
+        .write_new_phone,.write_new_phone2{
+            display: none;
+            margin-right: 5px;
+            margin-top: 10px;
+            font-family: 'OTWelcomeRA';
+            padding-top:5px;
+            padding-left: 5px;
+            width: 170px;
+            height: 20px;
+            font-size: 16px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: #fff;
+        }
+    
+        .write_new_phone:focus,.write_new_phone2:focus{
+            background-color: rgb(246, 246, 246);
+        }
+
+
+        
+        
+        .complete_nick_btn{
+            display: none;
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 10px;
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+        .modify_phone_btn{
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 10px;
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+
+        #XB, #XB1{
+            display: none;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            margin-top: 10px;
+            font-family: 'OTWelcomeRA';
+            position: relative;
+            top: 1.5px;
+            padding-top: 5px;
+            color: rgb(189, 189, 189);
+            background-color: #fff;
+            border: 1px solid rgb(189, 189, 189);
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+        #XB5{
+        	display: none;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            margin-top: 10px;
+            font-family: 'OTWelcomeRA';
+            position: relative;
+            top: 1.5px;
+            padding-top: 5px;
+            color: rgb(189, 189, 189);
+            background-color: #fff;
+            border: 1px solid rgb(189, 189, 189);
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+        
+        #XB2,#XB3{
+            display: none;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            font-family: 'OTWelcomeRA';
+            position: relative;
+            top: 1.5px;
+            padding-top: 5px;
+            color: rgb(189, 189, 189);
+            background-color: #fff;
+            border: 1px solid rgb(189, 189, 189);
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+
+        .send_code,.send_code2{
+            display: none;
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 10px;
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+
+        .send_code:disabled,.send_code2:disabled{
+            cursor: default;
+            border: 1px solid rgb(179, 179, 179);
+            border-radius: 3px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(179, 179, 179);
+        }
+        
+
+        .write_phone_code,.write_phone_code2{
+            display: none;
+            margin-right: 5px;
+            margin-top: 10px;
+            font-family: 'OTWelcomeRA';
+            padding-top:5px;
+            padding-left: 5px;
+            width: 100px;
+            height: 20px;
+            font-size: 16px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+            color: rgb(115, 115, 115);
+            background-color: #fff;
+        }
+    
+        .write_phone_code:focus,.write_phone_code2:focus{
+            background-color: rgb(246, 246, 246);
+        }
+
+        .phone_code_btn,.phone_code_btn2{
+            display: none;
+
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 10px;
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+
+        .phone_code_btn:disabled,.phone_code_btn2:disabled{
+            cursor: default;
+            border: 1px solid rgb(179, 179, 179);
+            border-radius: 3px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(179, 179, 179);
+        }
+
+
+
+        .complete_addr_btn{
+            display: none;
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            /* margin-top: 10px; */
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+        .modify_addr_btn{
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            /* margin-top: 10px; */
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+        
+
+        .time,.time2{
+            display: none;
+            position: relative;
+            bottom: 20px;
+            left: 73px;
+            font-size: 14px;
+            color: red;
+            width: 30px;
+        }
+
+
+
+
+        .modify_pw2{
+            display: none;
+        }
+
+
+        .modify_pw,.modify_pw2{
+            cursor: pointer;
+            width: 90px;
+            margin-top: 50px;
+            color: black;
+            font-size: 14px;
+        }
+
+        .modify_pw:hover,.modify_pw2:hover{
+            text-decoration: underline;
+        }
+
+        .ask_to_user{
+            margin-top: 30px;
+        }
+
+        .ask_to_user>span{
+            font-size: 14px;
+            color:rgb(136, 136, 136);
+            margin-right: 10px;
+        }
+
+        .ask_to_user>a{
+            cursor: pointer;
+            color: black;
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .ask_to_user>a:hover{
+            text-decoration: underline;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* 주소 CSS */
+
+        #sample6_postcode{
+            display: none;
+            margin-right: 5px;
+            margin-top: 20px;
+            font-family: 'OTWelcomeRA';
+            padding-top:5px;
+            padding-left: 5px;
+            width: 170px;
+            height: 20px;
+            font-size: 16px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: #fff;
+        }
+    
+       
+
+
+
+        #sample6_address{
+            display: none;
+            margin-right: 5px;
+            margin-top: 5px;
+            font-family: 'OTWelcomeRA';
+            padding-top:5px;
+            padding-left: 5px;
+            width: 275px;
+            height: 20px;
+            font-size: 16px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: #fff;
+        }
+    
+    
+
+
+
+        #sample6_detailAddress{
+            display: none;
+            margin-right: 5px;
+            margin-top: 5px;
+            font-family: 'OTWelcomeRA';
+            padding-top:5px;
+            padding-left: 5px;
+            width: 275px;
+            height: 20px;
+            font-size: 16px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: #fff;
+        }
+    
+        #sample6_detailAddress:focus{
+            background-color: rgb(246, 246, 246);
+        }
+
+
+
+
+
+        #sample6_extraAddress{
+            display: none;
+            margin-right: 5px;
+            margin-top: 5px;
+            font-family: 'OTWelcomeRA';
+            padding-top:5px;
+            padding-left: 5px;
+            width: 275px;
+            height: 20px;
+            font-size: 16px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: #fff;
+        }
+    
+        #sample6_extraAddress:focus{
+            background-color: rgb(246, 246, 246);
+        }
+
+
+
+        .UP_btn{
+            display: none;
+
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 20px;
+            position: relative;
+            width: 100px;
+            height: 28px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+
+        .explaintitle{
+            display: none;
+            margin-left: 1px;
+            margin-top: 5px;
+            margin-bottom: -5px;
+            font-size: 13px;
+            color: rgb(113, 113, 113);
+        }
+
+
+        /* -------------- 비밀번호 재설정 -------------- */
+
+        #re_new_pw{
+            margin-left: 5px;
+            margin-top: 5px;
+            padding-left: 5px;
+            width: 170px;
+            height: 25px;
+            font-size: 13px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: #fff;
+        }
+    
+        #re_new_pw:focus{
+            background-color: rgb(246, 246, 246);
+        }
+
+        #re_new_pw::placeholder{
+            font-family: 'OTWelcomeRA';
+        }
+        
+        #new_pw{
+            position: relative;
+            left: 23.5px;
+            margin-left: 5px;
+            margin-top: 20px;
+            padding-left: 5px;
+            width: 170px;
+            height: 25px;
+            font-size: 13px;
+            border: 1px solid rgb(166, 166, 166);
+            border-radius: 2px;
+    
+            background-color: #fff;
+        }
+    
+        #new_pw:focus{
+            background-color: rgb(246, 246, 246);
+        }
+
+        #new_pw::placeholder{
+            font-family: 'OTWelcomeRA';
+        }
+
+
+        .re_new_pw, .new_pw{
+            display: none;
+            font-size: 14px;
+        }
+
+        #see_pw{
+            position: relative;
+            top: 5px;
+            margin-left: 25px;
+        }
+
+        #see_pw,#see_pw2{
+            cursor: pointer;
+            width: 22px;
+        }
+
+        #see_pw2{
+            position: relative;
+            top: 6px;
+            margin-left: 2px;
+        }
+
+        #clear_change_pw{
+
+            display: none;
+
+            font-family: 'OTWelcomeRA';
+            padding-top: 5px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+
+            position: relative;
+            width: 300px;
+            height: 35px;
+            cursor: pointer;
+            border: 1px solid rgb(116, 10, 140);
+            border-radius: 3px;
+            background-color: rgb(116, 10, 140);
+            color: #fff;
+        }
+
+
+        #clear_change_pw:disabled{
+            cursor: default;
+            border: 1px solid rgb(179, 179, 179);
+            border-radius: 3px;
+            background-color: rgb(255, 255, 255);
+            color: rgb(179, 179, 179);
+        }
+        .txt2{
+            font-size: 12px;
+            margin-top: 6px;
+            margin-left: 94.5px;
+            color: red;
+        }

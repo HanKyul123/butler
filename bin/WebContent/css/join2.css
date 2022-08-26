@@ -1,0 +1,133 @@
+/* 웰컴체 */
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+    .wrap{
+        font-family: 'OTWelcomeRA';
+        margin-top: 10%;
+        text-align: center;
+    }
+
+    .phone_title{
+        position: relative;
+        left: 25px;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    p{
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+
+
+    .Prove_box{
+        display: none;
+        margin-top: 30px;
+    }
+
+    .bold{
+        position: relative;
+        right: 6.5%;
+        color: rgb(56, 56, 56);
+    }
+    .bold2{
+        position: relative;
+        right: 7%;
+        color: rgb(56, 56, 56);
+    }
+
+    input[type=tel]{
+        border-radius: 3px;
+        border: 1px solid rgb(184, 184, 184);
+       position: relative;
+       left: 5px;
+        font-size: 15px;
+        width: 190px;
+        height: 35px;
+        outline: none;
+        padding-left: 10px;
+    }
+    input[type=tel]:focus{
+        outline: none;
+    }
+    .time{
+        width: 80px;
+        margin: auto;
+        text-align: center;
+        color: red;
+        position: relative;
+        left: 40px;
+        bottom: 26.5px;
+    }
+    #phone_num{
+        margin-top: 10px;
+        margin-left: 35px;
+    }
+    
+    #prove_num{
+        margin-top: 10px;
+        margin-left: 35px;
+    }
+
+    #click_btn{
+        cursor: pointer;
+        position: relative;
+        left: 10px;
+        width: 110px;
+        height: 38px;
+    }
+    .btn_checked1:enabled{
+        cursor: pointer;
+        background-color: rgb(129, 39, 149);
+        border: 1px solid rgb(129, 39, 149);
+        /* background-color: rgb(192, 192, 192);
+        border: 1px solid rgb(192, 192, 192); */
+        border-radius: 3px; 
+        color: white;
+    }
+
+    .btn_checked1:disabled{
+        cursor: default;
+    }
+    
+    .btn_checked2:enabled{
+        cursor: pointer;
+        background-color: rgb(129, 39, 149);
+        border: 1px solid rgb(129, 39, 149);
+        /* background-color: rgb(192, 192, 192);
+        border: 1px solid rgb(192, 192, 192); */
+        border-radius: 3px; 
+        color: white;
+    }
+    .btn_checked2:disabled{
+        cursor: default;
+    }
+    
+    .phone_num:disabled{
+        background-color: rgb(240, 240, 240);
+    }
+
+    .warytxtbox{
+        position: relative;
+        bottom: 12px;
+        width: 269px;
+        margin: auto;
+        text-align: left;
+        font-size: 12px;
+        color: rgb(255, 34, 34);
+    }
