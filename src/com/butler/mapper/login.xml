@@ -28,4 +28,29 @@
     <select id="checknickname" parameterType="string" resultType="_int">
       select count(*) from user_tb where user_nickname = #{user_nickname}
     </select>
+   <update id="User_modifyAction" parameterType="udto">
+		update user_tb set 
+		user_logintype = #{user_logintype},
+		user_nickname = #{user_nickname},
+		user_zipcode = #{user_zipcode},
+		user_addrdetail = #{user_addrdetail},
+		user_addr = #{user_addr},
+		user_phone = #{user_phone},
+		user_addretc = #{user_addretc}
+		where User_NUM_PK=#{user_num_pk}
+	</update> 
+	<select id="User_select_pk" parameterType="_int" resultType="udto">
+		select * from user_tb where user_num_pk = #{user_num_pk}
+	</select>
+	   <update id="UserResignOK" parameterType="udto">
+		update user_tb set 
+		user_status = 0
+		where User_NUM_PK=#{user_num_pk}
+	</update> 
+	<update id="User_modifyPwOk" parameterType="udto">
+		update user_tb set 
+		user_logintype = #{user_logintype},
+		user_pw = #{user_pw}
+		where User_NUM_PK=#{user_num_pk}
+	</update> 
 </mapper>

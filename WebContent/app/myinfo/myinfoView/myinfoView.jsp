@@ -16,6 +16,58 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
 
 </head>
+<!-- 휴대폰 수정시 인증번호 -->
+<script>
+	function sendcode2(){
+		const xhr = new XMLHttpRequest();
+		const phone_num = document.getElementById("WNP");
+  	  	const cp = "${cp}";
+  	 	console.log(phone_num.value);
+
+	xhr.onreadystatechange = function() {
+			console.log("5-4");
+			if (xhr.readyState == 4) {
+				if (xhr.status == 200) {
+					let txt = xhr.responseText;
+					txt = txt.trim();
+					if (txt == 'O') {
+						alert("인증번호 전송이 완료되었습니다.")
+					} else if (txt == 'X') {
+						alert("인증번호 전송을 다시 확인해 주세요.")
+					}
+				}
+			}
+		}
+		xhr.open("GET", cp + "/user/phone_numChack.us?phone_num="+ phone_num.value);
+		xhr.send();
+	};
+</script>
+<!-- 비밀번호 수정시 인증번호 -->
+<script>
+	function sendcode3(){
+		const xhr = new XMLHttpRequest();
+		const phone_num = document.getElementById("WNP2");
+  	  	const cp = "${cp}";
+  	 	console.log(phone_num.value);
+
+	xhr.onreadystatechange = function() {
+			console.log("6-4");
+			if (xhr.readyState == 4) {
+				if (xhr.status == 200) {
+					let txt = xhr.responseText;
+					txt = txt.trim();
+					if (txt == 'O') {
+						alert("인증번호 전송이 완료되었습니다.")
+					} else if (txt == 'X') {
+						alert("인증번호 전송을 다시 확인해 주세요.")
+					}
+				}
+			}
+		}
+		xhr.open("GET", cp + "/user/phone_numChack.us?phone_num="+ phone_num.value);
+		xhr.send();
+	};
+</script>
 
 <%@ include file="../../../header/pc_header.jsp"%>
 
@@ -48,7 +100,7 @@
                 </div>
               
               
-           <form method="post" action="/user/user_modifyAction.us">
+           <form id="mody_form1" method="post" action="/user/user_modifyAction.us">
                 <input type="hidden" name="user_num_pk" value="${LoginUser.user_num_pk}">
                 <input type="hidden" name="user_logintype" value="${LoginUser.user_logintype}">
                 
@@ -61,7 +113,7 @@
                 </div>
   
                  
-            
+            	
                 <div id="all_info" class="user_nick_box">
                     <div id="title_box" class="user_nick_title">닉네임</div>
                     <div id="modify_contents" class="user_nick_name">
@@ -76,7 +128,8 @@
                     <input class="write_new_nick" type="text" id="WNN" onkeyup="checknick(this.value)"  autocomplete="off">
                     
                     <button type="button" class="modify_nick_btn" id="MNB" onclick="myFunction()">수정하기</button>
-                    <button type="button"  id="checknick">중복확인</button>
+                    <button type="button"  id="checknick" onclick="checknicknameok()">중복확인</button>
+                    
                     <button type="button" class="complete_nick_btn" id="CMB" onclick="myFunction_1()">수정완료</button>
                    
                     <button type="button" id="XB1" onclick="myFunction2_2()">X</button>
@@ -111,10 +164,10 @@
                 <div class="flexMody">
                     <input class="write_new_phone" type="tel" id="WNP" minlength="10" maxlength="11" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     <button type="button" class="modify_phone_btn" onclick="myFunction2()" id="MPB">수정하기</button>
-                 <input type="hidden" name="user_phone" value="${LoginUser.user_phone}">
+                 <input type="hidden" name="user_phone" id="user_phone1" value="${LoginUser.user_phone}">
                  <input type="hidden" name="user_phone2" id="user_phone2" value="">
                 
-                    <button type="button" class="send_code" onclick="myFunction3()" id="SC" disabled="disabled">인증번호 전송</button>
+                    <button type="button" class="send_code" onclick="myFunction3(); sendcode2();" id="SC" disabled="disabled">인증번호 전송</button>
                     <button type="button" id="XB" onclick="myFunction2_1()">X</button>
                     
                 </div>
@@ -124,7 +177,7 @@
                 </div>
 
                 <div class="flexMody">
-                    <input class="write_phone_code" type="tel" name="" id="WPC" maxlength="4" >
+                    <input class="write_phone_code" type="tel" name="telnumchk" id="WPC" maxlength="4" >
                     <button type="button" class="phone_code_btn" id="PCB" disabled="disabled" onclick="finish_prove()">인증하기</button>
                     <button type="button" id="XB5" onclick="cancel_phone()">X</button>
                 </div>
@@ -175,25 +228,33 @@
                         <button type="button" class="complete_addr_btn" id="CAB" onclick="myFunction4_1()">수정완료</button>
                         <button type="button" id="XB2" onclick="myFunction4_2()">X</button>
                     </div>
-                   
-             
+                   <input id="final_send" type="submit" value="수정 완료"/>
+             	</form>
+             	
+				<form id="mody_form2" method="post" action="/user/user_modifyPwAction.us">
+               	<input type="hidden" name="user_num_pk2" value="${LoginUser.user_num_pk}">
+                <input type="hidden" name="user_logintype2" value="${LoginUser.user_logintype}">
                
                 <div class="modify_pw" id="MDPW" onclick="change_pw()">비밀번호 변경 ></div>
                 <div class="modify_pw2" id="MDPW2" onclick="cancel_pw()">비밀번호 변경∨</div>
                 <div class="explaintitle" id="ELT">전화번호 인증을 해주세요</div>
                 <div class="flexMody">
-                    <input class="write_new_phone2" type="tel" name="" id="WNP2" minlength="10" maxlength="11" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-                    <button type="button" class="send_code2" onclick="myFunction3_2()" id="SC2" disabled="disabled">인증번호 전송</button>
+                    <input class="write_new_phone2" type="tel" name="" id="WNP2" minlength="10" maxlength="11" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                    onkeyup="is_samephone(this.value)">
+                    <button type="button" class="send_code2" onclick="myFunction3_2(); sendcode3();" id="SC2" disabled="disabled">인증번호 전송</button>
                 </div>
+                
+                <div class="txt4"><span id="notsamephone"></span></div>
+                
                 <div class="flexMody">
-                    <input class="write_phone_code2" type="tel" name="" id="WPC2" maxlength="4" autocomplete="off">
+                    <input class="write_phone_code2" type="tel" name="telnumchk2" id="WPC2" maxlength="4" autocomplete="off">
                     <button type="button" class="phone_code_btn2" id="PCB2" disabled="disabled" onclick="prove_user_code()">인증하기</button>
                 </div>
                 <div class="time2" id="time2"><span id="timer2" class="timer2">3:00</span></div>
 
                 <!-- 새 비밀번호 설정 -->
                 <div class="new_pw">
-                          새 비밀번호
+                          	새 비밀번호
                     <input id="new_pw" type="password" name="new_pw" placeholder="새 비밀번호를 입력해주세요." id="all_pw" class="pw_I" onkeyup="checkpw(this.value)">
                     <img src="${pageContext.request.contextPath}/img/eye.png" alt="" id="see_pw" class="see_pw">
 
@@ -202,7 +263,7 @@
 
                 <!-- 새 비밀번호 재입력 -->
                 <div class="re_new_pw" >
-                          비밀번호 재입력
+                          	비밀번호 재입력
                     <input id="re_new_pw" type="password" name="re_new_pw" placeholder="비밀번호를 재입력해주세요." id="all_pw" class="re_pw_I" onkeyup="checkrepw(this.value)">
                     <img src="${pageContext.request.contextPath}/img/eye.png" alt="" id="see_pw2" class="see_pw2">
 
@@ -211,10 +272,11 @@
                 </div>
 
                 <!-- 비밀번호 변경 완료 버튼 -->
-                <button type="button" id="clear_change_pw" disabled="disabled" onclick="clear_chage_pw()">비밀번호 변경 완료</button>
+                <button type="submit" id="clear_change_pw" disabled="disabled" onclick="clear_chage_pw()">비밀번호 변경 완료</button>
                 <!-- 새로운 비밀번호 저장하는 input -->
-                <input type="hidden" id="user_new_pw">
+           <!-- <input type="hidden" id="user_new_pw" name="user_new_pw" value=""> -->
                 
+             </form>
 
 
                 <div class="ask_to_user">
@@ -285,5 +347,7 @@
         }).open();
     }
 </script>
+
+
 
 </html>

@@ -30,6 +30,8 @@ SqlSession sqlsession;
 		
 		return sqlsession.update("review.updateReply",datas) == 1;
 	}
+	
+	
 }
 
 

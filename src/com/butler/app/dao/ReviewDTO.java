@@ -6,6 +6,13 @@ public class ReviewDTO {
 	private String review_contents;
 	private String review_nickname;
 	private String review_regdate;
+	private String review_file_systemname;
+	private String review_file_orgname;
+	
+	private int reply_num_pk;
+	private int review_num_fk;
+	private String reply_contents;
+	private String reply_regdate;
 	
 
 	public int getReview_num_pk() {
@@ -38,4 +45,48 @@ public class ReviewDTO {
 	public void setReview_regdate(String review_regdate) {
 		this.review_regdate = review_regdate;
 	}
+	public String getReview_file_systemname() {
+		return review_file_systemname;
+	}
+	public void setReview_file_systemname(String review_file_systemname) {
+		this.review_file_systemname = review_file_systemname;
+	}
+	public String getReview_file_orgname() {
+		return review_file_orgname;
+	}
+	public void setReview_file_orgname(String review_file_orgname) {
+		this.review_file_orgname = review_file_orgname;
+	}
+	
+	
+	
+	
+	public int getReply_num_pk() {
+		return reply_num_pk;
+	}
+	public void setReply_num_pk(int reply_num_pk) {
+		this.reply_num_pk = reply_num_pk;
+	}
+	public int getReview_num_fk() {
+		return review_num_fk;
+	}
+	public void setReview_num_fk(int review_num_fk) {
+		this.review_num_fk = review_num_fk;
+	}
+	public String getReply_contents() {
+		return reply_contents;
+	}
+	public void setReply_contents(String reply_contents) {
+		this.reply_contents = reply_contents;
+	}
+	public String getReply_regdate() {
+		return reply_regdate;
+	}
+	public void setReply_regdate(String reply_regdate) {
+		this.reply_regdate = reply_regdate;
+	}
+	
+	
+	
+	
 }

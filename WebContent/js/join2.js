@@ -49,10 +49,6 @@ var user_phone = $('#phone_num').val();
 
 const modifyT = document.querySelector(".btn_checked1");
 
-
-
-
-
     $('.Prove_box').css('display','block');
     $('.btn_checked1').attr("disabled", true);
     $('#phone_num').attr("disabled", true);

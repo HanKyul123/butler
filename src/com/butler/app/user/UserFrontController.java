@@ -141,7 +141,25 @@ public class UserFrontController extends HttpServlet{
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			break;	
+			break;
+			
+		case "/user/user_modifyAction.us":
+			System.out.println("67");
+			try {
+				new User_modifyAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
+		case "/user/user_modifyPwAction.us":
+			try {
+				System.out.println("90");
+				transfer = new User_modifyPwAction().execute(req, resp);
+			} catch (Exception e) {
+				System.out.println("91");
+				e.printStackTrace();
+			}
+			break;
 		
 	 }
 		if(transfer !=null) {

@@ -2,6 +2,7 @@ const txtnick = document.getElementById("WN");
 const txtnickname = document.getElementById("user_nick");
 const txtaddrs = document.getElementById("modify_addr");
 const txtaddr = document.getElementById("addr_txt");
+var notsame = document.getElementById("notsamephone");
 function nick_chk(nick){
   if(nick.length < 2 || nick.length > 10) {
   return false;
@@ -560,6 +561,11 @@ function change_pw(){
         $(".modify_nick_btn").attr("disabled",true);
         $(".modify_addr_btn").attr("disabled",true);
         $(".modify_phone_btn").attr("disabled",true);
+        
+        var notsame = document.getElementById("notsamephone");
+        notsame.style.color="red"
+        notsame.innerHTML="";
+        notsame.style.display="none";
 
 
   z.style.display="none";
@@ -569,6 +575,8 @@ function change_pw(){
   a.style.display="block";
 
 }
+
+
 var txtre_pw = document.getElementById("re_new_pw_txt");
 var txtpw = document.getElementById("new_pw_txt");
 
@@ -584,10 +592,10 @@ function cancel_pw(){
   var h = document.getElementById("new_pw");
   var j = document.getElementById("re_new_pw");
 
-		  $(".modify_nick_btn").attr("disabled",false);
-		  $(".modify_addr_btn").attr("disabled",false);
-		  $(".modify_phone_btn").attr("disabled",false);
-		  $(".modify_pw").attr("onclick","change_pw()");
+        $(".modify_nick_btn").attr("disabled",false);
+        $(".modify_addr_btn").attr("disabled",false);
+        $(".modify_phone_btn").attr("disabled",false);
+        $(".modify_pw").attr("onclick","change_pw()");
 
         $("#WNP2").attr("disabled",false);
         $("#SC2").attr("disabled",true);
@@ -599,6 +607,11 @@ function cancel_pw(){
         $("#clear_change_pw").css("display","none")
         $(".re_new_pw").css("display","none")
         $(".new_pw").css("display","none")
+        
+         var notsame = document.getElementById("notsamephone");
+          notsame.style.color="red"
+          notsame.innerHTML="";
+          notsame.style.display="none";
 
 
   z.style.display="block";
@@ -609,7 +622,9 @@ function cancel_pw(){
   r.style.display="none";
   q.style.display="none";
   e.style.display="none";
-
+  notsame.style.color="red"
+  notsame.value="";
+  
   x.value="";
   wc2.value="";
   h.value ="";
@@ -847,6 +862,7 @@ const over2 = document.getElementById('see_pw2');
           let l = document.getElementById("user_new_pw");
 
 
+
           a.style.display="block";
           b.style.display="none";
           c.style.display="none";
@@ -858,7 +874,14 @@ const over2 = document.getElementById('see_pw2');
           k.style.display="none";
           $(".new_pw").css("display","none");
           $(".re_new_pw").css("display","none");
-
+          
+          
+          var notsame = document.getElementById("notsamephone");
+          notsame.style.color="red"
+          notsame.innerHTML="";
+          notsame.style.display="none";
+          
+          
           l.value=i.value;
           d.value="";
           f.value="";
@@ -889,39 +912,63 @@ const over2 = document.getElementById('see_pw2');
         
         
         function cancel_phone() {
-        	let a = document.getElementById("WNP");
-        	let b = document.getElementById("MPB");
-        	let c = document.getElementById("SC");
-        	let d = document.getElementById("WPC");
-        	let e = document.getElementById("PCB");
-        	let f = document.getElementById("XB5");
-        	let g = document.getElementById("time");
-        	
-        	
-        	a.style.display="none";
-        	b.style.display="block";
-        	c.style.display="none";
-        	d.style.display="none";
-        	e.style.display="none";
-        	f.style.display="none";
-        	g.style.display="none";
-        	
-        	
-        	a.value="";
-        	d.value="";
-        	
-        	a.style.border="1px solid rgb(166, 166, 166)";
-        	d.style.border="1px solid rgb(166, 166, 166)";
-        	
-        	$(".modify_nick_btn").attr("disabled",false);
+           let a = document.getElementById("WNP");
+           let b = document.getElementById("MPB");
+           let c = document.getElementById("SC");
+           let d = document.getElementById("WPC");
+           let e = document.getElementById("PCB");
+           let f = document.getElementById("XB5");
+           let g = document.getElementById("time");
+           
+           
+           a.style.display="none";
+           b.style.display="block";
+           c.style.display="none";
+           d.style.display="none";
+           e.style.display="none";
+           f.style.display="none";
+           g.style.display="none";
+           
+           
+           a.value="";
+           d.value="";
+           
+           a.style.border="1px solid rgb(166, 166, 166)";
+           d.style.border="1px solid rgb(166, 166, 166)";
+           
+           $(".modify_nick_btn").attr("disabled",false);
             $(".modify_addr_btn").attr("disabled",false);
             $(".modify_pw").attr("onclick","change_pw()");
-        	
-        	
-		}
+           
+           
+      }
 
 
 
+        function is_samephone(value) {
+         let oriphone = document.getElementById("user_phone1");
+         if(value!==oriphone.value){
+            notsame.innerHTML="회원님의 전화번호와 일치하지 않습니다.";
+            notsame.style.color="red";
+            $(".send_code2").attr("disabled",true);
+            notsame.style.display="block";
+            return false;
+         }else if(value.length!==oriphone.value.length){
+            notsame.innerHTML="회원님의 전화번호와 일치하지 않습니다.";
+            notsame.style.color="red";
+            $(".send_code2").attr("disabled",true);
+            notsame.style.display="block";
+            return false;
+         }else if(value==""){
+            notsame.innerHTML="";
+            notsame.style.color="red"
+            notsame.style.display="block";
+            return false;
+         }else{
+            notsame.innerHTML="회원님의 전화번호와 일치합니다.";
+            notsame.style.color="rgb(19, 106, 227)";
+         }
+         
+      
+      }
  
-
-

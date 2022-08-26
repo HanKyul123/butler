@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="File">
+	<insert id="insertFile" parameterType="rfdto">
+		insert into file_review_tb values(#{review_num_fk},#{file_review_systemname},#{file_review_orgname})
+	</insert>
+	<update id="updateFile" parameterType="rdto">
+		update review_tb set 
+		review_file_systemname = #{review_file_systemname},
+		review_file_orgname = #{review_file_orgname}
+		where review_num_pk=#{review_num_pk}
+	</update>
+	<select id="ReviewGetFile" parameterType="_int" resultType="rfdto">
+		select * from file_review_tb where REVIEW_NUM_FK = #{business_place_num_pk}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
