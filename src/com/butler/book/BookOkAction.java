@@ -92,12 +92,21 @@ public class BookOkAction implements Action{
 			petsMap.put(key, allParameterMap.get(key)[0]);
 		}
 		
-		List<String> rc = bdao.findRC(USER_NUM_FK);
-		List<String> rip = bdao.findRIP(USER_NUM_FK);
-		List<String> ucBook = bdao.findUCBook(USER_NUM_FK);
-		req.setAttribute("rc", rc);
-		req.setAttribute("ucBook",rip);
-		req.setAttribute("ucBook", ucBook);
+		System.out.println("USER_NUM_FK : "+ USER_NUM_FK);
+
+		List<BookDTO> rc = new ArrayList<BookDTO>();
+		List<BookDTO> rip = new ArrayList<BookDTO>();
+		List<BookDTO> ucBook = new ArrayList<BookDTO>();
+		
+		rc = bdao.findRC(USER_NUM_FK);
+		System.out.println("bdao.findRC(USER_NUM_FK) 호출완료");
+		System.out.println(rc);
+		rip = bdao.findRIP(USER_NUM_FK);
+		System.out.println("bdao.findRIP(USER_NUM_FK) 호출완료");
+		System.out.println(rip);
+		ucBook = bdao.findUCBook(USER_NUM_FK);
+		System.out.println("bdao.findUCBook(USER_NUM_FK) 호출완료");
+		System.out.println(ucBook);
 		
 		int BOOK_NUM_PK = 0;				
 		if(bdao.booking(newbook)) {
@@ -120,6 +129,12 @@ public class BookOkAction implements Action{
 					System.out.println("petDto"+i+"번 방 DB입력실패");
 				}
 			}
+			
+			req.setAttribute("rc", rc);
+			req.setAttribute("rip",rip);
+			req.setAttribute("ucBook", ucBook);
+			
+			
 			ActionTo transfer = new ActionTo();
 			transfer.setRedirect(false);
 			transfer.setPath("/app/myinfo/myinfo_reservationView/myinfo_reservationView.jsp");
