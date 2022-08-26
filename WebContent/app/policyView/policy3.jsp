@@ -323,7 +323,7 @@
                                     <span  class="icon"><img src="${pageContext.request.contextPath}/img/ico_7.png"> </span>
                                     &nbsp; <strong>보유 및 이용기간</strong>
                                 </p>
-                                    <img src="${pageContext.request.contextPath}/img/under1.png" width="15px" class="under">
+                                    <img src="${pageContext.request.contextPath}/img/under1.png" width="15px" class="under1">
                                     <div class="list_text" id="list_text_5" style="display: none;">
                                         <p>회사는 다음과 같이 이용자의 개인정보를 처리합니다.</p>
                                         <table class="p_table">

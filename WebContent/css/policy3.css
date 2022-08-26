@@ -199,6 +199,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             background-color: transparent;
             background-size: 14px auto;
     }
+        .under1{
+        position: absolute;
+    		top:1115px;
+            left:750px;
+            background-color: transparent;
+            background-size: 14px auto;
+    }
         .p_text{
             padding: 0 0 10px 0;
         }
