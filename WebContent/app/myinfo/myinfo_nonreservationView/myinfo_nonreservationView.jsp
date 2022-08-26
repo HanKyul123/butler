@@ -9,6 +9,8 @@
     <title>NonReservation</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myreservation.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
 </head>
 	<%@ include file="../../../header/pc_header.jsp" %>
 <body class="non_reservation_wrap">
@@ -46,14 +48,14 @@
 </body>
 
 	<!-- 문서수정할때는주석처리를 하고 진행하세요 -->
-	<c:choose>
+<%-- 	<c:choose>
     	<c:when test="${sessionScope.loginUser eq null}">
 			<script>
 				alert("login후에 이용하세요.");
 				window.location.href="/index.jsp"
 			</script>
     	</c:when>
-	</c:choose>
+	</c:choose> --%>
 
 <%@ include file="../../../footer/footer.jsp"%>
 <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>

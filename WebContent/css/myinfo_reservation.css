@@ -90,7 +90,7 @@ article, aside, details, figcaption, figure, hgroup, menu, nav, section {
 
 
     .my_reservation_box2{
-        padding: 20px;
+        padding: 10px;
         padding-left: 70px;
         text-align: left;
         width: 80%;
@@ -192,161 +192,10 @@ article, aside, details, figcaption, figure, hgroup, menu, nav, section {
         color: rgb(88, 88, 88);
     }
 
-    #left_btn1{
-        cursor: pointer;
-        background-color: transparent;
-        width: 30px;
-        height: 30px;
-        border: none;
-        /* border: 1px solid #000; */
-        border-radius: 30px;
-        position: absolute;
-        top: 255px;
-        left: 497px;
 
-        transition: 0.2s;
-    }
-    #left_btn1:hover{
-        box-shadow: 0px 0px 4px 4px #fff;
-    }
-    .left_btn{
-        position: relative;
-        right: 11px;
-        bottom: 6px;
-        width: 40px;
-    }
-
-    #right_btn1{
-        cursor: pointer;
-        background-color: transparent;
-        width: 30px;
-        height: 30px;
-        border: none;
-        /* border: 1px solid #000; */
-        border-radius: 30px;
-        position: absolute;
-        top: 255px;
-        right: 223px;
-
-    }
-
-    #right_btn1:hover{
-        box-shadow: 0px 0px 4px 4px #fff;
-    }
-
-    .right_btn{
-        position: relative;
-        right: 11px;
-        bottom: 6px;
-        width: 40px;
-    }
-
-
-
-
-
-
-    
-    #left_btn2{
-        cursor: pointer;
-        background-color: transparent;
-        width: 30px;
-        height: 30px;
-        border: none;
-        /* border: 1px solid #000; */
-        border-radius: 30px;
-        position: absolute;
-        top: 435px;
-        left: 497px;
-
-        transition: 0.2s;
-    }
-    #left_btn2:hover{
-        box-shadow: 0px 0px 4px 4px #fff;
-    }
-    .left_btn{
-        position: relative;
-        right: 11px;
-        bottom: 6px;
-        width: 40px;
-    }
-
-    #right_btn2{
-        cursor: pointer;
-        background-color: transparent;
-        width: 30px;
-        height: 30px;
-        border: none;
-        /* border: 1px solid #000; */
-        border-radius: 30px;
-        position: absolute;
-        top: 435px;
-        right: 223px;
-
-    }
-
-    #right_btn2:hover{
-        box-shadow: 0px 0px 4px 4px #fff;
-    }
-
-    .right_btn{
-        position: relative;
-        right: 11px;
-        bottom: 6px;
-        width: 40px;
-    }
-
-
-
-
-
-
-
-    #left_btn3{
-        cursor: pointer;
-        background-color: transparent;
-        width: 30px;
-        height: 30px;
-        border: none;
-        /* border: 1px solid #000; */
-        border-radius: 30px;
-        position: absolute;
-        top: 615px;
-        left: 497px;
-
-        transition: 0.2s;
-    }
-    #left_btn3:hover{
-        box-shadow: 0px 0px 4px 4px #fff;
-    }
-    .left_btn{
-        position: relative;
-        right: 11px;
-        bottom: 6px;
-        width: 40px;
-    }
-
-    #right_btn3{
-        cursor: pointer;
-        background-color: transparent;
-        width: 30px;
-        height: 30px;
-        border: none;
-        /* border: 1px solid #000; */
-        border-radius: 30px;
-        position: absolute;
-        top: 615px;
-        right: 223px;
-
-    }
-
-    #right_btn3:hover{
-        box-shadow: 0px 0px 4px 4px #fff;
-    }
-
-    .right_btn{
-        position: relative;
-        right: 11px;
-        bottom: 6px;
-        width: 40px;
+    #non_reservate{
+    margin-top:50px; 
+    margin-bottom:100px;
+    font-size: 14px;
+    color: #a4a4a4;
     }
