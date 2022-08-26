@@ -17,14 +17,22 @@
 </head>
 <body>
 	<div class="notice_wrap">
-		<div class="more" id="content">
-			<nav>
-				<ul>
-					<li><a href="" class="click">공지사항</a></li>
-					<li><a href="" class="">QnA</a></li>
-					<li><a href="" class="">약관 및 정책</a></li>
-				</ul>
-			</nav>
+		<div class="moremore" id="content">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="" id="click" class="more_a">공지사항</a>
+                    </li>
+                    <li>
+                    <a href="" class="more_a">자주 묻는 질문</a>
+                    </li>
+                    <li>
+                        <a href="" class="more_a">약관 및 정책</a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+            
 			<div class="t_notice">
 				<div class="notice">
 					<div class="tab">
@@ -35,7 +43,7 @@
 							<li><a href="javascript:GetShow()" class="all_list"
 								id="notice_tab">
 
-									<p>[발표] 7월 4주차 무료 초대권 이벤트</p> <span>2022.07.27</span> <img
+									<p>[발표] 9월 1주차 무료 초대권 이벤트</p> <span>2022.07.27</span> <img
 									src="${pageContext.request.contextPath}/img/under1.png"
 									width="18px" class="under">
 									<div id="plus" style="display: none;">
@@ -43,50 +51,50 @@
 											adasdasdasdasqweqwe <br> qweqweqweqwewq <br>
 											fdhdfghdfhdfhdfh <br> hjkhjkhjkhjk <br>
 										</span>
-							</a>
-					</div>
-
-					</li>
+							</a></li>
+					
 					<li><a href="javascript:GetShow2()" class="all_list"
 						id="notice_tab">
-							<p>[발표] 7월 4차 여기어때 응원하기 이벤트</p> <span>2022.07.25</span> <img
+							<p>[발표] 9월 1주차 버틀러 응원하기 이벤트</p> <span>2022.07.25</span> <img
 							src="${pageContext.request.contextPath}/img/under1.png"
 							width="20px" class="under"
 							style="background-color: rgba(white, white, white, alpha)">
 							<div id="plus_2" style="display: none;">
 								<span> safsafsadfsdafsdafsadfsdafsdafsadf </span>
+						</a>
+				
+					</li>
+					
+					<li><a href="javascript:GetShow3()" class="all_list"
+						id="notice_tab">
+							<p>[발표] 8월 도전룰렛 블랙 숙박권 당첨안내</p> <span>2022.07.21</span> <img
+							src="${pageContext.request.contextPath}/img/under1.png"
+							width="20px" class="under">
+							<div id="plus_3" style="display: none;">
+								<span> safsafsadfsdafsdafsadfsdafsdafsadf </span>
 					</a>
-				</div>
-				</li>
-				<li><a href="javascript:GetShow3()" class="all_list"
-					id="notice_tab">
-						<p>[발표] 8월 도전룰렛 블랙 숙박권 당첨안내</p> <span>2022.07.21</span> <img
-						src="${pageContext.request.contextPath}/img/under1.png"
-						width="20px" class="under">
-						<div id="plus_3" style="display: none;">
-							<span> safsafsadfsdafsdafsadfsdafsdafsadf </span>
-				</a>
-			</div>
-
-			</li>
-			<li><a href="javascript:GetShow4()" class="all_list"
-				id="notice_tab">
-					<p>[발표] 7월 3주차 무료 초대권 이벤트</p> <span>2022.07.18</span> <img
-					src="${pageContext.request.contextPath}/img/under1.png"
-					width="20px" class="under">
-					<div id="plus_4" style="display: none;">
-						<span> safsafsadfsdafsdafsadfsdafsdafsadf </span>
-			</a>
+				
+	
+					</li>
+					<li><a href="javascript:GetShow4()" class="all_list"
+						id="notice_tab">
+							<p>[발표] 7월 3주차 무료 초대권 이벤트</p> <span>2022.07.18</span> <img
+							src="${pageContext.request.contextPath}/img/under1.png"
+							width="20px" class="under">
+							<div id="plus_4" style="display: none;">
+								<span> safsafsadfsdafsdafsadfsdafsdafsadf </span>
+						</a>
+					</li>
+				</ul>
 		</div>
-		</li>
-		</ul>
+		
 		<div id="notice_page">
 			<div class="page">
 				<button class="on">1</button>
-				<button>2</button>
-				<button>3</button>
-				<button>4</button>
-				<button>5</button>
+				<button class="off">2</button>
+				<button class="off">3</button>
+				<button class="off">4</button>
+				<button class="off">5</button>
 				<button class="next">다음</button>
 			</div>
 		</div>

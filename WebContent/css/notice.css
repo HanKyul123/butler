@@ -36,56 +36,78 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     a{text-decoration: none;}
     
-    #content {
-        overflow: hidden;
-    }
-    .more {
-        
-        display: block;
-        width: 100%;
-        padding-left: 31px;
-        padding-top: 54px;
-        background: #fff;
-        min-height: 390px;
-        width: 1024px !important;
-        margin: 0 auto;
-        padding-bottom: 50px;
-        margin-left: 17%;
-    }
-    .more nav {
-        margin-top: 8%;
-        display: block;
-        float: left;
-        width: 238px;
-        padding-left: 31px;
-    }
-    
-    .more nav ul li {
-        margin-bottom: 26px;
-    }
-    .more nav ul li a.click {
-        font-size: 18px;
-        font-weight: bold;
-        color: rgb(129,39,149);
-    }
+
     
     a {
         text-decoration: none;
     }
-    .more nav ul li a {
-        display: block;
-        font-size: 18px;
-        color: rgba(0,0,0,0.56);
-    }
-    .more .t_notice {
-        float: right;
-        width: 724px;
-        margin-top: 10%;
-    }
-    .notice {
+    
+       .notice_wrap{
+        position:relative;
+		top:10px;
+		display:flex;
+		flex-wrap:wrap;
+        text-align: center;
+        width: 100%;
         background: #fff;
-        
+        margin-bottom:200px; 
     }
+        .moremore {
+    width:40%;
+          display: flex;
+        flex-wrap: wrap;
+        padding: 0 12.8%;
+        margin-top: 80px;
+    }
+    .moremore nav {
+        margin-top: 9%;
+        display: block;
+
+        width: 238px;
+        padding-left: 31px;
+    }
+    
+    .moremore nav ul li {
+            text-align:right;
+        margin-bottom: 26px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    
+    
+    	.more_a{
+    	font-size: 20px;
+    	font-family: 'OTWelcomeRA';
+     	color: rgba(0,0,0,0.56);
+    	}
+    	
+    	#click{
+    	color: rgb(116, 10, 140);
+    	}
+       .more_a:hover{
+        color: rgb(116, 10, 140);
+    }
+    
+    
+    
+    
+    
+	.t_notice {
+		padding-left: 20px;
+       position:relative;
+        top:100px;
+  		right:110px;
+        text-align: left;
+        width: 50%;
+    }
+    
+
+    
+    
+    
     .tab {
         height: auto;
         border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -197,7 +219,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         text-indent: -9999px;
         margin-left: 5px;
     }
-    button {
+    .off {
         padding: 0;
         cursor: pointer;
         

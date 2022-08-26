@@ -37,10 +37,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     a{text-decoration: none;}
 
     .QnA_wrap{
-    position:relative;
-    top:90px;
-	display:flex;
-	flex-wrap:wrap;
+    	position:relative;
+    	top:90px;
+		display:flex;
+		flex-wrap:wrap;
         text-align: center;
         width: 100%;
         background: #fff;

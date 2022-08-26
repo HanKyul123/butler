@@ -23,13 +23,13 @@
             <nav>
                 <ul>
                     <li>
-                        <a href=""  class="more_a">공지사항</a>
+                        <a href="" class="more_a">공지사항</a>
                     </li>
                     <li>
-                    <a href="" id="click" class="more_a">자주 묻는 질문</a>
+                    <a href="" class="more_a">자주 묻는 질문</a>
                     </li>
                     <li>
-                        <a href="" class="more_a">약관 및 정책</a>
+                        <a href="" id="click" class="more_a">약관 및 정책</a>
                     </li>
                 </ul>
             </nav>
