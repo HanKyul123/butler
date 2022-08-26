@@ -63,7 +63,6 @@
          const cp = "${cp}";
          console.log(phone_num.value);
 
-     
 
          xhr.onreadystatechange = function(){
             console.log("5-4");
@@ -82,40 +81,37 @@
          }
          xhr.open("GET",cp +"/user/phone_numChack.us?phone_num="+phone_num.value);
          xhr.send();   
-   }
-   
-</script>
-<script>
+   };
 
-function check_code(){
-    /* 유효성 검사 */
-	 const xhr = new XMLHttpRequest(); 
-     const prove_num = document.getElementById("prove_num");
-      const cp = "${cp}";
-     console.log(prove_num.value);
+   function check_code(){
+	    /* 유효성 검사 */
+	    const xhr = new XMLHttpRequest(); 
+	     const prove_num = document.getElementById("prove_num");
+	      const cp = "${cp}";
+	     console.log(prove_num.value);
 
-   xhr.onreadystatechange = function(){
-         console.log("5-5");
-         if(xhr.readyState == 4){
-            if(xhr.status == 200){
-               let txt = xhr.responseText;
-               txt = txt.trim();
-               if(txt == 'O'){
-                  alert("휴대전화 인증이 완료되었습니다.")
-                  
-               }
-               else if(txt == 'X') {
-                  alert("인증번호가 일치하지 않습니다.")
-                  
-               }
-            }
-         }
-      }
-      xhr.open("GET",cp+"/user/prove_numChack.us?prove_num="+prove_num.value);
-      xhr.send();
-      
-}
-	
+	   xhr.onreadystatechange = function(){
+	         console.log("5-5");
+	         if(xhr.readyState == 4){
+	            if(xhr.status == 200){
+	               let txt = xhr.responseText;
+	               txt = txt.trim();
+	               if(txt == 'O'){
+	                  alert("휴대전화 인증이 완료되었습니다.")
+	                  
+	               }
+	               else if(txt == 'X') {
+	                  alert("인증번호가 일치하지 않습니다.")
+	                  
+	               }
+	            }
+	         }
+	      }
+	      xhr.open("GET",cp+"/user/prove_numChack.us?prove_num="+prove_num.value);
+	      xhr.send();
+	      
+	}
+
 </script>
 
 </html>

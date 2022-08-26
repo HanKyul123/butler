@@ -18,7 +18,6 @@ public class phone_numChackAction implements Action{
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		String phone_num = req.getParameter("phone_num");
-		UserDAO udao = new UserDAO();
 
 		System.out.println("6");
 		System.out.println(phone_num);

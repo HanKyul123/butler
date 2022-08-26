@@ -19,6 +19,8 @@ public class prove_numChackAction implements Action{
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		String prove_num = req.getParameter("prove_num");
 		UserDAO udao = new UserDAO();
+		
+		smsClass sms = new smsClass();
 
 		System.out.println("5");
 		System.out.println(prove_num);
@@ -29,11 +31,13 @@ public class prove_numChackAction implements Action{
 		PrintWriter out = resp.getWriter();
 
 		HttpSession session = req.getSession(true);
-		String certiNum = (String)session.getAttribute("certiNum");
-		System.out.println(certiNum);
-		
+		session.getAttribute("certiNum");
+		System.out.println(session.getAttribute("certiNum"));
 
-		if(certiNum == prove_num) {
+		if(session != null) {
+		
+		if(prove_num.equals(session.getAttribute("certiNum"))) {
+			
 			System.out.println("5-4-o");
 			
 			out.write("O");
@@ -45,7 +49,11 @@ public class prove_numChackAction implements Action{
 		}
 		out.close();
 		
+		}else {
 			
+			System.out.println("tlqkf");
+			out.write("X");
+		}
 		
 		return null;
 		
