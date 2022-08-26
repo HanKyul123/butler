@@ -98,6 +98,7 @@
 	               txt = txt.trim();
 	               if(txt == 'O'){
 	                  alert("휴대전화 인증이 완료되었습니다.")
+	                  response.sendRedirect("./join_3.jsp"); 
 	                  
 	               }
 	               else if(txt == 'X') {

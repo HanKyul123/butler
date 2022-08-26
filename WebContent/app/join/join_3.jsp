@@ -95,6 +95,17 @@
 <script src = "${pageContext.request.contextPath}/js/join3.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+	const user_email = document.getElementsByClassName('user_email');
+	const user_nickname = document.getElementsByClassName('nick_I');
+	
+	if(user_email.value == null){
+		user_email.value ="";
+	}
+	
+	if(user_nickname.value == null){
+		user_nickname.value="";
+	}
+
     function sample6_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
