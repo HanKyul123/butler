@@ -19,20 +19,23 @@
 </head>
 <body>
  <div class="policy_wrap">
-        <div class="more" id="content">
-        <nav>
-            <ul>
-                <li>
-                    <a href="" class="">공지사항</a>
-                </li>
-                <li>
-                <a href="" class="">자주 묻는 질문</a>
-                </li>
-                <li>
-                    <a href="" class="click">약관 및 정책</a>
-                </li>
-            </ul>
-        </nav>
+              <div class="moremore" id="content">
+            <nav>
+                <ul>
+                    <li>
+                        <a href=""  class="more_a">공지사항</a>
+                    </li>
+                    <li>
+                    <a href="" id="click" class="more_a">자주 묻는 질문</a>
+                    </li>
+                    <li>
+                        <a href="" class="more_a">약관 및 정책</a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+        
+        
         <div class="t_policy">
             <div class="policy">
                 <div class="tab">
@@ -60,7 +63,7 @@
                             <p>주식회사 여기어때컴퍼니(이하 “회사”)는 이용자의 자유와 권리 보호를 위해 대한민국의 개인정보보호 규정을 준수하여, 적법하게 개인정보를 처리하고 안전하게 관리하고 있습니다.
                                 <br>
                                 <br>
-                                이용자에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                               	 이용자에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
                             </p>
                             <table class="p_table">
                                 <colgroup>

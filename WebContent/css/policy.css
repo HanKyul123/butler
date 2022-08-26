@@ -37,48 +37,64 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     a{text-decoration: none;}
 
     .policy_wrap{
-        margin: auto;
-    }
-    .more {
-        display: block;
+        position:relative;
+		top:10px;
+		display:flex;
+		flex-wrap:wrap;
+        text-align: center;
         width: 100%;
-        padding-left: 31px;
-        padding-top: 54px;
         background: #fff;
-        min-height: 390px;
-        width: 1024px !important;
-        margin: 0 auto;
-        padding-bottom: 50px;
-        margin-left: 17%;
+        margin-bottom:200px; 
     }
-    .more nav {
+        .moremore {
+    width:40%;
+          display: flex;
+        flex-wrap: wrap;
+        padding: 0 12.8%;
+        margin-top: 80px;
+    }
+    .moremore nav {
         margin-top: 9%;
         display: block;
-        float: left;
+
         width: 238px;
         padding-left: 31px;
     }
-    .more nav ul li {
+    
+    .moremore nav ul li {
+            text-align:right;
         margin-bottom: 26px;
     }
-    .more nav ul li a.click {
-        font-size: 18px;
-        font-weight: bold;
-        color: rgb(129,39,149);
-    }
+
     a {
         text-decoration: none;
     }
-    .more nav ul li a {
-        display: block;
-        font-size: 18px;
-        color: rgba(0,0,0,0.56);
+
+    
+    
+    	.more_a{
+    	font-size: 20px;
+    	font-family: 'OTWelcomeRA';
+     	color: rgba(0,0,0,0.56);
+    	}
+    	
+    	#click{
+    	color: rgb(116, 10, 140);
+    	}
+       .more_a:hover{
+        color: rgb(116, 10, 140);
     }
+    
+    
+    
+    
+    
     .t_policy {
-        float: right;
-        width: 724px;
-        margin-right: 31px;
+       
+  		position:relative;
+  		right:110px;
         text-align: left;
+        width: 50%;
     }
     .tab {
         overflow: visible;
@@ -169,11 +185,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
     .under{
         position: absolute;
-            margin-right: 400px;
-            right: 200px;
-            width: 15px;
-            height: 15px;
-            margin-top: 40px;
+        	margin-top:40px;
+        	
+            left:750px;
             background-color: transparent;
             background-size: 14px auto;
     }

@@ -19,20 +19,22 @@
 </head>
 <body>
 <div class="policy_wrap">
-        <div class="more" id="content">
-        <nav>
-            <ul>
-                <li>
-                    <a href="" class="">공지사항</a>
-                </li>
-                <li>
-                <a href="" class="">자주 묻는 질문</a>
-                </li>
-                <li>
-                    <a href="" class="click">약관 및 정책</a>
-                </li>
-            </ul>
-        </nav>
+               <div class="moremore" id="content">
+            <nav>
+                <ul>
+                    <li>
+                        <a href=""  class="more_a">공지사항</a>
+                    </li>
+                    <li>
+                    <a href="" id="click" class="more_a">자주 묻는 질문</a>
+                    </li>
+                    <li>
+                        <a href="" class="more_a">약관 및 정책</a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+        
         <div class="t_policy">
             <div class="policy">
                 <div class="tab">
