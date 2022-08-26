@@ -121,17 +121,17 @@
        <c:when test="${sessionScope.LoginUser eq null}">
          <script>
             function statusChangelogoutHeader(){login_search
-               document.getElementById("status_logout").style.display="none";
-               document.getElementById("logout_search").style.display="none";
-               document.getElementById("btn1").style.display="none";
+               document.getElementById("status_logout").style.display="block";
+               document.getElementById("logout_search").style.display="block";
+               document.getElementById("btn1").style.display="block";
                
             
               
-               document.getElementById("btn2").style.display="block";
-               document.getElementById("login_search").style.display="block";
-               document.getElementById("status_login").style.display="block";
+               document.getElementById("btn2").style.display="none";
+               document.getElementById("login_search").style.display="none";
+               document.getElementById("status_login").style.display="none";
                
-               document.getElementById("status_login_empty").style.display="block";
+               document.getElementById("status_login_empty").style.display="none";
                console.log(11);
             };
             statusChangelogoutHeader();
