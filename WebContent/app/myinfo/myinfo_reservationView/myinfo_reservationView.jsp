@@ -56,11 +56,11 @@
 					</c:forEach>
 				</c:when>
 				<c:otherwise>
-					<div id = "non_reservate"> 예약내용이 없습니다 </div>
+					<div id = "non_reservate"> 내역이 없습니다 </div>
 				</c:otherwise>
 			</c:choose>
 			<!-- ----------이용완료 박스---------- -->
-			<span class="ed">사용 완료</span><br>
+			<span class="ed">이용 완료</span><br>
 			<c:choose>		
 				<c:when test="${ucbook != null and ucbook.size()>0 }">
 					<c:forEach items="${rip}" var="rip">
@@ -86,7 +86,7 @@
 					</c:forEach>
 				</c:when>
 				<c:otherwise>
-					<div id = "non_reservate"> 예약내용이 없습니다 </div>
+					<div id = "non_reservate"> 내역이 없습니다 </div>
 				</c:otherwise>
 			</c:choose>
 			<!-- ----------예약취소 박스---------- -->
@@ -116,7 +116,7 @@
 					</c:forEach>
 				</c:when>
 				<c:otherwise>
-					<div id = "non_reservate"> 예약내용이 없습니다 </div>
+					<div id = "non_reservate"> 내역이 없습니다 </div>
 				</c:otherwise>
 			</c:choose>
 		</div>
