@@ -45,9 +45,9 @@
 										</div>
 										<div class="in_contents">
 											<!-- 호텔 이름 가져오기 -->
-											<div id="ing_hotelname" class="all_name">${business_name}</div>
+											<div id="ing_hotelname" class="all_name">${rip.business_name}</div>
 											<!-- 이용 중 / 이용 완료 / 예약 취소 -->
-											<div id="ing_date" class="all_date">${book_checkin_date} ~ ${book_checkout_date}</div>
+											<div id="ing_date" class="all_date">${rip.book_checkin_date} ~ ${rip.book_checkout_date}</div>
 										</div>
 									</div>
 								</div>
@@ -75,9 +75,9 @@
 										</div>
 										<div class="in_contents">
 											<!-- 호텔 이름 가져오기 -->
-											<div id="ed_hotelname" class="all_name">${business_name}</div>
+											<div id="ed_hotelname" class="all_name">${ucbook.business_name}</div>
 											<div id="ed_contents" class="all_contents">이용 완료</div>
-											<div id="ed_date" class="all_date">${book_checkin_date} ~ ${book_checkout_date}</div>
+											<div id="ed_date" class="all_date">${ucbook.book_checkin_date} ~ ${ucbook.book_checkout_date}</div>
 										</div>
 									</div>
 								</div>
@@ -100,14 +100,14 @@
 									<div class="flex">
 										<div class="imgbox">
 											<img
-												src="${pageContext.request.contextPath}/img/business_place_img/${ucbook.BUSINESS_PLACE_NUM_FK}/${ucbook.BUSINESS_PLACE_NUM_FK}_1.png"
+												src="${pageContext.request.contextPath}/img/business_place_img/${rc.BUSINESS_PLACE_NUM_FK}/${rc.BUSINESS_PLACE_NUM_FK}_1.png"
 												alt="" class="hotelimg">
 										</div>
 										<div class="in_contents">
 											<!-- 호텔 이름 가져오기 -->
-											<div id="cancel_hotelname" class="all_name">${business_name}</div>
+											<div id="cancel_hotelname" class="all_name">${rc.business_name}</div>
 											<div id="cancel_contents" class="all_contents">이용 완료</div>
-											<div id="cancel_date" class="all_date">${book_checkin_date} ~ ${book_checkout_date}</div>
+											<div id="cancel_date" class="all_date">${rc.book_checkin_date} ~ ${rc.book_checkout_date}</div>
 										</div>
 									</div>
 								</div>
