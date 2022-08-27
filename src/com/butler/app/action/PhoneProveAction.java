@@ -45,7 +45,7 @@ public class PhoneProveAction implements Action{
 			user.setUser_phone(user_phone);
 			user.setUser_email(useruser.getUser_email());
 			user.setUser_name(useruser.getUser_name());
-			user.setUser_logintype(useruser.getUser_logintype());
+			user.setUser_logintype(1); 
 			
 			session.setAttribute("LoginUser", user);
 			

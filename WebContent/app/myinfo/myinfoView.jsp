@@ -100,19 +100,21 @@
                 </div>
               
               
-           <form id="mody_form1" method="post" action="/user/user_modifyAction.us">
+           <form id="mody_form1" name="mody_form1" method="post" action="/user/user_modifyAction.us">
                 <input type="hidden" name="user_num_pk" value="${LoginUser.user_num_pk}">
                 <input type="hidden" name="user_logintype" value="${LoginUser.user_logintype}">
                 
                  <div class="user_email_box">
                    <!-- 버틀러 회원/카카오 회원 구별하여 해당하는 아이콘으로 하기 -->
 		<c:choose>
-		<c:when test="${LoginUser.user_logintype == 0}">
+		   <c:when test="${LoginUser.user_logintype == 0}">
                     <img src="${pageContext.request.contextPath}/img/Hotel_icon.png" alt="" class="user_from" id="Butler">
-		</c:when>
-		<c:otherwise>
+		   </c:when>
+			<c:when test="${LoginUser.user_logintype == 1}">
                     <img src="${pageContext.request.contextPath}/img/카카오톡.png" alt="" class="user_from" id="Kakao">
-		</c:otherwise>
+            </c:when>
+		<c:otherwise>
+        </c:otherwise>
 						</c:choose>
                     <!-- 유저 버틀러/카카오 이메일 아이디 정보 넣기 -->
                     <div class="user_email" name="user_email">${LoginUser.user_email}</div>
@@ -283,7 +285,7 @@
            <!-- <input type="hidden" id="user_new_pw" name="user_new_pw" value=""> -->
                 
              </form>
-
+ 
 
                 <div class="ask_to_user">
 
@@ -353,7 +355,52 @@
         }).open();
     }
 </script>
+<script>
+$('input[type="text"]').keydown(function() {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+    }
+});
+
+$('input[type="tel"]').keydown(function() {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+    }
+});
+</script>
+<script>
+function checknicknameok(){
+	   const xhr = new XMLHttpRequest();
+	   const user_nickname = document.getElementById("WNN");
+	   const cp = "${cp}";
+	   console.log(user_nickname.value);
+	   
+	   if(user_nickname.value == ""){
+	      console.log("tt")
+	      alert("닉네임을 입력하세요!")
+	      return false;
+	   }
+	   
+	   xhr.onreadystatechange = function(){
+	      console.log("5-4");
+	      if(xhr.readyState == 4){
+	         if(xhr.status == 200){
+	            let txt = xhr.responseText;
+	            txt = txt.trim();
+	            if(txt == 'O'){
+	               alert("사용가능한 닉네임입니다.")
+	            }
+	            else if(txt == 'X') {
+	               alert("중복된 닉네임입니다.")
+	            }
+	         }
+	      }
+	   }
+	   xhr.open("GET",cp+"/user/checknicknameok.us?user_nickname="+user_nickname.value);
+	   xhr.send();
+	}
 
 
 
+</script>
 </html>

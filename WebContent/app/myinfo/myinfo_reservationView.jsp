@@ -63,7 +63,7 @@
 			<span class="ed">이용 완료</span><br>
 			<c:choose>		
 				<c:when test="${ucbook != null and ucbook.size()>0 }">
-					<c:forEach items="${rip}" var="rip">
+					<c:forEach items="${ucbook}" var="ucbook">
 						<div class="boxs" id="edboxs">
 							<a href="">
 								<div id="ed_box" class="in_boxs">
