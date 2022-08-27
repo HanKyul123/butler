@@ -18,7 +18,7 @@
 <body class="myinfo_writereview_wrap">
     <div class="my_reservation_title">
         내 정보
-    </div>
+    </div> 
 
     <div class="my_writereview_BigBox">
 

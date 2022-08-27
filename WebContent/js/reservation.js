@@ -514,7 +514,7 @@ let toprice = document.getElementById("book_charge");
         console.log("\n");
         i=i+1;
     }
-
+ 
     else if($('#animal option:selected').text()=="토끼"){
         $("#parentadd").append(
             "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+

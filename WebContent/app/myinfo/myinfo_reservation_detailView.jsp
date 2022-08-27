@@ -18,7 +18,7 @@
     <div class="my_reservation_title">
         내 정보
     </div>
-
+ 
     <div class="my_reservation_BigBox">
 
             <div class="my_reservation_box1">
