@@ -5,6 +5,7 @@ import java.sql.Date;
 public class BookDTO {
 	int BOOK_NUM_PK;
 	int BUSINESS_PLACE_NUM_FK;
+	String business_name;
 	int USER_NUM_FK;
 	int book_status;
 	Date book_regdate;
@@ -51,6 +52,14 @@ public class BookDTO {
 
 	public int getBUSINESS_PLACE_NUM_FK() {
 		return BUSINESS_PLACE_NUM_FK;
+	}
+	
+	public String getBusiness_name() {
+		return business_name;
+	}
+
+	public void setBusiness_name(String business_name) {
+		this.business_name = business_name;
 	}
 
 	public void setBUSINESS_PLACE_NUM_FK(int bUSINESS_PLACE_NUM_FK) {

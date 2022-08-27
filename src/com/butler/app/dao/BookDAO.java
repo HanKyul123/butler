@@ -22,12 +22,12 @@ public class BookDAO {
 	}
 
 	public List findRIP(int USER_NUM_FK) {
-		 return sqlsession.selectList("book.findRIP",USER_NUM_FK);
+		 return sqlsession.selectList("book.rip",USER_NUM_FK);
 	}
 	public List findUCBook(int USER_NUM_FK) {
-		 return sqlsession.selectList("book.findUCBook",USER_NUM_FK);
+		 return sqlsession.selectList("book.ucbook",USER_NUM_FK);
 	}
 	public List findRC(int USER_NUM_FK) {
-		 return sqlsession.selectList("book.findRC",USER_NUM_FK);
+		 return sqlsession.selectList("book.rc",USER_NUM_FK);
 	}
 }

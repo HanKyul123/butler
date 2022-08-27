@@ -28,12 +28,13 @@
 	book_tb.book_charge =#{book_charge} ;
 	</select>
 	<select id="rip" resultType="bdto" parameterType="_int" >
-	SELECT * from butler.book_tb where USER_NUM_FK = #{USER_NUM_FK} and book_status = 1;
+	SELECT book.BOOK_NUM_PK, book.BUSINESS_PLACE_NUM_FK, ho.business_name,book.USER_NUM_FK,book.book_status,book.book_regdate,book.book_checkin_date,book.book_checkout_date,book.book_charge from butler.book_tb as book join business_tb as ho on book.BUSINESS_PLACE_NUM_FK = ho.BUSINESS_PLACE_NUM_PK where book.USER_NUM_FK = #{USER_NUM_FK} and book.book_status = 1;
+
 	</select>
 	<select id="rc" resultType="bdto" parameterType="_int" >
-	SELECT * from butler.book_tb where USER_NUM_FK = #{USER_NUM_FK} and book_status = 2;
+	SELECT book.BOOK_NUM_PK, book.BUSINESS_PLACE_NUM_FK, ho.business_name,book.USER_NUM_FK,book.book_status,book.book_regdate,book.book_checkin_date,book.book_checkout_date,book.book_charge from butler.book_tb as book join business_tb as ho on book.BUSINESS_PLACE_NUM_FK = ho.BUSINESS_PLACE_NUM_PK where book.USER_NUM_FK = #{USER_NUM_FK} and book.book_status = 2;
 	</select>
 	<select id="ucbook" resultType="bdto" parameterType="_int">
-	SELECT * from butler.book_tb where USER_NUM_FK = #{USER_NUM_FK} and book_status = 3;
+		SELECT book.BOOK_NUM_PK, book.BUSINESS_PLACE_NUM_FK, ho.business_name,book.USER_NUM_FK,book.book_status,book.book_regdate,book.book_checkin_date,book.book_checkout_date,book.book_charge from butler.book_tb as book join business_tb as ho on book.BUSINESS_PLACE_NUM_FK = ho.BUSINESS_PLACE_NUM_PK where book.USER_NUM_FK = #{USER_NUM_FK} and book.book_status = 3;
 	</select>
 </mapper>
