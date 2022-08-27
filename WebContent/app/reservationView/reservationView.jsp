@@ -24,10 +24,11 @@
     
     <script>
         let nowdate =0;
-
+        
     $(function () {
+    	
         let txttotalprice = document.getElementById("pricecontent");
-
+        const insidecnt = document.getElementById("parentadd");
         let nowdate2 = document.getElementById("nowdate");
         nowdate2.value=1;
         $('#demo').daterangepicker({
@@ -64,9 +65,11 @@
             nowdate = end.format('DD')-start.format('DD');
             nowdate2.value = nowdate;
 
+            console.log("<----- 기간 수정 : "+nowdate+"일 ----->");
+            
             totaldate.innerHTML="체크인 : "+start.format('MM-DD')+" ~ "+"체크 아웃 : "+end.format('MM-DD')
             totaldate2.innerHTML="총 "+nowdate+"박 "+(nowdate+1)+"일";
-
+            console.log("<------ 기간 수정 : "+nowdate+"일 ----->");
 
             // 날짜 가져오기
             let book_checkin_date  = document.getElementById("book_checkin_date");
@@ -93,7 +96,7 @@
             book_charge= fullcharge*xcount;
             console.log(book_charge+"="+fullcharge+"X"+xcount);
             
-
+            console.log("/n");
             
             
             $("#add").on("click",function(){
@@ -130,11 +133,6 @@
 
     });
         
-        $('#demo').datepicker({
-            mindate:0,
-            maxdate:+"2y"
-        })
-
     });
 
  
@@ -705,25 +703,36 @@ geocoder.addressSearch(Hotel_address.value, function(result, status) {
         fullcharge = 0;
     }
 function removethis(i){
+	
+	
+	let txttotalprice = document.getElementById("pricecontent");
+    let nd = document.getElementById("nowdate");
+    let xcount = parseInt(nd.value);
     // 총가격과 #thisprice+i 의 value 값을 parseint 로 변환해 빼어 계산한다.
-    console.log("삭제 한 상품 가격 :"+arrayprice[i]);
-            let txttotalprice = document.getElementById("pricecontent");
-            let nd = document.getElementById("nowdate");
-            let xcount = parseInt(nd.value);
+console.log("<----- 상품 삭제 : "+arrayprice[i]*xcount+"원 ----->");
+console.log("<----- 남은 가격 : "+book_charge-arrayprice[i]*xcount+"원 ----->");
+            
 
-            let disprice = parseInt(arrayprice[i]);
-            console.log(disprice);
+            
+            console.log(arrayprice[i]);
             console.log(xcount);
             console.log(book_charge);
             
-            console.log(book_charge+"-"+disprice+"*"+xcount);
+            console.log(book_charge+"-"+arrayprice[i]+"*"+xcount);
 
-            book_charge=book_charge-disprice*xcount;
-            fullcharge= fullcharge-disprice;
+            book_charge=book_charge-arrayprice[i]*xcount;
+            fullcharge= fullcharge-arrayprice[i];
             txttotalprice.innerHTML=book_charge;
 
             console.log(book_charge);
             console.log(fullcharge);
+            console.log(insidecnt.childElementCount);
+            
+            if(insidecnt.childElementCount==1){
+            	book_charge=0;
+            	fullcharge=0;
+            	anotherprice=0;
+            }
 
             
 
