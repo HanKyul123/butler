@@ -50,7 +50,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         text-align: center;
         width: 100%;
         background: #fff;
-        margin-bottom:200px; 
+		padding-bottom:200px; 
     }
         .moremore {
     width:40%;
@@ -111,7 +111,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .tab {
         height: auto;
         border-bottom: 1px solid rgba(0,0,0,0.2);
-        width: 720px;
+        width: 740px;
         
     }
     .tab , .tab .tab_btn  {
