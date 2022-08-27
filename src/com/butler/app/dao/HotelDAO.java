@@ -66,6 +66,12 @@ public class HotelDAO {
 	public List<HotelDTO> recommandResult(int topnum) {
 		return sqlsession.selectList("Hotel.recommandResult", topnum);
 	}
+
+	public List<HotelDTO> LowChargeResult(String keyword) {
+		List<HotelDTO> list;
+		list = sqlsession.selectList("Hotel.LowChargeResult", keyword);
+		return list;
+	}
 	
 		
 

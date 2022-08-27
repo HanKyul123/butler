@@ -83,6 +83,14 @@ public class HotelFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;
+			
+	   case "/hotel/choice/lowCharge.ho":
+			try {
+				transfer = new LowChargeAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;		   
 
 
 	 }

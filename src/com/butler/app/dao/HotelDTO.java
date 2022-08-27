@@ -16,6 +16,9 @@ public class HotelDTO {
 	private String business_workplace_rule;
 	private int    business_workplace_score;
 	private int    user_num_fk;
+	private int    business_pick_animal_type;
+	private int    business_min_charge ;
+	
 	
 	public int getBusiness_place_num_pk() {
 		return business_place_num_pk;
@@ -107,8 +110,17 @@ public class HotelDTO {
 	public void setUser_num_fk(int user_num_fk) {
 		this.user_num_fk = user_num_fk;
 	}
-	
-
-	
+	public int getBusiness_pick_animal_type() {
+		return business_pick_animal_type;
+	}
+	public void setBusiness_pick_animal_type(int business_pick_animal_type) {
+		this.business_pick_animal_type = business_pick_animal_type;
+	}
+	public int getBusiness_min_charge() {
+		return business_min_charge;
+	}
+	public void setBusiness_min_charge(int business_min_charge) {
+		this.business_min_charge = business_min_charge;
+	}
 
 }

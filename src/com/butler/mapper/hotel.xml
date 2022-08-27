@@ -41,4 +41,12 @@
 	<select id="recommandResult" parameterType="_int" resultType="hdto">
 		select * from business_tb order by business_workplace_score desc limit #{topnum};
 	</select>
+		<select id="LowChargeResult" parameterType="String" resultType="hdto">
+		select * from business_tb where business_name like('%${keyword}%')
+		or business_hashtag like('%${keyword}%')
+		or business_addr like('%${keyword}%')
+		or business_addretc like('%${keyword}%')
+		order by business_min_charge asc;
+	</select>
+	
 </mapper>

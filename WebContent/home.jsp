@@ -52,7 +52,7 @@
 											</div>
 
 											<div class="Epricebox">
-												<span class="Eprice">가격</span> <span class="Ewon">원</span>
+												<span class="Eprice">${recommandResult.business_min_charge}</span> <span class="Ewon">원</span>
 											</div>
 										</div>
 									</div>

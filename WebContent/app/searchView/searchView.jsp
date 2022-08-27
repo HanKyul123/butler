@@ -78,7 +78,7 @@
             <!-- 필터 -->
             <div class="choice">
                 <input type="button" value="거리순">
-                <input type="button" value="낮은 가격순">
+                <input type="button" value="낮은 가격순" onClick="location.href='/hotel/choice/lowCharge.ho?keyword=${keyword}'">
             </div>
  
 
@@ -112,7 +112,7 @@
 		                        ${result.business_addr} ${result.business_addrdetail}</span></div>
 		                        <div class="Hotelinfo"><span id="Hotelinfo">${result.business_main_intro}</span></div>
 		                        <div class="Hotelprice">
-		                            <span class="price"><span id="price"></span>1000</span>
+		                            <span class="price"><span id="price"></span>${result.business_min_charge}</span>
 		                            <span class="won">원</span>
 		                        </div>
 		                    </div>
