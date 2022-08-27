@@ -99,7 +99,7 @@
                         <a href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">내 정보</a>
                      </div>
                      <div id="CMpf" class="Reservation">
-                        <a href="${pageContext.request.contextPath}/app/myinfo/myinfo_reservationView.jsp">예약 내역</a>
+                        <a href="/book/findMyReservation.book">예약 내역</a>
                      </div>
                      <div id="CMpf" class="my_review">
                         <a href="${pageContext.request.contextPath}/app/myinfo/myinfo_reviewView.jsp">내가 쓴 리뷰</a>
