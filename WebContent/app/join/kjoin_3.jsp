@@ -218,4 +218,17 @@ function checknicknameok(){
    xhr.send();
 }
 </script>
+<script>
+	let user_nickname = document.getElementsByClassName('nick_I');
+	let user_email = document.getElementsByClassName('user_email');
+	let user_name = document.getElementsByClassName('name_I');
+	let user_pw = document.getElementById('all_pw');
+	
+	$(".sub_btn").on("click",function(){
+		user_nickname.value == "";
+		user_email.value == "";
+		user_name.value == "";
+		user_pw.value == "";		
+	})
+</script>
 </html>

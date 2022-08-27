@@ -26,7 +26,7 @@ public class prove_numChackAction implements Action{
 		System.out.println(prove_num);
 			
 			
-
+ 
 		
 		PrintWriter out = resp.getWriter();
 
@@ -34,8 +34,6 @@ public class prove_numChackAction implements Action{
 		session.getAttribute("certiNum");
 		System.out.println(session.getAttribute("certiNum"));
 
-		if(session != null) {
-		
 		if(prove_num.equals(session.getAttribute("certiNum"))) {
 			
 			System.out.println("5-4-o");
@@ -47,12 +45,6 @@ public class prove_numChackAction implements Action{
 			
 		}
 		out.close();
-		
-		}else {
-			
-			System.out.println("tlqkf");
-			out.write("X");
-		}
 		
 		return null;
 		

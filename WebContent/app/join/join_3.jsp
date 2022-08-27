@@ -44,13 +44,13 @@
         
                     <div class="sub_title">🔒비밀번호</div>
                     <div class="pw">
-                        <input type="password" name="pw" placeholder="비밀번호를 입력해주세요." id="all_pw" class="pw_I" onkeyup="checkpw(this.value)">
+                        <input type="password" name="pw" placeholder="비밀번호를 입력해주세요." id="all_pw" class="pw_I" onkeyup="checkpw(this.value)" autocomplete="off">
                         <div class="txt"><span id="pw_txt"></span></div>
                     </div>
         
                     <div class="sub_title">🔒비밀번호 확인</div>
                     <div class="re_pw">
-                        <input type="password" name="re_pw" placeholder="비밀번호를 재입력해주세요." id="all_pw" class="re_pw_I" onkeyup="checkrepw(this.value)">
+                        <input type="password" name="re_pw" placeholder="비밀번호를 재입력해주세요." id="all_pw" class="re_pw_I" onkeyup="checkrepw(this.value)" autocomplete="off">
                         <div class="txt"><span id="re_pw_txt"></span></div>
                     </div>
         
@@ -154,6 +154,21 @@
         }).open();
     }
 </script>
+
+<script>
+	let user_nickname = document.getElementsByClassName('nick_I');
+	let user_email = document.getElementsByClassName('user_email');
+	let user_name = document.getElementsByClassName('name_I');
+	let user_pw = document.getElementById('all_pw');
+	
+	$(".sub_btn").on("click",function(){
+		user_nickname.value == "";
+		user_email.value == "";
+		user_name.value == "";
+		user_pw.value == "";		
+	})
+</script>
+
 <script>
 function checknicknameok(){
    const xhr = new XMLHttpRequest();
