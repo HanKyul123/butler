@@ -194,7 +194,7 @@ function checknicknameok(){
    console.log(user_nickname[0].value);
    
    if(user_nickname[0].value == ""){
-      console.log("tlqkf")
+      console.log("tt")
       alert("닉네임을 입력하세요!")
       return false;
    }

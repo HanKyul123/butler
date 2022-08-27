@@ -160,7 +160,14 @@ public class UserFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;
-		
+		case "/user/userResign.us":
+			transfer = new ActionTo();
+			try {
+				transfer = new UserResignAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 	 }
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {

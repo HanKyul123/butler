@@ -56,7 +56,7 @@ public class User_modifyPwAction implements Action{
 	         
 				out.print("<script>");
 		        out.print("alert('비밀번호 수정이 완료되었습니다.');");
-		        out.print("location.href = '/app/myinfo/myinfoView/myinfoView.jsp';");
+		        out.print("location.href = '/app/myinfo/myinfoView.jsp';");
 		        out.print("</script>");
 	         
 	       }
