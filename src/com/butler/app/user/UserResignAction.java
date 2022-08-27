@@ -26,7 +26,7 @@ public class UserResignAction implements Action{
 		
 		PrintWriter out = resp.getWriter();
 		
-		if(udao.UserResignOK(user)) {
+		if(udao.UserResignOK(user)) { 
 			//성공! 잘가!
 			
 			session.removeAttribute("LoginUser");

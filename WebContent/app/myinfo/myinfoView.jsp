@@ -285,7 +285,7 @@
            <!-- <input type="hidden" id="user_new_pw" name="user_new_pw" value=""> -->
                 
              </form>
-
+ 
 
                 <div class="ask_to_user">
 
