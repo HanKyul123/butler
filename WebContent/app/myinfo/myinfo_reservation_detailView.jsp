@@ -36,62 +36,42 @@
             <div class="my_reservation_box2">
 
                 <!-- 호텔 이름 -->
-                
-                    <div class="detail_hotel_name">
-                        <a href="">
-                        (호텔 이름)우리 아이 호강하는 세계 최고 호텔
-                        </a>
-                    </div>
-                    
-                    
-                
-				<!-- 상태에 따라  -->
-                <!-- 예약 중 / 이용 완료 / 예약 취소 -->
-                <div id="detail_now" class="detail_now">예약 중</div>
-                <!-- <div id="detail_ed" class="detail_ed">이용 완료</div> -->
-                <!-- <div id="detail_cancel" class="detail_cancel">예약 취소</div> -->
-
-                <!-- 고른 날짜 -->
-                <div class="detail_date">8월 10일 수 ~ 8월 12일 금</div>
-                
-                
-                
-                
-
-				<!-- 이용 완료일 때 리뷰 쓰러가는 버튼 -->
-				<a href=""><button id="write_review">리뷰 쓰기</button></a>
-                
-                <!-- 예약 중 일 때 예약 취소할 수 있는 버튼 -->
-                <div id="cancel_btn">
-                	<button type="button" id="reserve_cancel">예약 취소</button>
+				<div class="detail_hotel_name">
+               		<a href="">
+						${book.business_name}
+					</a>
 				</div>
-				
-				
-				
+               <c:choose>		
+					<c:when test="${book != null and book.book_status==1}">
+						<div id="detail_now" class="detail_now">예약 중</div>
+						<div id="cancel_btn">
+                			<button type="button" id="reserve_cancel">예약 취소</button>
+						</div>
+					</c:when>
+					<c:when test="${book != null and book.book_status==2}">
+						<div id="detail_cancel" class="detail_cancel">예약 취소</div>
+					</c:when>
+					<c:otherwise>
+						<div id="detail_ed" class="detail_ed">이용 완료</div>
+						<a href=""><button id="write_review">리뷰 쓰기</button></a>
+					</c:otherwise>     
+                </c:choose>
+                <!-- 고른 날짜 -->
+                <div class="detail_date">${book.book_checkin_date} ~ ${book.book_checkout_date}</div>		
                 <!-- 예약 번호 -->
                 <div class="detail_reserv_num all" >
-                
                     <div class="title">예약 번호</div>
-                    <span class="reserv_num detail_content">758495</span>
-                    
+                    <span class="reserv_num detail_content">${book.BOOK_NUM_PK}</span>
                 </div>
-                
-                
                 <!-- 예약자 이름 -->
                 <div class="detail_reserv_name all">
-                
                     <div class="title">예약자 이름</div>
                     <span class="reserv_name detail_content">${LoginUser.user_name}</span>
-                    
                 </div>
-                
-                
                 <!-- 예약자 핸드폰 번호 -->
                 <div class="detail_reserv_phone all">
-                
                     <div class="title">핸드폰 번호</div>
 	                <span class="reserv_phone detail_content">${LoginUser.user_phone}</span>
-	                
                 </div>
 
                 <!-- 고른 옵션의 반려동물 정보 박스 -->
@@ -99,31 +79,22 @@
                     	반려동물 정보 <img src="${pageContext.request.contextPath}/img/treats.png" alt="" class="treats">
                 </div>
                 <div class="detail_animal_box">
-
-					<!-- 상품 갯수만큼 detail_pet_box 늘어남 -->
-                    <!-- ------------------------ -->
-                    <div class="detail_pet_box">
-
-                        <!-- 종류 가져오기 -->
-                        <div class="pet_kind">
-                            종류: <span id="PK">강아지</span>
-                        </div>
-
-                        <!-- 무게와 가격 가져오기 -->
-                        <div class="pet_weight">
-                            무게: <span id="PW">1~5kg 50000원</span>
-                        </div>
-                        
-                    </div>
-                    <!-- ------------------------ -->
-
-
-
-
+ 				<c:choose>		
+					<c:when test="${pets != null}">
+					<c:forEach items="${rip}" var="rip">
+						<div class="detail_pet_box">
+	                        <div class="pet_kind">
+	                          	 종류: <span id="PK">${pets.pets_name}</span>
+	                        </div>
+	                        <div class="pet_weight">
+	                        	무게: <span id="PW">${pets.pets_weight}</span>
+	                        </div>
+	                    </div>
+					</c:forEach>
+					</c:when>
+				</c:choose>
                 </div>
-
             </div>
-
     </div>
 </body>
 
