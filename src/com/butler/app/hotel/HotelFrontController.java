@@ -35,7 +35,7 @@ public class HotelFrontController extends HttpServlet{
 		String command = requestURI.substring(contextPath.length());
 		ActionTo transfer = null;
 		String path="";
-		boolean isRedirect;
+		boolean isRedirect; 
 		switch (command) {
 		case "/hotel/searchkeyword.ho":
 			try {

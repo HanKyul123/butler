@@ -27,7 +27,7 @@ public class HomePagedAction implements Action{
 		
 		System.out.println("초기 2");
 		
-		ActionTo transfer = new ActionTo();
+		ActionTo transfer = new ActionTo(); 
 		transfer.setRedirect(false);
 		transfer.setPath("/home.jsp");
 		return transfer;

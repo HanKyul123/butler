@@ -35,7 +35,7 @@ public class ChoiceAction implements Action{
 		String dateTwo = req.getParameter("dateTwo");
 		
 		String cat = req.getParameter("cat");
-		String dog = req.getParameter("dog");
+		String dog = req.getParameter("dog"); 
 		String bird = req.getParameter("bird");
 		String reptile = req.getParameter("reptile");
 		String farad = req.getParameter("farad");

@@ -80,7 +80,7 @@
                 <input type="button" value="거리순">
                 <input type="button" value="낮은 가격순">
             </div>
-
+ 
 
             <!-- 호텔란 -->
             
