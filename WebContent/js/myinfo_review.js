@@ -28,7 +28,7 @@
         $('.content_btn').css('display','none');
         $('.newreview_btn').css('display','flex');
     }
-  
+   
 
     function complete(){
         $('.content_btn').css('display','flex');

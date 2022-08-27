@@ -367,7 +367,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	        position: relative;
 	        bottom: 4px;
     	}
-
+ 
 	    a>#go_write_review:hover{
 			bottom:6px;
 	        width: 125px;
