@@ -1,6 +1,6 @@
 package com.butler.app.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -15,6 +15,10 @@ SqlSession sqlsession;
 	
 	public boolean insertPets(PetsDTO pet) {
 		 return (Integer)sqlsession.insert("pet.insertPet",pet) == 1;
+	}
+	
+	public List findPets(int BOOK_NUM_PK) {
+		return sqlsession.selectList("pet.findPets",BOOK_NUM_PK);
 	}
 	
 	

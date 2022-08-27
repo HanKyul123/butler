@@ -5,6 +5,7 @@ public class PetsDTO {
 	int PETS_NUM_PK;
 	int USER_NUM_FK;
 	int pets_type;
+	String pets_name;
 	String pets_weight;
 	int BOOK_NUM_FK;
 
@@ -49,6 +50,14 @@ public class PetsDTO {
 
 	public void setPets_type(int pets_type) {
 		this.pets_type = pets_type;
+	}
+	
+	public String getPets_name() {
+		return pets_name;
+	}
+
+	public void setPets_name(String pets_name) {
+		this.pets_name = pets_name;
 	}
 
 	public String getPets_weight() {

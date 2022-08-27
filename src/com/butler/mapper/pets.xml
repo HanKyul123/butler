@@ -12,4 +12,7 @@
 		#{pets_weight},
 		#{BOOK_NUM_FK});
 	</insert>
+	<select id="findPets" resultType="petsdto" parameterType="_int">
+		select info.PETS_NUM_PK, info.USER_NUM_FK, info.pets_type,nam.pets_name , info.pets_weight, info.BOOK_NUM_FK from pets_tb as info join pets_name_tb as nam on info.pets_type = nam.pets_type where info.BOOK_NUM_FK = #{BOOK_NUM_FK};
+	</select>
 </mapper>
