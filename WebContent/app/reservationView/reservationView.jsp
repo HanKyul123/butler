@@ -49,24 +49,79 @@
             "endDate": 0,
             "drops": "down"
         }, function (start, end, label) {
+        	
+        	
+        	 
 
 
             console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
             let totaldate = document.getElementById("totaldate");
             let totaldate2 = document.getElementById("totaldate2");
             console.log(end.format('DD')-start.format('DD'));
+            
+            
+            let startMM = parseInt(start.format('MM'));
+            let endMM = parseInt(end.format('MM'));
+            
+            let startDD = parseInt(start.format('DD'));
+            let endDD = parseInt(end.format('DD'));
+            
 
-
+            if(endMM==startMM){
+            	
+            	console.log("체크 아웃 달 = 체크인 달");
+            	/* 체크 아웃 달 == 체크인 달 */			
+            	if(endDD > startDD){
+    				nowdate = endDD - startDD;
+    				
+    			}else if(endDD < startDD){
+    				
+    				nowdate = startDD - endDD;
+    				
+    			}
+            	
+             }
+            
+            
+            
+            
+            else if(endMM > startMM){
+            	
+            	console.log("체크 아웃 달 > 체크인 달");
+				/* 체크 아웃 달 > 체크인 달 */				
+				
+				if((startMM%2 == 0) && startMM < 8){
+					nowdate =(30 - startDD) + endDD ;
+				
+				}else if((startMM % 2 == 1) && startMM < 8){
+					nowdate =(31 - startDD ) + endDD ;
+				}
+				else if(startMM == 2){
+					nowdate =(28 - startDD ) + endDD ;
+				
+				}else if((startMM >= 8) && startMM % 2 == 0){
+					nowdate =(31 - startDD) + endDD ;
+				
+				}else if((startMM >= 8) && startMM % 2 == 1){
+					nowdate =(30 - startDD ) + endDD ;
+				}
+				
+			}
 
             // 기간
-            nowdate = end.format('DD')-start.format('DD');
             nowdate2.value = nowdate;
+            
+            
+            
+            
 
             console.log("<----- 기간 수정 : "+nowdate+"일 ----->");
+            console.log("<----- 달 : "+end.format('MM')+"월 ----->");
+            console.log(end.format('MM')%2);
             
-            totaldate.innerHTML="체크인 : "+start.format('MM-DD')+" ~ "+"체크 아웃 : "+end.format('MM-DD')
+            totaldate.innerHTML="체크인 : "+ startMM +"월  "+ startDD +"일  ~ "+"체크 아웃 : "+ endMM +"월 " + endDD + "일";
             totaldate2.innerHTML="총 "+nowdate+"박 "+(nowdate+1)+"일";
-            console.log("<------ 기간 수정 : "+nowdate+"일 ----->");
+  
 
             // 날짜 가져오기
             let book_checkin_date  = document.getElementById("book_checkin_date");
@@ -93,7 +148,7 @@
             book_charge= fullcharge*xcount;
             console.log(book_charge+"="+fullcharge+"X"+xcount);
             
-            console.log("/n");
+            console.log("\n");
             
             
             $("#add").on("click",function(){
