@@ -254,6 +254,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
     #new_review{
+    	text-align:left;
         font-family: 'OTWelcomeRA';
         border: 1px solid rgb(255, 237, 248);
         background-color: rgb(255, 237, 248);
@@ -264,3 +265,115 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         resize: none;
         font-size: 14px;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    #Thumbnail_Box{
+    padding: 7px;
+    margin-top: 15px;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 4px;
+    }
+    
+    #Thumbnail{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    }
+    
+    
+        #mody_Thumbnail_Box{
+    padding: 7px;
+    margin-top: 5px;
+    width: 85.1%;
+    height: 80px;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: #fff;
+    border-radius: 4px;
+    }
+    
+    #mody_Thumbnail{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    }
+    
+    
+    
+    	#file{
+    	width: 72.7%;
+    	}
+ 
+        input[type=file]::file-selector-button {
+        cursor: pointer;
+        margin-top: 5px;
+        font-family: 'OTWelcomeRA';
+        margin-right: 10px;
+        text-align: center;
+        width: 100px;
+        height: 30px;
+        line-height: 33px;
+        border: 1px solid rgb(255, 154, 214);
+        background-color: rgb(255, 154, 214);
+        border-radius: 4px;
+        color: #fff;
+       
+      }
+      
+	  #addpic_btn{
+	  	margin-top: 5px;
+	    cursor: pointer;
+	    font-family: 'OTWelcomeRA';
+	    text-align: center;
+	    width: 100px;
+	    height: 30px;
+	    line-height: 33px;
+	    border: 1px solid rgb(255, 154, 214);
+        background-color: rgb(255, 154, 214);
+        border-radius: 4px;
+        color: #fff;
+	    
+	  }
+    
+    #flex{
+    display: flex;
+    flex-wrap: wrap;
+    height: 35px;
+    }
+    
+        a>#go_write_review{
+	        font-family: 'OTWelcomeRA';
+	        border: 1px solid rgb(255, 25, 178);
+	        margin-left: 20px;
+	        border-radius: 3px;
+	        width: 120px;
+	        height: 30px;
+	        background-color: transparent;
+	        line-height: 32px;
+	        cursor: pointer;
+	        color: rgb(255, 25, 178);
+	        transition: 0.3s;
+	        
+	        position: relative;
+	        bottom: 4px;
+    	}
+ 
+	    a>#go_write_review:hover{
+			bottom:6px;
+	        width: 125px;
+	        height: 35px;
+	        line-height: 37px;
+	        background-color: rgb(255, 241, 250);
+	        color: rgb(255, 0, 170);
+	    }
+    
