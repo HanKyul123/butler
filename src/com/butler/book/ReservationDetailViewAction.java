@@ -46,7 +46,7 @@ public class ReservationDetailViewAction implements Action{
 		List pets = new ArrayList<PetsDTO>();
 		
 		pets = pdao.findPets(BOOK_NUM_PK);
-		
+		System.out.println(pets);
 		req.setAttribute("book",book);
 		req.setAttribute("pets",pets);
 		

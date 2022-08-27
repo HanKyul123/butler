@@ -81,7 +81,7 @@
                 <div class="detail_animal_box">
  				<c:choose>		
 					<c:when test="${pets != null}">
-					<c:forEach items="${rip}" var="rip">
+					<c:forEach items="${pets}" var="pets">
 						<div class="detail_pet_box">
 	                        <div class="pet_kind">
 	                          	 종류: <span id="PK">${pets.pets_name}</span>
