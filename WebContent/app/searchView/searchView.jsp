@@ -45,8 +45,13 @@
             <div id="Tagin" class="Type">
                 <div id="TypeTitle" class="petType">반려동물 분류</div>
                 <div class="checkbox1">
-                    <label><input type="checkbox" name="dog" id="pet" value="0">강아지</label>
-                    <label><input type="checkbox" name="cat" id="pet" value="1">고양이</label>
+                    <label><input type="checkbox" name="dog" id="pet" value="0">강아지</label><br>
+                    <label><input type="checkbox" name="cat" id="pet" value="1">고양이</label><br>
+                    <label><input type="checkbox" name="bird" id="pet" value="2">새</label><br>
+                    <label><input type="checkbox" name="reptile" id="pet" value="3">파충류</label><br>
+                    <label><input type="checkbox" name="farad" id="pet" value="4">패럿</label><br>
+                    <label><input type="checkbox" name="rabbit" id="pet" value="6">토끼</label><br>
+                    <label><input type="checkbox" name="hamster" id="pet" value="7">햄스터</label><br>
                     <label><input type="checkbox" name="else_pet" id="pet" value="8">그 외</label>
                 </div>
             </div>

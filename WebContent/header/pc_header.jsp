@@ -45,7 +45,7 @@
                   &nbsp;&nbsp;&nbsp;<br><br>
                </button>
                <div id=login_search class="searchBar_box">
-                  <input id="keyword" class="search2" type="text" placeholder="지역, 호텔명" onkeyup="if(event.keyCode==13){search()}">
+                  <input id="keyword2" class="search2" type="text" placeholder="지역, 호텔명" onkeyup="if(event.keyCode==13){search2()}">
                </div>
             </label> 
             <img id="X" class="X" src="${pageContext.request.contextPath}/img/X.png" alt="" onclick="tog2()">
@@ -99,7 +99,7 @@
                         <a href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">내 정보</a>
                      </div>
                      <div id="CMpf" class="Reservation">
-                        <a href="/book/findMyReservation.book">예약 내역</a>
+                        <a href="${pageContext.request.contextPath}/app/myinfo/myinfo_reservationView.jsp">예약 내역</a>
                      </div>
                      <div id="CMpf" class="my_review">
                         <a href="${pageContext.request.contextPath}/app/myinfo/myinfo_reviewView.jsp">내가 쓴 리뷰</a>
@@ -162,6 +162,13 @@
       const cp = "${cp}";
       location.href=cp+"/hotel/searchkeyword.ho?keyword="+keyword.value;
    }
+   
+   function search2(){
+	      const keyword = document.getElementById("keyword2");
+	      const cp = "${cp}";
+	      location.href=cp+"/hotel/searchkeyword.ho?keyword="+keyword.value;
+	   }
+   
 </script>
 <script src="${pageContext.request.contextPath}/js/List.js"></script>
 <%-- <script src="${pageContext.request.contextPath}/js/pc_header.js"></script> --%>

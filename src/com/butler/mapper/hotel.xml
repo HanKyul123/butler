@@ -30,6 +30,11 @@
 		business_hashtag like('%${pet1}%') or 
 		business_hashtag like('%${pet2}%') or 
 		business_hashtag like('%${pet3}%') or
+		business_hashtag like('%${pet4}%') or 
+		business_hashtag like('%${pet5}%') or 
+		business_hashtag like('%${pet6}%') or
+		business_hashtag like('%${pet7}%') or 
+		business_hashtag like('%${pet8}%') or
 		business_category = #{category1} or
 		business_category = #{category2}
 	</select>

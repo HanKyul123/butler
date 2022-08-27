@@ -36,17 +36,29 @@ public class ChoiceAction implements Action{
 		
 		String cat = req.getParameter("cat");
 		String dog = req.getParameter("dog");
+		String bird = req.getParameter("bird");
+		String reptile = req.getParameter("reptile");
+		String farad = req.getParameter("farad");
+		String rabbit = req.getParameter("rabbit");
+		String hamster = req.getParameter("hamster");
 		String else_pet = req.getParameter("else_pet");
 		
 		String hotel = req.getParameter("Hotel");
 		String hospital = req.getParameter("Hospital");		
 		
+		System.out.println(keyword);
 		System.out.println(cat);
 		System.out.println(dog);
+		System.out.println(bird);
+		System.out.println(reptile);
+		System.out.println(rabbit);
+		System.out.println(farad);
+		System.out.println(hamster);
 		System.out.println(else_pet);
 		
 		
-		if(cat == null && dog == null && else_pet == null && hotel == null && hospital == null) {
+		if(cat == null && dog == null && else_pet == null && hotel == null && hospital == null
+		   && bird == null && reptile == null && rabbit == null && farad == null && hamster == null) {
 			PrintWriter out = resp.getWriter();
 	        out.print("<script>");
 	        out.print("location.href = '"+req.getContextPath()+"/hotel/searchkeyword.ho?keyword="+keyword+"';");
@@ -89,6 +101,41 @@ public class ChoiceAction implements Action{
 			}
 			else {
 				datas.put("category2", "없음");
+			}
+			
+			if(bird != null) { 
+				datas.put("pet4", "새");
+			}
+			else {
+				datas.put("pet4", "없음");
+			}
+			
+			if(reptile != null) { 
+				datas.put("pet5", "파충류");
+			}
+			else {
+				datas.put("pet5", "없음");
+			}
+			
+			if(rabbit != null) { 
+				datas.put("pet6", "토끼");
+			}
+			else {
+				datas.put("pet6", "없음");
+			}
+			
+			if(farad != null) { 
+				datas.put("pet7", "패럿");
+			}
+			else {
+				datas.put("pet7", "없음");
+			}
+			
+			if(hamster != null) { 
+				datas.put("pet8", "햄스터");
+			}
+			else {
+				datas.put("pet8", "없음");
 			}
 			System.out.println(datas);
 			
