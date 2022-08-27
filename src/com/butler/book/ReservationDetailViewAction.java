@@ -2,6 +2,8 @@ package com.butler.book;
 
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +14,7 @@ import com.butler.app.action.ActionTo;
 import com.butler.app.dao.BookDAO;
 import com.butler.app.dao.BookDTO;
 import com.butler.app.dao.PetsDAO;
+import com.butler.app.dao.PetsDTO;
 import com.butler.app.dao.UserDTO;
 
 public class ReservationDetailViewAction implements Action{
@@ -40,8 +43,12 @@ public class ReservationDetailViewAction implements Action{
 		BookDTO book = new BookDTO();
 		int BOOK_NUM_PK = Integer.parseInt(req.getParameter("BOOK_NUM_PK"));
 		book = bdao.findBook(BOOK_NUM_PK);
+		List pets = new ArrayList<PetsDTO>();
 		
+		pets = pdao.findPets(BOOK_NUM_PK);
+		System.out.println(pets);
 		req.setAttribute("book",book);
+		req.setAttribute("pets",pets);
 		
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(false);
