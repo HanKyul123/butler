@@ -35,7 +35,7 @@
 				<c:when test="${rip != null and rip.size()>0 }">
 					<c:forEach items="${rip}" var="rip">
 						<div class="boxs" id="ingboxs">
-							<a href="">
+							<a href="/book/goReservationDetailView.book?BOOK_NUM_PK=${rip.BOOK_NUM_PK}">
 								<div id="ing_box" class="in_boxs">
 									<div class="flex">
 										<div class="imgbox">

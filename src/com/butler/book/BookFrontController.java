@@ -45,8 +45,18 @@ public class BookFrontController extends HttpServlet{
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				break;
+			break;
+			
+			case "/book/goReservationDetailView.book":
+				try {
+					transfer = new ReservationDetailViewAction().execute(req, resp);		
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			break;
+				
 		}
+		
 		
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {
