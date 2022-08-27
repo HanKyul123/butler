@@ -147,7 +147,7 @@ var x = setInterval(function(){
 	     const prove_num = document.getElementById("prove_num");
 	      const cp = "${cp}";
 	     console.log(prove_num.value);
-
+ 
 	   xhr.onreadystatechange = function(){
 	         console.log("5-5");
 	         if(xhr.readyState == 4){

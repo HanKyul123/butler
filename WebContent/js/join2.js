@@ -24,7 +24,7 @@ $('#phone_num').on('input',function(){
         else if(input.value.length<10){$('.btn_checked1').attr("disabled", true);}
     }
 })
-
+ 
 // 인증번호 4자리 적으면 버튼 활성화
 $('#prove_num').on('input',function(){
     if(input2.value.length<4){

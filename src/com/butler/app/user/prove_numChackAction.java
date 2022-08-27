@@ -26,7 +26,7 @@ public class prove_numChackAction implements Action{
 		System.out.println(prove_num);
 			
 			
- 
+  
 		
 		PrintWriter out = resp.getWriter();
 

@@ -11,7 +11,7 @@
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/join3.css">
 </head>
-<body>    
+<body>     
       <form id="joinForm" method="post" action="/user/join.us">
               <div class="wrap">
 
