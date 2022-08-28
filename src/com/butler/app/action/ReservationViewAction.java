@@ -20,15 +20,9 @@ public class ReservationViewAction implements Action{
 
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-		System.out.println("1");
+
 		HotelDAO hdao = new HotelDAO();
-		HotelDTO hdto = new HotelDTO();
-		UserDTO udto = new UserDTO();
 		UserDAO udao = new UserDAO();
-		ReviewDTO rdto = new ReviewDTO();
-		ReviewFileDTO rfdto = new ReviewFileDTO();
-		ReviewFileDAO rfdao = new ReviewFileDAO();
-		BchargeDTO bcdto = new BchargeDTO();
 		BchargeDAO bcdao = new BchargeDAO();
 		
 		

@@ -65,7 +65,7 @@
                     </div>
                 </a>
 
-				<form action="" method="post">
+				<form action="/review/reviewWriteOK.review" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="business_place_num_fk" value ="${book.BUSINESS_PLACE_NUM_FK}">
                 <textarea name="review_contents" id="write_review" ></textarea>
                 <input type="file" name="file" id="file" multiple>

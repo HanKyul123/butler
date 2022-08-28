@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.butler.app.action.ActionTo;
 import com.butler.app.action.GoReviewWritingAction;
+import com.butler.app.action.ReviewWriteOKAction;
 
 public class ReviewFrontController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
@@ -40,6 +41,17 @@ public class ReviewFrontController extends HttpServlet{
 			}
 			break;
 		}
+		switch (command) {
+		case "/review/reviewWriteOK.review":
+		try {
+			transfer = new ReviewWriteOKAction().execute(req, resp);		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		break;
+	}
+		
+		
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {
 				resp.sendRedirect(transfer.getPath());
