@@ -220,10 +220,10 @@
 							<div class="Ntitle">대구/경산 애견호텔 펫브릿지 </div>
 							<div class="Ncontents">지금까지 없었던 내 반려견을 위한 프리미엄 호텔링 서비스</div>
 						</div>
-					</div>
+					</div> 
 				</a> 
 				<a href="https://www.xn--o39a01ona539e.com/">
-					<div id="choose" class="choose2">
+					<div id="choose" class="choose2"> 
 						<div class="Nimg">
 						<img id="partnes_pictures" src="${pageContext.request.contextPath}/img/partners_img/partners_pet_bird.png" alt="">
 						</div>
