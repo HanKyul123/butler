@@ -53,7 +53,7 @@
 					</c:when>
 					<c:otherwise>
 						<div id="detail_ed" class="detail_ed">이용 완료</div>
-						<a href="/review/goReviewWriting.review"><button id="write_review">리뷰 쓰기</button></a>
+						<a href="/review/goReviewWriting.review?BOOK_NUM_PK=${book.BOOK_NUM_PK}"><button id="write_review">리뷰 쓰기</button></a>
 					</c:otherwise>     
                 </c:choose>
                 <!-- 고른 날짜 -->

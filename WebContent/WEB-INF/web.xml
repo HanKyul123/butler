@@ -43,7 +43,7 @@
   </servlet-mapping>
    <servlet>
       <servlet-name>ReviewFrontController</servlet-name>
-      <servlet-class>com.butler.app.review.BookFrontController</servlet-class>
+      <servlet-class>com.butler.app.review.ReviewFrontController</servlet-class>
   </servlet>
   <servlet-mapping>
       <servlet-name>ReviewFrontController</servlet-name>

@@ -47,7 +47,7 @@
 
                         <!-- 호텔 대표 사진 -->
                         <div class="Hotelpic">
-                            <img src="${pageContext.request.contextPath}/img/business_place_img/${rip.BUSINESS_PLACE_NUM_FK}/${rip.BUSINESS_PLACE_NUM_FK}_1.png" alt="" id="Hotelimg">
+                            <img src="${pageContext.request.contextPath}/img/business_place_img/${book.BUSINESS_PLACE_NUM_FK}/${book.BUSINESS_PLACE_NUM_FK}_1.png" alt="" id="Hotelimg">
                         </div>
 
                         <!-- 호텔 이름 / 동물 종류 / 기간 -->
