@@ -41,4 +41,12 @@
       <servlet-name>BookFrontController</servlet-name>
       <url-pattern>*.book</url-pattern>
   </servlet-mapping>
+   <servlet>
+      <servlet-name>ReviewFrontController</servlet-name>
+      <servlet-class>com.butler.app.review.BookFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>ReviewFrontController</servlet-name>
+      <url-pattern>*.review</url-pattern>
+  </servlet-mapping>
 </web-app>
