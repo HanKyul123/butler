@@ -27,7 +27,7 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
-<script>
+<script> 
 
 	let nowdate = 0;
 

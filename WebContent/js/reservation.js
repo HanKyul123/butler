@@ -27,7 +27,7 @@ $('#animal').change(function() {
       $('.hamster_weight').hide();
       $('.else_weight').hide();
       $('.amphibia_weight').hide();
-      $('.Pig_weight').hide();
+      $('.Pig_weight').hide(); 
       
       
 
