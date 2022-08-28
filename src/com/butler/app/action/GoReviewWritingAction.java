@@ -20,7 +20,7 @@ public class GoReviewWritingAction implements Action{
 	
 		ActionTo transfer = new ActionTo();
 		transfer.setRedirect(false);
-		transfer.setPath("/app/myinfo_write_reviewView/myinfo_write_reviewView.jsp");
+		transfer.setPath("/app/myinfo/myinfo_write_reviewView.jsp");
 		return transfer;
 	}
 }
