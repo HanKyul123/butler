@@ -18,7 +18,7 @@ create table user_tb(
    user_email          varchar(200) unique not null,
    user_phone          varchar(15) not null,
    user_business_num   varchar(30)      #사업자 번호
-);
+); 
 
 
 drop table business_tb;

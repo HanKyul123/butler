@@ -38,7 +38,7 @@
             
         <div class="t_policy">
             <div class="policy">
-                <div class="tab">
+                <div class="tab"> 
                     <ul>
                         <li>
                             <a href="${pageContext.request.contextPath}/app/policyView/policy.jsp" class="tab_on">이용약관</a>

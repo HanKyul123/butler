@@ -58,7 +58,7 @@ values
 # 고양이       
 (2,1,'1 ~ 5kg',20000),(2,1,'5 ~ 10kg',60000),(2,1,'10kg 이상',80000);
                            
-
+ 
 #하임동물병원
 insert business_charge_tb (BUSINESS_PLACE_NUM_FK,animal_type,animal_weight,one_day_charge)
 values

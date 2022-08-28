@@ -82,7 +82,7 @@
 
 	<div class="my_info_title">내 정보</div>
 
-	<div class="my_info_BigBox">
+	<div class="my_info_BigBox"> 
 
 		<div class="my_info_box1">
 			<a class="my_info_manage" href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp"><div id="all_choice">내 정보

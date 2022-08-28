@@ -15,7 +15,7 @@
 </head>
 <body>
 	<div class="notice_wrap">
-		<div class="moremore" id="content">
+		<div class="moremore" id="content"> 
 			<nav>
 				<ul>
 					<li><a href="${pageContext.request.contextPath}/app/noticeView/noticeView.jsp" id="click" class="more_a">공지사항</a></li>

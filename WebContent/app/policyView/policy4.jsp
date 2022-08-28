@@ -52,7 +52,7 @@
                             <a href="${pageContext.request.contextPath}/app/policyView/policy4.jsp" class="tab_on">소비자 분쟁해결 기준</a>
                         </li>
                     </ul>
-                </div>
+                </div> 
                 <div class="t_more">
                     <div class="p_more">
                         <div class="title">

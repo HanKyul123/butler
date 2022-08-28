@@ -36,7 +36,7 @@
             </div>
         
         
-        <div class="t_policy">
+        <div class="t_policy"> 
             <div class="policy">
                 <div class="tab">
                     <ul>

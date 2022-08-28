@@ -19,7 +19,7 @@
 </head>
 <%@ include file="../../header/pc_header.jsp"%>
 
-<body>
+<body> 
 <div class="QnA_wrap">
         <div class="moremore" id="content">
             <nav>
