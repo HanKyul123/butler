@@ -57,7 +57,7 @@ create table business_tb(
     book_regdate            datetime default now(),
     book_checkin_date         datetime not null,
     book_checkout_date         datetime not null,
-    book_charge               varchar(300),
+    book_charge               int,
     book_request            varchar(1000),
     book_service            int
 );

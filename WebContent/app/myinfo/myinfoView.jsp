@@ -85,11 +85,11 @@
 	<div class="my_info_BigBox">
 
 		<div class="my_info_box1">
-			<a class="my_info_manage" href=""><div id="all_choice">내 정보
-					관리</div></a> <br> <a class="my_reservation_info" href=""><div
+			<a class="my_info_manage" href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp"><div id="all_choice">내 정보
+					관리</div></a> <br> <a class="my_reservation_info" href="${pageContext.request.contextPath}"><div
 					id="all_choice">예약 내역</div></a> <br> <a class="my_review_info"
-				href=""><div id="all_choice">내가 쓴 리뷰</div></a> <br> <a
-				class="my_cart_info" href=""><div id="all_choice">찜 목록</div></a>
+				href="${pageContext.request.contextPath}"><div id="all_choice">내가 쓴 리뷰</div></a> <br> <a
+				class="my_cart_info" href="${pageContext.request.contextPath}"><div id="all_choice">찜 목록</div></a>
 		</div>
 
 		<!-- 내용 공간 -->

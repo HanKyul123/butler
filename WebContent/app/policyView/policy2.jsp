@@ -23,13 +23,13 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="" class="more_a">공지사항</a>
+                        <a href="${pageContext.request.contextPath}/app/noticeView/noticeView.jsp" class="more_a">공지사항</a>
                     </li>
                     <li>
-                    <a href="" class="more_a">자주 묻는 질문</a>
+                    <a href="${pageContext.request.contextPath}/app/QnAView/QnAView.jsp" class="more_a">자주 묻는 질문</a>
                     </li>
                     <li>
-                        <a href="" id="click" class="more_a">약관 및 정책</a>
+                        <a href="${pageContext.request.contextPath}/app/policyView/policy.jsp" id="click" class="more_a">약관 및 정책</a>
                     </li>
                 </ul>
             </nav>
@@ -41,16 +41,16 @@
                 <div class="tab">
                     <ul>
                         <li>
-                            <a href="" class="tab_1">이용약관</a>
+                            <a href="${pageContext.request.contextPath}/app/policyView/policy.jsp" class="tab_1">이용약관</a>
                         </li>
                         <li>
-                            <a href="" class="tab_on">위치기반 서비스 이용약관</a>
+                            <a href="${pageContext.request.contextPath}/app/policyView/policy2.jsp" class="tab_on">위치기반 서비스 이용약관</a>
                         </li>
                         <li>
-                            <a href="" class="tab_2">개인정보 처리방침</a>
+                            <a href="${pageContext.request.contextPath}/app/policyView/policy3.jsp" class="tab_2">개인정보 처리방침</a>
                         </li>
                         <li>
-                            <a href="" class="tab_3">소비자 분쟁해결 기준</a>
+                            <a href="${pageContext.request.contextPath}/app/policyView/policy4.jsp" class="tab_3">소비자 분쟁해결 기준</a>
                         </li>
                     </ul>
                 </div>
