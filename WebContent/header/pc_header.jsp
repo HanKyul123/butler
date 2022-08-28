@@ -68,13 +68,13 @@
             <a href="">더보기</a>
             <div class="more_list" name="morelist">
                <div id="more_inside" class="more_list_1">
-                  <a href="">공지사항</a>
+                  <a href="${pageContext.request.contextPath}/app/noticeView/noticeView.jsp">공지사항</a>
                </div>
                <div id="more_inside" class="more_list_2"> 
-                  <a href="">자주 묻는 질문</a>
+                  <a href="${pageContext.request.contextPath}/app/QnAView/QnAView.jsp">자주 묻는 질문</a>
                </div>
                <div id="more_inside" class="more_list_3">
-                  <a href="">이용약관</a>
+                  <a href="${pageContext.request.contextPath}/app/policyView/policy.jsp">이용약관</a>
                </div>
             </div>
          </li>
