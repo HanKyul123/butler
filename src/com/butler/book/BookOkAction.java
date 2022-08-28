@@ -30,6 +30,7 @@ public class BookOkAction implements Action{
 		HttpSession session = req.getSession(false);
 		Date nowDate = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");		
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");		
 		PrintWriter out = resp.getWriter();
 		int USER_NUM_FK = 0;
 		BookDAO bdao = new BookDAO();
@@ -56,7 +57,7 @@ public class BookOkAction implements Action{
 		java.sql.Date book_checkout_date = java.sql.Date.valueOf(sdf.format(checkOutDatetypeDate));
 		System.out.println("book_checkout_date = "+ book_checkout_date);
 		//예약 등록시간 만들기
-		java.sql.Date book_regdate = java.sql.Date.valueOf(sdf.format(nowDate));
+		java.sql.Timestamp book_regdate = java.sql.Timestamp.valueOf(sdf2.format(nowDate));
 		System.out.println("book_regdate = "+ book_regdate);
 		//비용
 		int book_charge = Integer.parseInt(req.getParameter("book_charge"));

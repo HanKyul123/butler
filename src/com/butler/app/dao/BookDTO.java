@@ -1,6 +1,7 @@
 package com.butler.app.dao;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class BookDTO {
 	int BOOK_NUM_PK;
@@ -8,7 +9,7 @@ public class BookDTO {
 	String business_name;
 	int USER_NUM_FK;
 	int book_status;
-	Date book_regdate;
+	Timestamp book_regdate;
 	Date book_checkin_date;
 	Date book_checkout_date;
 	int book_charge;
@@ -17,7 +18,7 @@ public class BookDTO {
 	public BookDTO() {
 	}
 
-	public BookDTO(int BOOK_NUM_PK, int BUSINESS_PLACE_NUM_FK, int USER_NUM_FK, int book_status, Date book_regdate,
+	public BookDTO(int BOOK_NUM_PK, int BUSINESS_PLACE_NUM_FK, int USER_NUM_FK, int book_status, Timestamp book_regdate,
 			Date book_checkin_date, Date book_checkout_date, int book_charge, String book_request) {
 		this.BOOK_NUM_PK = BOOK_NUM_PK;
 		this.BUSINESS_PLACE_NUM_FK = BUSINESS_PLACE_NUM_FK;
@@ -30,7 +31,7 @@ public class BookDTO {
 		this.book_request = book_request;
 	}
 	
-	public BookDTO(int BUSINESS_PLACE_NUM_FK, int USER_NUM_FK, Date book_regdate,
+	public BookDTO(int BUSINESS_PLACE_NUM_FK, int USER_NUM_FK, Timestamp book_regdate,
 		Date book_checkin_date, Date book_checkout_date, int book_charge) {
 		this.BUSINESS_PLACE_NUM_FK = BUSINESS_PLACE_NUM_FK;
 		this.USER_NUM_FK = USER_NUM_FK;
@@ -82,11 +83,11 @@ public class BookDTO {
 		this.book_status = book_status;
 	}
 
-	public Date getBook_regdate() {
+	public Timestamp getBook_regdate() {
 		return book_regdate;
 	}
 
-	public void setBook_regdate(Date book_regdate) {
+	public void setBook_regdate(Timestamp book_regdate) {
 		this.book_regdate = book_regdate;
 	}
 
