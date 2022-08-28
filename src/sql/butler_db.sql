@@ -67,7 +67,7 @@ create table pets_tb(
     USER_NUM_FK             int,
    constraint p_tb_USER_NUM_FK foreign key(USER_NUM_FK) references  user_tb (USER_NUM_PK),
     pets_type               int not null,
-    pets_weight               int,
+    pets_weight              varchar(100),
     BOOK_NUM_FK             int,
     constraint p_tb_BOOK_NUM_FK foreign key(BOOK_NUM_FK) references book_tb (BOOK_NUM_PK)
 );
