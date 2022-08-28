@@ -138,7 +138,7 @@ public class BookOkAction implements Action{
 			
 			ActionTo transfer = new ActionTo();
 			transfer.setRedirect(false);
-			transfer.setPath("/app/myinfo/myinfo_reservationView/myinfo_reservationView.jsp");
+			transfer.setPath("/app/myinfo/myinfo_reservationView.jsp");
 			return transfer;
 		}else {
 			//예약실패시
