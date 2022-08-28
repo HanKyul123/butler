@@ -65,15 +65,12 @@
 						},
 						function(start, end, label) {
 
-							console.log('New date range selected: '
-									+ start.format('YYYY-MM-DD') + ' to '
-									+ end.format('YYYY-MM-DD')
-									+ ' (predefined range: ' + label + ')');
-							let totaldate = document
-									.getElementById("totaldate");
-							let totaldate2 = document
-									.getElementById("totaldate2");
-							console.log(end.format('DD') - start.format('DD'));
+								console.log('New date range selected: '+ start.format('YYYY-MM-DD') + ' to '+ end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+							
+							
+							let totaldate = document.getElementById("totaldate");
+							let totaldate2 = document.getElementById("totaldate2");
+								console.log(end.format('DD') - start.format('DD'));
 
 							let startMM = parseInt(start.format('MM'));
 							let endMM = parseInt(end.format('MM'));
@@ -85,17 +82,16 @@
 
 								console.log("체크 아웃 달 = 체크인 달");
 								/* 체크 아웃 달 == 체크인 달 */
+								
 								if (endDD > startDD) {
 									nowdate = endDD - startDD;
-
+									
 								} else if (endDD < startDD) {
-
 									nowdate = startDD - endDD;
-
 								}
-
 							}
 
+							
 							else if (endMM > startMM) {
 
 								console.log("체크 아웃 달 > 체크인 달");
@@ -121,56 +117,48 @@
 							// 기간
 							nowdate2.value = nowdate;
 
-							console.log("<----- 기간 수정 : "+nowdate+"일 ----->");
-							console.log("<----- 달 : " + end.format('MM')
-									+ "월 ----->");
-							console.log(end.format('MM') % 2);
+								console.log("<----- 기간 수정 : "+nowdate+"일 ----->");
+								console.log("<----- 달 : " + end.format('MM') + "월 ----->");
+								console.log(end.format('MM') % 2);
 
-							totaldate.innerHTML = "체크인 : " + startMM + "월  "
-									+ startDD + "일  ~ " + "체크 아웃 : " + endMM
-									+ "월 " + endDD + "일";
-							totaldate2.innerHTML = "총 " + nowdate + "박 "
-									+ (nowdate + 1) + "일";
+							totaldate.innerHTML = "체크인 : " + startMM + "월  " + startDD + "일  ~ " + "체크 아웃 : " + endMM + "월 " + endDD + "일";
+							totaldate2.innerHTML = "총 " + nowdate + "박 "+ (nowdate + 1) + "일";
 
 							// 날짜 가져오기
-							let book_checkin_date = document
-									.getElementById("book_checkin_date");
-							book_checkin_date.value = start
-									.format('YYYY-MM-DD');
+							let book_checkin_date = document.getElementById("book_checkin_date");
+							book_checkin_date.value = start.format('YYYY-MM-DD');
 
-							let book_checkout_date = document
-									.getElementById("book_checkout_date");
+							let book_checkout_date = document.getElementById("book_checkout_date");
 							book_checkout_date.value = end.format('YYYY-MM-DD');
 
-							console.log(book_checkin_date.value);
-							console.log(book_checkout_date.value);
+								console.log(book_checkin_date.value);
+								console.log(book_checkout_date.value);
 
 							let xcount = nowdate;
 							let nd = document.getElementById("nowdate");
 							nd.value = xcount;
 
 							// 총 기간과 총합의 값
-							console.log("총 기간과 총합의 값 : " + fullcharge * xcount);
+							console.log("총 기간과 총합의 값 : " + fullcharge * xcount);/* 기간과 곱해져있지 않는 총합을 새로 꺼내서 기간을 곱해준다. */
 
 							// 프론트 상에 보여주기
 							txttotalprice.innerHTML = fullcharge * xcount;
+							
 							// input value에 담아주기
 							toprice.value = fullcharge * xcount;
 							book_charge = fullcharge * xcount;
-							console.log(book_charge + "=" + fullcharge + "X"
-									+ xcount);
-
-							console.log("\n");
+							
+								console.log(book_charge + "=" + fullcharge + "X"+ xcount);
+								console.log("\n");
 
 						});
 
 	});
 </script>
+
+
+
 </head>
-
-
-
-
 
 
 <body class="reservation_wrap">
@@ -218,8 +206,7 @@
 		</div>
 	</div>
 
-	<form action="/book/BookOk.book" type="post"
-		onsubmit="return reservation()">
+	<form action="/book/BookOk.book" type="post" onsubmit="reservation()">
 		<!-- 예약 종류 선택하기 -->
 		<div class="box2">
 			<div class="addanimal">
@@ -227,26 +214,18 @@
 				<select name="animal" id="animal">
 
 					<option class="uderline" value="선택" selected="selected">선택</option>
-					
-<!--   					 	<option value="0">강아지</option>
-						<option value="1">고양이</option>
-						<option value="2">새</option>
-						<option value="3">파충류</option>
-						<option value="4">패럿</option>
-						<option value="5">토끼</option>
-						<option value="6">햄스터</option> -->
-		
+	
  						<c:forEach items="${animal_type}" var="animal_type">
-								<c:if test="${0 eq animal_type.animal_type}"><option value="0">기타</option></c:if>
-								<c:if test="${1 eq animal_type.animal_type}"><option value="1">강아지</option></c:if>
-								<c:if test="${2 eq animal_type.animal_type}"><option value="2">고양이</option></c:if>
-								<c:if test="${3 eq animal_type.animal_type}"><option value="3">조류</option></c:if>
-								<c:if test="${4 eq animal_type.animal_type}"><option value="4">파충류</option></c:if>
-								<c:if test="${5 eq animal_type.animal_type}"><option value="5">양서류</option></c:if>
-								<c:if test="${6 eq animal_type.animal_type}"><option value="6">설치류</option></c:if>
-								<c:if test="${7 eq animal_type.animal_type}"><option value="7">족제비과</option></c:if>
-								<c:if test="${8 eq animal_type.animal_type}"><option value="8">돼지류</option></c:if>
-								<c:if test="${9 eq animal_type.animal_type}"><option value="9">설치류</option></c:if>
+								<c:if test="${0 eq animal_type.animal_type}"><option value="0">기타</option></c:if><!-- else_weight -->
+								<c:if test="${1 eq animal_type.animal_type}"><option value="1">강아지</option></c:if><!-- dog_weight -->
+								<c:if test="${2 eq animal_type.animal_type}"><option value="2">고양이</option></c:if><!-- cat_weight -->
+								<c:if test="${3 eq animal_type.animal_type}"><option value="3">조류</option></c:if><!-- bird_weight -->
+								<c:if test="${4 eq animal_type.animal_type}"><option value="4">파충류</option></c:if><!-- reptile_weight -->
+								<c:if test="${5 eq animal_type.animal_type}"><option value="5">양서류</option></c:if><!-- amphibia_weight -->
+								<c:if test="${6 eq animal_type.animal_type}"><option value="6">설치류</option></c:if><!-- hamster_weight -->
+								<c:if test="${7 eq animal_type.animal_type}"><option value="7">족제비과</option></c:if><!-- Farad_weight -->
+								<c:if test="${8 eq animal_type.animal_type}"><option value="8">돼지류</option></c:if><!-- Pig_weight -->
+								<c:if test="${9 eq animal_type.animal_type}"><option value="9">토끼류</option></c:if><!-- rabbit_weight -->
 						</c:forEach>
 
 
@@ -264,7 +243,6 @@
 							</c:forEach>
 						</c:when>
 					</c:choose>
-					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option> -->
 				</select>				
 				
 				
@@ -278,13 +256,7 @@
 							</c:forEach>
 						</c:when>
 					</c:choose>
-
-<!-- 					<option value="40000">1 ~ 5kg 1박 40,000원</option>
-					<option value="80000">5 ~ 10kg 1박 80,000원</option>
-					<option value="120000">10 ~ 15kg 1박 120,000원</option>
-					<option value="150000">15 ~ 20kg 1박 150,000원</option>
-					<option value="180000">20kg 이상 1박 180,000원</option>
- -->					
+					
 				</select>
 
 				<!-- 고양이 무게 -->
@@ -297,9 +269,6 @@
 							</c:forEach>
 						</c:when>
 					</c:choose>
-<!-- 					<option value="30000">1 ~ 5kg 1박 30000원</option>
-					<option value="60000">5 ~ 10kg 1박 60,000원</option>
-					<option value="80000">10kg 이상 1박 80,000원</option> -->
 				</select>
 
 				<!-- 새 무게 -->
@@ -312,7 +281,6 @@
 							</c:forEach>
 						</c:when>
 					</c:choose>
-					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option> -->
 				</select>
 
 				<!-- 파충류 무게 -->
@@ -324,14 +292,10 @@
 								<option value="${reptile_result.one_day_charge}">${reptile_result.animal_weight} 1박 ${reptileOnedayCharge}원</option>			
 							</c:forEach>
 						</c:when>
-					</c:choose>				
-<!-- 					<option value="20000">1 ~ 5kg 1박 20000원</option>
-					<option value="40000">5 ~ 10kg 1박 40000원</option>
-					<option value="60000">10 ~ 15kg 1박 60000원</option>
-					<option value="80000">15kg 이상 1박 80000원</option> -->
+					</c:choose>
 				</select>
 				
-				<!-- 양서류 무게 -->		<!-- 추가!!!!  -->
+				<!-- 양서류 무게 -->	
 				<select name="상세정보" id="selectbox" class="amphibia_weight">
 					<c:choose>
 						<c:when test="${amphibia_result != null and amphibia_result.size()>0 }">
@@ -340,11 +304,7 @@
 								<option value="${amphibia_result.one_day_charge}">${amphibia_result.animal_weight} 1박 ${amphibiaOnedayCharge}원</option>			
 							</c:forEach>
 						</c:when>
-					</c:choose>				
-<!-- 					<option value="20000">1 ~ 5kg 1박 20000원</option>
-					<option value="40000">5 ~ 10kg 1박 40000원</option>
-					<option value="60000">10 ~ 15kg 1박 60000원</option>
-					<option value="80000">15kg 이상 1박 80000원</option> -->
+					</c:choose>
 				</select>				
 				
 				
@@ -358,9 +318,7 @@
 								<option value="${rodent_result.one_day_charge}">${rodent_result.animal_weight} 1박 ${rodentOnedayCharge}원</option>			
 							</c:forEach>
 						</c:when>
-					</c:choose>					
-					<!-- <option value="10000">~ 1kg 1박 10000원</option>
-					<option value="15000">1kg ~ 2kg 1박 15000원</option> -->
+					</c:choose>
 				</select>				
 				
 
@@ -374,9 +332,7 @@
 								<option value="${weasel_result.one_day_charge}">${weasel_result.animal_weight} 1박 ${weaselOnedayCharge}원</option>			
 							</c:forEach>
 						</c:when>
-					</c:choose>				
-					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option>
-					<option value="40000">3 ~ 6kg 1박 40000원</option> -->
+					</c:choose>
 				</select>
 				
 				
@@ -389,9 +345,7 @@
 								<option value="${pig_result.one_day_charge}">${pig_result.animal_weight} 1박 ${weaselOnedayCharge}원</option>			
 							</c:forEach>
 						</c:when>
-					</c:choose>				
-					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option>
-					<option value="40000">3 ~ 6kg 1박 40000원</option> -->
+					</c:choose>
 				</select>				
 
 
@@ -404,12 +358,7 @@
 								<option value="${rabbit_result.one_day_charge}">${rabbit_result.animal_weight} 1박 ${rabbitOnedayCharge}원</option>			
 							</c:forEach>
 						</c:when>
-					</c:choose>					
-
-					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option>
-					<option value="40000">3 ~ 6kg 1박 40000원</option>
-					<option value="60000">6 ~ 9kg 1박 60000원</option>
-					<option value="80000">10kg 이상 1박 80000원</option> -->
+					</c:choose>
 				</select>
 
 				<button type="button" class="add" id="add" disabled="disabled"
@@ -417,20 +366,9 @@
 
 
 
-				<!-- -----추가 시 뜨는 창----- -->
-				<!-- 무게창 고르면 display:flex 로 바꾸기  -->
 
 				<div id="parentadd" class="parentadd">
-
-					<!-- <div class='addinfo' id='addinfo'>
-                        <div class='animal_info'>
-                        <span class='animalname'>종류</span>
-                        <span class='animalprice'>무게와 가격</span>
-                        </div>
-                        <div class='Xbtn'>
-                        <img id='Xbtn' src='img/X_gray.png'><button id='remove_btn'></button></div>
-                    </div> -->
-
+					<!-- 고른 상품이 추가되는 공간 -->
 				</div>
 
 			</div>
@@ -440,50 +378,57 @@
 					<label>
 					<img src="${pageContext.request.contextPath}/img/calender.png" alt="" class="calender_img"> 
 					<input type="text" id="demo" name="demo" value="" readonly></label> 
-						<input type="hidden" id="book_checkin_date" name="book_checkin_date" readonly>
-						<input type="hidden" id="book_checkout_date" name="book_checkout_date" readonly> 
-						<input type="hidden" id="nowdate" readonly>
+						<input type="hidden" id="book_checkin_date" name="book_checkin_date" readonly><!-- 체크인 기간을 담는 input -->
+						<input type="hidden" id="book_checkout_date" name="book_checkout_date" readonly> <!-- 체크 아웃 기간을 담는 input -->
+						<input type="hidden" id="nowdate" readonly><!-- 총 기간을 담은 input -->
 				</div>
 
 			</div>
 
 			<!-- 총 기간과 가격 -->
 			<div class="buy">
-				<input type="hidden" id="BUSINESS_PLACE_NUM_FK"
-					name="BUSINESS_PLACE_NUM_FK"
-					value="${hotelresult.business_place_num_pk}">
-				<div id="totaldate" class="totaldate"></div>
-				<div id="totaldate2" class="totaldate2"></div>
+				<input type="hidden" id="BUSINESS_PLACE_NUM_FK" name="BUSINESS_PLACE_NUM_FK" value="${hotelresult.business_place_num_pk}">	
+				<div id="totaldate" class="totaldate"></div> <!-- 체크인 기간이 보여지는 공간 -->
+				<div id="totaldate2" class="totaldate2"></div> <!-- 체크아웃 기간이 보여지는 공간 -->
+				
 				<div class="pricetitle">가격</div>
+				
 				<div class="totalprice">
-					<span id="pricecontent" class="pricecontent">0</span> <span
-						class="pricewon">원</span>
+					<span id="pricecontent" class="pricecontent">0</span> <!-- 처음에는 기본적으로 0을 띄워준다 -->
+					<spanclass="pricewon">원</span>
 				</div>
-				<input type="hidden" name="book_charge" id="book_charge">
+				
+				<input type="hidden" name="book_charge" id="book_charge"><!-- 총 가격이 담겨지는 input -->
 
-				<!-- 제출 버튼 -->
+				<!-- 예약하기 제출 버튼 -->
 				<div class="reserbtnflex">
-					<button type="submit" class="reservation_btn"
-						onclick="reservation()">예약하기</button>
-					<img
-						src="${pageContext.request.contextPath}/img/reservationCart.png"
-						alt="" class="cart">
-
+					<button type="submit" class="reservation_btn" onclick="reservation()">예약하기</button>
+					<img src="${pageContext.request.contextPath}/img/reservationCart.png" alt="" class="cart">
 				</div>
 			</div>
+			
 		</div>
 	</form>
 
 	<!-- 호텔정보 / 사업자정보 / 리뷰 버튼 -->
 	<div class="box3">
 		<div class="Dtail_btn">
-			<a href="#D1"><button class="HotelDtail_info_title" href="#D1">
-					<span class="Hbtn_title">호텔정보</span>
-				</button></a> <a href="#D2"><button class="Entrepreneur_info_title">
-					<span class="Ebtn_title">사업자 정보</span>
-				</button></a> <a href="#D3"><button class="review_info_title">
-					<span class="Rbtn_title">리뷰</span>
-				</button></a>
+				<a href="#D1"> <!-- 클릭하면 호텔정보쪽으로 이동 -->
+					<button type="button" class="HotelDtail_info_title" href="#D1">
+						<span class="Hbtn_title">호텔정보</span>
+					</button>
+				</a> 
+				
+				<a href="#D2"> <!-- 클릭하면 사업자정보쪽으로 이동 -->
+					<button type="button" class="Entrepreneur_info_title">
+						<span class="Ebtn_title">사업자 정보</span>
+					</button>
+				</a> 
+				<a href="#D3"> <!-- 클릭하면 리뷰쪽으로 이동 -->
+					<button type="button" class="review_info_title">
+						<span class="Rbtn_title">리뷰</span>
+					</button>
+				</a>
 		</div>
 
 
@@ -491,7 +436,7 @@
 		<a id="aa" name="D1">
 			<article class="HotelDtail_box">
 				<div class="startHD">
-					※<span> ~ </span>호텔/동물병원의 상세정보 입니다.※
+					※<span> ${hotelresult.business_name} </span>호텔/동물병원의 상세정보 입니다.※
 				</div>
 
 				<div class="HD_explain">
@@ -501,8 +446,7 @@
 				</div>
 
 				<div class="HDpic">
-					호텔 이미지를 올리는 곳<br>현재 height는 auto 이기 때문에 아래처럼 올려지는 사진 크기대로 높이가
-					정해짐. <img
+					<img
 						src="${pageContext.request.contextPath}/img/business_place_img/${hotelresult.business_place_num_pk}/${hotelresult.business_place_num_pk}_1.png"
 						alt="">
 				</div>
@@ -535,7 +479,8 @@
 						</tr>
 					</table>
 
-					<!-- GSP 들어가는 공간 -->
+				
+				<!-- GSP 들어가는 공간 -->
 				</div>
 				<div class="Hotel_map_title">⭐ 오시는 길</div>
 				<div id="map" class="Hotel_map"></div>
@@ -561,11 +506,9 @@
 				<c:choose>
 					<c:when test="${reviewResult != null and reviewResult.size()>0 }">
 						<c:forEach items="${reviewResult}" var="reviewResult">
-							<!-- 유저 리뷰와 관리인 답글 포함한 박스
-                 			  유저 리뷰를 지으면 관리인 답글까지 같이 지워진다.
-                 			  관리인이 답장을 달지 않았으면 
-                 			 .replyBigbox display:none 으로 해놓기
-            			-->
+						
+				<!-- ----------- 유저 리뷰와 관리인 답글 포함한 박스  하나 "Review_Reply" ---------------
+								  유저 리뷰를 지으면 관리인 답글까지 같이 지워진다. -->
 							<div class="Review_Reply">
 
 								<div class="user_review_box">
@@ -576,19 +519,13 @@
 										<span class="user_date">${reviewResult.review_regdate}</span>
 
 										<!-- 유저 리뷰 수정하는 버튼 -->
-										<button id="modify_Review" class="Review_btn"
-											onclick="modify()" title="수정하기">
-											<img id="modi"
-												src="${pageContext.request.contextPath}/img/modify_icon.png"
-												alt="" class="MD">
+										<button type="button" id="modify_Review" class="Review_btn" onclick="modify()" title="수정하기">
+											<img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD">
 										</button>
 
 										<!-- 유저 리뷰 삭제하는 버튼 -->
-										<button id="delete_Review" class="Review_btn"
-											onclick="delete_review(this)" title="삭제하기">
-											<img id="delete"
-												src="${pageContext.request.contextPath}/img/delete.png"
-												alt="" class="MD">
+										<button type="submit" id="delete_Review" class="Review_btn" onclick="delete_review(this)" title="삭제하기">
+											<img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
 										</button>
 
 										<br> <span class="user_pet"> 아이 종류: </span> <span
@@ -625,7 +562,7 @@
 														src="${pageContext.request.contextPath}/img/complete_btn.png"
 														alt="" id="Mbtn" class="MCbtn">
 												</button>
-												<button class="CB" onclick="cancel()">
+												<button type="button" class="CB" onclick="cancel()">
 													<img
 														src="${pageContext.request.contextPath}/img/Mdelete_btn.png"
 														alt="" id="Dbtn" class="MCbtn">
@@ -673,6 +610,8 @@
 									</div>
 								</div>
 							</div>
+							
+							<!-- ------------------------------------------------------------------------ -->
 						</c:forEach>
 					</c:when>
 					<c:otherwise>
@@ -702,16 +641,7 @@
 
 <script src="${pageContext.request.contextPath}/js/reservation.js"></script>
 <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
-<!-- <script src="script/test2.js"></script> -->
-<!-- <script src="/plugins/moment/moment.min.js"></script>
-<script src="/plugins/daterangepicker/daterangepicker.js"></script> -->
-
-<!--        
-        <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> -->
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8371f82865e1a5caad2fb3821aba3a1a&libraries=services"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8371f82865e1a5caad2fb3821aba3a1a&libraries=services"></script>
 <script>
 	var Hotel_address = document.getElementById('Hotel_address')
 	var Hotel_name = document.getElementById('Hotel_name')
@@ -764,38 +694,51 @@
 					});
 </script>
 <script>
+
 	if ($("#parentadd").val() == "") {
 		book_charge = 0;
 		fullcharge = 0;
 	}
+	
+	
+	/* 삭제하기 */
 	function removethis(i) {
-
-		let txttotalprice = document.getElementById("pricecontent");
-		let nd = document.getElementById("nowdate");
+		let totalprice = document.getElementById("book_charge")/* DB에 총가격을 넘길 input 태그 불러오기 */
+		let txttotalprice = document.getElementById("pricecontent");/* 프론트상에 출력하는 span 태그 불러오기 */
+		let nd = document.getElementById("nowdate");/* 총 기간값을 담는 input 태그 불러오기 */
 		let xcount = parseInt(nd.value);
 		// 총가격과 #thisprice+i 의 value 값을 parseint 로 변환해 빼어 계산한다.
 		console.log("<----- 상품 삭제 : "+arrayprice[i]*xcount+"원 ----->");
-		console
-				.log("<----- 남은 가격 : "+book_charge-arrayprice[i]*xcount+"원 ----->");
-
+		console.log("<----- 상품 원가 : "+arrayprice[i]+"원 ----->");
+		console.log("<----- 남은 가격 : "+book_charge-arrayprice[i]*xcount+"원 ----->");
+		
 		console.log(arrayprice[i]);
 		console.log(xcount);
 		console.log(book_charge);
 
 		console.log(book_charge + "-" + arrayprice[i] + "*" + xcount);
 
+		/* 총합에서 해당가격에 기간만큼 곱해진 가격을 빼서 저장해준다. */
 		book_charge = book_charge - arrayprice[i] * xcount;
+		
+		/* 기간이 곱해져있지 않은 총합에서 해당 가격을 빼서 저장해준다. */
 		fullcharge = fullcharge - arrayprice[i];
+		
+		/* 프론트상에 총합을 출력해준다. */
 		txttotalprice.innerHTML = book_charge;
 
-		console.log(book_charge);
-		console.log(fullcharge);
-		console.log(insidecnt.childElementCount);
-
+		console.log(book_charge);/* 총합(기간 곱해져있는것) */
+		console.log(fullcharge);/* 총합(기간 곱해져있지 않는것) */
+		console.log(insidecnt.childElementCount);/* 상품이 추가되는 박스상의 상품 갯수 */
+		
+		totalprice.value = book_charge;/* 총합을 DB로 보내주는 히든 input값에 저장해준다. */
+		
+		/* 만약 상품추가되는 박스의 자식이 1이 된다면 총합을 담은 객체들과 프론트상에 비춰지는 값을 0으로 출력해준다. */
 		if (insidecnt.childElementCount == 1) {
 			book_charge = 0;
 			fullcharge = 0;
 			anotherprice = 0;
+			totalprice.value=0;
 		}
 
 		// 담긴 상품들 어레이에서 삭제하기
@@ -807,9 +750,8 @@
 
 		console.log("\n");
 
+		/* 해당 상품을 삭제해준다. */
 		$(".bigadd" + i).remove();
-
-		console.log(arraypet[i]);
 
 		if (arraypet[i] == '고양이') {
 			arraypet.splice(i, 1);
@@ -819,10 +761,10 @@
 			arraypet.splice(i, 1);
 			arraypet.splice(i, 0, '삭제');
 
-		} else if (arraypet[i] == '그 외') {
+		} else if (arraypet[i] == '기타') {
 			arraypet.splice(i, 1);
 			arraypet.splice(i, 0, '삭제');
-		} else if (arraypet[i] == '새') {
+		} else if (arraypet[i] == '조류') {
 			arraypet.splice(i, 1);
 			arraypet.splice(i, 0, '삭제');
 
@@ -830,15 +772,23 @@
 			arraypet.splice(i, 1);
 			arraypet.splice(i, 0, '삭제');
 
-		} else if (arraypet[i] == '패럿') {
+		} else if (arraypet[i] == '양서류') {
 			arraypet.splice(i, 1);
 			arraypet.splice(i, 0, '삭제');
 
-		} else if (arraypet[i] == '토끼') {
+		} else if (arraypet[i] == '토끼류') {
 			arraypet.splice(i, 1);
 			arraypet.splice(i, 0, '삭제');
 
-		} else if (arraypet[i] == '햄스터') {
+		} else if (arraypet[i] == '설치류') {
+			arraypet.splice(i, 1);
+			arraypet.splice(i, 0, '삭제');
+
+		}else if (arraypet[i] == '족제비과') {
+			arraypet.splice(i, 1);
+			arraypet.splice(i, 0, '삭제');
+
+		}else if (arraypet[i] == '돼지과') {
 			arraypet.splice(i, 1);
 			arraypet.splice(i, 0, '삭제');
 
