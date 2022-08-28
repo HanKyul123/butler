@@ -20,7 +20,7 @@ function nick_chk(nick){
   }   
 return true;
 }
-
+ 
   //    닉네임
 function checknick(value){
   if(value==""){

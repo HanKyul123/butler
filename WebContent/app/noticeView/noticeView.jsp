@@ -50,7 +50,7 @@
 											<col width="83">
 											<col width="169">
 										</colgroup>
-										<tbody>
+										<tbody> 
 											<tr style="height: 30px;">
 												<td class="td_1" rowspan="2" colspan="1">
 													<div style="max-height: 60px;">

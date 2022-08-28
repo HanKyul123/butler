@@ -135,8 +135,8 @@ var x = setInterval(function(){
                      alert("인증번호 전송을 다시 확인해 주세요.")
                   }
                }
-            }
-         }
+            } 
+         } 
          xhr.open("GET",cp +"/user/phone_numChack.us?phone_num="+phone_num.value);
          xhr.send();   
    };
