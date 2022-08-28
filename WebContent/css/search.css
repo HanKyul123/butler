@@ -40,7 +40,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
 
     .wrap1{
-        margin-bottom: 100px;
+        margin-bottom: 400px;
         margin-top: 2%;
         text-align: center;
         width: 100%;
@@ -83,7 +83,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .detail{
         font-size: 17px;
         height: 30px;
-        margin-top: 25px;
+        margin-top: 10px;
         margin-bottom: 15px;
         border-bottom: 1px solid rgb(219, 219, 219);
     }
@@ -96,10 +96,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     }
 
     .checkbox2{
-        width: 90px;
+        width: 180px;
         display: block;
         font-size: 14px;
-
+		margin-bottom: 20px;
+    }
+    
+        .checkbox3{
+        width: 180px;
+        display: flex;
+        flex-wrap:wrap;
+        font-size: 14px;
+		margin-bottom: 10px;
+    }
+    
+    .checkbox3>label{
+    padding: 0px 5px 0px 0px;
     }
 
     #TypeTitle{

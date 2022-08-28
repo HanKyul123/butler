@@ -16,7 +16,7 @@
 <%@ include file="../../header/pc_header.jsp" %>
 </head>
 <!-- 헤더  -->
-<body>
+<body class="search_body">
     <!-- 검색 키워드 -->
     <div class="SearchWord">
         <span class="">${keyword}</span>
@@ -27,17 +27,6 @@
     <form method="post" action="/hotel/choice.ho">
         <div class="Tagbox">
            <input type="hidden" id="keyword" value="${keyword}" name="keyword">
-            <!-- 날짜 -->
-<%--             <div id="Tagin" class="datebox">
-                <div class="datetitle">날짜</div>
-                <div class="today">오늘 날짜 : <span id="today"></span></div> 
-                <input type="text" id="datepicker1" name="dateOne" readonly>
-                ~
-                <input type="text" id="datepicker2" name="dateTwo" readonly>
-          
-          
-                <img id="calender" src="${pageContext.request.contextPath}/img/calender.png" alt="">
-            </div> --%>
            
             <!-- 상세 조건 -->
             <div id="Tagin" class="detail"><span>상세 조건</span></div>
@@ -68,6 +57,32 @@
                     <label><input type="checkbox" name="Hospital" id="Hotel" value="11">동물병원</label>
                 </div>         
             </div>
+            
+            <!-- 지역 분류 -->
+            <div id="Tagin" class="Type">
+                <div id="TypeTitle" class="locationType">지역 분류</div>
+                <div class="checkbox3">
+                    <label><input type="checkbox" name="Seoul" id="location" value="12">서울</label>
+                    <label><input type="checkbox" name="Busan" id="location" value="13">부산</label>
+                    <label><input type="checkbox" name="Daegu" id="location" value="12">대구</label>
+                    <label><input type="checkbox" name="Incheon" id="location" value="13">인천</label>
+                    <label><input type="checkbox" name="Gwangju" id="location" value="12">광주</label>
+                    <label><input type="checkbox" name="Daejeon" id="location" value="13">대전</label>
+                    <label><input type="checkbox" name="Ulsan" id="location" value="12">울산</label>
+                    <label><input type="checkbox" name="Sejong" id="location" value="13">세종</label>
+                    <label><input type="checkbox" name="Gyeonggi-do" id="location" value="12">경기도</label>
+                    <label><input type="checkbox" name="Gangwon-do" id="location" value="13">강원도</label>
+                    <label><input type="checkbox" name="Chungcheongbuk-do" id="location" value="12">충청북도</label>
+                    <label><input type="checkbox" name="Chungcheongnam-do" id="location" value="13">충청남도</label>
+                    <label><input type="checkbox" name="Jeollabuk-do" id="location" value="12">전라북도</label>
+                    <label><input type="checkbox" name="Jeollanam-do" id="location" value="13">전라남도</label>
+                    <label><input type="checkbox" name="Gyeongsangbuk-do" id="location" value="12">경상북도</label>
+                    <label><input type="checkbox" name="Gyeongsangnam-do" id="location" value="13">경상남도</label>
+                    <label><input type="checkbox" name="Jeju" id="location" value="13">제주</label>
+                </div>         
+            </div>
+            
+            
 			<!-- 검색 버튼 -->
             <button type="submit" id="hashsearch" >선택</button>
         </div>
