@@ -62,22 +62,22 @@
 			<!-- ----------이용완료 박스---------- -->
 			<span class="ed">이용 완료</span><br>
 			<c:choose>		
-				<c:when test="${ucbook != null and ucbook.size()>0 }">
-					<c:forEach items="${ucbook}" var="ucbook">
+				<c:when test="${ucBook != null and ucBook.size()>0 }">
+					<c:forEach items="${ucBook}" var="ucBook">
 						<div class="boxs" id="edboxs">
-							<a href="">
+							<a href="/book/goReservationDetailView.book?BOOK_NUM_PK=${ucBook.BOOK_NUM_PK}">
 								<div id="ed_box" class="in_boxs">
 									<div class="flex">
 										<div class="imgbox">
 											<img
-												src="${pageContext.request.contextPath}/img/business_place_img/${ucbook.BUSINESS_PLACE_NUM_FK}/${ucbook.BUSINESS_PLACE_NUM_FK}_1.png"
+												src="${pageContext.request.contextPath}/img/business_place_img/${ucBook.BUSINESS_PLACE_NUM_FK}/${ucBook.BUSINESS_PLACE_NUM_FK}_1.png"
 												alt="" class="hotelimg">
 										</div>
 										<div class="in_contents">
 											<!-- 호텔 이름 가져오기 -->
-											<div id="ed_hotelname" class="all_name">${ucbook.business_name}</div>
+											<div id="ed_hotelname" class="all_name">${ucBook.business_name}</div>
 											<div id="ed_contents" class="all_contents">이용 완료</div>
-											<div id="ed_date" class="all_date">${ucbook.book_checkin_date} ~ ${ucbook.book_checkout_date}</div>
+											<div id="ed_date" class="all_date">${ucBook.book_checkin_date} ~ ${ucBook.book_checkout_date}</div>
 										</div>
 									</div>
 								</div>
@@ -95,7 +95,7 @@
 				<c:when test="${rc != null and rc.size()>0 }">
 					<c:forEach items="${rc}" var="rc">
 						<div class="boxs" id="cancelboxs">
-							<a href="">
+							<a href="/book/goReservationDetailView.book?BOOK_NUM_PK=${rc.BOOK_NUM_PK}">
 								<div id="cancel_box" class="in_boxs">
 									<div class="flex">
 										<div class="imgbox">
@@ -106,7 +106,7 @@
 										<div class="in_contents">
 											<!-- 호텔 이름 가져오기 -->
 											<div id="cancel_hotelname" class="all_name">${rc.business_name}</div>
-											<div id="cancel_contents" class="all_contents">이용 완료</div>
+											<div id="cancel_contents" class="all_contents">예약취소</div>
 											<div id="cancel_date" class="all_date">${rc.book_checkin_date} ~ ${rc.book_checkout_date}</div>
 										</div>
 									</div>
@@ -123,14 +123,14 @@
 	</div>
 </body>
 <!-- 문서수정할때는주석처리를 하고 진행하세요 -->
-<%--    <c:choose>
-       <c:when test="${sessionScope.loginUser eq null}">
+<c:choose>
+       <c:when test="${sessionScope.LoginUser eq null}">
          <script>
             alert("login후에 이용하세요.");
             window.location.href="/index.jsp"
          </script>
        </c:when>
-   </c:choose> --%>
+</c:choose>
 
 <%@ include file="../../../footer/footer.jsp"%>
 <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
