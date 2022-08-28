@@ -17,8 +17,14 @@
 </head>
 <!--  -->
 	<%@ include file="../header/pc_header.jsp" %>
+<style>
+#partnes_pictures{
 
+ 	height: 100%;
+	object-fit: cover;
+	}
 
+</style>
 <!-- Body -->
 <body>
 
@@ -202,23 +208,57 @@
 
 		<div class="Notice">
 			<div class="new">
-				<a href="">버틀러 소식</a>
+				<a href="">버틀러 협력업체 소개</a>
 			</div>
 			<div class="notice2">
-				<a href="">
+				<a href="https://petbridge.modoo.at/">
 					<div id="choose" class="choose1">
-						<div class="Nimg"></div>
+						<div class="Nimg">
+						<img id="partnes_pictures" src="${pageContext.request.contextPath}/img/partners_img/partners_pet_dog.png" alt="">
+						</div>
 						<div class="inform">
-							<div class="Ntitle">제목</div>
-							<div class="Ncontents">내용</div>
+							<div class="Ntitle">대구/경산 애견호텔 펫브릿지 </div>
+							<div class="Ncontents">지금까지 없었던 내 반려견을 위한 프리미엄 호텔링 서비스</div>
 						</div>
 					</div>
-				</a> <a href="">
+				</a> 
+				<a href="https://www.xn--o39a01ona539e.com/">
 					<div id="choose" class="choose2">
-						<div class="Nimg"></div>
+						<div class="Nimg">
+						<img id="partnes_pictures" src="${pageContext.request.contextPath}/img/partners_img/partners_pet_bird.png" alt="">
+						</div>
 						<div class="inform">
-							<div class="Ntitle">제목</div>
-							<div class="Ncontents">내용</div>
+							<div class="Ntitle">버드가든</div>
+							<div class="Ncontents">버드가든에서는 앵무새 분양, 먹이 및 용품 판매와 호텔링을 운영하고 있습니다.
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="notice2">
+				<a href="http://frienzoo.com/index.html">
+					<div id="choose" class="choose1">
+						<div class="Nimg">
+						<img id="partnes_pictures" src="${pageContext.request.contextPath}/img/partners_img/partners_pet_reptile.png" alt="">
+						</div>
+						<div class="inform">
+							<div class="Ntitle">프렌쥬</div>
+							<div class="Ncontents">
+							프랜쥬는 고객님의 개체를 더 우선적으로 최선을 다해 관리 해드릴 것을 약속드립니다.<br>
+							※강아지, 고양이는 환경 특성상 호텔링을 받지않습니다.</div>
+						</div>
+					</div>
+				</a> 
+				<a href="https://udadakcathotel.modoo.at/">
+					<div id="choose" class="choose2">
+						<div class="Nimg">
+						<img id="partnes_pictures" src="${pageContext.request.contextPath}/img/partners_img/partners_pet_cat.jpeg" alt="">
+						</div>
+						<div class="inform">
+							<div class="Ntitle">우다다고양이호텔</div>
+							<div class="Ncontents">우다닥 고양이호텔은 반려묘에게 내집인냥 쾌적한 휴식과 공간을 제공하는 고양이 호텔입니다.<br>
+							항상 최선을 다하는 우다닥 고양이호텔이 되겠습니다.
+							</div>
 						</div>
 					</div>
 				</a>
