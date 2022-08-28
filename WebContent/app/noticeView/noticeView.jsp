@@ -14,13 +14,13 @@
 <%@ include file="../../header/pc_header.jsp"%>
 </head>
 <body>
-	<div class="notice_wrap">
-		<div class="moremore" id="content">
+	<div class="notice_wrap"> 
+		<div class="moremore" id="content"> 
 			<nav>
 				<ul>
-					<li><a href="" id="click" class="more_a">공지사항</a></li>
-					<li><a href="" class="more_a">자주 묻는 질문</a></li>
-					<li><a href="" class="more_a">약관 및 정책</a></li>
+					<li><a href="${pageContext.request.contextPath}/app/noticeView/noticeView.jsp" id="click" class="more_a">공지사항</a></li>
+					<li><a href="${pageContext.request.contextPath}/app/QnAView/QnAView.jsp" class="more_a">자주 묻는 질문</a></li>
+					<li><a href="${pageContext.request.contextPath}/app/policyView/policy.jsp" class="more_a">약관 및 정책</a></li>
 				</ul>
 			</nav>
 		</div>

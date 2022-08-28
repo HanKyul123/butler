@@ -18,7 +18,7 @@ create table user_tb(
    user_email          varchar(200) unique not null,
    user_phone          varchar(15) not null,
    user_business_num   varchar(30)      #사업자 번호
-);
+); 
 
 
 drop table business_tb;
@@ -57,11 +57,11 @@ create table business_tb(
     book_regdate            datetime default now(),
     book_checkin_date         datetime not null,
     book_checkout_date         datetime not null,
-    book_charge               varchar(300),
+    book_charge               int,
     book_request            varchar(1000),
     book_service            int
 );
-
+ 
 create table pets_tb(
    PETS_NUM_PK               int primary key auto_increment,
     USER_NUM_FK             int,

@@ -19,22 +19,22 @@
 </head>
 <%@ include file="../../header/pc_header.jsp"%>
 
-<body>
+<body> 
 <div class="QnA_wrap">
         <div class="moremore" id="content">
             <nav>
                 <ul>
                     <li>
-                        <a href=""  class="more_a">공지사항</a>
+                        <a href="${pageContext.request.contextPath}/app/noticeView/noticeView.jsp"  class="more_a">공지사항</a>
                     </li>
                     <li>
-                    <a href="" id="click" class="more_a">자주 묻는 질문</a>
+                    <a href="${pageContext.request.contextPath}/app/QnAView/QnAView.jsp" id="click" class="more_a">자주 묻는 질문</a>
                     </li>
                     <li>
-                        <a href="" class="more_a">약관 및 정책</a>
+                        <a href="${pageContext.request.contextPath}/app/policyView/policy.jsp" class="more_a">약관 및 정책</a>
                     </li>
                 </ul>
-            </nav>
+            </nav> 
             </div>
             <div class="t_QnA">
                 <div class="QnA">
