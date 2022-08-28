@@ -82,7 +82,7 @@
                   <img id="PF" class="Cpf" src="${pageContext.request.contextPath}/img/click_profile.png" alt="">&nbsp;
                   <div class="more_profile">
                      <div id="CMpf" class="nickname">
-                        <a href="">닉네임</a>
+                        <a href="">${LoginUser.user_nickname}</a>
                      </div>
                      <div id="CMpf" class="my_inform">
                         <a href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">내 정보</a>

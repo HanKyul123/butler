@@ -17,14 +17,8 @@
 </head>
 <!--  -->
 	<%@ include file="../header/pc_header.jsp" %>
-<style>
-#partnes_pictures{
 
- 	height: 100%;
-	object-fit: cover;
-	}
 
-</style>
 <!-- Body -->
 <body>
 
@@ -68,100 +62,6 @@
 					</c:forEach>
 				</c:when>
 			</c:choose>
-		<!-- 반복끝 -->	
-			 
-			<%-- <div>
-				<div class="Egroup">
-					<a href=""><div id="Ebox" class="Ebox5">
-
-							<!-- id 이름 : Hotel_pic -->
-							<div class="Epic">
-								<img
-									src="${pageContext.request.contextPath}/img/example_hotel.webp"
-									alt="" id="Hotel_pic">
-							</div>
-							<div class="Einfo">
-								<div class="Enamebox">
-									<span class="Ename">호텔 이름</span>
-								</div>
-
-								<div class="Eheartbox">
-									<img src="${pageContext.request.contextPath}/img/Star.png"
-										alt="" class="Eheartimg"
-										style="width: 18px; position: relative; bottom: 4px; margin-right: 5px;">
-									<span class="Eheart
-                                        ">별점</span>
-								</div>
-
-								<div class="Epricebox">
-									<span class="Eprice">가격</span> <span class="Ewon">원</span>
-								</div>
-							</div>
-						</div></a>
-				</div>
-			</div>
-			<div>
-				<div class="Egroup">
-					<a href=""><div id="Ebox" class="Ebox5">
-
-							<!-- id 이름 : Hotel_pic -->
-							<div class="Epic">
-								<img
-									src="${pageContext.request.contextPath}/img/example_hotel.webp"
-									alt="" id="Hotel_pic">
-							</div>
-							<div class="Einfo">
-								<div class="Enamebox">
-									<span class="Ename">호텔 이름</span>
-								</div>
-
-								<div class="Eheartbox">
-									<img src="${pageContext.request.contextPath}/img/Star.png"
-										alt="" class="Eheartimg"
-										style="width: 18px; position: relative; bottom: 4px; margin-right: 5px;">
-									<span class="Eheart
-                                        ">별점</span>
-								</div>
-
-								<div class="Epricebox">
-									<span class="Eprice">가격</span> <span class="Ewon">원</span>
-								</div>
-							</div>
-						</div></a>
-				</div>
-			</div>
-			<div>
-				<div class="Egroup">
-					<a href=""><div id="Ebox" class="Ebox5">
-
-							<!-- id 이름 : Hotel_pic -->
-							<div class="Epic">
-								<img
-									src="${pageContext.request.contextPath}/img/example_hotel.webp"
-									alt="" id="Hotel_pic">
-							</div>
-							<div class="Einfo">
-								<div class="Enamebox">
-									<span class="Ename">호텔 이름</span>
-								</div>
-
-								<div class="Eheartbox">
-									<img src="${pageContext.request.contextPath}/img/Star.png"
-										alt="" class="Eheartimg"
-										style="width: 18px; position: relative; bottom: 4px; margin-right: 5px;">
-									<span class="Eheart
-                                        ">별점</span>
-								</div>
-
-								<div class="Epricebox">
-									<span class="Eprice">가격</span> <span class="Ewon">원</span>
-								</div>
-							</div>
-						</div></a>
-				</div>
-			</div> --%>
-			
-			
 			
 		</section>
 	</div>
@@ -208,60 +108,42 @@
 
 		<div class="Notice">
 			<div class="new">
-				<a href="">버틀러 협력업체 소개</a>
+				<a href="${pageContext.request.contextPath}/app/noticeView/noticeView.jsp" title="공지사항 페이지로 가기">버틀러 소식 go ▶</a>
 			</div>
 			<div class="notice2">
-				<a href="https://petbridge.modoo.at/">
+				
 					<div id="choose" class="choose1">
+					<a href="https://www.pet-friends.co.kr/main/tab/2">
 						<div class="Nimg">
-						<img id="partnes_pictures" src="${pageContext.request.contextPath}/img/partners_img/partners_pet_dog.png" alt="">
+							<img id = "Nimgs" src="${pageContext.request.contextPath}/img/petfriends.jpg">
 						</div>
 						<div class="inform">
-							<div class="Ntitle">대구/경산 애견호텔 펫브릿지 </div>
-							<div class="Ncontents">지금까지 없었던 내 반려견을 위한 프리미엄 호텔링 서비스</div>
-						</div>
-					</div> 
-				</a> 
-				<a href="https://www.xn--o39a01ona539e.com/">
-					<div id="choose" class="choose2"> 
-						<div class="Nimg">
-						<img id="partnes_pictures" src="${pageContext.request.contextPath}/img/partners_img/partners_pet_bird.png" alt="">
-						</div>
-						<div class="inform">
-							<div class="Ntitle">버드가든</div>
-							<div class="Ncontents">버드가든에서는 앵무새 분양, 먹이 및 용품 판매와 호텔링을 운영하고 있습니다.
-							</div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="notice2">
-				<a href="http://frienzoo.com/index.html">
-					<div id="choose" class="choose1">
-						<div class="Nimg">
-						<img id="partnes_pictures" src="${pageContext.request.contextPath}/img/partners_img/partners_pet_reptile.png" alt="">
-						</div>
-						<div class="inform">
-							<div class="Ntitle">프렌쥬</div>
+							<div class="Ntitle" id="Ntitle1">펫프렌즈 구경하러 가실래요?</div>
 							<div class="Ncontents">
-							프랜쥬는 고객님의 개체를 더 우선적으로 최선을 다해 관리 해드릴 것을 약속드립니다.<br>
-							※강아지, 고양이는 환경 특성상 호텔링을 받지않습니다.</div>
-						</div>
-					</div>
-				</a> 
-				<a href="https://udadakcathotel.modoo.at/">
-					<div id="choose" class="choose2">
-						<div class="Nimg">
-						<img id="partnes_pictures" src="${pageContext.request.contextPath}/img/partners_img/partners_pet_cat.jpeg" alt="">
-						</div>
-						<div class="inform">
-							<div class="Ntitle">우다다고양이호텔</div>
-							<div class="Ncontents">우다닥 고양이호텔은 반려묘에게 내집인냥 쾌적한 휴식과 공간을 제공하는 고양이 호텔입니다.<br>
-							항상 최선을 다하는 우다닥 고양이호텔이 되겠습니다.
+								반려동물 <span class="pink">1등</span> 쇼핑몰<br>
+								<span class="gray">사료, 용품, 간식 24시간 전문가 추천! <br>매달 쏟아지는 쿠폰 혜택 놓치지마세요!</span>			
 							</div>
 						</div>
+						</a> 
 					</div>
-				</a>
+				
+				
+				
+					<div id="choose" class="choose2">
+						<a href="https://wayopet.com/petsitter">
+							<div class="Nimg">
+								<img id = "Nimgs" src="${pageContext.request.contextPath}/img/wayo.webp">
+							</div>
+							<div class="inform">
+								<div class="Ntitle" id="Ntitle2">펫시터가 집으로  <span class="blue"><b>wayo</b></span></div>
+								<div class="Ncontents">
+									<span class="blue">펫시터</span> 방문 돌봄 및 산책 서비스 <span class="blue"><b>와요</b></span><br>
+									<span class="gray">와요에만 있는 실시간 LIVE 영상 기능으로<br>언제 어디서든 안심하고 펫시터를 불러보세요!</span>			
+								</div>
+							</div>
+						</a>
+					</div>
+				
 			</div>
 		</div>
 	</div>
