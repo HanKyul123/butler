@@ -154,16 +154,7 @@
                             
                              </li>
                         </ul>
-                        <div id="QnA_page">
-                            <div class="page">
-                                <button class="on">1</button>
-                                <button class="off">2</button>
-                                <button class="off">3</button>
-                                <button class="off">4</button>
-                                <button class="off">5</button>
-                                <button class="next">다음</button>
-                                </div>
-                            </div>
+                       
                        </div>
                        </div>
                        </div>

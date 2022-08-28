@@ -430,7 +430,7 @@
 											<strong>※ 참고하세요.</strong> <br> - 지급된 무료초대권은 쿠폰함에서 확인
 											가능합니다. <br> - 무료초대권 사용 시 최소 3일 전 해당 숙소 프런트에 문의해 주세요. <br>
 											- 무료초대권은 타인에게 양도하거나 재 판매 할 수 없습니다. <br> - 숙소 사정(광고제휴 종료,
-											업주변경 등)에 의해 무료초대권 사용이 불가능할 수 있으며, 여기어때에서 대체해 드리지 않습니다. <br>
+											업주변경 등)에 의해 무료초대권 사용이 불가능할 수 있으며, Butler에서 대체해 드리지 않습니다. <br>
 
 
 
@@ -445,16 +445,7 @@
 					</ul>
 				</div>
 
-				<div id="notice_page">
-					<div class="page">
-						<button class="on">1</button>
-						<button class="off">2</button>
-						<button class="off">3</button>
-						<button class="off">4</button>
-						<button class="off">5</button>
-						<button class="next">다음</button>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>
