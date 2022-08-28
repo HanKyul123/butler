@@ -111,7 +111,7 @@ create table file_review_tb(
 );
 
 create table notice_tb(
-   NOTICE_NUM_PK            int primary key auto_increment,
+   	NOTICE_NUM_PK            int primary key auto_increment,
     notice_title            varchar(3000) not null,
     notice_contents            varchar(10000) not null,
     notice_regdate            datetime default now()
@@ -130,4 +130,9 @@ create table business_charge_tb(
     animal_type      int,               # 0. 강아지 1. 고양이 2. 새 3. 파충류 4. 패럿 6. 토끼 7. 햄스터 8. etc
     animal_weight   varchar(200),         #동물무게 1 ~ 5kg / 6 ~ 10kg / 11 ~ 15kg / 16 ~ 20kg / 20kg이상
     one_day_charge   int  #1박시 금액
+);
+
+create table pets_name_tb(
+   pets_type int primary key,
+   pets_name    varchar(100)
 );

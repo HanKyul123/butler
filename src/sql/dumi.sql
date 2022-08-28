@@ -309,3 +309,77 @@ animal_type,animal_weight,one_day_charge)
 insert business_charge_tb (BUSINESS_PLACE_NUM_FK,
 animal_type,animal_weight,one_day_charge)
                            values(4,1,'10kg 이상',80000);
+                           
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(0,
+"기타");
+
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(1,
+"강아지");
+
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(2,
+"고양이");
+
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(3,
+"조류");
+
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(4,
+"파충류");
+
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(5,
+"양서류");
+
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(6,
+"설치류");
+
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(7,
+"족제비과");
+
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(8,
+"돼지류");
+
+INSERT INTO butler.pets_name_tb
+(pets_type,
+pets_name)
+VALUES
+(9,
+"토끼류");                           
+                           
+                           
+                           
+                          
