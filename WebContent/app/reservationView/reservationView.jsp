@@ -206,7 +206,7 @@
 		</div>
 	</div>
 
-	<form action="/book/BookOk.book" type="post" onsubmit="reservation()">
+
 		<!-- 예약 종류 선택하기 -->
 		<div class="box2">
 			<div class="addanimal">
@@ -361,14 +361,15 @@
 					</c:choose>
 				</select>
 
-				<button type="button" class="add" id="add" disabled="disabled"
-					onclick="copyDiv()">추가하기</button>
+				<button type="button" class="add" id="add" disabled="disabled" onclick="copyDiv()">추가하기</button>
 
  
 
-
+	<form action="/book/BookOk.book" type="post" onsubmit="reservation()">
+	
 				<div id="parentadd" class="parentadd">
 					<!-- 고른 상품이 추가되는 공간 -->
+					
 				</div>
 
 			</div>
@@ -378,7 +379,7 @@
 					<label>
 					<img src="${pageContext.request.contextPath}/img/calender.png" alt="" class="calender_img"> 
 					<input type="text" id="demo" name="demo" value="" readonly></label> 
-						<input type="hidden" id="book_checkin_date" name="book_checkin_date" readonly><!-- 체크인 기간을 담는 input -->
+						<input type="hidden" id="book_checkin_date" name="book_checkin_date" readonly> <!-- 체크인 기간을 담는 input -->
 						<input type="hidden" id="book_checkout_date" name="book_checkout_date" readonly> <!-- 체크 아웃 기간을 담는 input -->
 						<input type="hidden" id="nowdate" readonly><!-- 총 기간을 담은 input -->
 				</div>
