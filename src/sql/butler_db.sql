@@ -61,7 +61,7 @@ create table business_tb(
     book_request            varchar(1000),
     book_service            int
 );
-
+ 
 create table pets_tb(
    PETS_NUM_PK               int primary key auto_increment,
     USER_NUM_FK             int,

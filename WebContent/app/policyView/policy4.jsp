@@ -56,7 +56,7 @@
                 <div class="t_more">
                     <div class="p_more">
                         <div class="title">
-                            <h2>소비자 분쟁해결 기준</h2>
+                            <h2>소비자 분쟁해결 기준</h2> 
                         </div>
                         <div class="p_wrap">
                             <div class="policy_list">

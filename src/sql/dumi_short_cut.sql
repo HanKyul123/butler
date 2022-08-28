@@ -49,7 +49,7 @@ values
 # etc
 (1,7,'1 ~ 3kg',20000);  
  
-
+ 
 #바우밸리애견호텔  
 insert business_charge_tb (BUSINESS_PLACE_NUM_FK,animal_type,animal_weight,one_day_charge)
 values

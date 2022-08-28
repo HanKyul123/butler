@@ -14,7 +14,7 @@
 <%@ include file="../../header/pc_header.jsp"%>
 </head>
 <body>
-	<div class="notice_wrap">
+	<div class="notice_wrap"> 
 		<div class="moremore" id="content"> 
 			<nav>
 				<ul>

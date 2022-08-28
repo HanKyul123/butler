@@ -34,7 +34,7 @@
                         <a href="${pageContext.request.contextPath}/app/policyView/policy.jsp" class="more_a">약관 및 정책</a>
                     </li>
                 </ul>
-            </nav>
+            </nav> 
             </div>
             <div class="t_QnA">
                 <div class="QnA">
