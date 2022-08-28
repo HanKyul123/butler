@@ -47,43 +47,28 @@
 
                         <!-- 호텔 대표 사진 -->
                         <div class="Hotelpic">
-                            <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="Hotelimg">
+                            <img src="${pageContext.request.contextPath}/img/business_place_img/${rip.BUSINESS_PLACE_NUM_FK}/${rip.BUSINESS_PLACE_NUM_FK}_1.png" alt="" id="Hotelimg">
                         </div>
-
 
                         <!-- 호텔 이름 / 동물 종류 / 기간 -->
                         <div class="textHotelinfo">
-
                             <!-- 호텔 이름 -->
                             <div id="hotelname" class="H_info">
-                                <span class="H_name">여기는 호텔이름입니다아아아아아아아ㅏ앙아아아ㅏ아아아</span>
+                                <span class="H_name">${book.business_name}</span>
                             </div>
-        
-                            <!-- 동물 종류 -->
-
-                            <div id="pet" class="H_info">
-                                아이 종류 : 
-                                <span id="petname">종류종류</span>
-                            </div>
-        
                             <!-- 동물 맡긴 기간 -->
                             <div id="reserveDate" class="H_info">
-                                기간 : 
-                                <span id="petdate">9월 머시기 일</span>
+                             	   기간 : 
+                                <span id="petdate">${book.book_checkin_date } ~ ${book.book_checkout_date }</span>
                             </div>
-
                         </div>
                     </div>
                 </a>
 
-
-                <textarea name="" id="write_review" ></textarea>
-
-                    
-                    
-                <input type="file" name="file" id="file"
-                multiple>
-
+				<form action="" method="post">
+				<input type="hidden" name="business_place_num_fk" value ="${book.BUSINESS_PLACE_NUM_FK}">
+                <textarea name="review_contents" id="write_review" ></textarea>
+                <input type="file" name="file" id="file" multiple>
                 <div class="getpic">
                     <!-- 받아오는 이미지들  id를 전부 getpic으로 설정 -->
                     <div class="imgbox">
@@ -98,21 +83,14 @@
                         <img src="${pageContext.request.contextPath}/img/example_hotel.webp" alt="" id="getpic">
                         <button id="Dbtn"><img src="${pageContext.request.contextPath}/img/X_black.png" alt="" class="X"></button>
                     </div>
-
                 </div>
-
                 <div class="upload">
                     <input class="SC" id="UP" type="submit" value="리뷰 업로드">
                     <input class="SC" id="DE" type="button" value="취소">
                 </div>
+                </form>
             </div>
-
         </div>
-
-
-
-
-
 </body>
 
 <%@ include file="../../footer/footer.jsp" %>

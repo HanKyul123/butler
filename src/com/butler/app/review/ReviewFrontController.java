@@ -33,7 +33,7 @@ public class ReviewFrontController extends HttpServlet{
 		String path="";
 		boolean isRedirect;
 		switch (command) {
-			case "/review/reviewWriting.review":
+			case "/review/goReviewWriting.review":
 			try {
 				transfer = new ReservationViewAction().execute(req, resp);		
 			} catch (Exception e) {
