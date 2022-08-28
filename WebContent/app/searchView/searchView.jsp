@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,7 @@
         <div class="Tagbox">
            <input type="hidden" id="keyword" value="${keyword}" name="keyword">
             <!-- 날짜 -->
-            <div id="Tagin" class="datebox">
+<%--             <div id="Tagin" class="datebox">
                 <div class="datetitle">날짜</div>
                 <div class="today">오늘 날짜 : <span id="today"></span></div> 
                 <input type="text" id="datepicker1" name="dateOne" readonly>
@@ -36,7 +37,7 @@
           
           
                 <img id="calender" src="${pageContext.request.contextPath}/img/calender.png" alt="">
-            </div>
+            </div> --%>
            
             <!-- 상세 조건 -->
             <div id="Tagin" class="detail"><span>상세 조건</span></div>
@@ -79,13 +80,12 @@
 
             <!-- 필터 -->
             <div class="choice">
-                <input type="button" value="거리순">
+                <input type="button" value="가나다순" onClick="location.href='/hotel/choice/hangul.ho?keyword=${keyword}'"> 
                 <input type="button" value="낮은 가격순" onClick="location.href='/hotel/choice/lowCharge.ho?keyword=${keyword}'">
             </div>
  
 
             <!-- 호텔란 -->
-            
             <c:choose>
             	<c:when test="${list != null and list.size()>0 }">
             		<c:forEach items="${list}" var="result">				      
@@ -114,7 +114,9 @@
 		                        ${result.business_addr} ${result.business_addrdetail}</span></div>
 		                        <div class="Hotelinfo"><span id="Hotelinfo">${result.business_main_intro}</span></div>
 		                        <div class="Hotelprice">
-		                            <span class="price"><span id="price"></span>${result.business_min_charge}</span>
+		                            <span class="price">
+		                            <fmt:formatNumber type="number" maxFractionDigits="3" value="${result.business_min_charge}" var="minCharge" />
+		                            ${minCharge}</span>
 		                            <span class="won">원</span>
 		                        </div>
 		                    </div>

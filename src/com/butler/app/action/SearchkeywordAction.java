@@ -1,6 +1,5 @@
 package com.butler.app.action;
 
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,10 +17,17 @@ public class SearchkeywordAction implements Action{
 		String keyword = req.getParameter("keyword");
 		System.out.println(keyword);
 		
-		
-		
 		HotelDTO hdto = new HotelDTO();
 		HotelDAO hdao = new HotelDAO();
+		
+//		if(lowCharge.equals("lowResult")) {
+//			
+//			List<HotelDTO> LowChargeResult = hdao.LowChargeResult(keyword);
+//			
+//		}
+//		else {
+//			
+//		}
 		
 		
 		if(keyword == null || keyword == "") {
@@ -56,8 +62,7 @@ public class SearchkeywordAction implements Action{
 			transfer.setRedirect(false);
 			transfer.setPath("/app/searchView/searchView.jsp");
 			return transfer;
-		}
-		
+
 		
 		
 //		if(searchResult != null) {
@@ -74,6 +79,8 @@ public class SearchkeywordAction implements Action{
 //		}
 //
 //		return null;
+	}
+	
 	}
 	
 }

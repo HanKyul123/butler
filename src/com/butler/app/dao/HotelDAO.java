@@ -72,6 +72,12 @@ public class HotelDAO {
 		list = sqlsession.selectList("Hotel.LowChargeResult", keyword);
 		return list;
 	}
+
+	public List<HotelDTO> HangulResult(String keyword) {
+		List<HotelDTO> list;
+		list = sqlsession.selectList("Hotel.HangulResult", keyword);
+		return list;
+	}
 	
 		
 

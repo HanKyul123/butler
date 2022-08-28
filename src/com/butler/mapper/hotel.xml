@@ -83,4 +83,13 @@
 	<select id="SearchRabbittype" parameterType="_int" resultType="bcdto">
 		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 9;
 	</select>
+	<select id="HangulResult" parameterType="String" resultType="hdto">
+		select * from business_tb where business_name like('%${keyword}%')
+		or business_hashtag like('%${keyword}%')
+		or business_addr like('%${keyword}%')
+		or business_addretc like('%${keyword}%')
+		order by business_name asc;
+	</select>
+	
+	
 </mapper>

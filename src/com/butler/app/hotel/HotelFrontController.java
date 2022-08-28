@@ -91,8 +91,13 @@ public class HotelFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;		   
-
-
+	   case "/hotel/choice/hangul.ho":
+			try {
+				transfer = new hangulAction().execute(req, resp);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;	
 	 }
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {
