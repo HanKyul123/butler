@@ -50,7 +50,7 @@ create table business_tb(
  create table book_tb (
    BOOK_NUM_PK               int primary key auto_increment,
    BUSINESS_PLACE_NUM_FK      int,
-   constraint b_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (USER_NUM_FK),
+   constraint b_tb_BUSINESS_PLACE_NUM_FK foreign key(BUSINESS_PLACE_NUM_FK) references business_tb (BUSINESS_PLACE_NUM_PK),
    USER_NUM_FK             int,
    constraint b_tb_USER_NUM_FK   foreign key(USER_NUM_FK) references  user_tb (USER_NUM_PK),
     book_status               int default 1,     	#1= 예약중 / 2= 취소 / 3= 사용완료
@@ -67,7 +67,7 @@ create table pets_tb(
     USER_NUM_FK             int,
    constraint p_tb_USER_NUM_FK foreign key(USER_NUM_FK) references  user_tb (USER_NUM_PK),
     pets_type               int not null,
-    pets_weight               int,
+    pets_weight              varchar(100),
     BOOK_NUM_FK             int,
     constraint p_tb_BOOK_NUM_FK foreign key(BOOK_NUM_FK) references book_tb (BOOK_NUM_PK)
 );

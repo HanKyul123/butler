@@ -50,20 +50,10 @@
             </label> 
             <img id="X" class="X" src="${pageContext.request.contextPath}/img/X.png" alt="" onclick="tog2()">
             <img id="X2" class="X2" src="${pageContext.request.contextPath}/img/X.png" alt="" onclick="tog2()">
-            
-<!--             <div id="text1" class="recommend_box">
-               반복문으로 추천 검색어 가져오기
-               <div id="recommend" class="Rcontents1">
-                  <a href="" id="text1"></a> -->
-               </div>
-<!--                <div id="recommend" class="Rcontents2">
-                  <a href="">고양이</a>
-               </div>
-               <div id="recommend" class="Rcontents3">
-                  <a href="">애견 호텔</a>
-               </div> -->
-            </div>
+           
+
          </li>
+
          <li class="list" id="over">
             <a href="">더보기</a>
             <div class="more_list" name="morelist">
@@ -78,12 +68,11 @@
                </div>
             </div>
          </li>
-         <li class="list">
-            <a href="">내주변</a>
-         </li>
          <li id="status_logout" class="list" ><a class="text" href="/login.login.us">로그인</a></li>
+
          
-         <li id="status_login_empty" class="list" >빈</li>
+         
+         <li id="status_login_empty" class="list" >♥</li>
          <li id="status_login" class="list" >
             <div class="set_profile">
                <div class="profile">
