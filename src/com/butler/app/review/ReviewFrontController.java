@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.butler.app.action.ActionTo;
-import com.butler.app.action.ReservationViewAction;
-import com.butler.book.BookOkAction;
+import com.butler.app.action.GoReviewWritingAction;
 
 public class ReviewFrontController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
@@ -35,7 +34,7 @@ public class ReviewFrontController extends HttpServlet{
 		switch (command) {
 			case "/review/goReviewWriting.review":
 			try {
-				transfer = new ReservationViewAction().execute(req, resp);		
+				transfer = new GoReviewWritingAction().execute(req, resp);		
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
