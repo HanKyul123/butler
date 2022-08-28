@@ -35,8 +35,10 @@
 		business_hashtag like('%${pet6}%') or
 		business_hashtag like('%${pet7}%') or 
 		business_hashtag like('%${pet8}%') or
+		business_hashtag like('%${pet9}%') or
+		business_hashtag like('%${pet0}%') or
 		business_category = #{category1} or
-		business_category = #{category2}
+		business_category = #{category2}	
 	</select>
 	<select id="recommandResult" parameterType="_int" resultType="hdto">
 		select * from business_tb order by business_workplace_score desc limit #{topnum};
@@ -48,5 +50,37 @@
 		or business_addretc like('%${keyword}%')
 		order by business_min_charge asc;
 	</select>
-	
+	<select id="SearchAnimaltype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} group by animal_type;
+	</select>
+	<select id="SearchEtctype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 0;
+	</select>
+	<select id="SearchDogtype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 1;
+	</select>
+	<select id="SearchCattype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 2;
+	</select>
+	<select id="SearchBirdtype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 3;
+	</select>
+	<select id="SearchReptiletype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 4;
+	</select>
+	<select id="SearchAmphibiatype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 5;
+	</select>
+	<select id="SearchRodenttype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 6;
+	</select>
+	<select id="SearchWeaseltype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 7;
+	</select>
+	<select id="SearchPigtype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 8;
+	</select>
+	<select id="SearchRabbittype" parameterType="_int" resultType="bcdto">
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 9;
+	</select>
 </mapper>

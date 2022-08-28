@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +28,7 @@
 	src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
 <script>
+
 	let nowdate = 0;
 
 	$(function() {
@@ -224,81 +227,189 @@
 				<select name="animal" id="animal">
 
 					<option class="uderline" value="선택" selected="selected">선택</option>
-					<option value="0">강아지</option>
-					<option value="1">고양이</option>
-					<option value="2">새</option>
-					<option value="3">파충류</option>
-					<option value="4">패럿</option>
-					<option value="5">토끼</option>
-					<option value="6">햄스터</option>
-					<option value="7">그 외</option>
+					
+<!--   					 	<option value="0">강아지</option>
+						<option value="1">고양이</option>
+						<option value="2">새</option>
+						<option value="3">파충류</option>
+						<option value="4">패럿</option>
+						<option value="5">토끼</option>
+						<option value="6">햄스터</option> -->
+		
+ 						<c:forEach items="${animal_type}" var="animal_type">
+								<c:if test="${0 eq animal_type.animal_type}"><option value="0">기타</option></c:if>
+								<c:if test="${1 eq animal_type.animal_type}"><option value="1">강아지</option></c:if>
+								<c:if test="${2 eq animal_type.animal_type}"><option value="2">고양이</option></c:if>
+								<c:if test="${3 eq animal_type.animal_type}"><option value="3">조류</option></c:if>
+								<c:if test="${4 eq animal_type.animal_type}"><option value="4">파충류</option></c:if>
+								<c:if test="${5 eq animal_type.animal_type}"><option value="5">양서류</option></c:if>
+								<c:if test="${6 eq animal_type.animal_type}"><option value="6">설치류</option></c:if>
+								<c:if test="${7 eq animal_type.animal_type}"><option value="7">족제비과</option></c:if>
+								<c:if test="${8 eq animal_type.animal_type}"><option value="8">돼지류</option></c:if>
+								<c:if test="${9 eq animal_type.animal_type}"><option value="9">설치류</option></c:if>
+						</c:forEach>
+
+
 				</select>
 
 				<div class="selectprice">몸무게는요</div>
+				
+				<!-- 그 외 몸무게 -->
+				<select name="상세정보" id="selectbox" class="else_weight">
+					<c:choose>
+						<c:when test="${etc_result != null and etc_result.size()>0 }">
+							<c:forEach items="${etc_result}" var="etc_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${etc_result.one_day_charge}" var="etcOnedayCharge" />
+								<option value="${etc_result.one_day_charge}">${etc_result.animal_weight} 1박 ${etcOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>
+					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option> -->
+				</select>				
+				
+				
 				<!-- 강아지 무게 -->
 				<select name="상세정보" id="selectbox" class="dog_weight">
+					<c:choose>
+						<c:when test="${dog_result != null and dog_result.size()>0 }">
+							<c:forEach items="${dog_result}" var="dog_result">						
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${dog_result.one_day_charge}" var="dogOnedayCharge" />
+								<option value="${dog_result.one_day_charge}">${dog_result.animal_weight} 1박 ${dogOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>
 
-					<option value="40000">1 ~ 5kg 1박 40000원</option>
+<!-- 					<option value="40000">1 ~ 5kg 1박 40,000원</option>
 					<option value="80000">5 ~ 10kg 1박 80,000원</option>
 					<option value="120000">10 ~ 15kg 1박 120,000원</option>
 					<option value="150000">15 ~ 20kg 1박 150,000원</option>
 					<option value="180000">20kg 이상 1박 180,000원</option>
+ -->					
 				</select>
 
 				<!-- 고양이 무게 -->
 				<select name="상세정보" id="selectbox" class="cat_weight">
-
-					<option value="30000">1 ~ 5kg 1박 30000원</option>
+					<c:choose>
+						<c:when test="${cat_result != null and cat_result.size()>0 }">
+							<c:forEach items="${cat_result}" var="cat_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${cat_result.one_day_charge}" var="catOnedayCharge" />
+								<option value="${cat_result.one_day_charge}">${cat_result.animal_weight} 1박 ${catOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>
+<!-- 					<option value="30000">1 ~ 5kg 1박 30000원</option>
 					<option value="60000">5 ~ 10kg 1박 60,000원</option>
-					<option value="80000">10kg 이상 1박 80,000원</option>
+					<option value="80000">10kg 이상 1박 80,000원</option> -->
 				</select>
 
 				<!-- 새 무게 -->
 				<select name="상세정보" id="selectbox" class="bird_weight">
-
-					<option value="20000">1 ~ 3kg 1박 20000원</option>
+					<c:choose>
+						<c:when test="${bird_result != null and bird_result.size()>0 }">
+							<c:forEach items="${bird_result}" var="bird_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${bird_result.one_day_charge}" var="birdOnedayCharge" />
+								<option value="${bird_result.one_day_charge}">${bird_result.animal_weight} 1박 ${birdOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>
+					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option> -->
 				</select>
 
 				<!-- 파충류 무게 -->
 				<select name="상세정보" id="selectbox" class="reptile_weight">
-
-					<option value="20000">1 ~ 5kg 1박 20000원</option>
+					<c:choose>
+						<c:when test="${reptile_result != null and reptile_result.size()>0 }">
+							<c:forEach items="${reptile_result}" var="reptile_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${reptile_result.one_day_charge}" var="reptileOnedayCharge" />
+								<option value="${reptile_result.one_day_charge}">${reptile_result.animal_weight} 1박 ${reptileOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>				
+<!-- 					<option value="20000">1 ~ 5kg 1박 20000원</option>
 					<option value="40000">5 ~ 10kg 1박 40000원</option>
 					<option value="60000">10 ~ 15kg 1박 60000원</option>
-					<option value="80000">15kg 이상 1박 80000원</option>
+					<option value="80000">15kg 이상 1박 80000원</option> -->
 				</select>
+				
+				<!-- 양서류 무게 -->		<!-- 추가!!!!  -->
+				<select name="상세정보" id="selectbox" class="amphibia_weight">
+					<c:choose>
+						<c:when test="${amphibia_result != null and amphibia_result.size()>0 }">
+							<c:forEach items="${amphibia_result}" var="amphibia_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${amphibia_result.one_day_charge}" var="amphibiaOnedayCharge" />
+								<option value="${amphibia_result.one_day_charge}">${amphibia_result.animal_weight} 1박 ${amphibiaOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>				
+<!-- 					<option value="20000">1 ~ 5kg 1박 20000원</option>
+					<option value="40000">5 ~ 10kg 1박 40000원</option>
+					<option value="60000">10 ~ 15kg 1박 60000원</option>
+					<option value="80000">15kg 이상 1박 80000원</option> -->
+				</select>				
+				
+				
+				
+				<!-- 햄스터 무게 -->
+				<select name="상세정보" id="selectbox" class="hamster_weight">				
+					<c:choose>
+						<c:when test="${rodent_result != null and rodent_result.size()>0 }">
+							<c:forEach items="${rodent_result}" var="rodent_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${rodent_result.one_day_charge}" var="rodentOnedayCharge" />
+								<option value="${rodent_result.one_day_charge}">${rodent_result.animal_weight} 1박 ${rodentOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>					
+					<!-- <option value="10000">~ 1kg 1박 10000원</option>
+					<option value="15000">1kg ~ 2kg 1박 15000원</option> -->
+				</select>				
+				
 
 
 				<!-- 패럿 무게  -->
 				<select name="상세정보" id="selectbox" class="Farad_weight">
-
-					<option value="20000">1 ~ 3kg 1박 20000원</option>
-					<option value="40000">3 ~ 6kg 1박 40000원</option>
+					<c:choose>
+						<c:when test="${weasel_result != null and weasel_result.size()>0 }">
+							<c:forEach items="${weasel_result}" var="weasel_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${weasel_result.one_day_charge}" var="weaselOnedayCharge" />
+								<option value="${weasel_result.one_day_charge}">${weasel_result.animal_weight} 1박 ${weaselOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>				
+					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option>
+					<option value="40000">3 ~ 6kg 1박 40000원</option> -->
 				</select>
+				
+				
+				<!-- 돼지 무게  -->
+				<select name="상세정보" id="selectbox" class="Pig_weight">
+					<c:choose>
+						<c:when test="${pig_result != null and pig_result.size()>0 }">
+							<c:forEach items="${pig_result}" var="weasel_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${pig_result.one_day_charge}" var="weaselOnedayCharge" />
+								<option value="${pig_result.one_day_charge}">${pig_result.animal_weight} 1박 ${weaselOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>				
+					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option>
+					<option value="40000">3 ~ 6kg 1박 40000원</option> -->
+				</select>				
 
 
 				<!-- 토끼 무게 -->
 				<select name="상세정보" id="selectbox" class="rabbit_weight">
+					<c:choose>
+						<c:when test="${rabbit_result != null and rabbit_result.size()>0 }">
+							<c:forEach items="${rabbit_result}" var="rabbit_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${rabbit_result.one_day_charge}" var="rabbitOnedayCharge" />
+								<option value="${rabbit_result.one_day_charge}">${rabbit_result.animal_weight} 1박 ${rabbitOnedayCharge}원</option>			
+							</c:forEach>
+						</c:when>
+					</c:choose>					
 
-					<option value="20000">1 ~ 3kg 1박 20000원</option>
+					<!-- <option value="20000">1 ~ 3kg 1박 20000원</option>
 					<option value="40000">3 ~ 6kg 1박 40000원</option>
 					<option value="60000">6 ~ 9kg 1박 60000원</option>
-					<option value="80000">10kg 이상 1박 80000원</option>
-				</select>
-
-
-				<!-- 햄스터 무게 -->
-				<select name="상세정보" id="selectbox" class="hamster_weight">
-
-					<option value="10000">~ 1kg 1박 10000원</option>
-					<option value="15000">1kg ~ 2kg 1박 15000원</option>
-				</select>
-
-
-				<!-- 그 외 몸무게 -->
-				<select name="상세정보" id="selectbox" class="else_weight">
-
-					<option value="20000">1 ~ 3kg 1박 20000원</option>
+					<option value="80000">10kg 이상 1박 80000원</option> -->
 				</select>
 
 				<button type="button" class="add" id="add" disabled="disabled"
@@ -326,14 +437,12 @@
 			<div class="pickdate">
 
 				<div class="datecontent">
-					<label><img
-						src="${pageContext.request.contextPath}/img/calender.png" alt=""
-						class="calender_img"> <input type="text" id="demo"
-						name="demo" value="" readonly></label> <input type="hidden"
-						id="book_checkin_date" name="book_checkin_date" readonly>
-					<input type="hidden" id="book_checkout_date"
-						name="book_checkout_date" readonly> <input type="hidden"
-						id="nowdate" readonly>
+					<label>
+					<img src="${pageContext.request.contextPath}/img/calender.png" alt="" class="calender_img"> 
+					<input type="text" id="demo" name="demo" value="" readonly></label> 
+						<input type="hidden" id="book_checkin_date" name="book_checkin_date" readonly>
+						<input type="hidden" id="book_checkout_date" name="book_checkout_date" readonly> 
+						<input type="hidden" id="nowdate" readonly>
 				</div>
 
 			</div>

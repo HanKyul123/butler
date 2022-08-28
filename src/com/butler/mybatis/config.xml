@@ -11,6 +11,7 @@
   	<typeAlias type="com.butler.app.dao.BookDTO" alias="bdto"/>
   	<typeAlias type="com.butler.app.dao.PetsDTO" alias="petsdto"/>
   	<typeAlias type="com.butler.app.dao.ReviewFileDTO" alias="rfdto"/>
+  	<typeAlias type="com.butler.app.dao.BchargeDTO" alias="bcdto"/>
   </typeAliases>
   <environments default="development">
     <environment id="development">

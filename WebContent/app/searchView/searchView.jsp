@@ -45,14 +45,16 @@
             <div id="Tagin" class="Type">
                 <div id="TypeTitle" class="petType">반려동물 분류</div>
                 <div class="checkbox1">
-                    <label><input type="checkbox" name="dog" id="pet" value="0">강아지</label><br>
-                    <label><input type="checkbox" name="cat" id="pet" value="1">고양이</label><br>
-                    <label><input type="checkbox" name="bird" id="pet" value="2">새</label><br>
-                    <label><input type="checkbox" name="reptile" id="pet" value="3">파충류</label><br>
-                    <label><input type="checkbox" name="farad" id="pet" value="4">패럿</label><br>
-                    <label><input type="checkbox" name="rabbit" id="pet" value="6">토끼</label><br>
-                    <label><input type="checkbox" name="hamster" id="pet" value="7">햄스터</label><br>
-                    <label><input type="checkbox" name="else_pet" id="pet" value="8">그 외</label>
+                    <label><input type="checkbox" name="dog" id="pet" value="1">강아지</label><br>
+                    <label><input type="checkbox" name="cat" id="pet" value="2">고양이</label><br>
+                    <label><input type="checkbox" name="bird" id="pet" value="3">조류</label><br>
+                    <label><input type="checkbox" name="reptile" id="pet" value="4">파충류</label><br>
+                    <label><input type="checkbox" name="amphibia" id="pet" value="5">양서류</label><br>
+                    <label><input type="checkbox" name="rodent" id="pet" value="6">설치류</label><br>
+                    <label><input type="checkbox" name="weasel" id="pet" value="7">족제비과</label><br>
+                    <label><input type="checkbox" name="pig" id="pet" value="8">돼지류</label><br>
+                    <label><input type="checkbox" name="rabbit" id="pet" value="9">토끼류</label><br>
+                    <label><input type="checkbox" name="else_pet" id="pet" value="0">기타</label>
                 </div>
             </div>
 
@@ -61,15 +63,15 @@
             <div id="Tagin" class="Type">
                 <div id="TypeTitle" class="HotelType">숙소 분류</div>
                 <div class="checkbox2">
-                    <label><input type="checkbox" name="Hotel" id="Hotel" value="4">호텔</label><br>
-                    <label><input type="checkbox" name="Hospital" id="Hotel" value="5">동물병원</label>
+                    <label><input type="checkbox" name="Hotel" id="Hotel" value="10">호텔</label><br>
+                    <label><input type="checkbox" name="Hospital" id="Hotel" value="11">동물병원</label>
                 </div>         
             </div>
 			<!-- 검색 버튼 -->
             <button type="submit" id="hashsearch" >선택</button>
+        </div>
        </form>
 
-        </div>
        
 
         <!-- 검색 결과 상품들 -->
