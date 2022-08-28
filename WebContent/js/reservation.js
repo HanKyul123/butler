@@ -26,6 +26,10 @@ $('#animal').change(function() {
       $('.rabbit_weight').hide();
       $('.hamster_weight').hide();
       $('.else_weight').hide();
+      $('.amphibia_weight').hide();
+      $('.Pig_weight').hide();
+      
+      
 
       $('.dog_weight').css("display", "block");
       $('.cat_weight').css("display", "none");
@@ -35,6 +39,8 @@ $('#animal').change(function() {
       $('.rabbit_weight').css("display", "none");
       $('.hamster_weight').css("display", "none");
       $('.else_weight').css("display", "none");
+      $('.amphibia_weight').css("display", "none");
+      $('.Pig_weight').css("display", "none");
 
         } 
 
@@ -49,6 +55,8 @@ $('#animal').change(function() {
       $('.rabbit_weight').hide();
       $('.hamster_weight').hide();
       $('.else_weight').hide();
+      $('.amphibia_weight').hide();
+      $('.Pig_weight').hide();
 
       $('.cat_weight').css("display", "block");
       $('.dog_weight').css("display", "none");
@@ -58,9 +66,11 @@ $('#animal').change(function() {
       $('.rabbit_weight').css("display", "none");
       $('.hamster_weight').css("display", "none");
       $('.else_weight').css("display", "none");
+      $('.amphibia_weight').css("display", "none");
+      $('.Pig_weight').css("display", "none");
 
         }
-    else if (resultT == '새') {
+    else if (resultT == '조류') {
 
         $('.selectprice').show();
         $('.bird_weight').show();
@@ -71,6 +81,9 @@ $('#animal').change(function() {
         $('.rabbit_weight').hide();
         $('.hamster_weight').hide();
         $('.else_weight').hide();
+        $('.amphibia_weight').hide();
+        $('.Pig_weight').hide();
+        
   
         $('.bird_weight').css("display", "block");
         $('.dog_weight').css("display", "none");
@@ -80,6 +93,9 @@ $('#animal').change(function() {
         $('.rabbit_weight').css("display", "none");
         $('.hamster_weight').css("display", "none");
         $('.else_weight').css("display", "none");
+        $('.amphibia_weight').css("display", "none");
+        $('.Pig_weight').css("display", "none");
+
 
 
     }else if (resultT == '파충류') {
@@ -93,6 +109,8 @@ $('#animal').change(function() {
         $('.rabbit_weight').hide();
         $('.hamster_weight').hide();
         $('.else_weight').hide();
+        $('.amphibia_weight').hide();
+        $('.Pig_weight').hide();
   
         $('.reptile_weight').css("display", "block");
         $('.dog_weight').css("display", "none");
@@ -102,8 +120,11 @@ $('#animal').change(function() {
         $('.rabbit_weight').css("display", "none");
         $('.hamster_weight').css("display", "none");
         $('.else_weight').css("display", "none");
+        $('.amphibia_weight').css("display", "none");
+        $('.Pig_weight').css("display", "none");
 
-    }else if (resultT == '패럿') {
+ 
+    }else if (resultT == '족제비과') {
         
         $('.selectprice').show();
         $('.Farad_weight').show();
@@ -114,6 +135,8 @@ $('#animal').change(function() {
         $('.rabbit_weight').hide();
         $('.hamster_weight').hide();
         $('.else_weight').hide();
+        $('.amphibia_weight').hide();
+        $('.Pig_weight').hide();
   
         $('.Farad_weight').css("display", "block");
         $('.dog_weight').css("display", "none");
@@ -123,8 +146,10 @@ $('#animal').change(function() {
         $('.rabbit_weight').css("display", "none");
         $('.hamster_weight').css("display", "none");
         $('.else_weight').css("display", "none");
+        $('.amphibia_weight').css("display", "none");
+        $('.Pig_weight').css("display", "none");
 
-    }else if (resultT == '토끼') {
+    }else if (resultT == '토끼류') {
         
         $('.selectprice').show();
         $('.rabbit_weight').show();
@@ -135,7 +160,9 @@ $('#animal').change(function() {
         $('.reptile_weight').hide();
         $('.hamster_weight').hide();
         $('.else_weight').hide();
-  
+        $('.amphibia_weight').hide();
+        $('.Pig_weight').hide();
+        
         $('.rabbit_weight').css("display", "block");
         $('.dog_weight').css("display", "none");
         $('.cat_weight').css("display", "none");
@@ -144,8 +171,10 @@ $('#animal').change(function() {
         $('.reptile_weight').css("display", "none");
         $('.hamster_weight').css("display", "none");
         $('.else_weight').css("display", "none");
+        $('.amphibia_weight').css("display", "none");
+        $('.Pig_weight').css("display", "none");
 
-    }else if (resultT == '햄스터') {
+    }else if (resultT == '설치류') {
         
         $('.selectprice').show();
         $('.hamster_weight').show();
@@ -156,6 +185,9 @@ $('#animal').change(function() {
         $('.reptile_weight').hide();
         $('.rabbit_weight').hide();
         $('.else_weight').hide();
+        $('.amphibia_weight').hide();
+        $('.Pig_weight').hide();
+        
   
         $('.hamster_weight').css("display", "block");
         $('.dog_weight').css("display", "none");
@@ -165,6 +197,58 @@ $('#animal').change(function() {
         $('.reptile_weight').css("display", "none");
         $('.rabbit_weight').css("display", "none");
         $('.else_weight').css("display", "none");
+        $('.amphibia_weight').css("display", "none");
+        $('.Pig_weight').css("display", "none");
+
+    }else if (resultT == '양서류') {
+        
+        $('.selectprice').show();
+        $('.amphibia_weight').show();
+        $('.dog_weight').hide();
+        $('.cat_weight').hide();
+        $('.bird_weight').hide();
+        $('.Farad_weight').hide();
+        $('.reptile_weight').hide();
+        $('.hamster_weight').hide();
+        $('.rabbit_weight').hide();
+        $('.else_weight').hide();
+        $('.Pig_weight').hide();
+        
+        $('.amphibia_weight').css("display", "block");
+        $('.dog_weight').css("display", "none");
+        $('.cat_weight').css("display", "none");
+        $('.bird_weight').css("display", "none");
+        $('.Farad_weight').css("display", "none");
+        $('.reptile_weight').css("display", "none");
+        $('.hamster_weight').css("display", "none");
+        $('.rabbit_weight').css("display", "none");
+        $('.else_weight').css("display", "none");
+        $('.Pig_weight').css("display", "none");
+
+    }else if (resultT == '돼지류') {
+        
+        $('.selectprice').show();
+        $('.Pig_weight').show();
+        $('.dog_weight').hide();
+        $('.cat_weight').hide();
+        $('.bird_weight').hide();
+        $('.Farad_weight').hide();
+        $('.reptile_weight').hide();
+        $('.hamster_weight').hide();
+        $('.rabbit_weight').hide();
+        $('.else_weight').hide();
+        $('.amphibia_weight').hide();
+        
+        $('.Pig_weight').css("display", "block");
+        $('.dog_weight').css("display", "none");
+        $('.cat_weight').css("display", "none");
+        $('.bird_weight').css("display", "none");
+        $('.Farad_weight').css("display", "none");
+        $('.reptile_weight').css("display", "none");
+        $('.hamster_weight').css("display", "none");
+        $('.rabbit_weight').css("display", "none");
+        $('.else_weight').css("display", "none");
+        $('.amphibia_weight').css("display", "none");
 
     }else if (resultT == '그 외') {
         
@@ -177,7 +261,9 @@ $('#animal').change(function() {
         $('.reptile_weight').hide();
         $('.hamster_weight').hide();
         $('.rabbit_weight').hide();
-  
+        $('.amphibia_weight').hide();
+        $('.Pig_weight').hide();
+        
         $('.else_weight').css("display", "block");
         $('.dog_weight').css("display", "none");
         $('.cat_weight').css("display", "none");
@@ -186,6 +272,8 @@ $('#animal').change(function() {
         $('.reptile_weight').css("display", "none");
         $('.hamster_weight').css("display", "none");
         $('.rabbit_weight').css("display", "none");
+        $('.amphibia_weight').css("display", "none");
+        $('.Pig_weight').css("display", "none");
 
     } else {
         $('.selectprice').hide();
@@ -197,6 +285,8 @@ $('#animal').change(function() {
         $('.reptile_weight').hide();
         $('.hamster_weight').hide();
         $('.else_weight').hide();
+        $('.amphibia_weight').hide();
+        $('.Pig_weight').hide();
         
       }
       
@@ -303,7 +393,7 @@ let toprice = document.getElementById("book_charge");
          i=i+1;
 
         //  새
-    }else if($('#animal option:selected').text()=="새"){
+    }else if($('#animal option:selected').text()=="조류"){
         $("#parentadd").append(
             "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
             "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
@@ -460,9 +550,111 @@ let toprice = document.getElementById("book_charge");
         console.log("[담긴 것들] :"+array);
         console.log("\n");
         i=i+1;
-    }
+    }else if($('#animal option:selected').text()=="양서류"){
+        $("#parentadd").append(
+                "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
+                "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
+                "<span>"+
+        
+                $('#animal option:selected').text()
+                
+                +"</span>"
+                +"&nbsp;"+"<span>"+
+                
+                
+                $('.amphibia_weight option:selected').text()
+                
+                +"</span>"+"</div>"+"<button type='button' id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.reptile_weight option:selected').text()+"'>"+"</div>"
+            );
 
-    else if($('#animal option:selected').text()=="패럿"){
+            // 상품 가격 가져오기
+            var selected = $('.amphibia_weight option:selected').val();
+
+
+         // 총 가격 구하기
+            let pricenum = parseInt(selected);
+            fullcharge=anotherprice+pricenum;
+            anotherprice=anotherprice+pricenum;
+            
+            book_charge=book_charge+pricenum*xcount;
+            toprice.value=book_charge;
+            txttotalprice.innerHTML=book_charge;
+
+            // 상품가격 hidden input value 에 넣기
+            var minusprice = $("#thisprice"+i).val();
+            minusprice = selected;
+
+            // 펫 종류 구하기
+            var petname = $('#animal option:selected').text();
+
+            arraypet.push(petname);
+            array.push("bigadd"+i);
+            arrayprice.push(minusprice);
+
+
+
+            console.log("총 가격 :"+book_charge);
+            console.log("상품 가격 :"+minusprice);
+            console.log("펫 종류 :"+petname);
+
+            console.log("[담긴 것들] :"+array);
+            console.log("\n");
+            i=i+1;
+        }
+    
+    else if($('#animal option:selected').text()=="설치류"){
+        $("#parentadd").append(
+                "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
+                "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
+                "<span>"+
+        
+                $('#animal option:selected').text()
+                
+                +"</span>"
+                +"&nbsp;"+"<span>"+
+                
+                
+                $('.hamster_weight option:selected').text()
+                
+                +"</span>"+"</div>"+"<button type='button' id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.reptile_weight option:selected').text()+"'>"+"</div>"
+            );
+
+            // 상품 가격 가져오기
+            var selected = $('.hamster_weight option:selected').val();
+
+
+         // 총 가격 구하기
+            let pricenum = parseInt(selected);
+            fullcharge=anotherprice+pricenum;
+            anotherprice=anotherprice+pricenum;
+            
+            book_charge=book_charge+pricenum*xcount;
+            toprice.value=book_charge;
+            txttotalprice.innerHTML=book_charge;
+
+            // 상품가격 hidden input value 에 넣기
+            var minusprice = $("#thisprice"+i).val();
+            minusprice = selected;
+
+            // 펫 종류 구하기
+            var petname = $('#animal option:selected').text();
+
+            arraypet.push(petname);
+            array.push("bigadd"+i);
+            arrayprice.push(minusprice);
+
+
+
+            console.log("총 가격 :"+book_charge);
+            console.log("상품 가격 :"+minusprice);
+            console.log("펫 종류 :"+petname);
+
+            console.log("[담긴 것들] :"+array);
+            console.log("\n");
+            i=i+1;
+        }
+
+    else if($('#animal option:selected').text()=="족제비과"){
         $("#parentadd").append(
             "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
             "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
@@ -515,7 +707,60 @@ let toprice = document.getElementById("book_charge");
         i=i+1;
     }
  
-    else if($('#animal option:selected').text()=="토끼"){
+    else if($('#animal option:selected').text()=="돼지류"){
+        $("#parentadd").append(
+            "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
+            "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
+            "<span>"+
+    
+            $('#animal option:selected').text()
+            
+            +"</span>"
+            +"&nbsp;"+"<span>"+
+            
+            
+            $('.Pig_weight option:selected').text()
+            
+            +"</span>"+"</div>"+"<button type='button' id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.rabbit_weight option:selected').text()+"'>"+"</div>"
+        );
+
+        // 상품 가격 가져오기
+        var selected = $('.Pig_weight option:selected').val();
+
+
+     // 총 가격 구하기
+        let pricenum = parseInt(selected);
+        fullcharge=anotherprice+pricenum;
+        anotherprice=anotherprice+pricenum;
+        
+        book_charge=book_charge+pricenum*xcount;
+        toprice.value=book_charge;
+        txttotalprice.innerHTML=book_charge;
+
+
+        // 상품가격 hidden input value 에 넣기
+        var minusprice = $("#thisprice"+i).val();
+        minusprice = selected;
+
+        // 펫 종류 구하기
+        var petname = $('#animal option:selected').text();
+
+        arraypet.push(petname);
+        array.push("bigadd"+i);
+        arrayprice.push(minusprice);
+
+
+
+        console.log("총 가격 :"+book_charge);
+        console.log("상품 가격 :"+minusprice);
+        console.log("펫 종류 :"+petname);
+
+        console.log("[담긴 것들] :"+array);
+        console.log("\n");
+        i=i+1;
+    }
+
+    else if($('#animal option:selected').text()=="토끼류"){
         $("#parentadd").append(
             "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
             "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
@@ -529,7 +774,7 @@ let toprice = document.getElementById("book_charge");
             
             $('.rabbit_weight option:selected').text()
             
-            +"</span>"+"</div>"+"<button type='button' id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.rabbit_weight option:selected').text()+"'>"+"</div>"
+            +"</span>"+"</div>"+"<button type='button' id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.hamster_weight option:selected').text()+"'>"+"</div>"
         );
 
         // 상품 가격 가져오기
@@ -568,60 +813,7 @@ let toprice = document.getElementById("book_charge");
         i=i+1;
     }
 
-    else if($('#animal option:selected').text()=="햄스터"){
-        $("#parentadd").append(
-            "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
-            "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
-            "<span>"+
-    
-            $('#animal option:selected').text()
-            
-            +"</span>"
-            +"&nbsp;"+"<span>"+
-            
-            
-            $('.hamster_weight option:selected').text()
-            
-            +"</span>"+"</div>"+"<button type='button' id='Xbtn"+i+"' class='Xbtni' style=' position: relative;top: 8px;margin-top: 13px;margin-left: 5px;width: 17px;height: 22px;background-color: transparent;border: none;' onclick='removethis("+i+")'>"+"<img src='../../img/X_gray.png' style='position: relative;bottom: 8px;width: 20px;height: 23px;right: 10px;cursor: pointer;'>"+"</button>"+"<input id='thisprice"+i+"' type='hidden'>"+"<input name='pets_type"+i+"' id='pets_type"+i+"' type='hidden' value='"+$('#animal option:selected').val()+"'>"+"<input name='pets_weight"+i+"' id='pets_weight"+i+"' type='hidden' value='"+$('.hamster_weight option:selected').text()+"'>"+"</div>"
-        );
-
-        // 상품 가격 가져오기
-        var selected = $('.hamster_weight option:selected').val();
-
-
-     // 총 가격 구하기
-        let pricenum = parseInt(selected);
-        fullcharge=anotherprice+pricenum;
-        anotherprice=anotherprice+pricenum;
-        
-        book_charge=book_charge+pricenum*xcount;
-        toprice.value=book_charge;
-        txttotalprice.innerHTML=book_charge;
-
-
-        // 상품가격 hidden input value 에 넣기
-        var minusprice = $("#thisprice"+i).val();
-        minusprice = selected;
-
-        // 펫 종류 구하기
-        var petname = $('#animal option:selected').text();
-
-        arraypet.push(petname);
-        array.push("bigadd"+i);
-        arrayprice.push(minusprice);
-
-
-
-        console.log("총 가격 :"+book_charge);
-        console.log("상품 가격 :"+minusprice);
-        console.log("펫 종류 :"+petname);
-
-        console.log("[담긴 것들] :"+array);
-        console.log("\n");
-        i=i+1;
-    }
-
-    else if($('#animal option:selected').text()=="그 외"){
+    else if($('#animal option:selected').text()=="기타"){
         $("#parentadd").append(
             "<div id='bigadd' class='bigadd"+i+"' style='width: 250px;display: flex;flex-wrap: wrap;'>"+
             "<div id='add' style=' font-size:12px; padding-left: 5px; width: 180px; height: 30px;line-height: 32px; border: 1px solid rgb(173, 173, 173);border-radius: 3px;color:rgb(125, 125, 125);margin-top: 10px;'>"+
