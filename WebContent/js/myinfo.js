@@ -244,7 +244,7 @@ function myFunction2_2() {
       var d5 = document.getElementById("XB5");
       var e = document.getElementById("time");
       
-      
+
       $('.send_code').attr("disabled", true);
         e.style.display="block";
         x.style.display = "block";
@@ -272,17 +272,12 @@ var x = setInterval(function(){
         clearInterval(x); //setInterval() 실행을 끝내기
         document.getElementById("timer").innerHTML = "0:00"
         $('.send_code').attr("disabled", false);
-
+        $('.write_phone_code').attr("disabled", true);
+        $('.phone_code_btn').attr("disabled", true);
         
 
         }
-    $(".phone_code_btn").on("click",function(){
-
-        clearInterval(x); //setInterval() 실행을 끝내기
-        document.getElementById("timer").innerHTML = "3:00";
-        $('.send_code').attr("disabled", true);
-
-      })
+    
     $("#XB5").on("click",function(){
 
         clearInterval(x); //setInterval() 실행을 끝내기
@@ -300,6 +295,7 @@ var x = setInterval(function(){
       var y = document.getElementById("PCB2");
       var e = document.getElementById("time2");
       
+      $('.write_phone_code2').attr("disabled", false);
       $('.send_code2').attr("disabled", true);
         e.style.display="block";
         x.style.display = "block";
@@ -325,7 +321,8 @@ var x = setInterval(function(){
         clearInterval(x); //setInterval() 실행을 끝내기
         document.getElementById("timer2").innerHTML = "0:00"
         $('.send_code2').attr("disabled", false);
-
+        $('.write_phone_code2').attr("disabled", true);
+        $('.phone_code_btn2').attr("disabled", false);
         
 
         }
@@ -472,45 +469,6 @@ var x = setInterval(function(){
        
       }
 
-      function finish_prove(){
-        var w = document.getElementById("WNP");
-        var x = document.getElementById("WPC");
-        var y = document.getElementById("PCB");
-        var d = document.getElementById("XB");
-        var e = document.getElementById("time");
-        var m = document.getElementById("MPB");
-        var s = document.getElementById("SC");
-        var u = document.getElementById("USP");
-        var v = document.getElementById("XB5");
-        
-        var user_phone2 = document.getElementById("user_phone2");
-        
-        user_phone2.value = w.value;
-
-        $(".modify_nick_btn").attr("disabled",false);
-        $(".modify_addr_btn").attr("disabled",false);
-        $(".phone_code_btn").attr("disabled",true);
-        $(".modify_pw").attr("onclick","change_pw()");
-
-        let str = w.value;
-        let phonenum = str.slice(0,3)+"-"+str.slice(3,7)+"-"+str.slice(7,11);
-
-        x.style.display="none";
-        m.style.display="block";
-        y.style.display="none";
-        d.style.display="none";
-        e.style.display="none";
-        w.style.display="none";
-        s.style.display="none";
-        v.style.display="none";
-        x.value="";
-
-        if(w.value!==""){
-          u.innerHTML=phonenum;
-        }
-        w.value="";
-
-      }
 
 
       
@@ -815,35 +773,6 @@ const over2 = document.getElementById('see_pw2');
         let thisrepw = document.getElementById("re_new_pw");
 
         
-
-        function prove_user_code(){
-
-        // let x = document.getElementById("WNP2");
-        // let y = document.getElementById("SC2");
-        // let b = document.getElementById("new_pw");
-        // let c = document.getElementById("re_new_pw");
-        // let d = document.getElementById("time2");
-        // let e = document.getElementById("PCB2");
-        // let f = document.getElementById("WPC2");
-
-        $("#WNP2").attr("disabled",true);
-        $("#SC2").attr("disabled",true);
-        $("#time2").attr("disabled",true);
-        $("#PCB2").attr("disabled",true);
-        $("#WPC2").attr("disabled",true);
-
-          
-
-
-        $("#clear_change_pw").css("display","block")
-        $(".re_new_pw").css("display","block")
-        $(".new_pw").css("display","block")
-
-
-
-       
-        }
-
  
 
         
@@ -859,9 +788,12 @@ const over2 = document.getElementById('see_pw2');
           let i = document.getElementById("new_pw");
           let j = document.getElementById("re_new_pw");
           let k = document.getElementById("clear_change_pw");
-          let l = document.getElementById("user_new_pw");
 
+          
+          let m = document.getElementById("New_password");
+          
 
+          m.value = i.value;
 
           a.style.display="block";
           b.style.display="none";
@@ -882,7 +814,7 @@ const over2 = document.getElementById('see_pw2');
           notsame.style.display="none";
           
           
-          l.value=i.value;
+
           d.value="";
           f.value="";
           i.value="";
@@ -947,13 +879,14 @@ const over2 = document.getElementById('see_pw2');
 
         function is_samephone(value) {
          let oriphone = document.getElementById("user_phone1");
-         if(value!==oriphone.value){
+         let user_phone2 = document.getElementById("user_phone2");
+         if(value!==user_phone2.value){
             notsame.innerHTML="회원님의 전화번호와 일치하지 않습니다.";
             notsame.style.color="red";
             $(".send_code2").attr("disabled",true);
             notsame.style.display="block";
             return false;
-         }else if(value.length!==oriphone.value.length){
+         }else if(value.length!==user_phone2.value.length){
             notsame.innerHTML="회원님의 전화번호와 일치하지 않습니다.";
             notsame.style.color="red";
             $(".send_code2").attr("disabled",true);

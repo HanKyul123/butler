@@ -44,13 +44,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     
        .notice_wrap{
         position:relative;
-		top:10px;
-		display:flex;
-		flex-wrap:wrap;
+      top:10px;
+      display:flex;
+      flex-wrap:wrap;
         text-align: center;
         width: 100%;
         background: #fff;
-		padding-bottom:200px; 
+      padding-bottom:200px; 
     }
         .moremore {
     width:40%;
@@ -78,15 +78,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
     
     
-    	.more_a{
-    	font-size: 20px;
-    	font-family: 'OTWelcomeRA';
-     	color: rgba(0,0,0,0.56);
-    	}
-    	
-    	#click{
-    	color: rgb(116, 10, 140);
-    	}
+       .more_a{
+       font-size: 20px;
+       font-family: 'OTWelcomeRA';
+        color: rgba(0,0,0,0.56);
+       }
+       
+       #click{
+       color: rgb(116, 10, 140);
+       }
        .more_a:hover{
         color: rgb(116, 10, 140);
     }
@@ -95,11 +95,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     
     
     
-	.t_notice {
-		padding-left: 20px;
+   .t_notice {
+      padding-left: 20px;
        position:relative;
         top:100px;
-  		right:110px;
+        right:110px;
         text-align: left;
         width: 50%;
     }
@@ -250,5 +250,135 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             
         }
         
-    
+    .td_1{
+        border-width: 1px; 
+        border-style: solid; 
+        border-color: rgb(153, 153, 153) rgb(183, 183, 183) rgb(153, 153, 153) rgb(153, 153, 153); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle; 
+        background-color: rgb(102, 102, 102);  
+        font-size: 9pt;  
+        color: rgb(255, 255, 255); 
+        text-align: center;
+    }
+    .td_2{
+        border-top: 1px solid rgb(183, 183, 183); 
+        border-right: 1px solid rgb(183, 183, 183); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle;  
+        font-size: 9pt;
+    }
+    .td_3{
+        border-top: 1px solid rgb(183, 183, 183); 
+        border-right: 1px solid rgb(183, 183, 183); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle;  
+        font-size: 9pt;
+        border-bottom: 1px solid rgb(183, 183, 183);
+    }
+    .event_2{
+        border-width: 0px 0px 1px 1px; 
+        border-bottom-style: solid; 
+        border-left-style: solid; 
+        border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); 
+        border-image: initial; 
+        border-top-style: initial; 
+        border-top-color: initial; 
+        border-right-style: initial; 
+        border-right-color: initial; 
+        width: 100px; 
+        height: 36px; 
+        background-color: rgb(255, 255, 255);
+    }
+    .td_4{
+        border-bottom: 1px solid rgb(183, 183, 183); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle;  
+        font-size: 9pt; 
+        font-weight: bold;
+    }
+    .td_5{
+        border-bottom: 1px solid rgb(183, 183, 183); 
+        border-left: 1px solid rgb(153, 153, 153); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle; 
+        background-color: rgb(102, 102, 102);  
+        font-size: 9pt; 
+        color: rgb(255, 255, 255); 
+        text-align: center;
+
+    }
+    .td_6{
+        border-right: 1px solid rgb(255, 255, 255); 
+        border-bottom: 1px solid rgb(183, 183, 183); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle;  
+        font-size: 9pt;
+    }
+    .td_7{
+        border-right: 1px solid rgb(183, 183, 183); 
+        border-bottom: 1px solid rgb(183, 183, 183); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle; 
+        font-size: 9pt;
+    }
+    .td_8{
+        border-bottom: 1px solid rgb(183, 183, 183); 
+        border-left: 1px solid rgb(153, 153, 153);
+         overflow: hidden; 
+         padding: 2px 3px; 
+         vertical-align: middle; 
+         background-color: rgb(102, 102, 102);  
+         font-size: 9pt; 
+         color: rgb(255, 255, 255); 
+         text-align: center;
+    }
+    .td_9{
+        border-right: 1px solid rgb(255, 255, 255); 
+        overflow: hidden; padding: 2px 3px; 
+        vertical-align: middle; 
+        font-size: 9pt;
+    }
+    .td_10{
+        border-right: 1px solid rgb(183, 183, 183); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle;  
+        font-size: 9pt;
+    }
+    .td_11{
+        border-bottom: 1px solid rgb(183, 183, 183); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle; 
+        font-size: 9pt;
+    }
+    .td_12{
+        border-right: 1px solid rgb(183, 183, 183); 
+        border-bottom: 1px solid rgb(183, 183, 183); 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle;  
+        font-size: 9pt;
+    }
+    .td_13{
+        font-size: 13.3333px; 
+        overflow: hidden;
+         padding: 2px 3px; 
+         vertical-align: middle;
+    }
+    .td_14{
+        font-size: 13.3333px; 
+        overflow: hidden; 
+        padding: 2px 3px; 
+        vertical-align: middle;
+    }
+
     

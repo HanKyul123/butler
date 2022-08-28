@@ -705,12 +705,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         #final_send{
         font-family: 'OTWelcomeRA';
             padding-top: 5px;
-            margin-top: 40px;
+            margin-top: 10px;
             margin-bottom: 20px;
 
             position: relative;
             width: 300px;
-            height: 35px;
+            height: 45px;
             cursor: pointer;
             border: 1px solid rgb(116, 10, 140);
             border-radius: 3px;
