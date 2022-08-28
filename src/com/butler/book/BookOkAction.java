@@ -34,7 +34,7 @@ public class BookOkAction implements Action{
 		int USER_NUM_FK = 0;
 		BookDAO bdao = new BookDAO();
 		PetsDAO pdao = new PetsDAO();
-		
+		 
 		//데이터베이스에 올릴 호텔 DTO 생성부분		
 		//호텔넘버를 가져오는 부분
 		int BUSINESS_PLACE_NUM_FK = Integer.parseInt(req.getParameter("BUSINESS_PLACE_NUM_FK"));

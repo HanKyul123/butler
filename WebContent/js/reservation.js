@@ -123,7 +123,7 @@ $('#animal').change(function() {
         $('.amphibia_weight').css("display", "none");
         $('.Pig_weight').css("display", "none");
 
-
+ 
     }else if (resultT == '족제비과') {
         
         $('.selectprice').show();
