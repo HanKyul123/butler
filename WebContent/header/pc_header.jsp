@@ -8,14 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header_login_front</title>
-<%--     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">    --%>
     <link href="${pageContext.request.contextPath}/css/jquery-ui.css" rel="stylesheet">
     
    
 </head>
 ​
-
-
 <!-- 헤더  -->
 <header>
 <div class="srh_mask" onclick="tog2()">&nbsp;</div>
@@ -75,14 +72,16 @@
          <li id="status_login_empty" class="list" >♥</li>
          <li id="status_login" class="list" >
             <div class="set_profile">
-               <div class="profile">
-                  <img class="pf" src="${pageContext.request.contextPath}/img/profile1.png" alt="">&nbsp;
-               </div>
+               <a href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">
+	               <div class="profile">
+	                  <img class="pf" src="${pageContext.request.contextPath}/img/profile1.png" alt="">&nbsp;
+	               </div>
+               </a>
                <div class="click_pf">
                   <img id="PF" class="Cpf" src="${pageContext.request.contextPath}/img/click_profile.png" alt="">&nbsp;
                   <div class="more_profile">
                      <div id="CMpf" class="nickname">
-                        <a href="">${LoginUser.user_nickname}</a>
+                        <a href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">${LoginUser.user_nickname}</a>
                      </div>
                      <div id="CMpf" class="my_inform">
                         <a href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">내 정보</a>
@@ -93,9 +92,7 @@
                      <div id="CMpf" class="my_review">
                         <a href="${pageContext.request.contextPath}/app/myinfo/myinfo_reviewView.jsp">내가 쓴 리뷰</a>
                      </div>
-                     <div id="CMpf" class="heart_cart">
-                        <a href="">찜 목록</a>
-                     </div>
+                    
                      <div id="CMpf" class="logout">
                         <a href="${pageContext.request.contextPath}/main.logout.us">로그아웃</a>
                      </div>
@@ -160,20 +157,12 @@
    
 </script>
 <script src="${pageContext.request.contextPath}/js/List.js"></script>
-<%-- <script src="${pageContext.request.contextPath}/js/pc_header.js"></script> --%>
-    <script src="https://code.jquery.com/jquery-1.12.4.js">
-    </script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js">
+</script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
    $( "#keyword" ).autocomplete({
       source: List
    });
 </script>
 
-
-</html> 
-      
-
-
-
-<!-- 자바스크립트로 클래스 이름으로 헤더를 찾아 클래스 명을 추가하여 스크롤을 했을 때
-     디자인을 원하는 대로 바꿔 배치하기. (header.roll) -->
+</html>
