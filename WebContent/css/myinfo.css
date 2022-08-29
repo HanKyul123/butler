@@ -142,7 +142,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         flex-wrap: wrap;
     }
 
-    .profile{
+    .profile2{
         margin-top: 10px;
         width: 130px;
     }
@@ -208,6 +208,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
         .phone_notice{
+            margin-top: 5px;
+            font-size: 12px;
+            color:rgb(151, 151, 151);
+        }
+        .phone_notice2{
+        	display:none;
+        	margin-bottom:-10px;
             margin-top: 5px;
             font-size: 12px;
             color:rgb(151, 151, 151);

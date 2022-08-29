@@ -85,11 +85,28 @@
 	<div class="my_info_BigBox">  
 
 		<div class="my_info_box1">
-			<a class="my_info_manage" href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp"><div id="all_choice">내 정보
-					관리</div></a> <br> <a class="my_reservation_info" href="${pageContext.request.contextPath}"><div
-					id="all_choice">예약 내역</div></a> <br> <a class="my_review_info"
-				href="${pageContext.request.contextPath}"><div id="all_choice">내가 쓴 리뷰</div></a> <br> <a
-				class="my_cart_info" href="${pageContext.request.contextPath}"><div id="all_choice">찜 목록</div></a>
+			<a class="my_info_manage" href= "${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">
+				<div id="all_choice">
+					내 정보 관리
+				</div>
+			</a> 
+			
+			<br> 
+			
+			<a class="my_reservation_info" href= "${pageContext.request.contextPath}/app/myinfo/myinfo_reservationView.jsp">
+				<div id="all_choice">
+					예약 내역
+				</div>
+			</a> 
+			
+			<br>
+			
+			<a class="my_review_info" href="${pageContext.request.contextPath}/app/myinfo/myinfo_reviewView.jsp">
+				<div id="all_choice">
+					내가 쓴 리뷰
+				</div>
+			</a>
+
 		</div>
 
 		<!-- 내용 공간 -->
@@ -97,8 +114,8 @@
 
 			<div class="modify_title">내 정보 수정</div>
 
-			<div class="profile">
-				<img class="profile"
+			<div class="profile2">
+				<img class="profile2"
 					src="${pageContext.request.contextPath}/img/profile1.png" alt="">
 			</div>
 
@@ -181,7 +198,7 @@
 
 				<div class="phone_notice">개인 정보 보호를 위해 내 정보는 모두 안전하게 암호화됩니다.</div>
 
-
+				<div class="phone_notice2" id="phone_notice2">수정할 전화번호를 입력해주세요.</div>
 				<div class="flexMody">
 				
 					<input class="write_new_phone" type="tel" id="WNP" minlength="10"
@@ -273,7 +290,7 @@
 						onclick="myFunction4_1()">수정완료</button>
 					<button type="button" id="XB2" onclick="myFunction4_2()">X</button>
 				</div>
-				<input id="final_send" type="submit" value="수정 완료"  title="닉네임, 휴대번호, 주소 수정완료" />
+				<input id="final_send" type="submit" value="내 정보 수정 완료"  title="닉네임, 휴대번호, 주소 수정완료" />
 			</form>
 
  
@@ -561,6 +578,7 @@
 				        var v = document.getElementById("XB5");
 				        var u = document.getElementById("USP");	        
 				        var w = document.getElementById("WNP");
+				        var h = document.getElementById("phone_notice2");
 				
 				       
 				        var user_phone2 = document.getElementById("user_phone2");
@@ -587,6 +605,7 @@
 						  w.style.display="none";
 						  s.style.display="none";
 						  v.style.display="none";
+						  h.style.display="none";
 						  x.value="";
 						  w.value="";
 

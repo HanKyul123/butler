@@ -150,6 +150,7 @@ function myFunction2() {
     var y = document.getElementById("MPB");
     var c = document.getElementById("SC");
     var d = document.getElementById("XB");
+    var e = document.getElementById("phone_notice2");
    
 
     $(".modify_nick_btn").attr("disabled",true);
@@ -160,6 +161,7 @@ function myFunction2() {
       y.style.display="none"
       c.style.display = "block";
       d.style.display = "block";
+      e.style.display = "block";
       x.focus();
 
   }
@@ -170,7 +172,8 @@ function myFunction2_1() {
     var y = document.getElementById("MPB");
     var c = document.getElementById("SC");
     var d = document.getElementById("XB");
-
+    var e = document.getElementById("phone_notice2");
+    
     $(".modify_nick_btn").attr("disabled",false);
     $(".modify_addr_btn").attr("disabled",false);
     $(".modify_pw").attr("onclick","change_pw()");
@@ -181,6 +184,7 @@ function myFunction2_1() {
     x.style.display = "none";
     y.style.display="block";
     c.style.display = "none";
+    e.style.display = "none";
       d.style.display = "none";
       
     }
@@ -851,6 +855,7 @@ const over2 = document.getElementById('see_pw2');
            let e = document.getElementById("PCB");
            let f = document.getElementById("XB5");
            let g = document.getElementById("time");
+           var h = document.getElementById("phone_notice2");
            
            
            a.style.display="none";
@@ -860,6 +865,7 @@ const over2 = document.getElementById('see_pw2');
            e.style.display="none";
            f.style.display="none";
            g.style.display="none";
+           h.style.display="none";
            
            
            a.value="";
