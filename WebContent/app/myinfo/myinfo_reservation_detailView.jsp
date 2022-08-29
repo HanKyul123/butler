@@ -45,7 +45,8 @@
 					<c:when test="${book != null and book.book_status==1}">
 						<div id="detail_now" class="detail_now">예약 중</div>
 						<div id="cancel_btn">
-                			<button type="button" id="reserve_cancel">예약 취소</button>
+                			<a href="/book/cancelReservation.book?BOOK_NUM_PK=${book.BOOK_NUM_PK}"><button type="button" id="reserve_cancel">예약 취소</button>
+							</a>
 						</div>
 					</c:when>
 					<c:when test="${book != null and book.book_status==2}">

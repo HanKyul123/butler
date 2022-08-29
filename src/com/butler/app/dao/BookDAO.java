@@ -34,4 +34,8 @@ public class BookDAO {
 	public List findRC(int USER_NUM_FK) {
 		 return sqlsession.selectList("book.rc",USER_NUM_FK);
 	}
+
+	public boolean cancelReservation(int BOOK_NUM_PK) {
+		return sqlsession.update("book.cancelReservation",BOOK_NUM_PK)==1;
+	}
 }

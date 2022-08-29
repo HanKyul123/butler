@@ -54,7 +54,14 @@ public class BookFrontController extends HttpServlet{
 					e.printStackTrace();
 				}
 			break;
-				
+			
+			case "/book/cancelReservation.book":
+				try {
+					transfer = new CancelReservationAction().execute(req, resp);		
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			break;
 		}
 		
 		
