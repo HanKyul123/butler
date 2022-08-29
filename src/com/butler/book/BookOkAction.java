@@ -99,15 +99,7 @@ public class BookOkAction implements Action{
 		List<BookDTO> rip = new ArrayList<BookDTO>();
 		List<BookDTO> ucBook = new ArrayList<BookDTO>();
 		
-		rc = bdao.findRC(USER_NUM_FK);
-		System.out.println("bdao.findRC(USER_NUM_FK) 호출완료");
-		System.out.println(rc);
-		rip = bdao.findRIP(USER_NUM_FK);
-		System.out.println("bdao.findRIP(USER_NUM_FK) 호출완료");
-		System.out.println(rip);
-		ucBook = bdao.findUCBook(USER_NUM_FK);
-		System.out.println("bdao.findUCBook(USER_NUM_FK) 호출완료");
-		System.out.println(ucBook);
+	
 		
 		int BOOK_NUM_PK = 0;				
 		if(bdao.booking(newbook)) {
@@ -130,6 +122,15 @@ public class BookOkAction implements Action{
 					System.out.println("petDto"+i+"번 방 DB입력실패");
 				}
 			}
+			rc = bdao.findRC(USER_NUM_FK);
+//			System.out.println("bdao.findRC(USER_NUM_FK) 호출완료");
+//			System.out.println(rc);
+			rip = bdao.findRIP(USER_NUM_FK);
+//			System.out.println("bdao.findRIP(USER_NUM_FK) 호출완료");
+//			System.out.println(rip);
+			ucBook = bdao.findUCBook(USER_NUM_FK);
+//			System.out.println("bdao.findUCBook(USER_NUM_FK) 호출완료");
+//			System.out.println(ucBook);
 			
 			req.setAttribute("rc", rc);
 			req.setAttribute("rip",rip);
