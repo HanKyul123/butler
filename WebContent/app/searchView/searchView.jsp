@@ -70,14 +70,14 @@
                     <label><input type="checkbox" name="Daejeon" id="location" value="13">대전</label>
                     <label><input type="checkbox" name="Ulsan" id="location" value="12">울산</label>
                     <label><input type="checkbox" name="Sejong" id="location" value="13">세종</label>
-                    <label><input type="checkbox" name="Gyeonggi-do" id="location" value="12">경기도</label>
-                    <label><input type="checkbox" name="Gangwon-do" id="location" value="13">강원도</label>
-                    <label><input type="checkbox" name="Chungcheongbuk-do" id="location" value="12">충청북도</label>
-                    <label><input type="checkbox" name="Chungcheongnam-do" id="location" value="13">충청남도</label>
-                    <label><input type="checkbox" name="Jeollabuk-do" id="location" value="12">전라북도</label>
-                    <label><input type="checkbox" name="Jeollanam-do" id="location" value="13">전라남도</label>
-                    <label><input type="checkbox" name="Gyeongsangbuk-do" id="location" value="12">경상북도</label>
-                    <label><input type="checkbox" name="Gyeongsangnam-do" id="location" value="13">경상남도</label>
+                    <label><input type="checkbox" name="Gyeonggi_do" id="location" value="12">경기도</label>
+                    <label><input type="checkbox" name="Gangwon_do" id="location" value="13">강원도</label>
+                    <label><input type="checkbox" name="Chungcheongbuk_do" id="location" value="12">충청북도</label>
+                    <label><input type="checkbox" name="Chungcheongnam_do" id="location" value="13">충청남도</label>
+                    <label><input type="checkbox" name="Jeollabuk_do" id="location" value="12">전라북도</label>
+                    <label><input type="checkbox" name="Jeollanam_do" id="location" value="13">전라남도</label>
+                    <label><input type="checkbox" name="Gyeongsangbuk_do" id="location" value="12">경상북도</label>
+                    <label><input type="checkbox" name="Gyeongsangnam_do" id="location" value="13">경상남도</label>
                     <label><input type="checkbox" name="Jeju" id="location" value="13">제주</label>
                 </div>         
             </div>
