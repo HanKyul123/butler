@@ -3,7 +3,8 @@ const writeid = document.getElementById('writeid');
 const iderror_message = document.getElementById('iderror_message');
 const pwerror_message = document.getElementById('pwerror_message');
 const loginbtn = document.getElementById('loginbtn');
-const reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[~?!@#$%^&*_-]).{8,}$/;
+const reg = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g;
+const regs = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
 
 /*이메일 정규식*/
 function checkid(value){
@@ -35,10 +36,10 @@ function checkpw(value){
 		 writepw.style.height = "68px";
 		 pwerror_message.style.display = "block";
 		 document.getElementById('pwerror_message').innerHTML = "비밀번호를 입력해주세요."
-	 }else if(!reg.test(value)){
+	 }else if(!reg.test(value)&&!(regs.test(value))){
 		 writepw.style.height = "76px";
 		 pwerror_message.style.display = "block";
-		 document.getElementById('pwerror_message').innerHTML = "8자 이상,숫자,대문자,소문자,특수문자를 모두 하나 이상 포함하세요.";
+		 document.getElementById('pwerror_message').innerHTML = "8자 이상,숫자,대문자,소문자,특수문자를 입력해주세요";
 	 }else if(/(\w)\1\1\1/.test(value)){
 		 writepw.style.height = "68px";
 		 pwerror_message.style.display = "block";
