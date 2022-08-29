@@ -14,6 +14,16 @@ public class ReviewDTO {
 	private String reply_contents;
 	private String reply_regdate;
 	
+	public ReviewDTO() {
+	}
+	public ReviewDTO(int business_place_num_fk,String review_contents,String review_nickname,String review_file_systemname,String review_file_orgname) {
+		this.business_place_num_fk = business_place_num_fk;
+		this.review_contents = review_contents;
+		this.review_nickname = review_nickname;
+		this.review_file_systemname = review_file_systemname;
+		this.review_file_orgname = review_file_orgname;
+	}
+	
 
 	public int getReview_num_pk() {
 		return review_num_pk;
@@ -58,9 +68,6 @@ public class ReviewDTO {
 		this.review_file_orgname = review_file_orgname;
 	}
 	
-	
-	
-	
 	public int getReply_num_pk() {
 		return reply_num_pk;
 	}
@@ -85,7 +92,36 @@ public class ReviewDTO {
 	public void setReply_regdate(String reply_regdate) {
 		this.reply_regdate = reply_regdate;
 	}
+//	private int review_num_pk;
+//	private int business_place_num_fk;
+//	private String review_contents;
+//	private String review_nickname;
+//	private String review_regdate;
+//	private String review_file_systemname;
+//	private String review_file_orgname;
+//	
+//	private int reply_num_pk;
+//	private int review_num_fk;
+//	private String reply_contents;
+//	private String reply_regdate;
 	
+	@Override
+	public String toString() {
+		String message = "";
+		message = "review_num_pk : " + review_num_pk+"\n"+
+				"business_place_num_fk : " + business_place_num_fk+"\n"+
+				"review_contents : " + review_contents+"\n"+
+				"review_nickname : " + review_nickname+"\n"+
+				"review_regdate : " + review_regdate+"\n"+
+				"review_file_systemname : " + review_file_systemname+"\n"+
+				"review_file_orgname : " + review_file_orgname+"\n"+
+				"reply_num_pk : " + reply_num_pk+"\n"+
+				"review_num_fk : " + review_num_fk+"\n"+
+				"reply_contents : " + reply_contents+"\n"+
+				"reply_regdate : " + reply_regdate+"\n"
+				;
+		return message;
+	}
 	
 	
 	
