@@ -803,8 +803,8 @@ a>#choose_btn{
 
    .reply_box{
     position: relative;
-    bottom: 8.1px;
-    border: 1px solid rgb(166, 166, 166);
+    bottom: 58px;
+    border: 1px solid rgb(180, 180, 180);
     border-radius: 5px;
     width: 97.5%;
     padding: 10px;
@@ -854,6 +854,7 @@ a>#choose_btn{
     position: relative;
     left: 10px;
     width: 40px;
+    bottom: 50px;
    }
 
 
