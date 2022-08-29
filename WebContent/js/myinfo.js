@@ -523,6 +523,7 @@ function change_pw(){
         $(".modify_nick_btn").attr("disabled",true);
         $(".modify_addr_btn").attr("disabled",true);
         $(".modify_phone_btn").attr("disabled",true);
+        $("#final_send").attr("disabled",true);
         
         var notsame = document.getElementById("notsamephone");
         notsame.style.color="red"
@@ -558,6 +559,7 @@ function cancel_pw(){
         $(".modify_addr_btn").attr("disabled",false);
         $(".modify_phone_btn").attr("disabled",false);
         $(".modify_pw").attr("onclick","change_pw()");
+        $("#final_send").attr("disabled",false);
 
         $("#WNP2").attr("disabled",false);
         $("#SC2").attr("disabled",true);
@@ -886,13 +888,13 @@ const over2 = document.getElementById('see_pw2');
         function is_samephone(value) {
          let oriphone = document.getElementById("user_phone1");
          let user_phone2 = document.getElementById("user_phone2");
-         if(value!==user_phone2.value){
+         if(value!==oriphone.value){
             notsame.innerHTML="회원님의 전화번호와 일치하지 않습니다.";
             notsame.style.color="red";
             $(".send_code2").attr("disabled",true);
             notsame.style.display="block";
             return false;
-         }else if(value.length!==user_phone2.value.length){
+         }else if(value.length!==oriphone.value.length){
             notsame.innerHTML="회원님의 전화번호와 일치하지 않습니다.";
             notsame.style.color="red";
             $(".send_code2").attr("disabled",true);
@@ -910,4 +912,16 @@ const over2 = document.getElementById('see_pw2');
          
       
       }
+        
+        
+        function phone_putin() {
+        	var u = document.getElementById("USP");	  
+        	var user_phone1 = document.getElementById("user_phone1");
+	        
+	        let str = user_phone1.value;
+	        let phonenum = str.slice(0,3)+"-"+str.slice(3,7)+"-"+str.slice(7,11);
+	        u.innerHTML=phonenum;
+		}
+        
+        phone_putin();
  

@@ -306,7 +306,7 @@
 				<div class="modify_pw" id="MDPW" onclick="change_pw()" title="비밀번호 변경하기">비밀번호 변경
 					></div>
 				<div class="modify_pw2" id="MDPW2" onclick="cancel_pw()" title="비밀번호 변경 취소">비밀번호
-					변경∨</div>
+					변경 취소∨</div>
 				<div class="explaintitle" id="ELT">전화번호 인증을 해주세요</div>
 				<div class="flexMody">
 					<input class="write_new_phone2" type="tel" name="" id="WNP2"
@@ -336,7 +336,7 @@
 				<div class="new_pw">
 					새 비밀번호 <input id="new_pw" type="password" name="new_pw"
 						placeholder="새 비밀번호를 입력해주세요." id="all_pw" class="pw_I"
-						onkeyup="checkpw(this.value)"> <img
+						onkeyup="checkpw(this.value)"  autocomplete="new-password"> <img
 						src="${pageContext.request.contextPath}/img/eye.png" alt=""
 						id="see_pw" class="see_pw">
 
@@ -349,7 +349,7 @@
 				<div class="re_new_pw">
 					비밀번호 재입력 <input id="re_new_pw" type="password" name="re_new_pw"
 						placeholder="비밀번호를 재입력해주세요." id="all_pw" class="re_pw_I"
-						onkeyup="checkrepw(this.value)"> <img
+						onkeyup="checkrepw(this.value)"  autocomplete="new-password"> <img
 						src="${pageContext.request.contextPath}/img/eye.png" alt=""
 						id="see_pw2" class="see_pw2">
 

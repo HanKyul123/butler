@@ -433,9 +433,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
 
-        .modify_pw2{
-            display: none;
-        }
+
 
 
         .modify_pw,.modify_pw2{
@@ -444,6 +442,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             margin-top: 50px;
             color: black;
             font-size: 14px;
+        }
+                .modify_pw2{
+            display: none;
+             width: 120px;
         }
 
         .modify_pw:hover,.modify_pw2:hover{
