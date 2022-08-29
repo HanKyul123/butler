@@ -18,27 +18,31 @@
 		where business_place_num_pk=#{business_place_num_pk};
 	</select>
 	<select id="ReviewResultOK" parameterType="_int" resultType="rdto">
-		select * from review_tb rev join reply_tb rep 
-		where rev.business_place_num_fk = ${business_place_num_fk} and rep.business_place_num_fk = ${business_place_num_fk}
-	</select>
+      select * from review_tb left join reply_tb
+      on review_tb.business_place_num_fk = reply_tb.business_place_num_fk
+      where review_tb.business_place_num_fk = #{business_place_num_pk}
+   </select>
 	<update id="Review_modifyAction" parameterType="hashMap">
 		update review_tb set review_contents = #{Mnew_review}, review_regdate=now()
 		where REVIEW_NUM_PK=#{review_num}
 	</update> 
 	<select id="choiseOK" parameterType="hashMap" resultType="hdto">
 		select * from business_tb where 
-		business_hashtag like('%${pet1}%') or 
-		business_hashtag like('%${pet2}%') or 
-		business_hashtag like('%${pet3}%') or
-		business_hashtag like('%${pet4}%') or 
-		business_hashtag like('%${pet5}%') or 
-		business_hashtag like('%${pet6}%') or
-		business_hashtag like('%${pet7}%') or 
-		business_hashtag like('%${pet8}%') or
-		business_hashtag like('%${pet9}%') or
-		business_hashtag like('%${pet0}%') or
-		business_category = #{category1} or
-		business_category = #{category2}	
+		business_hashtag like('%${pet1}%') or business_hashtag like('%${pet2}%') or 
+		business_hashtag like('%${pet3}%') or business_hashtag like('%${pet4}%') or 
+		business_hashtag like('%${pet5}%') or business_hashtag like('%${pet6}%') or
+		business_hashtag like('%${pet7}%') or business_hashtag like('%${pet8}%') or
+		business_hashtag like('%${pet9}%') or business_hashtag like('%${pet0}%') or
+		business_category = #{category1} or business_category = #{category2} or
+		business_addr like('%${location1}%') or business_addr like('%${location2}%') or
+		business_addr like('%${location3}%') or business_addr like('%${location4}%') or
+		business_addr like('%${location5}%') or business_addr like('%${location6}%') or
+		business_addr like('%${location7}%') or business_addr like('%${location8}%') or
+		business_addr like('%${location9}%') or business_addr like('%${location10}%') or
+		business_addr like('%${location11}%') or business_addr like('%${location12}%') or
+		business_addr like('%${location13}%') or business_addr like('%${location14}%') or
+		business_addr like('%${location15}%') or business_addr like('%${location16}%') or
+		business_addr like('%${location17}%')	
 	</select>
 	<select id="recommandResult" parameterType="_int" resultType="hdto">
 		select * from business_tb order by business_workplace_score desc limit #{topnum};

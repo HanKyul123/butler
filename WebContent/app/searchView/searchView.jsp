@@ -53,8 +53,8 @@
             <div id="Tagin" class="Type">
                 <div id="TypeTitle" class="HotelType">숙소 분류</div>
                 <div class="checkbox2">
-                    <label><input type="checkbox" name="Hotel" id="Hotel" value="10">호텔</label><br>
-                    <label><input type="checkbox" name="Hospital" id="Hotel" value="11">동물병원</label>
+                    <label><input type="checkbox" name="Hotel" id="Hotel" value="1">호텔</label><br>
+                    <label><input type="checkbox" name="Hospital" id="Hotel" value="2">동물병원</label>
                 </div>         
             </div>
             

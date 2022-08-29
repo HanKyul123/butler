@@ -6,7 +6,13 @@
 <html lang="en">
 
 <%@ include file="../../header/pc_header.jsp"%>
-
+<style>
+     img.thumbnail{
+      display:block;
+      clear:both;      
+      height:80px;
+   }
+ </style>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -498,131 +504,165 @@
 		<a id="aa" name="D3">
 			<article class="review_info_box">
 
-				<div class="Rtitle">
-					▶리뷰
-					<button id="go_reservation_info">리뷰 쓰러 가기</button>
-				</div>
+            <div class="Rtitle">
+               ▶리뷰
+               <button id="go_reservation_info">리뷰 쓰러 가기</button>
+            </div>
 
 
-				<c:choose>
-					<c:when test="${reviewResult != null and reviewResult.size()>0 }">
-						<c:forEach items="${reviewResult}" var="reviewResult">
-						
-				<!-- ----------- 유저 리뷰와 관리인 답글 포함한 박스  하나 "Review_Reply" ---------------
-								  유저 리뷰를 지으면 관리인 답글까지 같이 지워진다. -->
-							<div class="Review_Reply">
+            <c:choose>
+               <c:when test="${reviewResult != null and reviewResult.size()>0 }">
+                  <c:forEach items="${reviewResult}" var="reviewResult">
+                  <!-- 유저 리뷰와 관리인 답글 포함한 박스
+                            유저 리뷰를 지으면 관리인 답글까지 같이 지워진다.
+                            관리인이 답장을 달지 않았으면 
+                           .replyBigbox display:none 으로 해놓기
+                     -->
+                     <div class="Review_Reply">
+                     
+                        <div class="user_review_box">
+                           <div class="user_info">
+                              <span class="usernick">${reviewResult.review_nickname}</span> 
+                              <img class="user_from" src="${pageContext.request.contextPath}/img/카카오톡.png" alt="">
+                              <span class="user_date">${reviewResult.review_regdate}</span>
 
-								<div class="user_review_box">
-									<div class="user_info">
-										<span class="usernick">${reviewResult.review_nickname}</span>
-										<img class="user_from"
-											src="${pageContext.request.contextPath}/img/카카오톡.png" alt="">
-										<span class="user_date">${reviewResult.review_regdate}</span>
+                              <!-- 유저 리뷰 수정하는 버튼 -->
+                              <button id="modify_Review" class="Review_btn"
+                                 onclick="modify()" title="수정하기">
+                                 <img id="modi"
+                                    src="${pageContext.request.contextPath}/img/modify_icon.png"
+                                    alt="" class="MD">
+                              </button>
 
-										<!-- 유저 리뷰 수정하는 버튼 -->
-										<button type="button" id="modify_Review" class="Review_btn" onclick="modify()" title="수정하기">
-											<img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD">
-										</button>
+                              <!-- 유저 리뷰 삭제하는 버튼 -->
+                              <button id="delete_Review" class="Review_btn" onclick="delete_review(this)" title="삭제하기">
+                                 <img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
+                              </button>
 
-										<!-- 유저 리뷰 삭제하는 버튼 -->
-										<button type="submit" id="delete_Review" class="Review_btn" onclick="delete_review(this)" title="삭제하기">
-											<img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
-										</button>
+                              <br> <span class="user_pet"> 아이 종류: </span> <span
+                                 class="user_pet_what">강아지</span>
+                           </div>
 
-										<br> <span class="user_pet"> 아이 종류: </span> <span
-											class="user_pet_what">강아지</span>
+                           <div id="Rbox" class="user_review">
+                              <!-- <div id="Rbox" class="user_title">여기는 리뷰제목입니다.</div> -->
 
-									</div>
+                              <div id="Rbox" class="user_contents">
+                                 ${reviewResult.review_contents}
+                                 <c:choose>
+                                    <c:when test="${reviewResult.review_file_systemname != null}">                                 
+                                       <img src="${cp}/reviewfile/${reviewResult.review_file_systemname}" class="thumbnail">
+                                    </c:when>
+                                    <c:otherwise>
+                                       
+                                    </c:otherwise>
+                                 </c:choose>                                 
+                              </div>
+                           </div>
 
-									<div id="Rbox" class="user_review">
-										<!-- <div id="Rbox" class="user_title">여기는 리뷰제목입니다.</div> -->
+                           <!-- 유저가 올리는 사진 -->
+                           <div class="user_review_pic" id="URP">
+                              
+                           </div>
 
-										<div id="Rbox" class="user_contents">
-											${reviewResult.review_contents}</div>
-									</div>
+                        </div>
+               </div>
 
-									<!-- 유저가 올리는 사진 -->
-									<div class="user_review_pic" id="URP"></div>
+                     <!-- 수정박스 -->
+                     <form id="review_modify_Form" method="post" action="/user/review_modifyAction.us" enctype="multipart/form-data">
+                        <div class="Mbox">
+                           <div class="flex_go">
+                              <div>
+                                 <span id="user_pet_M" class="Mall"> 아이 종류:</span> 
+                                 <span id="user_pet_what_M" class="Mall">강아지</span><br> 
+                                 <span id="price_prod" class="Mall">무게와 가격</span>
+                              </div>
 
-								</div>
+                              <div class="btnbox">
+                                 <button type="submit" class="CB" onclick="complete()">
+                                    <img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" id="Mbtn" class="MCbtn">
+                                 </button>
+                                 <button type="button" class="CB" onclick="cancel()">
+                                    <img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" id="Dbtn" class="MCbtn">
+                                 </button>
+                              </div>
+                           </div>
+                           <textarea name="Mnew_review" id="Mnew_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>
+                           <input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}"> 
+                           <input type="hidden" id="business_place_num_pk" name="business_place_num_pk"value="${hotelresult.business_place_num_pk}">
 
-								<!-- 수정박스 -->
-								<form id="review_modify_Form" method="post"
-									action="/user/review_modifyAction.us">
-									<div class="Mbox">
-										<div class="flex_go">
-											<div>
-												<span id="user_pet_M" class="Mall"> 아이 종류:</span> <span
-													id="user_pet_what_M" class="Mall">강아지</span><br> <span
-													id="price_prod" class="Mall">무게와 가격</span>
-											</div>
+                           <!-- 사진 추가하면 사진이 담긴 자식 생성됨. -->
+                           
+                           <div class="modypic" id="ele">
+                              <c:forEach var="i" begin="0" end="1">
+                              <div class="file${i+1}_cont">
 
-											<div class="btnbox">
-												<button type="submit" class="CB" onclick="complete()">
-													<img
-														src="${pageContext.request.contextPath}/img/complete_btn.png"
-														alt="" id="Mbtn" class="MCbtn">
-												</button>
-												<button type="button" class="CB" onclick="cancel()">
-													<img
-														src="${pageContext.request.contextPath}/img/Mdelete_btn.png"
-														alt="" id="Dbtn" class="MCbtn">
-												</button>
-											</div>
-										</div>
-										<textarea name="Mnew_review" id="Mnew_review" cols="30"
-											rows="10">${reviewResult.review_contents}</textarea>
-										<input type="hidden" id="review_num" name="review_num"
-											value="${reviewResult.review_num_pk}"> <input
-											type="hidden" id="BUSINESS_PLACE_NUM_FK"
-											name="BUSINESS_PLACE_NUM_FK"
-											value="${hotelresult.business_place_num_pk}">
+                                 <div style="float: left;">
+                                    <input type="file" name="file${i+1}" id="file${i+1}" style="display: none;">
+                                    <input type="hidden" name="filename" value="${i<files.size() ? files[i].orgname : ''}">
+                                 </div>
+                                 
+                                 <c:forTokens items="${files[i].orgname}" delims="." var="token" varStatus="status">
+                                    <c:if test="${status.last}">
+                                       <c:if
+                                          test="${token eq 'jpg' or token eq 'jpeg' or token eq 'png' or token eq 'gif' or token eq 'webp'}">
+                                          <img src="${cp}/reviewfile/${files[i].systemname}" class="thumbnail">
+                                       </c:if>
+                                    </c:if>
+                                 </c:forTokens>
+                              </div>
+                              </c:forEach>                           
+                           </div>
+                           
+                           <div class="addpic">
+                              <a href="javascript:upload('file${1}')">파일 선택</a> 
+                              <span id="file${1}name"> ${i<files.size() ? files[0].orgname : "선택된 파일 없음"} </span>
+                              <div style="float: right; margin-right: 100px;">
+                                 <a href="javascript:cancelFile('file${1}')">첨부 삭제</a>
+                              </div> 
+                              
+<%--                            <input type="file" name="file" id="file" href="javascript:upload('file${1}')">
+                              <input type="button" value="이미지 추가" id="addpic_btn" class="CaddB">
+                              <input type="button" value="이미지 삭제" href="javascript:cancelFile('file${1}')"> --%>
+                           </div>
+                        </div>
+                     </form>
 
-										<!-- 사진 추가하면 사진이 담긴 자식 생성됨. -->
-										<div class="modypic" id="ele"></div>
+                     <!-- 관리인 리뷰 답장 -->
+                     <c:choose>
+                        <c:when test="${reviewResult.reply_contents != null}">
+                           <div class="replyBigbox">
+                              <img src="${pageContext.request.contextPath}/img/Ladder.png" alt="" class="ladder">
+                              <div class="reply_box">
+                                 <div class="manager_info">
+                                    <img
+                                       src="${pageContext.request.contextPath}/img/manager_icon.png"
+                                       alt="" class="manager_icon">
+                                    <div class="manager_name">호텔의 작성자 아이디</div>
+                                    <div class="manager_date">${reviewResult.reply_regdate}</div>
+                                 </div>
+                                 <div class="manager_Hotelname">${hotelresult.business_name}</div>
+                                 <div class="manager_reply">
+                                    ${reviewResult.reply_contents}
+                                 </div>
+                              </div>
+                           </div>
+                        </c:when>
+                        <c:otherwise>
+   `                        
+                        </c:otherwise>
+                     </c:choose>
 
-										<div class="addpic">
-											<input type="file" name="file" id="file"> <input
-												type="button" value="이미지 추가" id="addpic_btn" class="CaddB">
-										</div>
 
-									</div>
-								</form>
-
-								<!-- 관리인 리뷰 답장 -->
-								<div class="replyBigbox">
-									<img src="${pageContext.request.contextPath}/img/Ladder.png"
-										alt="" class="ladder">
-									<div class="reply_box">
-
-										<div class="manager_info">
-											<img
-												src="${pageContext.request.contextPath}/img/manager_icon.png"
-												alt="" class="manager_icon">
-											<div class="manager_name">관리인 닉네임 또는 이름</div>
-											<div class="manager_date">날짜</div>
-										</div>
-
-										<div class="manager_Hotelname">여기는 호텔 이름입니다.</div>
-
-										<div class="manager_reply">
-											여기는 답장 내용입니다. <br> 답자아아앙
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<!-- ------------------------------------------------------------------------ -->
-						</c:forEach>
-					</c:when>
-					<c:otherwise>
-						<div id="emty_review">
-							<div id="ER">아직 리뷰가 없습니다.</div>
-						</div>
-					</c:otherwise>
-				</c:choose>
-
-			</article>
+                     </div>
+                  </c:forEach>
+               </c:when>
+               <c:otherwise>
+                  <div id="emty_review">
+                     <div id="ER">아직 리뷰가 없습니다.</div>
+                  </div>
+               </c:otherwise>
+            </c:choose>
+         </article>
 		</a>
 	</div>
 
@@ -799,6 +839,58 @@
 
 	}
 </script>
+<script>
 
+   function upload(name){
+      $("#"+name).click();
+   }
+   //$(제이쿼리선택자).change(함수) : 해당 선택자의 요소에 변화가 일어난다면 넘겨주는 함수 호출
+   $("[type='file']").change(function(e){
+      //e : 파일이 업로드된 상황 자체를 담고있는 객체
+      //e.target : 파일이 업로드가 된 input[type=file] 객체(태그객체)
+      //e.target.files : 파일태그에 업로드를 한 파일 객체들의 배열
+      let file = e.target.files[0];
+      
+      if(file == undefined){
+         //$("#file1name")
+         $("#"+e.target.id+"name").text("선택된 파일 없음");
+         $("."+e.target.id+"_cont .thumbnail").remove();
+      }
+      else{
+         $("#"+e.target.id+"name").text(file.name);
+         
+         //["QR","png"]
+         let ext = file.name.split(".").pop();
+         if(ext == 'jpeg' || ext == 'jpg' || ext == 'png' || ext == 'gif' || ext == 'webp'){
+            $("."+e.target.id+"_cont .thumbnail").remove();
+            const reader = new FileReader();
+            
+            reader.onload = function(ie){
+               const img = document.createElement("img");
+               img.setAttribute("src",ie.target.result)
+               img.setAttribute("class",'thumbnail');//<img src="???/QR.png" class="thumbnail">
+               document.querySelector("."+e.target.id+"_cont").appendChild(img);
+            }
+            
+            reader.readAsDataURL(file);
+         }
+         
+      }
+   });
+   
+   function cancelFile(name){
+      if($.browser.msie){
+         $("input[name="+name+"]").replaceWith( $("input[name="+name+"]").clone(true) );
+      }
+      else{
+         $("input[name="+name+"]").val("");
+      }
+      $("#"+name+"name").text("선택된 파일 없음");
+      $("."+name+"_cont .thumbnail").remove();
+      $("#"+name+"name").next().val("");
+      
+   };
+   
+</script>
 
 </html>

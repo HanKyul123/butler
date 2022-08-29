@@ -1,9 +1,14 @@
 
-# 유저
+# 유저(사용자)
 insert into user_tb
 (user_logintype,user_status,user_identity,user_nickname, user_pw,user_name,user_zipcode,user_addr,user_addrdetail,user_addretc,user_email,user_phone) 
 values
-(0,1,0,'널뛰기','abcd1234','김사자','13310','경기 성남시 수정구 수정북로11번길 7-1','201호','(태평동)','abcd12345@naver.com','010-9876-5432'),
+(0,1,0,'널뛰기','abcd1234','김사자','13310','경기 성남시 수정구 수정북로11번길 7-1','201호','(태평동)','abcd12345@naver.com','010-9876-5432');
+
+#사업자
+insert into user_tb
+(user_logintype,user_status,user_identity,user_nickname, user_pw,user_name,user_zipcode,user_addr,user_addrdetail,user_addretc,user_email,user_phone, user_business_num) 
+values
 (0,1,1,'고라니','abcd1234','호롱이','15870','경기 군포시 번영로 380','407동 1002호','(산본동, 한라주공4단지)','abcd123456@naver.com','010-1234-1234','15755-488793'),
 (0,1,1,'코끼리','abcd1234','코끼리','15870','경기 안양시 만안구 경수대로 1141','101호','(안양동, 그린하이빌)','tkffuwnj@naver.com','010-4567-7531','15755-487193'),
 (0,1,1,'캥거루','abcd1234','캥거루','16293','경기 수원시 장안구 수일로 205','201동 202호','(조원동, 광교산임광그대가)','abc23456@nate.com','010-1784-1234','14755-488793'),
