@@ -719,7 +719,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     bottom: 2.5px;
     width: 15px;
  }
- input[type=file]::file-selector-button {
+ .file_box {
     cursor: pointer;
     margin-top: 10px;
     font-family: 'OTWelcomeRA';
@@ -736,11 +736,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
   .addpic{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
   }
   input[type=file]{
     width: 86.3%;
   }
-  #addpic_btn:disabled{
+  a>#addpic_btn:disabled{
     cursor: default;
     margin-top: 10px;
     font-family: 'OTWelcomeRA';
@@ -753,7 +755,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     border-radius: 4px;
     color: rgb(159, 159, 159);
   }
-  #addpic_btn{
+  
+  a>#addpic_btn{
     cursor: pointer;
     margin-top: 10px;
     font-family: 'OTWelcomeRA';
@@ -765,9 +768,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     background-color: rgb(131, 51, 149);
     border-radius: 4px;
     color: #fff;
+    position: relative;
+    left: 152px;
     
   }
   
+a>#choose_btn{
+	 cursor: pointer;
+
+    font-family: 'OTWelcomeRA';
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 33px;
+    border: 1px solid rgb(131, 51, 149);
+    background-color: rgb(131, 51, 149);
+    border-radius: 4px;
+    color: #fff;
+}
 
 
 
@@ -866,4 +884,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 #ER{
     margin-top: 100px;
     color: rgb(145, 145, 145);
+}
+
+
+
+
+.nospan{
+	margin-top:20px;
+	width: 52%;
 }

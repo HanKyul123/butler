@@ -614,12 +614,20 @@
                            </div>
                            
                            <div class="addpic">
-                              <a href="javascript:upload('file${1}')">파일 선택</a> 
-                              <span id="file${1}name"> ${i<files.size() ? files[0].orgname : "선택된 파일 없음"} </span>
-                              <div style="float: right; margin-right: 100px;">
-                                 <a href="javascript:cancelFile('file${1}')">첨부 삭제</a>
-                              </div> 
+                              <a class="file_box" href="javascript:upload('file${1}')">
+                              	 <div id="choose_btn" margin-right: 100px;">
+                              	 파일 선택
+                              	 </div>
+                              </a> 
                               
+                              <div class="nospan">
+                              <span id="file${1}name"> ${i<files.size() ? files[0].orgname : "선택된 파일 없음"} </span>
+                              </div>
+                              <a href="javascript:cancelFile('file${1}')">
+                              <div id="addpic_btn" style="float: right; margin-right: 100px;" onclick="deletepick()">         
+                                 		첨부 삭제
+                              </div> 
+                              </a>
 <%--                            <input type="file" name="file" id="file" href="javascript:upload('file${1}')">
                               <input type="button" value="이미지 추가" id="addpic_btn" class="CaddB">
                               <input type="button" value="이미지 삭제" href="javascript:cancelFile('file${1}')"> --%>

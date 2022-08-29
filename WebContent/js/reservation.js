@@ -905,21 +905,21 @@ const over1 = document.getElementById('modi');
 const over2 = document.getElementById('delete');
 
     over1.addEventListener("mouseover", function () {
-        over1.src="${pageContext.request.contextPath}/img/modify_icon_focus.png";
+        over1.src="../../img/modify_icon_focus.png";
     }, false);
 
     over1.addEventListener("mouseout", function () {
-        over1.src="${pageContext.request.contextPath}/img/modify_icon.png";
+        over1.src="../../img/modify_icon.png";
    
     }, false);
     
     
     over2.addEventListener("mouseover", function () {
-        over2.src="${pageContext.request.contextPath}/img/delete_focus.png";
+        over2.src="../../img/delete_focus.png";
     }, false);
 
     over2.addEventListener("mouseout", function () {
-        over2.src="${pageContext.request.contextPath}/img/delete.png";
+        over2.src="../../img/delete.png";
     }, false);
     
     
@@ -996,18 +996,22 @@ const over2 = document.getElementById('delete');
    })
 
    // 사진 지우기
-   function deletethispic(i){
-    var ele = document.getElementById("ele");
-      var eleCount = ele.childElementCount;
-    console.log(i.parentNode);
-
-    i.parentNode.remove();
-
-    eleCount=eleCount-1;
-    picCount=picCount-1;
-    console.log(eleCount);
-    $(".CaddB").attr("disabled",false);
-   }
+//   function deletethispic(I){
+//    var ele = document.getElementById("ele");
+//      var eleCount = ele.childElementCount;
+//    console.log(i.parentNode);
+//
+//    i.parentNode.remove();
+//
+//    eleCount=eleCount-1;
+//    picCount=picCount-1;
+//    console.log(eleCount);
+//    $(".CaddB").attr("disabled",false);
+//   }
+   
+   function deletepick() {
+	$(".thumbnail").remove();
+}
    
    
    // 수정 완료
