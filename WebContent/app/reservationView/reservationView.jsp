@@ -506,8 +506,12 @@
 			<article class="review_info_box">
 
             <div class="Rtitle">
-               ▶리뷰
-               <button id="go_reservation_info">리뷰 쓰러 가기</button>
+              	 ▶리뷰
+                 <c:if test="${LoginUser != null}">
+                     <a href="/book/findMyReservation.book">
+                     <button id="go_reservation_info">리뷰 쓰러 가기</button>
+                     </a>
+                 </c:if>
             </div>
 
 
@@ -561,8 +565,7 @@
 											</c:if>
 
 
-										<br> <span class="user_pet"> 아이 종류: </span> <span
-                                 class="user_pet_what">강아지</span>
+										
                            </div>
 
                            <div id="Rbox" class="user_review">
@@ -581,11 +584,6 @@
                               </div>
                            </div>
 
-                           <!-- 유저가 올리는 사진 -->
-                           <div class="user_review_pic" id="URP">
-                              
-                           </div>
-
                         </div>
                </div>
 
@@ -593,11 +591,7 @@
                      <form id="review_modify_Form" method="post" action="/user/review_modifyAction.us" enctype="multipart/form-data">
                         <div class="Mbox">
                            <div class="flex_go">
-                              <div>
-                                 <span id="user_pet_M" class="Mall"> 아이 종류:</span> 
-                                 <span id="user_pet_what_M" class="Mall">강아지</span><br> 
-                                 <span id="price_prod" class="Mall">무게와 가격</span>
-                              </div>
+                              
 
                               <div class="btnbox">
                                  <button type="submit" class="CB" onclick="complete()">

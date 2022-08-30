@@ -852,7 +852,7 @@ a>#choose_btn{
    }
 
 
-   #go_reservation_info{
+  #go_reservation_info{
     font-family: 'OTWelcomeRA';
 
     background-color: transparent;
@@ -868,7 +868,7 @@ a>#choose_btn{
     cursor: pointer;
     transition: 0.2s;
 }
-#go_reservation_info:hover{
+ #go_reservation_info:hover{
     background-color: rgb(253, 246, 255);
 }
 #emty_review{
