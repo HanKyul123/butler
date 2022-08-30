@@ -57,14 +57,12 @@ public class ReviewWriteOKAction implements Action{
 		List myReviews = new ArrayList();
 		
 		if(rdao.insertReview(review)) {
-			System.out.println("리뷰작성완료");	
-			myReviews = rdao.findMyReview(loginUser.getUser_nickname());		
+			System.out.println("리뷰작성완료");			
 			ActionTo transfer = new ActionTo();
 			transfer.setRedirect(false);		
 			transfer.setPath(req.getContextPath()+"/user/myinfoRevieViewAction.us");
 			return transfer;
 		}else {
-			myReviews = rdao.findMyReview(loginUser.getUser_nickname());	
 			System.out.println("리뷰작성실패");
 			out.print("<script>");
 			//alert('apple님 어서오세요~!');
