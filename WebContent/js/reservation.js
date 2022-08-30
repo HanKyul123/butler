@@ -324,6 +324,7 @@ let addprice = 0;
 const insidecnt = document.getElementById("parentadd");
 let toprice = document.getElementById("book_charge");
 
+console.log(insidecnt.childElementCount);
 
 // 장바구니 추가하기
   function copyDiv()  {
@@ -880,18 +881,7 @@ var totalarray=[];
 
 
 
-// 예약하기
-function reservation(){
-    
-    for(let i = 0; i < arraypet.length; i++) {
-        if(arraypet[i] === '삭제')  {
-            arraypet.splice(i,1);
-            i--;
-        }
-      }
 
-
-}
 
 
 
@@ -935,7 +925,6 @@ const over2 = document.getElementById('delete');
         i.parentNode.parentNode.parentNode.remove();
     }
 
-    //    유저가 올린 사진 갯수 구하고 css 적용
    var pic=document.getElementById("URP");
    var picCount = pic.childElementCount;
    console.log(picCount)
@@ -995,19 +984,6 @@ const over2 = document.getElementById('delete');
    
    })
 
-   // 사진 지우기
-//   function deletethispic(I){
-//    var ele = document.getElementById("ele");
-//      var eleCount = ele.childElementCount;
-//    console.log(i.parentNode);
-//
-//    i.parentNode.remove();
-//
-//    eleCount=eleCount-1;
-//    picCount=picCount-1;
-//    console.log(eleCount);
-//    $(".CaddB").attr("disabled",false);
-//   }
    
    function deletepick() {
 	$(".thumbnail").remove();

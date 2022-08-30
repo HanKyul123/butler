@@ -372,7 +372,7 @@
 
  
 
-	<form action="/book/BookOk.book" type="post" onsubmit="reservation()">
+	<form action="/book/BookOk.book" type="post" onsubmit="return reservation()">
 	
 				<div id="parentadd" class="parentadd">
 					<!-- 고른 상품이 추가되는 공간 -->
@@ -416,7 +416,7 @@
                   <img src="${pageContext.request.contextPath}/img/reservationCart.png" alt="" class="cart">
                </c:when>
                <c:otherwise>
-                  <button type="submit" class="reservation_btn" onclick="reservation()">예약하기</button>
+                  <button type="submit" class="reservation_btn">예약하기</button>
                   <img src="${pageContext.request.contextPath}/img/reservationCart.png" alt="" class="cart">               
                </c:otherwise>
             </c:choose>
@@ -813,6 +813,7 @@
 			fullcharge = 0;
 			anotherprice = 0;
 			totalprice.value=0;
+			insidecnt.childElementCount = 0;
 		}
 
 		// 담긴 상품들 어레이에서 삭제하기
@@ -925,6 +926,29 @@
       
    };
    
+</script>
+
+<script>
+//예약하기 (유효성검사)
+function reservation(){
+    for(let i = 0; i < arraypet.length; i++) {
+        if(arraypet[i] === '삭제')  {
+            arraypet.splice(i,1);
+            i--;
+        }
+      }
+    if(book_checkin_date.value=="" && book_checkout_date.value==""){
+            alert("기간을 설정하여주세요.");
+            location.reload();
+            return false;
+        }
+    if(insidecnt.childElementCount == 0){
+            alert("펫정보를 추가해주세요.");
+            location.reload();
+            return false;
+    }
+   
+}
 </script>
 
 </html>
