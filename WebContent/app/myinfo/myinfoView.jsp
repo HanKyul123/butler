@@ -93,7 +93,7 @@
 			
 			<br> 
 			
-			<a class="my_reservation_info" href= "${pageContext.request.contextPath}/app/myinfo/myinfo_reservationView.jsp">
+			<a class="my_reservation_info" href= "/book/findMyReservation.book">
 				<div id="all_choice">
 					예약 내역
 				</div>
@@ -101,7 +101,7 @@
 			
 			<br>
 			
-			<a class="my_review_info" href="${pageContext.request.contextPath}/app/myinfo/myinfo_reviewView.jsp">
+			<a class="my_review_info" href="/user/myinfoRevieViewAction.us">
 				<div id="all_choice">
 					내가 쓴 리뷰
 				</div>
