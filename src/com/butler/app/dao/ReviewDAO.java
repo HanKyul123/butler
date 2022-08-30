@@ -16,7 +16,7 @@ SqlSession sqlsession;
 	}
 	
 	public boolean insertReview(ReviewDTO review) {
-		return sqlsession.insert("review.insertBoard",review) == 1;
+		return sqlsession.insert("review.insertReview",review) == 1;
 	}
 
 	public boolean removeReview(int review_num) {
@@ -36,7 +36,9 @@ SqlSession sqlsession;
 	      return list;
 	   }
 
-	
+	public List findMyReview(String user_nickname) {
+		return   sqlsession.selectList("Hotel.MyinfoReviewResult",user_nickname);
+	}
 }
 
 

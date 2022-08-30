@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myinfo_writereview.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
+	
 </head>
 
 <%@ include file="../../header/pc_header.jsp" %>
@@ -96,5 +97,5 @@
 <%@ include file="../../footer/footer.jsp" %>
 <script src="${pageContext.request.contextPath}/js/pc_header.js"></script>
 <script src="${pageContext.request.contextPath}/js/writereview.js"></script>
-
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 </html>

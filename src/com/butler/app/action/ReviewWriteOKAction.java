@@ -34,33 +34,36 @@ public class ReviewWriteOKAction implements Action{
 		MultipartRequest multi = new MultipartRequest(req, saveFolder,size,"UTF-8",new DefaultFileRenamePolicy());
 		//input [type=file] 태그의 name을 써주면 시스템상 이름을 받아올수있음
 		String review_file_systemname = multi.getFilesystemName("file");
-		if(review_file_systemname == null) {
-			fcheck=true;
-		}
-		
 		//input [type=file] 태그의 name을 써주면 사용자가 업로드할 당시의 이름을 받아올 수 있음.
 		String review_file_orgname = multi.getOriginalFileName("file");
 		
 		String review_contents = multi.getParameter("review_contents");
 		loginUser= (UserDTO)session.getAttribute("LoginUser");
 		String review_nickname = loginUser.getUser_nickname();
-		int BUSINESS_PLACE_NUM_FK =Integer.parseInt( multi.getParameter("BUSINESS_PLACE_NUM_FK"));
+				
+		if(review_file_systemname == null) {
+
+			
+		}
 		
-		ReviewDTO review = new ReviewDTO(BUSINESS_PLACE_NUM_FK, review_contents, review_nickname, review_file_systemname, review_file_orgname);
+		int business_place_num_fk =Integer.parseInt(multi.getParameter("business_place_num_fk"));
+		
+		ReviewDTO review = new ReviewDTO(business_place_num_fk, review_contents, review_nickname, review_file_systemname, review_file_orgname);
+		
+		System.out.println(review);
 		
 		List myReviews = new ArrayList();
 		
-		
 		if(rdao.insertReview(review)) {
 			System.out.println("리뷰작성완료");	
-			myReviews = rdao.MyinfoReviewResult(loginUser.getUser_nickname());
+			myReviews = rdao.findMyReview(loginUser.getUser_nickname());
 			req.setAttribute("reviewResult",myReviews);			
 			ActionTo transfer = new ActionTo();
 			transfer.setRedirect(false);		
 			transfer.setPath(req.getContextPath()+"/app/myinfo/myinfo_reviewView.jsp");
 			return transfer;
 		}else {
-			myReviews = rdao.MyinfoReviewResult(loginUser.getUser_nickname());
+			myReviews = rdao.findMyReview(loginUser.getUser_nickname());
 			req.setAttribute("reviewResult",myReviews);		
 			System.out.println("리뷰작성실패");
 			out.print("<script>");
@@ -73,7 +76,6 @@ public class ReviewWriteOKAction implements Action{
 			transfer.setRedirect(false);		
 			transfer.setPath(req.getContextPath()+"/app/myinfo/myinfo_reviewView.jsp");
 			return transfer;
-			
 		}
 	}
 	
