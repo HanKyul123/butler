@@ -539,26 +539,29 @@
                              <!--  <img class="user_from" src="${pageContext.request.contextPath}/img/카카오톡.png" alt=""> -->
                               <span class="user_date">${reviewResult.review_regdate}</span>
 
-                              <!-- 유저 리뷰 수정하는 버튼 -->
-                              <button id="modify_Review" class="Review_btn"
-                                 onclick="modify()" title="수정하기">
-                                 <img id="modi"
-                                    src="${pageContext.request.contextPath}/img/modify_icon.png"
-                                    alt="" class="MD">
-                              </button>
+											<c:if
+												test="${reviewResult.review_nickname eq LoginUser.user_nickname}">
+												<!-- 유저 리뷰 수정하는 버튼 -->
+												<button id="modify_Review" class="Review_btn"
+													onclick="modify()" title="수정하기">
+													<img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD">
+												</button>
 
-                              <!-- 유저 리뷰 삭제하는 버튼 -->
-                              <form method="post" action="/user/hotelreview_delete.us">
-                              <button id="delete_Review" class="Review_btn" title="삭제하기">
-                                 <img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
-                              </button>
-                              <input type="hidden" name="reviewNumPk" value="${reviewResult.review_num_pk}">
-							  <input type="hidden" name="replyNumPk" value="${reviewResult.reply_num_pk}">
-							  <input type="hidden" name="reviewNickname" value="${reviewResult.review_nickname}">
-							  <input type="hidden" name="user_nickname" value="${LoginUser.user_nickname}">
-                              </form>
+												<!-- 유저 리뷰 삭제하는 버튼 -->
+												<form method="post" action="/user/hotelreview_delete.us">
+													<button id="delete_Review" class="Review_btn" title="삭제하기">
+														<img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
+													</button>
+													<input type="hidden" name="reviewNumPk" value="${reviewResult.review_num_pk}">
+													<input type="hidden" name="replyNumPk" value="${reviewResult.reply_num_pk}"> 
+													<input type="hidden" name="reviewNickname" value="${reviewResult.review_nickname}"> 
+													<input type="hidden" name="user_nickname" value="${LoginUser.user_nickname}"> 
+													<input type="hidden" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">
+												</form>
+											</c:if>
 
-                              <br> <span class="user_pet"> 아이 종류: </span> <span
+
+										<br> <span class="user_pet"> 아이 종류: </span> <span
                                  class="user_pet_what">강아지</span>
                            </div>
 

@@ -193,7 +193,17 @@ public class UserFrontController extends HttpServlet{
 		          } catch (Exception e) {
 		             e.printStackTrace();
 		          }
-		          break; 
+		          break;
+	       case "/user/hotelreview_delete.us":
+	    	   transfer = new ActionTo();
+		          try {
+		        	  System.out.println("101");
+		             transfer = new HotelreviewDeleteAction().execute(req, resp);
+		          } catch (Exception e) {
+		        	  System.out.println("102");
+		             e.printStackTrace();
+		          }
+		          break;
 	 }
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {

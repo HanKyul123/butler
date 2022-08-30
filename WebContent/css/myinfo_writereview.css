@@ -182,7 +182,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
    
-    input[type=file]::file-selector-button {
+    a>input[type=file]::file-selector-button {
         cursor: pointer;
         margin-top: 2px;
         font-family: 'OTWelcomeRA';
@@ -197,6 +197,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         color: #fff;
        
       }
+      
+      a>input[type=file]{
+      	width: 570px;
+      }
+      
+      a>#deletethumb{
+        cursor: pointer;
+        margin-top: 2px;
+        font-family: 'OTWelcomeRA';
+        margin-right: 10px;
+        text-align: center;
+        width: 100px;
+        height: 30px;
+        line-height: 33px;
+        border: 1px solid rgb(255, 154, 214);
+        background-color: rgb(255, 154, 214);
+        border-radius: 4px;
+        color: #fff;}
 
       .getpic{
             display: flex;
@@ -208,17 +226,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             /* background-color: rgb(255, 246, 251); */
             border: 1px solid rgb(255, 208, 236);
             border-radius: 4px;
-            overflow-y: hidden;
-            overflow-x: scroll;
-            white-space: nowrap;  
+  
         }
 
-        .imgbox{
+        #imgbox{
             width: 75px;
             height: 100%;
         }
-    #getpic{
-        width: 75px;
+    .thumbnail{
+        width: auto;
         height: 100%;
         object-fit: cover;
         border: 2px solid rgb(255, 255, 255);

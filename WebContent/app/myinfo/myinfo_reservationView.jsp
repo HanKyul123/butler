@@ -24,8 +24,7 @@
 		<div class="my_reservation_box1">
 			<a class="my_info_magage" href=""><div id="all_choice">내 정보관리</div></a> <br> 
 			<a class="my_reservation_info" href=""><div id="all_choice">예약 내역</div></a> <br> 
-			<a class="my_review_info" href=""><div id="all_choice">내가 쓴 리뷰</div></a> <br> 
-			<a class="my_cart_info" href=""><div id="all_choice">찜 목록</div></a>
+			<a class="my_review_info" href=""><div id="all_choice">내가 쓴 리뷰</div></a>
 		</div>
 		<!-- -------------------내용 공간------------------- -->
 		<div class="my_reservation_box2">
