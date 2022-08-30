@@ -2,7 +2,7 @@
 function tog1(){
     $('.search').css('display','block');
     $('.search').focus();
-    $('#btn1').css('transform','translateX(-2680%)');
+    $('#btn1').css('transform','translateX(-2400%)');
     $('.list').css('visibility','hidden');
     $('.srh_mask').css('display','block');
     $('.X').css('display', 'block');
@@ -13,7 +13,7 @@ function tog1(){
 function tog1_1(){
     $('.search2').css('display','block');
     $('.search2').focus();
-    $('#btn2').css('transform','translateX(-2580%)');
+    $('#btn2').css('transform','translateX(-2400%)');
     $('.list').css('visibility','hidden');
     $('.srh_mask').css('display','block');
     $('.X2').css('display', 'block');

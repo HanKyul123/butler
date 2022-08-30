@@ -28,6 +28,7 @@
         </a>
       <!-- onclick 주고 클릭하면 메인화면으로 돌아가기 -->
       <ul class="over_list01">
+  
          <li class="Sclick">
             <label id="one">
                <button id="btn1" type="button" class="btn_search" value="검색" onclick="tog1()">
@@ -65,11 +66,14 @@
                </div>
             </div>
          </li>
+         <li id="list" class="list" ><a class="text" href="">내주변</a></li>
          <li id="status_logout" class="list" ><a class="text" href="/login.login.us">로그인</a></li>
+         <li id="status_login_empty" class="list" >빈</li>
+
 
          
          
-         <li id="status_login_empty" class="list" >♥</li> 
+        
          <li id="status_login" class="list" >
             <div class="set_profile">
                <a href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">
