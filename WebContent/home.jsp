@@ -1,6 +1,7 @@
 <%@page import="com.butler.app.dao.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +53,8 @@
 											</div>
 
 											<div class="Epricebox">
-												<span class="Eprice">${recommandResult.business_min_charge}</span> <span class="Ewon">원</span>
+												<fmt:formatNumber type="number" maxFractionDigits="3" value="${recommandResult.business_min_charge}" var="businessMinCharge" />
+												<span class="Eprice">${businessMinCharge}</span> <span class="Ewon">원</span>
 											</div>
 										</div>
 									</div>
