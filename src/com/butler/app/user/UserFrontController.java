@@ -2,6 +2,7 @@ package com.butler.app.user;
 
 import java.io.IOException;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.butler.app.action.ActionTo;
 import com.butler.app.action.KakaoLoginAction;
+import com.butler.app.action.MyinfoReviewAction;
 import com.butler.app.action.PhoneProveAction;
 
 public class UserFrontController extends HttpServlet{
@@ -168,6 +170,22 @@ public class UserFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;
+	      case "/user/myinfoRevieViewAction.us":
+	          transfer = new ActionTo();
+	          try {
+	             transfer = new MyinfoReviewAction().execute(req, resp);
+	          } catch (Exception e) {
+	             e.printStackTrace();
+	          }
+	          break;
+	       case "/user/review_delete.us":
+	          transfer = new ActionTo();
+	          try {
+	             transfer = new ReviewDeleteAction().execute(req, resp);
+	          } catch (Exception e) {
+	             e.printStackTrace();
+	          }
+	          break;
 	 }
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {

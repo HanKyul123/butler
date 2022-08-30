@@ -94,6 +94,15 @@
 		or business_addretc like('%${keyword}%')
 		order by business_name asc;
 	</select>
-	
+	<select id="MyinfoReviewResult" parameterType="String" resultType="mirdto">
+      select * from review_tb join book_tb join business_tb join reply_tb where review_tb.review_nickname = #{nickname} and 
+      business_tb.BUSINESS_PLACE_NUM_PK = review_tb.BUSINESS_PLACE_NUM_fK and reply_tb.review_num_fk = review_tb.review_num_pk and  book_tb.book_status = 3;
+   </select>
+   <delete id="ReviewDeleteResult" parameterType="_int">
+      delete from review_tb where review_num_pk = #{review_num_pk}
+   </delete>
+   <delete id="ReplyDeleteResult" parameterType="_int">
+      delete from reply_tb where reply_num_pk = #{reply_num_pk}
+   </delete>
 	
 </mapper>

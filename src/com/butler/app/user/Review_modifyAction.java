@@ -28,6 +28,8 @@ public class Review_modifyAction implements Action{
 		HotelDAO hdao = new HotelDAO();
 		ReviewFileDAO rfdao = new ReviewFileDAO();
 		
+		
+		
 		//파일 업로드
 		//파일이 저장될 경로
 		String saveFolder = req.getServletContext().getRealPath("/reviewfile");
@@ -42,7 +44,7 @@ public class Review_modifyAction implements Action{
 		int business_place_num_pk = Integer.parseInt(multi.getParameter("business_place_num_pk"));
 		String Mnew_review = multi.getParameter("Mnew_review");
 		int review_num = Integer.parseInt(multi.getParameter("review_num"));
-
+		int book_num_pk =  Integer.parseInt(multi.getParameter("book_num_pk"));
 		
 		System.out.println(review_num);
 		System.out.println(Mnew_review);
@@ -51,9 +53,6 @@ public class Review_modifyAction implements Action{
 		if(hdao.Review_modifyAction(Mnew_review, review_num)) {
 			System.out.println("end");
 			//수정완료
-			
-
-			
 			//input[type=file] 태그의 name을 써주면 시스템상 이름을 받아올 수 있음
 			String systemname1 = multi.getFilesystemName("file1");
 			
@@ -71,14 +70,25 @@ public class Review_modifyAction implements Action{
 				file.setReview_num_pk(review_num);
 				rfdao.ModifyFile(file);
 
-			
-			PrintWriter out = resp.getWriter();
-	        out.print("<script>");
-	        //alert('apple님 어서오세요~!');
-	        out.print("alert('리뷰 수정이 완료되었습니다.');");
-	        //location.href = '???/app/board/main.jsp';
-	        out.print("location.href = '"+req.getContextPath()+"/hotel/reservationViewAction.ho?business_place_num_pk="+business_place_num_pk+"';");
-	        out.print("</script>");
+				if(multi.getParameter("book_num_pk") != null) {
+					PrintWriter out = resp.getWriter();
+			        out.print("<script>");
+			        //alert('apple님 어서오세요~!');
+			        out.print("alert('리뷰 수정이 완료되었습니다.');");
+			        //location.href = '???/app/board/main.jsp';
+			        out.print("location.href = '"+req.getContextPath()+"/user/myinfoRevieViewAction.us';");
+			        out.print("</script>");
+				}
+				else {
+					PrintWriter out = resp.getWriter();
+					out.print("<script>");
+					//alert('apple님 어서오세요~!');
+					out.print("alert('리뷰 수정이 완료되었습니다.');");
+					//location.href = '???/app/board/main.jsp';
+					out.print("location.href = '"+req.getContextPath()+"/hotel/reservationViewAction.ho?business_place_num_pk="+business_place_num_pk+"';");
+					out.print("</script>");					
+				}
+				
 		}
 		return null;
 	}

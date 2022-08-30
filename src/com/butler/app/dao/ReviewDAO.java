@@ -30,7 +30,12 @@ SqlSession sqlsession;
 		
 		return sqlsession.update("review.updateReply",datas) == 1;
 	}
-	
+	public List<MyinfoReviewDTO> MyinfoReviewResult(String user_nickname) {
+	      List<MyinfoReviewDTO> list;
+	      list = sqlsession.selectList("Hotel.MyinfoReviewResult",user_nickname);
+	      return list;
+	   }
+
 	
 }
 

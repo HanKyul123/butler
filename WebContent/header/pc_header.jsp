@@ -90,7 +90,7 @@
                         <a href="/book/findMyReservation.book">예약 내역</a>
                      </div>
                      <div id="CMpf" class="my_review">
-                        <a href="${pageContext.request.contextPath}/app/myinfo/myinfo_reviewView.jsp">내가 쓴 리뷰</a>
+                         <a href="/user/myinfoRevieViewAction.us">내가 쓴 리뷰</a>
                      </div>
                     
                      <div id="CMpf" class="logout">

@@ -78,7 +78,13 @@ public class HotelDAO {
 		list = sqlsession.selectList("Hotel.HangulResult", keyword);
 		return list;
 	}
-	
-		
+	 public boolean ReviewDeleteResult(int review_num_pk) {
+	      return sqlsession.delete("Hotel.ReviewDeleteResult",review_num_pk) == 1;
+	      
+	   }
 
+	   public boolean ReplyDeleteResult(int reply_num_pk) {
+	      return sqlsession.delete("Hotel.ReplyDeleteResult",reply_num_pk) == 1;
+	   }
+	   
 }

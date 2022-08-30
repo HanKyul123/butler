@@ -848,6 +848,7 @@
 
 	}
 </script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <script>
 
    function upload(name){
