@@ -32,5 +32,6 @@
   	<mapper resource="com/butler/mapper/book.xml"/>
   	<mapper resource="com/butler/mapper/pets.xml"/>
   	<mapper resource="com/butler/mapper/file.xml"/>
+  	<mapper resource="com/butler/mapper/review.xml"/>
   </mappers>
 </configuration>

@@ -17,6 +17,8 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 public class ReviewWriteOKAction implements Action{
 	@Override
 	public ActionTo execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		resp.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html; charset=utf-8");
 		//파일이 저장될 경로
 		String saveFolder = req.getServletContext().getRealPath("file");
 		System.out.println(saveFolder);
@@ -56,15 +58,13 @@ public class ReviewWriteOKAction implements Action{
 		
 		if(rdao.insertReview(review)) {
 			System.out.println("리뷰작성완료");	
-			myReviews = rdao.findMyReview(loginUser.getUser_nickname());
-			req.setAttribute("reviewResult",myReviews);			
+			myReviews = rdao.findMyReview(loginUser.getUser_nickname());		
 			ActionTo transfer = new ActionTo();
 			transfer.setRedirect(false);		
-			transfer.setPath(req.getContextPath()+"/app/myinfo/myinfo_reviewView.jsp");
+			transfer.setPath(req.getContextPath()+"/user/myinfoRevieViewAction.us");
 			return transfer;
 		}else {
-			myReviews = rdao.findMyReview(loginUser.getUser_nickname());
-			req.setAttribute("reviewResult",myReviews);		
+			myReviews = rdao.findMyReview(loginUser.getUser_nickname());	
 			System.out.println("리뷰작성실패");
 			out.print("<script>");
 			//alert('apple님 어서오세요~!');
@@ -74,7 +74,7 @@ public class ReviewWriteOKAction implements Action{
 			out.print("</script>");
 			ActionTo transfer = new ActionTo();
 			transfer.setRedirect(false);		
-			transfer.setPath(req.getContextPath()+"/app/myinfo/myinfo_reviewView.jsp");
+			transfer.setPath(req.getContextPath()+"/user/myinfoRevieViewAction.us");
 			return transfer;
 		}
 	}

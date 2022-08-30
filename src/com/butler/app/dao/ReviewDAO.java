@@ -37,7 +37,7 @@ SqlSession sqlsession;
 	   }
 
 	public List findMyReview(String user_nickname) {
-		return   sqlsession.selectList("Hotel.MyinfoReviewResult",user_nickname);
+		return   sqlsession.selectList("review.findMyReview",user_nickname);
 	}
 }
 
