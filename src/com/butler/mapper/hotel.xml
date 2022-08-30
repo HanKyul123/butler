@@ -18,8 +18,8 @@
 		where business_place_num_pk=#{business_place_num_pk};
 	</select>
 	<select id="ReviewResultOK" parameterType="_int" resultType="rdto">
-      select * from review_tb left join reply_tb
-      on review_tb.business_place_num_fk = reply_tb.business_place_num_fk
+	  select * from review_tb left join reply_tb
+      on review_tb.review_num_pk = reply_tb.review_num_fk
       where review_tb.business_place_num_fk = #{business_place_num_pk}
    </select>
 	<update id="Review_modifyAction" parameterType="hashMap">

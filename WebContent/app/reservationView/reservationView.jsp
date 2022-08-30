@@ -510,11 +510,10 @@
 		</a>
 
 
-		<!-- 유저가 올리는 리뷰 -->
-		<a id="aa" name="D3">
-			<article class="review_info_box">
-
-            <div class="Rtitle">
+	<!-- 유저가 올리는 리뷰 -->
+	<a id="aa" name="D3">
+		<article class="review_info_box">
+			<div class="Rtitle">
               	 ▶리뷰
                  <c:if test="${LoginUser != null}">
                      <a href="/book/findMyReservation.book">
@@ -522,146 +521,119 @@
                      </a>
                  </c:if>
             </div>
-
-
             <c:choose>
-               <c:when test="${reviewResult != null and reviewResult.size()>0 }">
-                  <c:forEach items="${reviewResult}" var="reviewResult">
-                  <!-- 유저 리뷰와 관리인 답글 포함한 박스
-                            유저 리뷰를 지으면 관리인 답글까지 같이 지워진다.
-                            관리인이 답장을 달지 않았으면 
-                           .replyBigbox display:none 으로 해놓기
-                     -->
-                     <div class="Review_Reply">
-                     
-                        <div class="user_review_box">
-                           <div class="user_info">
-                              <span class="usernick">${reviewResult.review_nickname}</span> 
-                             <c:choose>
-						     <c:when test="${LoginUser.user_logintype == 0}">
-							<img src="${pageContext.request.contextPath}/img/Hotel_icon.png"
-								alt="" class="user_from" id="Butler">
-						  </c:when>
-						  <c:when test="${LoginUser.user_logintype == 1}">
-							<img src="${pageContext.request.contextPath}/img/카카오톡.png" alt=""
-								class="user_from" id="Kakao">
-						  </c:when>
-						  <c:otherwise>
-						 </c:otherwise>
-					   </c:choose>
-                             <!--  <img class="user_from" src="${pageContext.request.contextPath}/img/카카오톡.png" alt=""> -->
-                              <span class="user_date">${reviewResult.review_regdate}</span>
-
-											<c:if
-												test="${reviewResult.review_nickname eq LoginUser.user_nickname}">
-												<!-- 유저 리뷰 수정하는 버튼 -->
-												<button id="modify_Review" class="Review_btn"
-													onclick="modify()" title="수정하기">
-													<img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD">
-												</button>
-
-												<!-- 유저 리뷰 삭제하는 버튼 -->
-												<form method="post" action="/user/hotelreview_delete.us">
-													<button id="delete_Review" class="Review_btn" title="삭제하기">
-														<img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
-													</button>
-													<input type="hidden" name="reviewNumPk" value="${reviewResult.review_num_pk}">
-													<input type="hidden" name="replyNumPk" value="${reviewResult.reply_num_pk}"> 
-													<input type="hidden" name="reviewNickname" value="${reviewResult.review_nickname}"> 
-													<input type="hidden" name="user_nickname" value="${LoginUser.user_nickname}"> 
-													<input type="hidden" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">
-												</form>
-											</c:if>
-
-
-										
-                           </div>
-
-                           <div id="Rbox" class="user_review">
-                              <!-- <div id="Rbox" class="user_title">여기는 리뷰제목입니다.</div> -->
-
-                              <div id="Rbox" class="user_contents">
-                                 ${reviewResult.review_contents}
-                                 <c:choose>
-                                    <c:when test="${reviewResult.review_file_systemname != null}">                                 
-                                       <img src="${cp}/reviewfile/${reviewResult.review_file_systemname}" class="thumbnail">
-                                    </c:when>
-                                    <c:otherwise>
-                                       
-                                    </c:otherwise>
-                                 </c:choose>                                 
-                              </div>
-                           </div>
-
-                        </div>
-               </div>
-
-                     <!-- 수정박스 -->
+	           <c:when test="${reviewResult != null and reviewResult.size()>0 }">
+	           		<c:forEach items="${reviewResult}" var="reviewResult">
+	           			<div class="Review_Reply">
+                        	<div class="user_review_box">
+                          	 <div class="user_info">
+                          	 	<span class="usernick">${reviewResult.review_nickname}</span> 
+                          	 		<c:choose>
+						     			<c:when test="${LoginUser.user_logintype == 0}">
+						     				<img src="${pageContext.request.contextPath}/img/Hotel_icon.png" alt="" class="user_from" id="Butler">
+						     			</c:when>
+						     			<c:when test="${LoginUser.user_logintype == 1}">
+											<img src="${pageContext.request.contextPath}/img/카카오톡.png" alt="" class="user_from" id="Kakao">
+										</c:when>
+										<c:otherwise>
+										</c:otherwise>
+                          	 		</c:choose>
+                          	 	<span class="user_date">${reviewResult.review_regdate}</span>
+                          	 	<c:if test="${reviewResult.review_nickname eq LoginUser.user_nickname}">
+                          	 		
+                          	 		<!-- 유저 리뷰 수정하는 버튼 -->
+									<button id="modify_Review" class="Review_btn" onclick="modify()" title="수정하기">
+										<img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD">
+									</button>
+									
+									<!-- 유저 리뷰 삭제하는 버튼 -->
+									<form method="post" action="/user/hotelreview_delete.us">
+										<button id="delete_Review" class="Review_btn" title="삭제하기">
+											<img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
+										</button>
+										<input type="hidden" name="reviewNumPk" value="${reviewResult.review_num_pk}">
+										<input type="hidden" name="replyNumPk" value="${reviewResult.reply_num_pk}"> 
+										<input type="hidden" name="reviewNickname" value="${reviewResult.review_nickname}"> 
+										<input type="hidden" name="user_nickname" value="${LoginUser.user_nickname}"> 
+										<input type="hidden" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">	
+									</form>
+                          	 	</c:if>
+                          	 </div>
+							 <div id="Rbox" class="user_review">
+	                         <!-- <div id="Rbox" class="user_title">여기는 리뷰제목입니다.</div> -->
+	                         	<div id="Rbox" class="user_contents">
+	                                 ${reviewResult.review_contents}
+	                                 <c:choose>
+	                                    <c:when test="${reviewResult.review_file_systemname != null}">                                 
+	                                       <img src="${cp}/reviewfile/${reviewResult.review_file_systemname}" class="thumbnail">
+	                                    </c:when>
+	                                    <c:otherwise>
+	                                    </c:otherwise>
+	                                 </c:choose>                                 
+	                            </div>
+	                          </div> 
+                        	</div>
+	           			</div>
+	           			<!-- 수정박스 -->
                      <form id="review_modify_Form" method="post" action="/user/review_modifyAction.us" enctype="multipart/form-data">
-                        <div class="Mbox">
+                     	<div class="Mbox">
                            <div class="flex_go">
-                              
-
-                              <div class="btnbox">
-                                 <button type="submit" class="CB" onclick="complete()">
-                                    <img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" id="Mbtn" class="MCbtn">
-                                 </button>
-                                 <button type="button" class="CB" onclick="cancel()">
-                                    <img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" id="Dbtn" class="MCbtn">
-                                 </button>
-                              </div>
+	                     		<div class="btnbox">
+	                                 <button type="submit" class="CB" onclick="complete()">
+	                                    <img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" id="Mbtn" class="MCbtn">
+	                                 </button>
+	                                 <button type="button" class="CB" onclick="cancel()">
+	                                    <img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" id="Dbtn" class="MCbtn">
+	                                 </button>
+	                            </div>
                            </div>
                            <textarea name="Mnew_review" id="Mnew_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>
                            <input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}"> 
                            <input type="hidden" id="business_place_num_pk" name="business_place_num_pk"value="${hotelresult.business_place_num_pk}">
-
-                           <!-- 사진 추가하면 사진이 담긴 자식 생성됨. -->
                            
+                           <!-- 사진 추가하면 사진이 담긴 자식 생성됨. -->
                            <div class="modypic" id="ele">
                               <c:forEach var="i" begin="0" end="1">
-                              <div class="file${i+1}_cont">
-
-                                 <div style="float: left;">
-                                    <input type="file" name="file${i+1}" id="file${i+1}" style="display: none;">
-                                    <input type="hidden" name="filename" value="${i<files.size() ? files[i].orgname : ''}">
-                                 </div>
-                                 
-                                 <c:forTokens items="${files[i].orgname}" delims="." var="token" varStatus="status">
-                                    <c:if test="${status.last}">
-                                       <c:if
-                                          test="${token eq 'jpg' or token eq 'jpeg' or token eq 'png' or token eq 'gif' or token eq 'webp'}">
-                                          <img src="${cp}/reviewfile/${files[i].systemname}" class="thumbnail">
-                                       </c:if>
-                                    </c:if>
-                                 </c:forTokens>
-                              </div>
-                              </c:forEach>                           
-                           </div>
-                           
-                           <div class="addpic">
-                              <a class="file_box" href="javascript:upload('file${1}')">
-                              	 <div id="choose_btn" margin-right: 100px;">
-                              	 파일 선택
-                              	 </div>
-                              </a> 
+	                              <div class="file${i+1}_cont">
+	
+	                                 <div style="float: left;">
+	                                    <input type="file" name="file${i+1}" id="file${i+1}" style="display: none;">
+	                                    <input type="hidden" name="filename" value="${i<files.size() ? files[i].orgname : ''}">
+	                                 </div>
+	                                 
+	                                 <c:forTokens items="${files[i].orgname}" delims="." var="token" varStatus="status">
+	                                    <c:if test="${status.last}">
+	                                       <c:if
+	                                          test="${token eq 'jpg' or token eq 'jpeg' or token eq 'png' or token eq 'gif' or token eq 'webp'}">
+	                                          <img src="${cp}/reviewfile/${files[i].systemname}" class="thumbnail">
+	                                       </c:if>
+	                                    </c:if>
+	                                 </c:forTokens>
+	                              </div>
+                              </c:forEach> 
+                            </div>
+							<div class="addpic">
+                            	<a class="file_box" href="javascript:upload('file${1}')">
+                              	 	<div id="choose_btn" margin-right: 100px;">파일 선택 </div>
+                                </a> 
                               
                               <div class="nospan">
-                              <span id="file${1}name"> ${i<files.size() ? files[0].orgname : "선택된 파일 없음"} </span>
+                              	<span id="file${1}name"> ${i<files.size() ? files[0].orgname : "선택된 파일 없음"} </span>
                               </div>
                               <a href="javascript:cancelFile('file${1}')">
-                              <div id="addpic_btn" style="float: right; margin-right: 100px;" onclick="deletepick()">         
-                                 		첨부 삭제
-                              </div> 
+                              		<div id="addpic_btn" style="float: right; margin-right: 100px;" onclick="deletepick()"> 
+                              		첨부 삭제 
+                              		</div> 
                               </a>
 <%--                            <input type="file" name="file" id="file" href="javascript:upload('file${1}')">
                               <input type="button" value="이미지 추가" id="addpic_btn" class="CaddB">
                               <input type="button" value="이미지 삭제" href="javascript:cancelFile('file${1}')"> --%>
                            </div>
-                        </div>
+                     	</div>
                      </form>
-
-                     <!-- 관리인 리뷰 답장 -->
-                     <c:choose>
+	           		 
+	           		 <!-- 관리인 리뷰 답장 -->
+	           		  <c:choose>
                         <c:when test="${reviewResult.reply_contents != null}">
                            <div class="replyBigbox">
                               <img src="${pageContext.request.contextPath}/img/Ladder.png" alt="" class="ladder">
@@ -684,19 +656,27 @@
    `                        
                         </c:otherwise>
                      </c:choose>
-
-
-                     </div>
-                  </c:forEach>
-               </c:when>
-               <c:otherwise>
+	           			
+	           		</c:forEach>	           
+	           </c:when>
+	           <c:otherwise>
                   <div id="emty_review">
                      <div id="ER">아직 리뷰가 없습니다.</div>
                   </div>
                </c:otherwise>
             </c:choose>
-         </article>
-		</a>
+		</article>
+	</a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	</div>
 
 </body>
