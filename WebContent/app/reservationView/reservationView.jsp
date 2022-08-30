@@ -405,7 +405,7 @@
 					<span id="pricecontent" class="pricecontent">0</span> <!-- 처음에는 기본적으로 0을 띄워준다 -->
 					<spanclass="pricewon">원</span>
 				</div>
-				
+				 
 				<input type="hidden" name="book_charge" id="book_charge"><!-- 총 가격이 담겨지는 input -->
 
 				<!-- 예약하기 제출 버튼 -->

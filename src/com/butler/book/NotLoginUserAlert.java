@@ -21,7 +21,7 @@ public class NotLoginUserAlert implements Action{
         out.print("location.href = '/app/login/login.jsp';");
         out.print("</script>");
 		
-		
+		 
 		return null;
 	}
 	
