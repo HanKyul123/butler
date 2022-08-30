@@ -127,7 +127,7 @@
             statusChangelogoutHeader();
          </script>
        </c:when>
-       <c:otherwise>
+       <c:otherwise> 
          <script>
             function statusChangeloginHeader(){
                

@@ -79,7 +79,7 @@ window.addEventListener("scroll", ()=>{
         btn2.src="../../img/검색.png";
       
     }
-});
+}); 
 window.addEventListener("scroll", ()=>{
     if(window.scrollY>headerHeight){
        header.classList.add('scroll');
