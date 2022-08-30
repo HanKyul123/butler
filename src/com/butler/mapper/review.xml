@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="review">
+	<insert id="insertReview" parameterType="rdto">
+		INSERT INTO butler.review_tb
+		(BUSINESS_PLACE_NUM_FK,
+		review_contents,
+		review_nickname,
+		review_file_systemname,
+		review_file_orgname)
+		VALUES
+		(
+		#{business_place_num_fk},
+		#{review_contents},
+		#{review_nickname},
+		#{review_file_systemname},
+		#{review_file_orgname}
+		);
+	</insert>
+	<select id="findMyReview" parameterType="String" resultType="rdto">
+	SELECT 
+	REVIEW_NUM_PK,
+    BUSINESS_PLACE_NUM_FK,
+    review_contents,
+    review_nickname,
+    review_regdate,
+    review_file_systemname,
+    review_file_orgname,
+    file_review_systemname,
+    file_review_orgname
+	FROM review_tb  
+	where  review_tb.review_nickname = #{user_nickname};
+	</select>
+</mapper>
