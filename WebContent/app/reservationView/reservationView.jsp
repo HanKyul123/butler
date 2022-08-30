@@ -65,7 +65,7 @@
 								"firstDay" : 1
 
 							},
-
+							minDate: moment().millisecond(0).second(0).minute(0).hour(0),
 							"startDate" : 0,
 							"endDate" : 0,
 							"drops" : "down"
@@ -104,22 +104,22 @@
 								console.log("체크 아웃 달 > 체크인 달");
 								/* 체크 아웃 달 > 체크인 달 */
 
-								if ((startMM % 2 == 0) && startMM < 8) {
-									nowdate = (30 - startDD) + endDD;
+								if ((startMM % 2 == 0) && startMM < 8 && startMM !=2) {
+                                    nowdate = (30 - startDD) + endDD;
 
-								} else if ((startMM % 2 == 1) && startMM < 8) {
-									nowdate = (31 - startDD) + endDD;
-								} else if (startMM == 2) {
-									nowdate = (28 - startDD) + endDD;
+                                } else if ((startMM % 2 == 1) && startMM < 8 && startMM !=2) {
+                                    nowdate = (31 - startDD) + endDD;
+                                } else if (startMM == 2) {
+                                    nowdate = (28 - startDD) + endDD;
 
-								} else if ((startMM >= 8) && startMM % 2 == 0) {
-									nowdate = (31 - startDD) + endDD;
+                                } else if ((startMM >= 8) && startMM % 2 == 0) {
+                                    nowdate = (31 - startDD) + endDD;
 
-								} else if ((startMM >= 8) && startMM % 2 == 1) {
-									nowdate = (30 - startDD) + endDD;
-								}
+                                } else if ((startMM >= 8) && startMM % 2 == 1) {
+                                    nowdate = (30 - startDD) + endDD;
+                                }
 
-							}
+                            }
 
 							// 기간
 							nowdate2.value = nowdate;
@@ -524,7 +524,19 @@
                         <div class="user_review_box">
                            <div class="user_info">
                               <span class="usernick">${reviewResult.review_nickname}</span> 
-                              <img class="user_from" src="${pageContext.request.contextPath}/img/카카오톡.png" alt="">
+                             <c:choose>
+						     <c:when test="${LoginUser.user_logintype == 0}">
+							<img src="${pageContext.request.contextPath}/img/Hotel_icon.png"
+								alt="" class="user_from" id="Butler">
+						  </c:when>
+						  <c:when test="${LoginUser.user_logintype == 1}">
+							<img src="${pageContext.request.contextPath}/img/카카오톡.png" alt=""
+								class="user_from" id="Kakao">
+						  </c:when>
+						  <c:otherwise>
+						 </c:otherwise>
+					   </c:choose>
+                             <!--  <img class="user_from" src="${pageContext.request.contextPath}/img/카카오톡.png" alt=""> -->
                               <span class="user_date">${reviewResult.review_regdate}</span>
 
                               <!-- 유저 리뷰 수정하는 버튼 -->
@@ -536,9 +548,15 @@
                               </button>
 
                               <!-- 유저 리뷰 삭제하는 버튼 -->
-                              <button id="delete_Review" class="Review_btn" onclick="delete_review(this)" title="삭제하기">
+                              <form method="post" action="/user/hotelreview_delete.us">
+                              <button id="delete_Review" class="Review_btn" title="삭제하기">
                                  <img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
                               </button>
+                              <input type="hidden" name="reviewNumPk" value="${reviewResult.review_num_pk}">
+							  <input type="hidden" name="replyNumPk" value="${reviewResult.reply_num_pk}">
+							  <input type="hidden" name="reviewNickname" value="${reviewResult.review_nickname}">
+							  <input type="hidden" name="user_nickname" value="${LoginUser.user_nickname}">
+                              </form>
 
                               <br> <span class="user_pet"> 아이 종류: </span> <span
                                  class="user_pet_what">강아지</span>

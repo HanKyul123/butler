@@ -713,12 +713,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     right: 20px;
 }
 
- #X2{
-    position: relative;
-    right: 7px;
-    bottom: 2.5px;
-    width: 15px;
- }
  .file_box {
     cursor: pointer;
     margin-top: 10px;

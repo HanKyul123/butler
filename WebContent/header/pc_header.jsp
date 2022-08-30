@@ -66,7 +66,7 @@
                </div>
             </div>
          </li>
-         <li id="list" class="list" ><a class="text" href="">내주변</a></li>
+         <li id="list" class="list" ><a class="text" href="/user/userAround.us">내주변</a></li>
          <li id="status_logout" class="list" ><a class="text" href="/login.login.us">로그인</a></li>
          <li id="status_login_empty" class="list" >빈</li>
 

@@ -186,6 +186,14 @@ public class UserFrontController extends HttpServlet{
 	             e.printStackTrace();
 	          }
 	          break;
+	       case "/user/userAround.us":
+		          transfer = new ActionTo();
+		          try {
+		             transfer = new UserAroundAction().execute(req, resp);
+		          } catch (Exception e) {
+		             e.printStackTrace();
+		          }
+		          break; 
 	 }
 		if(transfer !=null) {
 			if(transfer.isRedirect()) {
