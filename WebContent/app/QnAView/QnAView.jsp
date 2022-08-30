@@ -49,8 +49,8 @@
                                 <a href="javascript:GetShow()" class="all_list" id="QnA_tab">
                                     <p>[숙박] 예약을 취소하고 싶어요.</p>
                                     <img src="${pageContext.request.contextPath}/img/under1.png" width="18px" class="under">
-                                    <div id="ans_1" style="display: none;">
-                                        <span >
+                                    <div class="allspan" id="ans_1" style="display: none;">
+                                        <span class="QnAspan">
                                             	예약취소는  앱/웹 > 내정보 > 예약/구매내역에서 직접 가능합니다
 	                                             <br>
 	                                             <br>
@@ -64,8 +64,8 @@
                                 <a href="javascript:GetShow2()" class="all_list" id="QnA_tab">
                                  <p>[공통] 천재지변/감염병으로 인한 예약 취소는 어떻게 하나요?</p>
                                  <img src="${pageContext.request.contextPath}/img/under1.png" width="20px" class="under"> 
-                                 <div id="ans_2" style="display: none;">
-                                    <span >
+                                 <div class="allspan" id="ans_2" style="display: none;">
+                                    <span  class="QnAspan">
 							                                        천재지변(기상악화), 법정 감염병 등 불가항력적인 사유로 제휴점 이용이 불가할 경우 고객행복센터로 예약내역 및 증빙서류(결항확인서, e-티켓, 진단확인서 등)를 보내주시면 확인 후 예약취소 가능 여부를 확인해 드립니다. <br>
 							                                        <br>
 							                                        다만, 당사는 판매 중개 플랫폼의 입장으로 제휴점에 대하여 취소/환불을 강제할 수 없어 각 제휴점의 규정에 근거하여 상황에 따라 수수료가 발생하거나 취소가 어려울 수 있는 점 양해 부탁드립니다. <br>
@@ -81,8 +81,8 @@
                                 <a href="javascript:GetShow3()" class="all_list" id="QnA_tab">
                                  <p>[숙박] 예약대기 건 예약취소하고 싶어요.</p>
                                  <img src="${pageContext.request.contextPath}/img/under1.png" width="20px" class="under" > 
-                                 <div id="ans_3" style="display: none;">
-                                    <span >
+                                 <div class="allspan" id="ans_3" style="display: none;">
+                                    <span  class="QnAspan">
 						                                        예약 대기중에는 여기어때 고객행복센터에 예약취소 요청해주시길 바랍니다. <br>
 						                                        <br>
 						
@@ -96,8 +96,8 @@
                                 <a href="javascript:GetShow4()" class="all_list" id="QnA_tab">
                                  <p>[숙박] 체크인 날짜/객실 타입을 변경하고 싶어요.</p>
                                  <img src="${pageContext.request.contextPath}/img/under1.png" width="20px" class="under" > 
-                                 <div id="ans_4" style="display: none;">
-                                    <span >
+                                 <div class="allspan" id="ans_4" style="display: none;">
+                                    <span  class="QnAspan">
                                        	 예약 결제 완료 후 날짜 및 객실타입 등 부분 변경은 불가합니다. 
                                        	 <br>
                                          <br>
@@ -115,8 +115,8 @@
                                 <a href="javascript:GetShow5()" class="all_list" id="QnA_tab">
                                  <p>[공통] 현금영수증을 발급받고 싶어요.</p>
                                  <img src="${pageContext.request.contextPath}/img/under1.png" width="20px" class="under" > 
-                                 <div id="ans_5" style="display: none;">
-                                    <span >
+                                 <div class="allspan" id="ans_5" style="display: none;">
+                                    <span class="QnAspan" >
 					                                             현금영수증은 현금성 결제수단으로 결제 시 발급이 가능합니다. <br><br>
 					
 										결제 단계에서 현금영수증을 신청하면 자동으로 발행되지만,
@@ -143,8 +143,8 @@
                                 <a href="javascript:GetShow6()" class="all_list" id="QnA_tab">
                                  <p>[공통] 영수증(거래 내역서)를 발급받고 싶어요.</p>
                                  <img src="${pageContext.request.contextPath}/img/under1.png" width="20px" class="under"> 
-                                 <div id="ans_6" style="display: none;">
-                                    <span >
+                                 <div class="allspan" id="ans_6" style="display: none;">
+                                    <span  class="QnAspan">
                                         	예약정보와 결제정보가 기재되어 있는 영수증(거래내역서)은 여기어때 고객행복센터로 문의하시면 발급이 가능합니다. <br><br>
 
 											예약내역, 영수증을 받으실 이메일 주소(또는 FAX번호)를 1:1문의 또는 카카오 상담톡으로 남겨주시길 바라며, 발급 완료까지는 영업일 기준 최대 1~2일 소요되오니 시간 양해 부탁드립니다.
