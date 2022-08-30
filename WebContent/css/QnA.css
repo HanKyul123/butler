@@ -245,3 +245,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             background-size: 14px auto;
             
         }
+        
+        .QnAspan{
+        font-size: 14px;
+        }
+        
+        .allspan{
+        margin-top: 10px;
+        }
