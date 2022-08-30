@@ -1,6 +1,8 @@
 package com.butler.app.action;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,13 +47,21 @@ public class ReviewWriteOKAction implements Action{
 		int BUSINESS_PLACE_NUM_FK =Integer.parseInt( multi.getParameter("BUSINESS_PLACE_NUM_FK"));
 		
 		ReviewDTO review = new ReviewDTO(BUSINESS_PLACE_NUM_FK, review_contents, review_nickname, review_file_systemname, review_file_orgname);
+		
+		List myReviews = new ArrayList();
+		
+		
 		if(rdao.insertReview(review)) {
-			System.out.println("리뷰작성완료");
+			System.out.println("리뷰작성완료");	
+			myReviews = rdao.MyinfoReviewResult(loginUser.getUser_nickname());
+			req.setAttribute("reviewResult",myReviews);			
 			ActionTo transfer = new ActionTo();
 			transfer.setRedirect(false);		
 			transfer.setPath(req.getContextPath()+"/app/myinfo/myinfo_reviewView.jsp");
 			return transfer;
 		}else {
+			myReviews = rdao.MyinfoReviewResult(loginUser.getUser_nickname());
+			req.setAttribute("reviewResult",myReviews);		
 			System.out.println("리뷰작성실패");
 			out.print("<script>");
 			//alert('apple님 어서오세요~!');
