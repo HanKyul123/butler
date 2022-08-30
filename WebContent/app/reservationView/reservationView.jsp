@@ -347,9 +347,9 @@
 				<select name="상세정보" id="selectbox" class="Pig_weight">
 					<c:choose>
 						<c:when test="${pig_result != null and pig_result.size()>0 }">
-							<c:forEach items="${pig_result}" var="weasel_result">
-								<fmt:formatNumber type="number" maxFractionDigits="3" value="${pig_result.one_day_charge}" var="weaselOnedayCharge" />
-								<option value="${pig_result.one_day_charge}">${pig_result.animal_weight} 1박 ${weaselOnedayCharge}원</option>			
+							<c:forEach items="${pig_result}" var="pig_result">
+								<fmt:formatNumber type="number" maxFractionDigits="3" value="${pig_result.one_day_charge}" var="pigOnedayCharge" />
+								<option value="${pig_result.one_day_charge}">${pig_result.animal_weight} 1박 ${pigOnedayCharge}원</option>			
 							</c:forEach>
 						</c:when>
 					</c:choose>
