@@ -162,7 +162,7 @@ public class UserFrontController extends HttpServlet{
 				e.printStackTrace();
 			}
 			break;
-		case "/user/userResign.us": 
+		case "/user/userResign.us":  
 			transfer = new ActionTo();
 			try {
 				transfer = new UserResignAction().execute(req, resp);

@@ -22,7 +22,7 @@ public class ReviewDeleteAction implements Action{
       System.out.println("리플넘"+reply_num_pk);
       
       HotelDAO hdao = new HotelDAO();
-      
+       
       
       if(reply_num_pk == 0) {
          hdao.ReviewDeleteResult(review_num_pk);

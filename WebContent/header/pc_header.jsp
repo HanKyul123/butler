@@ -69,7 +69,7 @@
 
          
          
-         <li id="status_login_empty" class="list" >♥</li>
+         <li id="status_login_empty" class="list" >♥</li> 
          <li id="status_login" class="list" >
             <div class="set_profile">
                <a href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">

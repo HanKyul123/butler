@@ -61,7 +61,7 @@ public class HotelDAO {
 		List<HotelDTO> list;
 		list = sqlsession.selectList("Hotel.choiseOK", datas);
 		return list;
-	}
+	} 
 
 	public List<HotelDTO> recommandResult(int topnum) {
 		return sqlsession.selectList("Hotel.recommandResult", topnum);

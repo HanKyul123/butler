@@ -88,5 +88,5 @@ public class ReservationViewAction implements Action{
 		}
 		return null;
 	}
-	
+	 
 }

@@ -8,7 +8,7 @@
   	<typeAlias type="com.butler.app.dao.UserDTO" alias="udto"/>  
   	<typeAlias type="com.butler.app.dao.HotelDTO" alias="hdto"/> 
   	<typeAlias type="com.butler.app.dao.ReviewDTO" alias="rdto"/> 
-  	<typeAlias type="com.butler.app.dao.BookDTO" alias="bdto"/>
+  	<typeAlias type="com.butler.app.dao.BookDTO" alias="bdto"/> 
   	<typeAlias type="com.butler.app.dao.PetsDTO" alias="petsdto"/>
   	<typeAlias type="com.butler.app.dao.ReviewFileDTO" alias="rfdto"/>
   	<typeAlias type="com.butler.app.dao.BchargeDTO" alias="bcdto"/>

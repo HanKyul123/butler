@@ -79,7 +79,7 @@
 		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 6;
 	</select>
 	<select id="SearchWeaseltype" parameterType="_int" resultType="bcdto">
-		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 7;
+		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 7; 
 	</select>
 	<select id="SearchPigtype" parameterType="_int" resultType="bcdto">
 		select * from business_charge_tb where BUSINESS_PLACE_NUM_FK = #{business_place_num_pk} and animal_type = 8;

@@ -19,7 +19,7 @@ public class MyinfoReviewAction implements Action{
 		UserDTO LoginUser = (UserDTO) session.getAttribute("LoginUser");
 		String user_nickname = LoginUser.getUser_nickname();
 		
-		System.out.println("1");
+		System.out.println("1"); 
 		
 		ReviewDAO rdao  = new ReviewDAO();
 		

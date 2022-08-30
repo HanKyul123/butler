@@ -876,7 +876,7 @@
             const reader = new FileReader();
             
             reader.onload = function(ie){
-               const img = document.createElement("img");
+               const img = document.createElement("img"); 
                img.setAttribute("src",ie.target.result)
                img.setAttribute("class",'thumbnail');//<img src="???/QR.png" class="thumbnail">
                document.querySelector("."+e.target.id+"_cont").appendChild(img);

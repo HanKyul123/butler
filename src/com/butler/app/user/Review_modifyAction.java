@@ -24,7 +24,7 @@ public class Review_modifyAction implements Action{
 		resp.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html; charset=utf-8");
 		
-		HotelDTO hdto = new HotelDTO();
+		HotelDTO hdto = new HotelDTO(); 
 		HotelDAO hdao = new HotelDAO();
 		ReviewFileDAO rfdao = new ReviewFileDAO();
 		

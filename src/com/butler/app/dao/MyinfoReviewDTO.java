@@ -254,7 +254,7 @@ public class MyinfoReviewDTO {
 	public int getUser_num_fk() {
 		return user_num_fk;
 	}
-	public void setUser_num_fk(int user_num_fk) {
+	public void setUser_num_fk(int user_num_fk) { 
 		this.user_num_fk = user_num_fk;
 	}
 	public int getBusiness_pick_animal_type() {
