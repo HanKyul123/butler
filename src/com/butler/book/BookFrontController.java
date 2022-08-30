@@ -62,6 +62,17 @@ public class BookFrontController extends HttpServlet{
 					e.printStackTrace();
 				}
 			break;
+			case "/book/notLoginUserAlert.book":
+				try {
+					transfer = new NotLoginUserAlert().execute(req, resp);		
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				break;
+			
+			
+			
+			
 		}
 		
 		

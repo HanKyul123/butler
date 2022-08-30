@@ -410,8 +410,17 @@
 
 				<!-- 예약하기 제출 버튼 -->
 				<div class="reserbtnflex">
-					<button type="submit" class="reservation_btn" onclick="reservation()">예약하기</button>
-					<img src="${pageContext.request.contextPath}/img/reservationCart.png" alt="" class="cart">
+					<c:choose>
+               <c:when test="${LoginUser == null}">
+                  <button type="button" class="reservation_btn" onclick="location.href='/book/notLoginUserAlert.book'">예약하기</button>
+                  <img src="${pageContext.request.contextPath}/img/reservationCart.png" alt="" class="cart">
+               </c:when>
+               <c:otherwise>
+                  <button type="submit" class="reservation_btn" onclick="reservation()">예약하기</button>
+                  <img src="${pageContext.request.contextPath}/img/reservationCart.png" alt="" class="cart">               
+               </c:otherwise>
+            </c:choose>
+
 				</div>
 			</div>
 			
