@@ -1,32 +1,62 @@
-//const over1 = document.getElementById('modify_btn');
-//const over2 = document.getElementById('delete_btn');
-//
-//    over1.addEventListener("mouseover", function () {
-//        over1.src="img/modify_icon_focus.png";
-//    }, false);
-//
-//    over1.addEventListener("mouseout", function () {
-//        over1.src="img/modify_icon.png";
-//   
-//    }, false);
-//    
-//    
-//    over2.addEventListener("mouseover", function () {
-//        over2.src="img/delete_focus.png";
-//    }, false);
-//
-//    over2.addEventListener("mouseout", function () {
-//        over2.src="img/delete.png";
-//    }, false);
+const over1 = document.getElementById('modify_btn');
+const over2 = document.getElementById('delete_btn');
+const over3 = document.getElementById('MC');
+const over4 = document.getElementById('CB');
+
+
+    over1.addEventListener("mouseover", function () {
+        over1.src="../../img/modify_icon_focus.png";
+    }, false);
+
+    over1.addEventListener("mouseout", function () {
+        over1.src="../../img/modify_icon.png";
+   
+    }, false);
+    
+    
+    over2.addEventListener("mouseover", function () {
+        over2.src="../../img/delete_focus.png";
+    }, false);
+
+    over2.addEventListener("mouseout", function () {
+        over2.src="../../img/delete.png";
+    }, false);
+
+
+    over3.addEventListener("mouseover", function () {
+        over3.src="../../img/check_icon_hover.png";
+    }, false);
+
+    over3.addEventListener("mouseout", function () {
+        over3.src="../../img/check_icon.png";
+   
+    }, false);
+    
+    
+    over4.addEventListener("mouseover", function () {
+        over4.src="../../img/cancel_icon_hover.png";
+    }, false);
+
+    over4.addEventListener("mouseout", function () {
+        over4.src="../../img/cancel_icon.png";
+    }, false);
 
 
 
-
-
-
-    function modify(){
-        $('.content_btn').css('display','none');
-        $('.newreview_btn').css('display','flex');
+    function modify(i){
+    
+    	console.log(i.parentNode.parentNode);	
+    	let original = i.parentNode.parentNode;
+    	
+    	console.log(original.nextElementSibling);  	
+    	let review = original.nextElementSibling;
+    	
+    	console.log(review.children[0]);
+    	let new_review = review.children[0];
+    	
+    	original.style.display = "none";
+    	new_review.style.display = "flex";
+     
     }
    
 
@@ -35,9 +65,18 @@
         $('.newreview_btn').css('display','none');
     }
 
-    function cancel(){
-        $('.content_btn').css('display','flex');
-        $('.newreview_btn').css('display','none');
+    function canceling(i){
+    	console.log(i.parentNode.parentNode.parentNode);	
+    	let original = i.parentNode.parentNode.parentNode;
+    	
+    	console.log(original.previousElementSibling);  	
+    	let review = original.previousElementSibling;
+    	
+    	let new_review = original.children[0];
+    	
+    	new_review.style.display = "none";
+    	review.style.display = "flex";
+    
     }
 
     

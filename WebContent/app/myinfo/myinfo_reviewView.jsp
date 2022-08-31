@@ -11,13 +11,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myinfo_review.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
-<style>
-     img.thumbnail{
-      display:block;
-      clear:both;      
-      height:80px;
-   }
-</style>
+
 
 </head>
 
@@ -92,7 +86,7 @@
 										<div id="Thumbnail_Box">
 											<c:choose>
 												<c:when test="${reviewResult.review_file_systemname != null}">
-													<img src="${cp}/reviewfile/${reviewResult.review_file_systemname}" class="thumbnail">
+													<img src="${cp}/reviewfile/${reviewResult.review_file_systemname}" class="thumbnail" id="thumbnail2">
 												</c:when>
 												<c:otherwise>
 
@@ -103,7 +97,7 @@
 									</div>
 									<div class="btn">
 										<!-- 수정 버튼 -->
-										<button type="button" class="MDbtn" id="Mbtn" onclick="modify()">
+										<button type="button" class="MDbtn" id="Mbtn" onclick="modify(this)">
 											<img class="MD" id="modify_btn" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" title="수정하기">
 										</button>
 
@@ -121,6 +115,7 @@
 
 								<!--  리뷰 수정 완료 또는 취소하면 display:none;  -->
 								 <form id="review_modify_Form" method="post" action="/user/review_modifyAction.us" enctype="multipart/form-data">
+									
 									<div class="newreview_btn">
 										<textarea name="Mnew_review" id="new_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>
 										<input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}"> 
@@ -131,49 +126,50 @@
 											<div>
 												<!-- 수정 완료를 하면 제출되어 DB에 저장된다 -->
 												<button type="submit" class="MDBP" id="complete" onclick="complete()">
-													<img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" class="MDB" title="수정완료">
+													<img src="${pageContext.request.contextPath}/img/check_icon.png" alt="" class="MDB" id = "MC" title="수정완료">
 												</button>
 											</div>
-											<button type="button" class="MDBP" id="cancel" onclick="cancel()">
-												<img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" class="MDB" id="CB" title="취소">
+											<button type="button" class="MDBP" id="cancel" onclick="canceling(this)">
+												<img src="${pageContext.request.contextPath}/img/cancel_icon.png" alt="" class="MDB" id="CB" title="취소">
 											</button>
 										</div>
-										
-										<!-- img id는 Thumbnail로 하기 -->
-										<!-- 만약 img가 하나도 없으면 Thumbnail_Box display: none으로 설정하기 -->
-										
-<%--  										<div id="mody_Thumbnail_Box">
-											 <img id="mody_Thumbnail" alt=""src="${pageContext.request.contextPath}/img/example_hotel.webp">
-										</div>  --%>
-	
-<!-- 										<input type="file" name="file" id="file"> 
-										<input type="button" value="이미지 삭제" id="addpic_btn" class="CaddB">  -->
+						
 
-
-										<div class="file${i+1}_cont">
-											<div class="modypic" id="ele">
-												<c:forTokens items="${files[i].orgname}" delims="."
-													var="token" varStatus="status">
-													<c:if test="${status.last}">
-														<c:if
-															test="${token eq 'jpg' or token eq 'jpeg' or token eq 'png' or token eq 'gif' or token eq 'webp'}">
-															<img src="${cp}/file/${files[i].systemname}"
-																class="thumbnail">
+										<div class="imgBox">
+											<div class="file${i+1}_cont">
+												<div class="modypic" id="ele">
+													<c:forTokens items="${files[i].orgname}" delims="."
+														var="token" varStatus="status">
+														<c:if test="${status.last}">
+															<c:if
+																test="${token eq 'jpg' or token eq 'jpeg' or token eq 'png' or token eq 'gif' or token eq 'webp'}">
+																<img src="${cp}/file/${files[i].systemname}"
+																	class="thumbnail">
+															</c:if>
 														</c:if>
-													</c:if>
-												</c:forTokens>
+													</c:forTokens>
+												</div>
 											</div>
-											<div style="float: left;">
-												<input type="file" name="file${i+1}" id="file${i+1}"
-													style="display: none;"> <span id="file${i+1}name">
-													${i<files.size() ? files[i].orgname : "선택된 파일 없음"} </span> <input
-													type="hidden" name="filename"
-													value="${i<files.size() ? files[i].orgname : ''}">
+										</div>
+												
+											<div id="flex_box">
+											
+												<a href="javascript:upload('file${i+1}')">
+													<div id="Choosebtn">파일 선택</div>
+												</a> 
+												<label><input type="file" name="file${i+1}" id="file${i+1}" style="display: none;"> 
+												
+													<div class="upup">
+														<span id="file${i+1}name">${i<files.size() ? files[i].orgname : "선택된 파일 없음"} </span> 
+													</div>
+												</label>	
+													<input type="hidden" name="filename" value="${i<files.size() ? files[i].orgname : ''}">
+												
+												<a href="javascript:cancelFile('file${i+1}')">
+													<div id="addpic_btn">첨부 삭제</div>
+												</a>
 											</div>
-											<div style="float: right; margin-right: 100px;">
-												<a href="javascript:upload('file${i+1}')">파일 선택</a> <a
-													href="javascript:cancelFile('file${i+1}')">첨부 삭제</a>
-											</div>
+										
 										</div>
 									</form>
 								</div>

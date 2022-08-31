@@ -232,8 +232,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
     .MDBP{
         cursor: pointer;
-        width: 26px;
-        height: 26px;
+        width: 18px;
+        height: 18px;
         background-color: transparent;
         border: none;
         margin-right: 10px;
@@ -243,13 +243,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     .MDB{
         position: relative;
         right: 7px;
-        width: 27px;
-        bottom: 2px;
+        width: 24px;
+        top: 2px;
     }
     #CB{
         position: relative;
         right: 7px;
         bottom: 2px;
+    }
+    
+    #MC{
+    width: 22px;
     }
 
 
@@ -268,12 +272,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     
     
     
+    #thumbnail2{
+    width:auto;
+    object-fit: cover;
+    height: 66px;
+    }
     
     
     
     
+    .imgBox{
+    width: 85.1%;
+    height: 100px;
+    padding: 10px;
+    border: 1px dotted rgb(176, 176, 176);
+    border-radius: 4px;
+    margin-top: 5px;
     
-    
+    }
     
     
     #Thumbnail_Box{
@@ -285,9 +301,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     border-radius: 4px;
     }
     
-    #Thumbnail{
+    .thumbnail{
     width: auto;
-    height: 100%;
+    height: 80px;
     object-fit: cover;
     }
     
@@ -314,7 +330,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     	width: 72.7%;
     	}
  
-        input[type=file]::file-selector-button {
+        a>#Choosebtn {
         cursor: pointer;
         margin-top: 5px;
         font-family: 'OTWelcomeRA';
@@ -376,4 +392,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	        background-color: rgb(255, 241, 250);
 	        color: rgb(255, 0, 170);
 	    }
+	    
+	    #flex_box{
+	    width:100%;
+	    display: flex;
+    	flex-wrap: wrap;
+	    }
     
+  	.upup{
+  	width:483.5px;
+    position: relative;
+    top: 13px;
+    }
