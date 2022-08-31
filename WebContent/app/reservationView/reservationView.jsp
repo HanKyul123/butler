@@ -527,6 +527,7 @@
 	           			<div class="Review_Reply">
                         	<div class="user_review_box">
                           	 <div class="user_info">
+                          	 <form method="post" action="/user/hotelreview_delete.us">
                           	 	<span class="usernick">${reviewResult.review_nickname}</span> 
                           	 		<c:choose>
 						     			<c:when test="${LoginUser.user_logintype == 0}">
@@ -542,12 +543,11 @@
                           	 	<c:if test="${reviewResult.review_nickname eq LoginUser.user_nickname}">
                           	 		
                           	 		<!-- 유저 리뷰 수정하는 버튼 -->
-									<button id="modify_Review" class="Review_btn" onclick="modify()" title="수정하기">
+									<button type="button" id="modify_Review" class="Review_btn" onclick="modify()" title="수정하기">
 										<img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD">
 									</button>
 									
 									<!-- 유저 리뷰 삭제하는 버튼 -->
-									<form method="post" action="/user/hotelreview_delete.us">
 										<button id="delete_Review" class="Review_btn" title="삭제하기">
 											<img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
 										</button>
@@ -556,9 +556,63 @@
 										<input type="hidden" name="reviewNickname" value="${reviewResult.review_nickname}"> 
 										<input type="hidden" name="user_nickname" value="${LoginUser.user_nickname}"> 
 										<input type="hidden" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">	
+										
+										 <!-- 유저 리뷰 수정 완료하는 버튼 -->
+				                         <button type="submit" id="complete_Review" class="Review_btn" onclick="complete()" title="수정완료">
+				                        	<img id="complete" src="${pageContext.request.contextPath}/img/check_icon.png" alt="" class="CD">
+				                         </button>
+				
+				                         <!-- 유저 리뷰 수정 취소하는 버튼 -->
+				                         <button type="button" id="cancel_Review" class="Review_btn" onclick="canceling()" title="취소하기">
+				                        	<img id="cancel" src="${pageContext.request.contextPath}/img/cancel_icon.png" alt="" class="MD">
+				                         </button>
+											
+										
+										
 									</form>
+									
+								
+									
                           	 	</c:if>
                           	 </div>
+                          	 
+                      <!----- 해당 유저 리뷰 박스위치에서 이 수정박스로 변환이 되어야 함 ----->    	 
+                      <!-- ------------------ 수정박스 ------------------ -->    
+                      	 
+	              		 <form id="review_modify_Form" method="post" action="/user/review_modifyAction.us" enctype="multipart/form-data" onsubmit="complete()">
+	                     	<textarea name="modify_contents" id="modify_contents" cols="30" rows="3">쓴 리뷰 그대로 가져오기</textarea>
+	                        <div id="choose_picture" class="choose_picture">
+	                        
+	                        
+	                        <!-- 맨 밑에 해당 스크립트 있음, 사진이 안나와요 -->
+	                            <div id="imgbox" class="file${i+1}_cont">
+			                     	<c:forEach var="i" begin="0" end="1">
+			                              <div class="file${i+1}_cont">
+			
+			                                 <div style="float: left;">
+								                 <input type="hidden" name="filename" value="${i<files.size() ? files[i].orgname : ''}">
+			                                 </div>
+			                                 
+			                                 <c:forTokens items="${files[i].orgname}" delims="." var="token" varStatus="status">
+			                                    <c:if test="${status.last}">
+			                                       <c:if
+			                                          test="${token eq 'jpg' or token eq 'jpeg' or token eq 'png' or token eq 'gif' or token eq 'webp'}">
+			                                          <img src="${cp}/reviewfile/${files[i].systemname}" class="thumbnail">
+			                                       </c:if>
+			                                    </c:if>
+			                                 </c:forTokens>
+			                              </div>
+			                         </c:forEach>  
+			                    </div>
+			                    
+			                    
+	                        </div>
+	                        <input type="file" name="file" id="file">
+	                        <button id="addpic_btn">이미지 삭제</button>
+	                        <hr>
+	                     </form>
+                      <!-- --------------------------------------------->    	 
+                          	 
 							 <div id="Rbox" class="user_review">
 	                         	<div id="Rbox" class="user_contents">
 	                                 ${reviewResult.review_contents}
@@ -573,10 +627,8 @@
 	                          </div> 
                         	</div>
 	           			</div>
-	           			<!-- 수정박스 -->
-                     <form id="review_modify_Form" method="post" action="/user/review_modifyAction.us" enctype="multipart/form-data">
-                     	<textarea class="modify_contents"></textarea>
-                     </form>
+
+
 	           		 
 	           		 <!-- 관리인 리뷰 답장 -->
 	           		  <c:choose>
@@ -800,6 +852,31 @@
 	}
 </script>
 <script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+
+
+<script>
+//예약하기 (유효성검사)
+function reservation(){
+    for(let i = 0; i < arraypet.length; i++) {
+        if(arraypet[i] === '삭제')  {
+            arraypet.splice(i,1);
+            i--;
+        }
+      }
+    if(book_checkin_date.value=="" && book_checkout_date.value==""){
+            alert("기간을 설정하여주세요.");
+            location.reload();
+            return false;
+        }
+    if(insidecnt.childElementCount == 0){
+            alert("펫정보를 추가해주세요.");
+            location.reload();
+            return false;
+    }
+   
+}
+</script>
+
 <script>
 
    function upload(name){
@@ -830,7 +907,7 @@
                const img = document.createElement("img"); 
                img.setAttribute("src",ie.target.result)
                img.setAttribute("class",'thumbnail');//<img src="???/QR.png" class="thumbnail">
-               document.querySelector("."+e.target.id+"_cont").appendChild(img);
+               $("."+e.target.id+"_cont").append(img);
             }
             
             reader.readAsDataURL(file);
@@ -849,32 +926,8 @@
       $("#"+name+"name").text("선택된 파일 없음");
       $("."+name+"_cont .thumbnail").remove();
       $("#"+name+"name").next().val("");
-      
    };
    
-</script>
-
-<script>
-//예약하기 (유효성검사)
-function reservation(){
-    for(let i = 0; i < arraypet.length; i++) {
-        if(arraypet[i] === '삭제')  {
-            arraypet.splice(i,1);
-            i--;
-        }
-      }
-    if(book_checkin_date.value=="" && book_checkout_date.value==""){
-            alert("기간을 설정하여주세요.");
-            location.reload();
-            return false;
-        }
-    if(insidecnt.childElementCount == 0){
-            alert("펫정보를 추가해주세요.");
-            location.reload();
-            return false;
-    }
-   
-}
 </script>
 
 </html>

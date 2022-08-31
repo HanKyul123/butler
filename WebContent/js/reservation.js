@@ -893,6 +893,8 @@ var totalarray=[];
 
 const over1 = document.getElementById('modi');
 const over2 = document.getElementById('delete');
+const over3 = document.getElementById('complete');
+const over4 = document.getElementById('cancel');
 
     over1.addEventListener("mouseover", function () {
         over1.src="../../img/modify_icon_focus.png";
@@ -912,17 +914,85 @@ const over2 = document.getElementById('delete');
         over2.src="../../img/delete.png";
     }, false);
     
+    over3.addEventListener("mouseover", function () {
+        over3.src="../../img/check_icon_hover.png";
+    }, false);
+
+    over3.addEventListener("mouseout", function () {
+        over3.src="../../img/check_icon.png";
+   
+    }, false);
+    
+    
+    over4.addEventListener("mouseover", function () {
+        over4.src="../../img/cancel_icon_hover.png";
+    }, false);
+
+    over4.addEventListener("mouseout", function () {
+        over4.src="../../img/cancel_icon.png";
+    }, false);
+    
+    
     
     let picklink = document.getElementById("file");
     
     
-    
-    
-
-// 수정하기
+ // 수정하기
     function modify(){
 
+        $("#Rbox").css("display","none");
+        $("#modify_Review").css("display","none");
+        $("#delete_Review").css("display","none");
+
+
+        $("#modify_contents").css("display","block");
+        $("#choose_picture").css("display","block");
+        $("#file").css("display","inline");
+        $("#addpic_btn").css("display","inline");
+        $("hr").css("display","block");
+
+        $("#complete_Review").css("display","inline");
+        $("#cancel_Review").css("display","inline");
+
+
+        
+
     }
+    
+
+ // 수정 취소
+    function canceling(){
+        $("#Rbox").css("display","block");
+        $("#modify_Review").css("display","inline");
+        $("#delete_Review").css("display","inline");
+    
+        $("#choose_picture").css("display","none");
+        $("#file").css("display","none");
+        $("#addpic_btn").css("display","none");
+        $("hr").css("display","none");
+    
+        $("#modify_contents").css("display","none");
+        $("#complete_Review").css("display","none");
+        $("#cancel_Review").css("display","none");
+    }
+
+   // 수정 완료
+   function complete(){
+    $("#Rbox").css("display","block");
+    $("#modify_Review").css("display","inline");
+    $("#delete_Review").css("display","inline");
+
+    $("#choose_picture").css("display","none");
+        $("#file").css("display","none");
+        $("#addpic_btn").css("display","none");
+        $("hr").css("display","none");
+
+
+    $("#modify_contents").css("display","none");
+    $("#complete_Review").css("display","none");
+    $("#cancel_Review").css("display","none");
+
+}
     
     
     
@@ -934,25 +1004,14 @@ const over2 = document.getElementById('delete');
         i.parentNode.parentNode.parentNode.remove();
     }
 
-   var pic=document.getElementById("URP");
-   var picCount = pic.childElementCount;
-   console.log(picCount)
-
-   if(picCount==0){
-    $(".user_review_pic").css("border","none");
-    $(".replyBigbox").css("bottom","6px")
-   }
-
-// 수정 삭제
-    function cancel(){
-        $('.Mbox').css('display','none');
-        $('.mask').css('display','none');
-        new_review.value="";
-    }
 
 
-    
-    
+// 리뷰 수정 시 사진 삭제하기
+    function deletepick() {
+    	$(".thumbnail").remove();
+    	let filetxt = document.getElementsByClassName("file");
+    	filetxt.value="";
+    }  
     
     
 
@@ -998,27 +1057,7 @@ const over2 = document.getElementById('delete');
 	$(".thumbnail").remove();
 }
    
-   
-   // 수정 완료
-   function complete(){
-    $('.Mbox').css('display','none');
-    $('.mask').css('display','none');
-    let before_review = document.getElementById("R_box");
-    let new_review = document.getElementById("Mnew_review");
 
-    if(new_review.value!==""){
-        before_review.innerHTML=new_review.value;
-    }
-    new_review.value="";
-
-    $(".user_pic").css("display", "block");
-    
-    if(picCount>0){
-        $(".user_review_pic").css("border","1px solid rgb(205, 205, 205)");
-        $(".replyBigbox").css("bottom","0px")
-       }
-
-}
 
 
 

@@ -532,6 +532,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
    }
 
    .user_info{
+
     margin-bottom: 10px;
     text-align: left;
    }
@@ -603,6 +604,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     width: 20px;
 }
 
+.CD{
+    position: relative;
+    right: 2px;
+    cursor: pointer;
+    width: 18px;
+}
+#complete_Review{
+    display: none;
+}
+
+#cancel_Review{
+    display: none;
+}
+
 .Review_btn{
     position: relative;
     top: 5px;
@@ -610,127 +625,48 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     background-color: transparent;
     width: 30px;
     border: none;
-    left: 40px;
+    left: 20px;
+    display: inline;
 }
-#delete{
-   left:210px;
-   bottom:29px;
-}
+
    /* ------------- 수정 박스 ------------- */
 
-.Mbox{
+   #modify_contents{
     display: none;
-    padding: 20px;
-    text-align: left;
-    z-index: 150;
-    position: fixed;
-    border: 1px solid rgb(93, 46, 105);
-    border-radius: 5px;
-    width: 800px;
-    height: 380px;
-    top: 155px;
-    right: 355px;
-    background-color: rgba(255, 255, 255, 0.944);
-    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.149);
-}
-.mask{
-    z-index: 140;
-     display: none;
-     position: fixed;
-     background-color: rgba(0, 0, 0, 0.352);
-     width: 100%;
-     height: 100%;
- }
-.Mall{
-    color: rgb(131, 51, 149);
-    
-}
-#price_prod{
-    font-size: 14px;
-    color: rgb(213, 147, 228);
-}
-
-#Mnew_review{
-    
     font-family: 'OTWelcomeRA';
-    font-size: 16px;
-    padding: 20px;
-    width: 94.55%;
-    height: 30%;
-    margin-top: 20px;
-    resize: none;
-    border: 1px solid #f0f0f0;
-    background-color: #f0f0f0;
-    border-radius: 4px;
-
-}
-
-.modify_contents{
-	width:100%;
+	width:98.3%;
 	padding: 10px;
     padding-top: 14px;
     border: none;
     border-radius: 4px;
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(255, 237, 248);
     font-size: 15px;
 	resize: none;
 }
-
-
-
-.flex_go{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.CB{
-    cursor: pointer;
-    position: relative;
-    left: 590px;
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
-    background-color: transparent;
-    border: none;
-}
- .MCbtn{
-    position: relative;
-    right: 8px;
-    bottom: 3px;
-    width: 25px;
- }
-
- .modypic{
-    display: flex;
-    flex-wrap: wrap;
+.choose_picture{
+    margin-top: 5px;
+    display: none;
+    padding: 10px;
+    text-align: left;
     width: 100%;
-    height: 80px;
-    border: 1px solid #c8c8c8;
+    height: 102px;
+    border: 1px dotted rgb(176, 176, 176);
     border-radius: 4px;
- }
- .pick{
-    width: auto;
-    height: 80px;
- }
- #modypic{
-     width: auto;
+}
+
+.thumbnail{
+    width: 100%;
     height: 100%;
     object-fit: cover;
- }
+    margin-right: 5px;
+  }
+   #imgbox{
+            width:auto;
+            height: 100%;
+        }
 
- #Deletepic{
-    cursor: pointer;
-    width: 5px;
-    height: 15px;
-    margin-right: -10px;
-    border: none;
-    background-color: transparent;
-    position: relative;
-    bottom: 60px;
-    right: 20px;
-}
+ input[type=file]::file-selector-button {
 
- .file_box {
     cursor: pointer;
     margin-top: 10px;
     font-family: 'OTWelcomeRA';
@@ -739,35 +675,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     width: 100px;
     height: 30px;
     line-height: 33px;
-    border: 1px solid rgb(131, 51, 149);
-    background-color: rgb(131, 51, 149);
+    border: 1px solid rgb(157, 69, 177);
+    background-color: rgb(157, 69, 177);
     border-radius: 4px;
     color: #fff;
    
   }
-  .addpic{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-  }
+
+
+
   input[type=file]{
-    width: 86.3%;
+    display: none;
+    width: 91.3%;
   }
-  a>#addpic_btn:disabled{
-    cursor: default;
-    margin-top: 10px;
-    font-family: 'OTWelcomeRA';
-    text-align: center;
-    width: 100px;
-    height: 30px;
-    line-height: 33px;
-    border: 1px solid rgb(173, 173, 173);
-    background-color: rgb(255, 255, 255);
-    border-radius: 4px;
-    color: rgb(159, 159, 159);
-  }
-  
-  a>#addpic_btn{
+
+  #addpic_btn{
+    display: none;
     cursor: pointer;
     margin-top: 10px;
     font-family: 'OTWelcomeRA';
@@ -775,28 +698,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     width: 100px;
     height: 30px;
     line-height: 33px;
-    border: 1px solid rgb(131, 51, 149);
-    background-color: rgb(131, 51, 149);
+    border: 1px solid rgb(157, 69, 177);
+    background-color: rgb(157, 69, 177);
     border-radius: 4px;
     color: #fff;
-    position: relative;
-    left: 152px;
+    margin-bottom: 5px;
     
   }
-  
-a>#choose_btn{
-    cursor: pointer;
 
-    font-family: 'OTWelcomeRA';
-    text-align: center;
-    width: 100px;
-    height: 30px;
-    line-height: 33px;
-    border: 1px solid rgb(131, 51, 149);
-    background-color: rgb(131, 51, 149);
-    border-radius: 4px;
-    color: #fff;
-}
+  hr{
+    display: none;
+    border: 1px dotted rgb(224, 224, 224);
+    margin-bottom: -1px;
+  }
+  
 
 
 

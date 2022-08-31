@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header_login_front</title>
     <link href="${pageContext.request.contextPath}/css/jquery-ui.css" rel="stylesheet">
+    <link rel="icon"
+	href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     
    
 </head>
