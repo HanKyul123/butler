@@ -525,9 +525,13 @@
 	           <c:when test="${reviewResult != null and reviewResult.size()>0 }">
 	           		<c:forEach items="${reviewResult}" var="reviewResult">
 	           			<div class="Review_Reply">
+	           			
+	           			<!-- 유저의 리뷰박스 & 수정박스 전체를 감쌈 -->
+	           			<form method="post" action="/user/hotelreview_delete.us">
                         	<div class="user_review_box">
+                        	
                           	 <div class="user_info">
-                          	 <form method="post" action="/user/hotelreview_delete.us">
+                          	 
                           	 	<span class="usernick">${reviewResult.review_nickname}</span> 
                           	 		<c:choose>
 						     			<c:when test="${LoginUser.user_logintype == 0}">
@@ -569,7 +573,7 @@
 											
 										
 										
-									</form>
+									
 									
 								
 									
@@ -608,7 +612,7 @@
 			                    
 	                        </div>
 	                        <input type="file" name="file" id="file">
-	                        <button id="addpic_btn">이미지 삭제</button>
+	                        <button type="button" id="addpic_btn">이미지 삭제</button>
 	                        <hr>
 	                     </form>
                       <!-- --------------------------------------------->    	 
@@ -626,6 +630,8 @@
 	                            </div>
 	                          </div> 
                         	</div>
+                        	
+                        	</form>
 	           			</div>
 
 
