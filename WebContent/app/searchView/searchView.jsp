@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/search.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
-    <title>Butler-Animal Hotel 검색 결과</title>
+    <title>Butler:Animal Hotel 검색 결과</title>
 <%@ include file="../../header/pc_header.jsp" %>
 </head>
 <!-- 헤더  -->

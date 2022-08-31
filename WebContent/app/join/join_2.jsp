@@ -22,8 +22,7 @@
 			<strong>휴대폰 본인 확인</strong>
 		</div>
 		<p>원활한 서비스 제공을 위해, 휴대폰 번호를 입력해주세요.</p>
-		<form name="phone_prove" method="post"
-			action="${cp}/login/loginPhoneProve.us">
+		<form name="phone_prove" method="post" action="${cp}/login/loginPhoneProve.us">
 
 			<div class="Pnum_box">
 				<div id="sendCode">
@@ -44,11 +43,9 @@
 				<div class="Prove_box">
 					<strong class="bold2">인증번호</strong>
 					<div class="Wnum">
-						<input id="prove_num" type="tel" minlength="4" maxlength="4"
-							autocomplete="off">
+						<input id="prove_num" name="porve_num" type="tel" minlength="4" maxlength="4" autocomplete="off">
 						<!-- code_num 과 적은 value 값이 같은지 확인 -->
-						<button type="submit" class="btn_checked2" id="click_btn"
-							disabled="disabled" onclick="check_code()">확인</button>
+						<button type="submit" class="btn_checked2" id="click_btn" disabled="disabled">확인</button>
 						<div class="time">
 							<span id="timer" class="timer">3:00</span>
 						</div>
@@ -141,35 +138,6 @@ var x = setInterval(function(){
          xhr.send();   
    };
 
-   function check_code(){
-	    /* 유효성 검사 */
-	    const xhr = new XMLHttpRequest(); 
-	     const prove_num = document.getElementById("prove_num");
-	      const cp = "${cp}";
-	     console.log(prove_num.value);
- 
-	   xhr.onreadystatechange = function(){
-	         console.log("5-5");
-	         if(xhr.readyState == 4){
-	            if(xhr.status == 200){
-	               let txt = xhr.responseText;
-	               txt = txt.trim();
-	               if(txt == 'O'){
-	                  alert("휴대전화 인증이 완료되었습니다.")
-	                 
-	                  
-	               }
-	               else if(txt == 'X') {
-	                  alert("인증번호가 일치하지 않습니다.")
-	                  location.reload();
-	               }
-	            }
-	         }
-	      }
-	      xhr.open("GET",cp+"/user/prove_numChack.us?prove_num="+prove_num.value);
-	      xhr.send();
-	      
-	}
 
 </script>
 

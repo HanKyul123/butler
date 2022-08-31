@@ -14,7 +14,9 @@
 	href="${pageContext.request.contextPath}/css/footer.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/pc_header.css">
-<title>policy</title>
+	<link rel="icon"
+	href="${pageContext.request.contextPath}/img/Hotel_icon.png">
+<title>Butler:policy</title>
 <%@ include file="../../header/pc_header.jsp"%>
 </head>
 <body>

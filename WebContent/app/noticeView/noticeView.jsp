@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/notice.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
-<title>공지사항</title>
+<link rel="icon"
+	href="${pageContext.request.contextPath}/img/Hotel_icon.png">
+<title>Butler:notice</title>
 <%@ include file="../../header/pc_header.jsp"%>
 </head>
 <body>

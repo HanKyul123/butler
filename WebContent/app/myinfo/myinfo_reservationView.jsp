@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reservation</title>
+<title>Butler:my Reservation</title>
 <link rel="icon"
 	href="${pageContext.request.contextPath}/img/Hotel_icon.png">
 <link rel="stylesheet"
@@ -22,7 +22,7 @@
 	<div class="my_reservation_title">내 정보</div>
 	<div class="my_reservation_BigBox">
 		<div class="my_reservation_box1">
-			<a class="my_info_magage" href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp"><div id="all_choice">내 정보관리</div></a> <br> 
+			<a class="my_info_magage" href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp"><div id="all_choice">내 정보 관리</div></a> <br> 
 			<a class="my_reservation_info" href="/book/findMyReservation.book"><div>예약 내역</div></a> <br> 
 			<a class="my_review_info" href="/user/myinfoRevieViewAction.us"><div id="all_choice">내가 쓴 리뷰</div></a>
 		</div>

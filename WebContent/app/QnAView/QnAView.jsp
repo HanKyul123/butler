@@ -11,9 +11,10 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/QnA.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pc_header.css">
+<link rel="icon"
+	href="${pageContext.request.contextPath}/img/Hotel_icon.png">
 
-
-<title>QnA</title>
+<title>Butler:QnA</title>
 
 
 </head>

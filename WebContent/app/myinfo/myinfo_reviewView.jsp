@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>myReview</title>
+<title>Butler:my Review</title>
 <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myinfo_review.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
@@ -32,7 +32,7 @@
 
 		<div class="my_review_box1">
 			<a class="my_info_magage" href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">
-			<div id="all_choice">내 정보관리</div>
+			<div id="all_choice">내 정보 관리</div>
 			</a> <br> 
 			<a class="my_reservation_info" href="/book/findMyReservation.book"><div>예약 내역</div></a> <br> 
 			<a class="my_review_info" href="/user/myinfoRevieViewAction.us">
@@ -46,7 +46,6 @@
 
 			<div id="flex">
 				<div class="myinfo_title">내가 쓴 리뷰</div>
-				<a href="../myinfo/myinfo_reservationView.jsp"><button id = "go_write_review">리뷰 쓰러 가기</button></a>
 			</div>
 			
 			<div class="myreview_cnt">

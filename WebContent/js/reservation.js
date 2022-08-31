@@ -914,12 +914,21 @@ const over2 = document.getElementById('delete');
     
     
     let picklink = document.getElementById("file");
+    
+    
+    
+    
 
 // 수정하기
     function modify(){
-        $('.Mbox').css('display','block');
-        $('.mask').css('display','block');
+
     }
+    
+    
+    
+    
+    
+    
 // 리뷰 삭제하기
     function delete_review(i){
         i.parentNode.parentNode.parentNode.remove();

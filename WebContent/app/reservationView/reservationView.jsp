@@ -18,7 +18,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>예약하기</title>
+<title>Butler:reserve</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/reservation.css">
 <link rel="stylesheet"
@@ -560,7 +560,6 @@
                           	 	</c:if>
                           	 </div>
 							 <div id="Rbox" class="user_review">
-	                         <!-- <div id="Rbox" class="user_title">여기는 리뷰제목입니다.</div> -->
 	                         	<div id="Rbox" class="user_contents">
 	                                 ${reviewResult.review_contents}
 	                                 <c:choose>
@@ -576,60 +575,7 @@
 	           			</div>
 	           			<!-- 수정박스 -->
                      <form id="review_modify_Form" method="post" action="/user/review_modifyAction.us" enctype="multipart/form-data">
-                     	<div class="Mbox">
-                           <div class="flex_go">
-	                     		<div class="btnbox">
-	                                 <button type="submit" class="CB" onclick="complete()">
-	                                    <img src="${pageContext.request.contextPath}/img/complete_btn.png" alt="" id="Mbtn" class="MCbtn">
-	                                 </button>
-	                                 <button type="button" class="CB" onclick="cancel()">
-	                                    <img src="${pageContext.request.contextPath}/img/Mdelete_btn.png" alt="" id="Dbtn" class="MCbtn">
-	                                 </button>
-	                            </div>
-                           </div>
-                           <textarea name="Mnew_review" id="Mnew_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>
-                           <input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}"> 
-                           <input type="hidden" id="business_place_num_pk" name="business_place_num_pk"value="${hotelresult.business_place_num_pk}">
-                           
-                           <!-- 사진 추가하면 사진이 담긴 자식 생성됨. -->
-                           <div class="modypic" id="ele">
-                              <c:forEach var="i" begin="0" end="1">
-	                              <div class="file${i+1}_cont">
-	
-	                                 <div style="float: left;">
-	                                    <input type="file" name="file${i+1}" id="file${i+1}" style="display: none;">
-	                                    <input type="hidden" name="filename" value="${i<files.size() ? files[i].orgname : ''}">
-	                                 </div>
-	                                 
-	                                 <c:forTokens items="${files[i].orgname}" delims="." var="token" varStatus="status">
-	                                    <c:if test="${status.last}">
-	                                       <c:if
-	                                          test="${token eq 'jpg' or token eq 'jpeg' or token eq 'png' or token eq 'gif' or token eq 'webp'}">
-	                                          <img src="${cp}/reviewfile/${files[i].systemname}" class="thumbnail">
-	                                       </c:if>
-	                                    </c:if>
-	                                 </c:forTokens>
-	                              </div>
-                              </c:forEach> 
-                            </div>
-							<div class="addpic">
-                            	<a class="file_box" href="javascript:upload('file${1}')">
-                              	 	<div id="choose_btn" margin-right: 100px;">파일 선택 </div>
-                                </a> 
-                              
-                              <div class="nospan">
-                              	<span id="file${1}name"> ${i<files.size() ? files[0].orgname : "선택된 파일 없음"} </span>
-                              </div>
-                              <a href="javascript:cancelFile('file${1}')">
-                              		<div id="addpic_btn" style="float: right; margin-right: 100px;" onclick="deletepick()"> 
-                              		첨부 삭제 
-                              		</div> 
-                              </a>
-<%--                            <input type="file" name="file" id="file" href="javascript:upload('file${1}')">
-                              <input type="button" value="이미지 추가" id="addpic_btn" class="CaddB">
-                              <input type="button" value="이미지 삭제" href="javascript:cancelFile('file${1}')"> --%>
-                           </div>
-                     	</div>
+                     	<textarea class="modify_contents"></textarea>
                      </form>
 	           		 
 	           		 <!-- 관리인 리뷰 답장 -->
@@ -653,7 +599,7 @@
                            </div>
                         </c:when>
                         <c:otherwise>
-   `                        
+                           
                         </c:otherwise>
                      </c:choose>
 	           			

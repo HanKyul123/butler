@@ -542,6 +542,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
    }
 
    .user_date{
+  
     color: rgb(141, 141, 141);
    }
 
@@ -568,6 +569,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  
 
    .user_contents{
+
     padding: 10px;
     padding-top: 14px;
     border: none;
@@ -609,6 +611,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     width: 30px;
     border: none;
     left: 40px;
+}
+#delete{
+   left:210px;
+   bottom:29px;
 }
    /* ------------- 수정 박스 ------------- */
 
@@ -657,6 +663,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     background-color: #f0f0f0;
     border-radius: 4px;
 
+}
+
+.modify_contents{
+	width:100%;
+	padding: 10px;
+    padding-top: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(243, 243, 243);
+    font-size: 15px;
+	resize: none;
 }
 
 
@@ -768,7 +785,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
   
 a>#choose_btn{
-	 cursor: pointer;
+    cursor: pointer;
 
     font-family: 'OTWelcomeRA';
     text-align: center;
@@ -885,6 +902,6 @@ a>#choose_btn{
 
 
 .nospan{
-	margin-top:20px;
-	width: 52%;
+   margin-top:20px;
+   width: 52%;
 }

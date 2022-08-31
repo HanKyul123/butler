@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NonReservation</title>
+    <title>Butler:writing review</title>
     <link rel="icon" href="${pageContext.request.contextPath}/img/Hotel_icon.png">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/myinfo_writereview.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footer.css">
