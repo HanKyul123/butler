@@ -527,7 +527,7 @@
 	           			<div class="Review_Reply">
 	           			
 	           			<!-- 유저의 리뷰박스 & 수정박스 전체를 감쌈 -->
-	           			<form method="post" action="/user/hotelreview_delete.us">
+	           			
                         	<div class="user_review_box">
                         	
                           	 <div class="user_info">
@@ -580,10 +580,22 @@
                           	 	</c:if>
                           	 </div>
                           	 
+                          	 <!-- 유저 리뷰 -->
+                          	 	 <div id="Rbox" class="user_review">
+	                         	<div id="Rbox" class="user_contents">
+	                                 ${reviewResult.review_contents}
+	                                 <c:choose>
+	                                    <c:when test="${reviewResult.review_file_systemname != null}">                                 
+	                                       <img src="${cp}/reviewfile/${reviewResult.review_file_systemname}" class="thumbnail">
+	                                    </c:when>
+	                                    <c:otherwise>
+	                                    </c:otherwise>
+	                                 </c:choose>                                 
+	                            </div>
+	                          </div> 
+                          	 
                       <!----- 해당 유저 리뷰 박스위치에서 이 수정박스로 변환이 되어야 함 ----->    	 
-                      <!-- ------------------ 수정박스 ------------------ -->    
-                      	 
-	              		 <form id="review_modify_Form" method="post" action="/user/review_modifyAction.us" enctype="multipart/form-data" onsubmit="complete()">
+                      <!-- ------------------ 수정박스 ------------------ -->                		
 	                     	<textarea name="modify_contents" id="modify_contents" cols="30" rows="3">쓴 리뷰 그대로 가져오기</textarea>
 	                        <div id="choose_picture" class="choose_picture">
 	                        
@@ -611,27 +623,23 @@
 			                    
 			                    
 	                        </div>
+	                        
+
+	                       	
+	                       	
 	                        <input type="file" name="file" id="file">
 	                        <button type="button" id="addpic_btn">이미지 삭제</button>
 	                        <hr>
-	                     </form>
-                      <!-- --------------------------------------------->    	 
+	                        
+	                        <!-- --------------------------------------------->    	 
                           	 
-							 <div id="Rbox" class="user_review">
-	                         	<div id="Rbox" class="user_contents">
-	                                 ${reviewResult.review_contents}
-	                                 <c:choose>
-	                                    <c:when test="${reviewResult.review_file_systemname != null}">                                 
-	                                       <img src="${cp}/reviewfile/${reviewResult.review_file_systemname}" class="thumbnail">
-	                                    </c:when>
-	                                    <c:otherwise>
-	                                    </c:otherwise>
-	                                 </c:choose>                                 
-	                            </div>
-	                          </div> 
+						
                         	</div>
+	                        
+	                 
+
                         	
-                        	</form>
+                        
 	           			</div>
 
 
