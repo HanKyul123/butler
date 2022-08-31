@@ -631,8 +631,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
    /* ------------- 수정 박스 ------------- */
 
+	.modimodi{
+	display:none;
+	}
    #modify_contents{
-    display: none;
+    
     font-family: 'OTWelcomeRA';
 	width:98.3%;
 	padding: 10px;
@@ -645,7 +648,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 .choose_picture{
     margin-top: 5px;
-    display: none;
     padding: 10px;
     text-align: left;
     width: 100%;
@@ -685,12 +687,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 
   input[type=file]{
-    display: none;
+    
     width: 91.3%;
   }
 
   #addpic_btn{
-    display: none;
+   
     cursor: pointer;
     margin-top: 10px;
     font-family: 'OTWelcomeRA';
@@ -707,7 +709,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 
   hr{
-    display: none;
+   
     border: 1px dotted rgb(224, 224, 224);
     margin-bottom: -1px;
   }

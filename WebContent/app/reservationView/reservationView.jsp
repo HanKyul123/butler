@@ -546,28 +546,30 @@
                           	 	<span class="user_date">${reviewResult.review_regdate}</span>
                           	 	<c:if test="${reviewResult.review_nickname eq LoginUser.user_nickname}">
                           	 		
-                          	 		<!-- 유저 리뷰 수정하는 버튼 -->
-									<button type="button" id="modify_Review" class="Review_btn" onclick="modify()" title="수정하기">
-										<img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD">
-									</button>
-									
-									<!-- 유저 리뷰 삭제하는 버튼 -->
-										<button id="delete_Review" class="Review_btn" title="삭제하기">
-											<img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
-										</button>
+                          	 		
 										<input type="hidden" name="reviewNumPk" value="${reviewResult.review_num_pk}">
 										<input type="hidden" name="replyNumPk" value="${reviewResult.reply_num_pk}"> 
 										<input type="hidden" name="reviewNickname" value="${reviewResult.review_nickname}"> 
 										<input type="hidden" name="user_nickname" value="${LoginUser.user_nickname}"> 
 										<input type="hidden" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">	
 										
+										<!-- 유저 리뷰 수정하는 버튼 -->
+										<button type="button" id="modify_Review" class="Review_btn" onclick="modify(this)" title="수정하기">
+											<img id="modi" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" class="MD">
+										</button>
+										
+										<!-- 유저 리뷰 삭제하는 버튼 -->
+										<button id="delete_Review" class="Review_btn" title="삭제하기">
+											<img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
+										</button>
+										
 										 <!-- 유저 리뷰 수정 완료하는 버튼 -->
-				                         <button type="submit" id="complete_Review" class="Review_btn" onclick="complete()" title="수정완료">
+				                         <button type="button" id="complete_Review" class="Review_btn" onclick="complete(this)" title="수정완료">
 				                        	<img id="complete" src="${pageContext.request.contextPath}/img/check_icon.png" alt="" class="CD">
 				                         </button>
 				
 				                         <!-- 유저 리뷰 수정 취소하는 버튼 -->
-				                         <button type="button" id="cancel_Review" class="Review_btn" onclick="canceling()" title="취소하기">
+				                         <button type="button" id="cancel_Review" class="Review_btn" onclick="canceling(this)" title="취소하기">
 				                        	<img id="cancel" src="${pageContext.request.contextPath}/img/cancel_icon.png" alt="" class="MD">
 				                         </button>
 											
@@ -595,11 +597,11 @@
 	                          </div> 
                           	 
                       <!----- 해당 유저 리뷰 박스위치에서 이 수정박스로 변환이 되어야 함 ----->    	 
-                      <!-- ------------------ 수정박스 ------------------ -->                		
+                      <!-- ------------------ 수정박스 ------------------ -->
+                      <div class="modimodi" >               		
 	                     	<textarea name="modify_contents" id="modify_contents" cols="30" rows="3">쓴 리뷰 그대로 가져오기</textarea>
-	                        <div id="choose_picture" class="choose_picture">
 	                        
-	                        
+	                        <div id="choose_picture" class="choose_picture">  
 	                        <!-- 맨 밑에 해당 스크립트 있음, 사진이 안나와요 -->
 	                            <div id="imgbox" class="file${i+1}_cont">
 			                     	<c:forEach var="i" begin="0" end="1">
@@ -641,7 +643,7 @@
                         	
                         
 	           			</div>
-
+					</div>
 
 	           		 
 	           		 <!-- 관리인 리뷰 답장 -->

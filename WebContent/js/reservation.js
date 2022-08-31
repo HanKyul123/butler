@@ -938,60 +938,98 @@ const over4 = document.getElementById('cancel');
     
     
  // 수정하기
-    function modify(){
+    function modify(i){
 
-        $("#Rbox").css("display","none");
-        $("#modify_Review").css("display","none");
-        $("#delete_Review").css("display","none");
-
-
-        $("#modify_contents").css("display","block");
-        $("#choose_picture").css("display","block");
-        $("#file").css("display","inline");
-        $("#addpic_btn").css("display","inline");
-        $("hr").css("display","block");
-
-        $("#complete_Review").css("display","inline");
-        $("#cancel_Review").css("display","inline");
-
-
+    	let my = i;
+        console.log(i.parentNode);
+        
+        let me = i.parentNode;
+        
+        console.log(me);
+        console.log(me.nextElementSibling);
+        console.log(me.nextElementSibling.nextElementSibling);
+        
+        let del_btn = i.nextElementSibling;
+        let com_btn = i.nextElementSibling.nextElementSibling;
+        let can_btn = i.nextElementSibling.nextElementSibling.nextElementSibling;
+        
+        console.log(com_btn);
+        
+        
+        let user_review = me.nextElementSibling;
+        let user_modify = me.nextElementSibling.nextElementSibling;
+        
+        my.style.display="none";
+        del_btn.style.display="none";
+        user_review.style.display="none";
+        user_modify.style.display="block";
+        com_btn.style.display="inline";
+        can_btn.style.display="inline";
         
 
     }
     
 
  // 수정 취소
-    function canceling(){
-        $("#Rbox").css("display","block");
-        $("#modify_Review").css("display","inline");
-        $("#delete_Review").css("display","inline");
-    
-        $("#choose_picture").css("display","none");
-        $("#file").css("display","none");
-        $("#addpic_btn").css("display","none");
-        $("hr").css("display","none");
-    
-        $("#modify_contents").css("display","none");
-        $("#complete_Review").css("display","none");
-        $("#cancel_Review").css("display","none");
+    function canceling(i){
+    	
+    	let my = i;
+        console.log(i.parentNode);
+        
+        let me = i.parentNode;
+        
+        console.log(me);
+        console.log(me.nextElementSibling);
+        console.log(me.nextElementSibling.nextElementSibling);
+        
+        let user_review = me.nextElementSibling;
+        let user_modify = me.nextElementSibling.nextElementSibling;
+        
+        console.log(i.previousElementSibling);
+        let com_btn = i.previousElementSibling;
+        let del_btn = i.previousElementSibling.previousElementSibling;
+        let modi_btn = i.previousElementSibling.previousElementSibling.previousElementSibling;
+ 
+        user_review.style.display="block";
+        user_modify.style.display="none";
+        
+        
+        del_btn.style.display="inline";
+        modi_btn.style.display="inline";
+        com_btn.style.display="none";
+        my.style.display="none";
+        
     }
 
    // 수정 완료
-   function complete(){
-    $("#Rbox").css("display","block");
-    $("#modify_Review").css("display","inline");
-    $("#delete_Review").css("display","inline");
+   function complete(i){
 
-    $("#choose_picture").css("display","none");
-        $("#file").css("display","none");
-        $("#addpic_btn").css("display","none");
-        $("hr").css("display","none");
+   	
+   	let my = i;
+       console.log(i.parentNode);
+       
+       let me = i.parentNode;
+       
+       console.log(me);
+       console.log(me.nextElementSibling);
+       console.log(me.nextElementSibling.nextElementSibling);
+       
+       let user_review = me.nextElementSibling;
+       let user_modify = me.nextElementSibling.nextElementSibling;
+       
+       console.log(i.previousElementSibling);
+       let can_btn = i.nextElementSibling;
+       let del_btn = i.previousElementSibling;
+       let modi_btn = i.previousElementSibling.previousElementSibling;
 
-
-    $("#modify_contents").css("display","none");
-    $("#complete_Review").css("display","none");
-    $("#cancel_Review").css("display","none");
-
+       user_review.style.display="block";
+       user_modify.style.display="none";
+       
+       
+       del_btn.style.display="inline";
+       modi_btn.style.display="inline";
+       can_btn.style.display="none";
+       my.style.display="none";
 }
     
     
