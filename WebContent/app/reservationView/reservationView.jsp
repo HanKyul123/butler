@@ -632,6 +632,7 @@ img.thumbnail {
 			                        <button type="button" id="addpic_btn"  onclick='cancelFile(file${reviewResult.review_num_pk});'>이미지삭제</button>
 			                        <input id="complete_modify" type="submit" value="수정 완료">
 		                        </div>
+		                        <hr>
 	                      </form>             		
 
 	                     </div>
