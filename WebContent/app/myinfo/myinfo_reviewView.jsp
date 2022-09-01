@@ -118,7 +118,7 @@
 								 <form id="review_modify_Form" method="post" action="/user/review_modifyAction.us" enctype="multipart/form-data">
 									
 									<div class="newreview_btn">
-										<textarea name="Mnew_review" id="new_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>
+										<textarea name="modify_contents" id="modify_contents" cols="30" rows="10">${reviewResult.review_contents}</textarea>
 										<input type="hidden" id="review_num_pk" name="review_num_pk" value="${reviewResult.review_num_pk}"> 
                            				<input type="hidden" id="bpnum_pk" name="bpnum_pk"value="${reviewResult.business_place_num_pk}">
                            				<input type="hidden" id="book_num_pk" name="book_num_pk"value="${reviewResult.BOOK_NUM_PK}">
