@@ -86,5 +86,32 @@ public class HotelDAO {
 	   public boolean ReplyDeleteResult(int reply_num_pk) {
 	      return sqlsession.delete("Hotel.ReplyDeleteResult",reply_num_pk) == 1;
 	   }
-	   
-}
+    //지역+카테
+	public List<HotelDTO> locaNcateCheckOk(HashMap<String, String> datas) {
+		List<HotelDTO> list;
+		list = sqlsession.selectList("Hotel.locaNcateCheckOk", datas);
+		return list;
+	}
+    //지역+동물
+	public List<HotelDTO> locaNanimalOK(HashMap<String, String> datas) {
+		List<HotelDTO> list;
+		list = sqlsession.selectList("Hotel.locaNanimalOK", datas);
+		return list;
+	}
+    //카테+동물
+	public List<HotelDTO> cateNanimalOK(HashMap<String, String> datas) {
+		List<HotelDTO> list;
+		list = sqlsession.selectList("Hotel.cateNanimalOK", datas);
+		return list;
+	}
+	//지역+카테+동물
+	public List<HotelDTO> AllboxCheckOK(HashMap<String, String> datas) {
+		List<HotelDTO> list;
+		list = sqlsession.selectList("Hotel.AllboxCheckOK", datas);
+		return list;
+	}
+		
+	}
+
+	
+	

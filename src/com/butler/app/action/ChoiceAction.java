@@ -69,7 +69,7 @@ public class ChoiceAction implements Action{
 		String Gyeongsangnam_do = req.getParameter("Gyeongsangnam_do");
 		String Jeju = req.getParameter("Jeju");
 		
-		
+		//전체
 		if(dog == null && cat == null && bird == null && reptile == null 
 			&& amphibia == null && rodent == null && weasel == null && 
 			pig == null && rabbit == null && else_pet == null && hotel == null && hospital == null
@@ -84,6 +84,9 @@ public class ChoiceAction implements Action{
 	         out.print("</script>");
 		}
 		else {
+			
+			
+			
 			HashMap<String, String> datas = new HashMap<String, String>();
 			
 			// 동물
@@ -123,28 +126,28 @@ public class ChoiceAction implements Action{
 			}
 			
 			if(rodent != null) { 
-				datas.put("pet6", "설치류");
+				datas.put("pet6", "설치");
 			}
 			else {
 				datas.put("pet6", "없음");
 			}
 			
 			if(weasel != null) { 
-				datas.put("pet7", "족제비과");
+				datas.put("pet7", "족제비");
 			}
 			else {
 				datas.put("pet7", "없음");
 			}
 			
 			if(pig != null) { 
-				datas.put("pet8", "돼지류");
+				datas.put("pet8", "돼지");
 			}
 			else {
 				datas.put("pet8", "없음");
 			}
 			
 			if(rabbit != null) { 
-				datas.put("pet9", "토끼류");
+				datas.put("pet9", "토끼");
 			}
 			else {
 				datas.put("pet9", "없음");
@@ -230,14 +233,14 @@ public class ChoiceAction implements Action{
 			}
 			
 			if(Gyeonggi_do != null) { 
-				datas.put("location9", "경기도");
+				datas.put("location9", "경기");
 			}
 			else {
 				datas.put("location9", "없음");
 			}
 			
 			if(Gangwon_do != null) {
-				datas.put("location10", "강원도");
+				datas.put("location10", "강원");
 			}
 			else {
 				datas.put("location10", "없음");
@@ -288,6 +291,85 @@ public class ChoiceAction implements Action{
 			}
 			else {
 				datas.put("location17", "없음");
+			}
+			
+			boolean hashTagchk = true;
+			boolean locationchk = true;
+			boolean categorychk = true;
+			
+
+			//지역과 호텔 
+			if(dog == null && cat == null && bird == null && reptile == null && 
+			   amphibia == null && rodent == null && weasel == null && 
+			   pig == null && rabbit == null && else_pet == null){
+				hashTagchk = false;
+			}
+			//지역과 동물
+			else if(hotel == null && hospital == null) {
+				categorychk = false;
+			}
+			//호텔과 동물
+			else if(Seoul == null &&	Busan == null && Daegu == null && Incheon == null && Gwangju == null &&
+			   Daejeon == null && Ulsan == null && Sejong == null && Gyeonggi_do == null && Gangwon_do == null &&
+			   Chungcheongbuk_do == null && Chungcheongnam_do == null && Jeollabuk_do == null && Chungcheongnam_do == null &&
+			   Jeollabuk_do == null && Jeollanam_do == null && Gyeongsangbuk_do == null && Gyeongsangnam_do == null && Jeju == null){
+				locationchk = false;
+			}
+			//지역과 호텔
+			if(locationchk == true && categorychk == true && hashTagchk == false) {
+				System.out.println(datas);
+				
+				List<HotelDTO> list = hdao.locaNcateCheckOk(datas);
+				
+				
+				session.setAttribute("list", list);
+				
+				ActionTo transfer = new ActionTo();
+				transfer.setRedirect(false);		
+				transfer.setPath(req.getContextPath()+"/app/searchView/searchView.jsp");
+				return transfer;
+			}
+			//지역과 동물
+			else if(locationchk == true && categorychk == false && hashTagchk == true){
+				System.out.println(datas);
+				
+				List<HotelDTO> list = hdao.locaNanimalOK(datas);
+				
+				
+				session.setAttribute("list", list);
+				
+				ActionTo transfer = new ActionTo();
+				transfer.setRedirect(false);		
+				transfer.setPath(req.getContextPath()+"/app/searchView/searchView.jsp");
+				return transfer;
+			}
+			//호텔과 동물
+			else if(locationchk == false && categorychk == true && hashTagchk == true){
+				System.out.println(datas);
+				
+				List<HotelDTO> list = hdao.cateNanimalOK(datas);
+				
+				
+				session.setAttribute("list", list);
+				
+				ActionTo transfer = new ActionTo();
+				transfer.setRedirect(false);		
+				transfer.setPath(req.getContextPath()+"/app/searchView/searchView.jsp");
+				return transfer;
+			}
+			//지역+호텔+동물
+			else if(locationchk == true && categorychk == true && hashTagchk == true){
+				System.out.println(datas);
+				
+				List<HotelDTO> list = hdao.AllboxCheckOK(datas);
+				
+				
+				session.setAttribute("list", list);
+				
+				ActionTo transfer = new ActionTo();
+				transfer.setRedirect(false);		
+				transfer.setPath(req.getContextPath()+"/app/searchView/searchView.jsp");
+				return transfer;
 			}
 			
 			System.out.println(datas);
