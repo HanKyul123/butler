@@ -87,7 +87,7 @@
 										<div id="Thumbnail_Box">
 											<c:choose>
 												<c:when test="${reviewResult.review_file_systemname != null}">
-													<img src="${cp}/reviewfile/${reviewResult.review_file_systemname}" class="thumbnail" id="thumbnail2">
+													<img src="${cp}/file/${reviewResult.review_file_systemname}" class="thumbnail" id="thumbnail2">
 												</c:when>
 												<c:otherwise>
 
