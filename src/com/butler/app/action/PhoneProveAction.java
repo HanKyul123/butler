@@ -33,7 +33,7 @@ public class PhoneProveAction implements Action{
 			PrintWriter out = resp.getWriter();
         	out.print("<script>");
         	out.print("alert('인증번호가 맞지 않습니다.');");
-            out.print("location.href = '"+req.getContextPath()+"/app/login/login.jsp';");
+            out.print("location.href = '"+req.getContextPath()+"/app/join/join_2.jsp';");
             out.print("</script>");
 			
 		}else {
