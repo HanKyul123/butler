@@ -108,5 +108,71 @@
    <delete id="ReplyDeleteResult" parameterType="_int">
       delete from reply_tb where reply_num_pk = #{reply_num_pk}
    </delete>
+   
+  <!-- 지역과 카테고리 -->
+   <select id="locaNcateCheckOk" parameterType="hashMap" resultType="hdto">
+      select * from business_tb where 
+      (business_addr like('%${location1}%') or business_addr like('%${location2}%') 
+      or business_addr like('%${location3}%') or business_addr like('%${location4}%')
+      or business_addr like('%${location5}%') or business_addr like('%${location6}%') 
+      or business_addr like('%${location7}%') or business_addr like('%${location8}%')
+      or business_addr like('%${location9}%') or business_addr like('%${location10}%') 
+      or business_addr like('%${location11}%') or business_addr like('%${location12}%')
+      or business_addr like('%${location13}%') or business_addr like('%${location14}%') 
+      or business_addr like('%${location15}%') or business_addr like('%${location16}%')
+      or business_addr like('%${location17}%')) 
+      and (business_category = #{category1} or business_category = #{category2});
+   </select>
+   
+   <!-- 지역과 동물 --> 
+   <select id="locaNanimalOK" parameterType="hashMap" resultType="hdto">
+      select * from business_tb where 
+      (business_addr like('%${location1}%') or business_addr like('%${location2}%') 
+      or business_addr like('%${location3}%') or business_addr like('%${location4}%')
+      or business_addr like('%${location5}%') or business_addr like('%${location6}%') 
+      or business_addr like('%${location7}%') or business_addr like('%${location8}%')
+      or business_addr like('%${location9}%') or business_addr like('%${location10}%') 
+      or business_addr like('%${location11}%') or business_addr like('%${location12}%')
+      or business_addr like('%${location13}%') or business_addr like('%${location14}%') 
+      or business_addr like('%${location15}%') or business_addr like('%${location16}%')
+      or business_addr like('%${location17}%')) 
+      and (business_hashtag like('%${pet1}%') or business_hashtag like('%${pet2}%')
+      or business_hashtag like('%${pet3}%') or business_hashtag like('%${pet4}%') 
+      or business_hashtag like('%${pet5}%') or business_hashtag like('%${pet6}%') 
+      or business_hashtag like('%${pet7}%') or business_hashtag like('%${pet8}%') 
+      or business_hashtag like('%${pet9}%') or business_hashtag like('%${pet0}%'));
+   </select>
+   
+   <!-- 카테고리와 동물 -->
+   <select id="cateNanimalOK" parameterType="hashMap" resultType="hdto">
+      select * from business_tb where 
+      (business_category = #{category1} or business_category = #{category2}) 
+      and (business_hashtag like('%${pet1}%') or business_hashtag like('%${pet2}%') 
+      or business_hashtag like('%${pet3}%') or business_hashtag like('%${pet4}%') 
+      or business_hashtag like('%${pet5}%') or business_hashtag like('%${pet6}%') 
+      or business_hashtag like('%${pet7}%') or business_hashtag like('%${pet8}%') 
+      or business_hashtag like('%${pet9}%') or business_hashtag like('%${pet0}%'));
+   </select>
+   
+   <!-- 지역과 카테고리와 동물 -->
+   <select id="AllboxCheckOK" parameterType="hashMap" resultType="hdto">
+      select * from business_tb where 
+      ((business_addr like('%${location1}%') or business_addr like('%${location2}%') 
+      or business_addr like('%${location3}%') or business_addr like('%${location4}%') 
+      or business_addr like('%${location5}%') or business_addr like('%${location6}%')
+      or business_addr like('%${location7}%') or business_addr like('%${location8}%') 
+      or business_addr like('%${location9}%') or business_addr like('%${location10}%') 
+      or business_addr like('%${location11}%') or business_addr like('%${location12}%')
+      or business_addr like('%${location13}%') or business_addr like('%${location14}%') 
+      or business_addr like('%${location15}%') or business_addr like('%${location16}%') 
+      or business_addr like('%${location17}%')) 
+      and (business_category = #{category1} or business_category = #{category2}) 
+      and (business_hashtag like('%${pet1}%') or business_hashtag like('%${pet2}%') 
+      or business_hashtag like('%${pet3}%') or business_hashtag like('%${pet4}%') 
+      or business_hashtag like('%${pet5}%') or business_hashtag like('%${pet6}%')
+      or business_hashtag like('%${pet7}%') or business_hashtag like('%${pet8}%') 
+      or business_hashtag like('%${pet9}%') or business_hashtag like('%${pet0}%')));
+   </select>
+   
 	
 </mapper>
