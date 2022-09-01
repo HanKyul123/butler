@@ -76,7 +76,7 @@ header {
    /* background: url("/img/검색.png")50% 50% no-repeat; */
    /* 마이닷홈용 */
    background-size: 20px auto;
-   transition: 1s;
+   transition: 0.5s;
 }
 /*     
         .btn_search:focus{
@@ -97,7 +97,7 @@ header {
    /* background: url("/img/검색.png")50% 50% no-repeat; */
    /* 마이닷홈용 */
    background-size: 20px auto;
-   transition: 1s;
+   transition: 0.5s;
         }
         
 #login_search{
