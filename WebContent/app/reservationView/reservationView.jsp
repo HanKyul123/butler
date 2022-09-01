@@ -611,7 +611,7 @@ img.thumbnail {
 		                                 <div style="float: left;">
 							                <input type="hidden" name="file${reviewResult.review_num_pk}name" value="${0<files.size() ? files.orgname : '선택된 파일없음'}">
 		                                 </div>
-		                                 
+		                                  <img src="${cp}/file/${reviewResult.review_file_orgname}" class="thumbnail">
 		                                 <div style="width:100px; height:100px">
 		                                 	<div class="file${reviewResult.review_num_pk}_cont2"></div>
 		                                 </div>

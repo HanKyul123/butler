@@ -129,6 +129,7 @@
 										<div class="imgBox">
 											<div class="file${i+1}_cont">
 												<div class="modypic" id="ele">
+												<img src="${cp}/file/${reviewResult.review_file_orgname}" class="thumbnail">
 													<c:forTokens items="${files[i].orgname}" delims="."
 														var="token" varStatus="status">
 														<c:if test="${status.last}">
@@ -136,6 +137,7 @@
 																test="${token eq 'jpg' or token eq 'jpeg' or token eq 'png' or token eq 'gif' or token eq 'webp'}">
 																<img src="${cp}/file/${files[i].systemname}"
 																	class="thumbnail">
+																	
 															</c:if>
 														</c:if>
 													</c:forTokens>
