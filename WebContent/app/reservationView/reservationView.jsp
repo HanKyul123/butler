@@ -162,7 +162,15 @@
 
 	});
 </script>
-
+<style>
+img.thumbnail {
+    display: block;
+    height: 80px;
+    object-fit: cover;
+    margin-top: 10px;
+    width: auto;
+}
+</style>
 
 
 </head>
@@ -547,11 +555,11 @@
                           	 	<c:if test="${reviewResult.review_nickname eq LoginUser.user_nickname}">
                           	 		
                           	 		
-										<input type="hidden" name="reviewNumPk" value="${reviewResult.review_num_pk}">
+<%-- 										<input type="hidden" name="reviewNumPk" value="${reviewResult.review_num_pk}">
 										<input type="hidden" name="replyNumPk" value="${reviewResult.reply_num_pk}"> 
 										<input type="hidden" name="reviewNickname" value="${reviewResult.review_nickname}"> 
 										<input type="hidden" name="user_nickname" value="${LoginUser.user_nickname}"> 
-										<input type="hidden" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">	
+										<input type="hidden" name="business_place_num_pk" value="${hotelresult.business_place_num_pk}">	 --%>
 										
 										<!-- 유저 리뷰 수정하는 버튼 -->
 										<button type="button" id="modify_Review" class="Review_btn" onclick="modify(this)" title="수정하기">
@@ -559,26 +567,16 @@
 										</button>
 										
 										<!-- 유저 리뷰 삭제하는 버튼 -->
-										<button id="delete_Review" class="Review_btn" title="삭제하기">
+
+										<button id="delete_Review" class="Review_btn" title="삭제하기" 
+										onclick="location.href='/user/hotelreview_delete.us?reviewNumPk=${reviewResult.review_num_pk}&&replyNumPk=${reviewResult.reply_num_pk}&&reviewNickname=${reviewResult.review_nickname}&&user_nickname=${LoginUser.user_nickname}&&business_place_num_pk=${hotelresult.business_place_num_pk}'">
 											<img id="delete" src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD">
-										</button>
-										
-										 <!-- 유저 리뷰 수정 완료하는 버튼 -->
-				                         <button type="button" id="complete_Review" class="Review_btn" onclick="complete(this)" title="수정완료">
-				                        	<img id="complete" src="${pageContext.request.contextPath}/img/check_icon.png" alt="" class="CD">
-				                         </button>
+										</button>					
 				
 				                         <!-- 유저 리뷰 수정 취소하는 버튼 -->
 				                         <button type="button" id="cancel_Review" class="Review_btn" onclick="canceling(this)" title="취소하기">
 				                        	<img id="cancel" src="${pageContext.request.contextPath}/img/cancel_icon.png" alt="" class="MD">
-				                         </button>
-											
-										
-										
-									
-									
-								
-									
+				                         </button>									
                           	 	</c:if>
                           	 </div>
                           	 
@@ -588,7 +586,7 @@
 	                                 ${reviewResult.review_contents}
 	                                 <c:choose>
 	                                    <c:when test="${reviewResult.review_file_systemname != null}">                                 
-	                                       <img src="${cp}/reviewfile/${reviewResult.review_file_systemname}" class="thumbnail">
+	                                       <img src="${cp}/file/${reviewResult.review_file_orgname}" class="thumbnail">
 	                                    </c:when>
 	                                    <c:otherwise>
 	                                    </c:otherwise>
@@ -597,53 +595,51 @@
 	                          </div> 
                           	 
                       <!----- 해당 유저 리뷰 박스위치에서 이 수정박스로 변환이 되어야 함 ----->    	 
-                      <!-- ------------------ 수정박스 ------------------ -->
-                      <div class="modimodi" >               		
-	                     	<textarea name="modify_contents" id="modify_contents" cols="30" rows="3">쓴 리뷰 그대로 가져오기</textarea>
-	                        
-	                        <div id="choose_picture" class="choose_picture">  
-	                        <!-- 맨 밑에 해당 스크립트 있음, 사진이 안나와요 -->
-	                            <div id="imgbox" class="file${i+1}_cont">
-			                     	<c:forEach var="i" begin="0" end="1">
-			                              <div class="file${i+1}_cont">
-			
-			                                 <div style="float: left;">
-								                 <input type="hidden" name="filename" value="${i<files.size() ? files[i].orgname : ''}">
-			                                 </div>
-			                                 
-			                                 <c:forTokens items="${files[i].orgname}" delims="." var="token" varStatus="status">
-			                                    <c:if test="${status.last}">
-			                                       <c:if
-			                                          test="${token eq 'jpg' or token eq 'jpeg' or token eq 'png' or token eq 'gif' or token eq 'webp'}">
-			                                          <img src="${cp}/reviewfile/${files[i].systemname}" class="thumbnail">
-			                                       </c:if>
-			                                    </c:if>
-			                                 </c:forTokens>
-			                              </div>
-			                         </c:forEach>  
-			                    </div>
-			                    
-			                    
-	                        </div>
-	                        
+                      		<!-- ------------------ 수정박스 ------------------ -->
+                      <div class="modimodi"> 
+	                      <form id="review_modify_Form" method="post" name="review_modify_Form" action="/user/review_modifyAction.us" enctype="multipart/form-data">
+	                      
+	                      		<input type="hidden" name ="review_num_pk" value="${reviewResult.review_num_pk}">
+                           		<input type="hidden" id="bpnum_pk" name="bpnum_pk" value="${hotelresult.business_place_num_pk}">                        		
+		                     	<textarea name="modify_contents" id="modify_contents" cols="30" rows="3">${reviewResult.review_contents}</textarea>
+		                        
+		                        <div id="choose_picture" class="choose_picture">
+		                        <!-- 맨 밑에 해당 스크립트 있음, 사진이 안나와요 -->
+		                            <div id="imgbox">
+		                              <div class="file${reviewResult.review_num_pk}_cont">
+						                 <input type="file" name="file${reviewResult.review_num_pk}" id="file${reviewResult.review_num_pk}" style="display:none;">
+		                                 <div style="float: left;">
+							                <input type="hidden" name="file${reviewResult.review_num_pk}name" value="${0<files.size() ? files.orgname : '선택된 파일없음'}">
+		                                 </div>
+		                                 
+		                                 <div style="width:100px; height:100px">
+		                                 	<div class="file${reviewResult.review_num_pk}_cont2"></div>
+		                                 </div>
+		                              </div>
+				                	</div>
+		                        </div>
+		                        <!-- 수정버튼입니다. -->
+		                        
+		                        <div class="flexbox">
+			                       
+				                        <!-- 수정버튼입니다. -->
+			                        <label  class="flexbox">
+				                        <button type="button" id="addpic_btn" onclick="upload('file${reviewResult.review_num_pk}')">파일 선택</button>
+				                        <div class="filespan">
+			                           	 <span id="file${reviewResult.review_num_pk}name2"> ${0<files.size() ? files.orgname : "선택된 파일 없음"} </span>
+			                            </div>
+		                            </label>
+			                        <button type="button" id="addpic_btn"  onclick='cancelFile(file${reviewResult.review_num_pk});'>이미지삭제</button>
+			                        <input id="complete_modify" type="submit" value="수정 완료">
+		                        </div>
+	                      </form>             		
 
-	                       	
-	                       	
-	                        <input type="file" name="file" id="file">
-	                        <button type="button" id="addpic_btn">이미지 삭제</button>
-	                        <hr>
-	                        
-	                        <!-- --------------------------------------------->    	 
-                          	 
-						
-                        	</div>
-	                        
-	                 
+	                     </div>
+	                     	                        	  	 
+                      </div>
 
-                        	
-                        
-	           			</div>
-					</div>
+	           	</div>
+					
 
 	           		 
 	           		 <!-- 관리인 리뷰 답장 -->
@@ -867,7 +863,7 @@
 
 	}
 </script>
-<script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+
 
 
 <script>
@@ -892,58 +888,75 @@ function reservation(){
    
 }
 </script>
-
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <script>
-
-   function upload(name){
-      $("#"+name).click();
-   }
-   //$(제이쿼리선택자).change(함수) : 해당 선택자의 요소에 변화가 일어난다면 넘겨주는 함수 호출
-   $("[type='file']").change(function(e){
-      //e : 파일이 업로드된 상황 자체를 담고있는 객체
-      //e.target : 파일이 업로드가 된 input[type=file] 객체(태그객체)
-      //e.target.files : 파일태그에 업로드를 한 파일 객체들의 배열
-      let file = e.target.files[0];
-      
-      if(file == undefined){
-         //$("#file1name")
-         $("#"+e.target.id+"name").text("선택된 파일 없음");
-         $("."+e.target.id+"_cont .thumbnail").remove();
-      }
-      else{
-         $("#"+e.target.id+"name").text(file.name);
-         
-         //["QR","png"]
-         let ext = file.name.split(".").pop();
-         if(ext == 'jpeg' || ext == 'jpg' || ext == 'png' || ext == 'gif' || ext == 'webp'){
-            $("."+e.target.id+"_cont .thumbnail").remove();
-            const reader = new FileReader();
-            
-            reader.onload = function(ie){
-               const img = document.createElement("img"); 
-               img.setAttribute("src",ie.target.result)
-               img.setAttribute("class",'thumbnail');//<img src="???/QR.png" class="thumbnail">
-               $("."+e.target.id+"_cont").append(img);
-            }
-            
-            reader.readAsDataURL(file);
-         }
-         
-      }
-   });
-   
-   function cancelFile(name){
-      if($.browser.msie){
-         $("input[name="+name+"]").replaceWith( $("input[name="+name+"]").clone(true) );
-      }
-      else{
-         $("input[name="+name+"]").val("");
-      }
-      $("#"+name+"name").text("선택된 파일 없음");
-      $("."+name+"_cont .thumbnail").remove();
-      $("#"+name+"name").next().val("");
-   };
-   
+function upload(name){
+	$("#"+name).click();
+}
+//$(제이쿼리선택자).change(함수) : 해당 선택자의 요소에 변화가 일어난다면 넘겨주는 함수 호출
+$("[type='file']").change(function(e){
+	//e : 파일이 업로드된 상황 자체를 담고있는 객체
+	//e.target : 파일이 업로드가 된 input[type=file] 객체(태그객체)
+	//e.target.files : 파일태그에 업로드를 한 파일 객체들의 배열
+	let file = e.target.files[0];
+	
+	console.log(file)
+	console.log(file.name)
+	console.log(e)
+	console.log(e.target.id)
+	console.log(e.target.name)
+	
+	
+	
+	if(file == undefined){
+		//$("#file1name")
+		$("#"+e.target.id+"name2").text("선택된 파일 없음");
+		$("."+e.target.id+"_cont2 .thumbnail").remove();
+	}
+	else{
+		$("#"+e.target.id+"name2").text(file.name);
+		
+		console.log("들어옴");
+		//["QR","png"]
+		let ext = file.name.split(".").pop();
+		if(ext == 'jpeg' || ext == 'jpg' || ext == 'png' || ext == 'gif' || ext == 'webp'){
+			$("."+e.target.id+"_cont .thumbnail").remove();
+			const reader = new FileReader();
+			
+			reader.onload = function(ie){
+				const img = document.createElement("img");
+				img.setAttribute("src",ie.target.result)
+				img.setAttribute("display",'block')
+				img.setAttribute("height",'80px')
+				img.setAttribute("object-fit",'cover')
+				img.setAttribute("margin-top",'10px')
+				img.setAttribute("width",'auto')
+				img.setAttribute("class",'thumbnail');//<img src="???/QR.png" class="thumbnail">
+				document.querySelector("."+e.target.id+"_cont2").appendChild(img);
+			}
+			
+			reader.readAsDataURL(file);
+		}
+		
+	}
+});
+</script>
+<script>
+function cancelFile(name){
+	console.log("들어옴2")
+	console.log(name.id)
+	
+	
+	if($.browser.msie){
+		$("input[name="+name.id+"name2]").replaceWith( $("input[name="+name.id+"name2]").clone(true) );
+	}
+	else{
+		$("input[name="+name.id+"name2]").val("");
+	}
+	$("#"+name.id+"name2").text("선택된 파일 없음");
+	$("."+name.id+"_cont2 .thumbnail").remove();
+	
+}
 </script>
 
 </html>

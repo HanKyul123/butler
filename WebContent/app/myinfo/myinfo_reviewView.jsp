@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -98,14 +99,14 @@
 									<div class="btn">
 										<!-- 수정 버튼 -->
 										<button type="button" class="MDbtn" id="Mbtn" onclick="modify(this)">
-											<img class="MD" id="modify_btn" src="${pageContext.request.contextPath}/img/modify_icon.png" alt="" title="수정하기">
+											<img class="MD" id="modify_btn" src="${pageContext.request.contextPath}/img/modify_icon_bright.png" alt="" title="수정하기">
 										</button>
 
 										<!-- 삭제 버튼 -->
 										<!-- 삭제를 누르면 삭제 요청이 넘어가고 리뷰수 - 1 이 된다. -->
 										<form method="post" action="/user/review_delete.us">
 											<button type="submit" class="MDbtn" id="Dbtn">
-												<img src="${pageContext.request.contextPath}/img/delete.png" alt="" class="MD" id="delete_btn" title="삭제하기">
+												<img src="${pageContext.request.contextPath}/img/delete_focus_bright.png" alt="" class="MD" id="delete_btn" title="삭제하기">
 											</button>
 											<input type="hidden" name="reviewNumPk" value="${reviewResult.review_num_pk}">
 											<input type="hidden" name="replyNumPk" value="${reviewResult.reply_num_pk}">
@@ -118,21 +119,11 @@
 									
 									<div class="newreview_btn">
 										<textarea name="Mnew_review" id="new_review" cols="30" rows="10">${reviewResult.review_contents}</textarea>
-										<input type="hidden" id="review_num" name="review_num" value="${reviewResult.review_num_pk}"> 
-                           				<input type="hidden" id="business_place_num_pk" name="business_place_num_pk"value="${reviewResult.business_place_num_pk}">
+										<input type="hidden" id="review_num_pk" name="review_num_pk" value="${reviewResult.review_num_pk}"> 
+                           				<input type="hidden" id="bpnum_pk" name="bpnum_pk"value="${reviewResult.business_place_num_pk}">
                            				<input type="hidden" id="book_num_pk" name="book_num_pk"value="${reviewResult.BOOK_NUM_PK}">
 	
-										<div>
-											<div>
-												<!-- 수정 완료를 하면 제출되어 DB에 저장된다 -->
-												<button type="submit" class="MDBP" id="complete" onclick="complete()">
-													<img src="${pageContext.request.contextPath}/img/check_icon.png" alt="" class="MDB" id = "MC" title="수정완료">
-												</button>
-											</div>
-											<button type="button" class="MDBP" id="cancel" onclick="canceling(this)">
-												<img src="${pageContext.request.contextPath}/img/cancel_icon.png" alt="" class="MDB" id="CB" title="취소">
-											</button>
-										</div>
+									
 						
 
 										<div class="imgBox">
@@ -168,6 +159,8 @@
 												<a href="javascript:cancelFile('file${i+1}')">
 													<div id="addpic_btn">첨부 삭제</div>
 												</a>
+												<button type="button" class = "cancel_btn" id="cancel_btn" onclick="canceling(this)">수정 취소</button>
+												<input id="complete_modify" type="submit" value="수정 완료">
 											</div>
 										
 										</div>

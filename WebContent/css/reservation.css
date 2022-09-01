@@ -599,7 +599,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
    .MD{
     position: relative;
-    right: 2px;
     cursor: pointer;
     width: 20px;
 }
@@ -681,8 +680,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     background-color: rgb(157, 69, 177);
     border-radius: 4px;
     color: #fff;
-   
-  }
+    transition: 0.5s;
+}
+
+#input[type=file]:hover{
+	border: 1px solid rgb(138, 17, 165);
+    border-radius: 4px;
+    background-color: rgb(138, 17, 165);
+    color: #fff;
+}
 
 
 
@@ -705,8 +711,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     border-radius: 4px;
     color: #fff;
     margin-bottom: 5px;
-    
-  }
+    transition: 0.5s;
+}
+
+#addpic_btn:hover{
+	border: 1px solid rgb(138, 17, 165);
+    border-radius: 4px;
+    background-color: rgb(138, 17, 165);
+    color: #fff;
+}
 
   hr{
    
@@ -821,4 +834,42 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .nospan{
    margin-top:20px;
    width: 52%;
+}
+
+
+.flexbox{
+	text-align: left;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.filespan{
+	position: relative;
+	top: 18px;
+	margin-left: 10px;
+	width: 895px;
+}
+
+#complete_modify{
+	    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'OTWelcomeRA';
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 33px;
+    border: 1px solid rgb(157, 69, 177);
+    background-color: rgb(157, 69, 177);
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+#complete_modify:hover{
+	border: 1px solid rgb(138, 17, 165);
+    border-radius: 4px;
+    background-color: rgb(138, 17, 165);
+    color: #fff;
 }

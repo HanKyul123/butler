@@ -30,10 +30,13 @@ SqlSession sqlsession;
 		
 		return sqlsession.update("review.updateReply",datas) == 1;
 	}
-	public List<MyinfoReviewDTO> MyinfoReviewResult(String user_nickname) {
-	      List<MyinfoReviewDTO> list;
-	      list = sqlsession.selectList("Hotel.MyinfoReviewResult",user_nickname);
-	      return list;
+	public List<MyinfoReviewDTO> MyinfoReviewResult(String user_nickname, int user_num_pk) {
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("user_nickname",user_nickname);
+		datas.put("user_num_pk", user_num_pk);
+	    List<MyinfoReviewDTO> list;
+	    list = sqlsession.selectList("Hotel.MyinfoReviewResult",datas);
+	    return list;
 	   }
 
 	public List findMyReview(String user_nickname) {

@@ -327,7 +327,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     
     
     	#file{
-    	width: 72.7%;
+    	width: 60%;
     	}
  
         a>#Choosebtn {
@@ -343,8 +343,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         background-color: rgb(255, 154, 214);
         border-radius: 4px;
         color: #fff;
-       
-      }
+        transition:0.5s;
+	    
+	  }
+	  
+	  a>#Choosebtn:hover{
+		border: 1px solid rgb(255, 133, 206);
+	    background-color: rgb(255, 133, 206);
+	    border-radius: 4px;
+	    color: #fff;
+	  }
       
 	  #addpic_btn{
 	  	margin-top: 5px;
@@ -358,8 +366,64 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         background-color: rgb(255, 154, 214);
         border-radius: 4px;
         color: #fff;
+        transition:0.5s;
 	    
 	  }
+	  
+	  #addpic_btn:hover{
+		border: 1px solid rgb(255, 133, 206);
+	    background-color: rgb(255, 133, 206);
+	    border-radius: 4px;
+	    color: #fff;
+	  }
+	  
+	  #complete_modify{
+  	cursor: pointer;
+    margin-top: 5px;
+    font-family: 'OTWelcomeRA';
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 33px;
+    border: 1px solid rgb(157, 69, 177);
+    background-color: rgb(157, 69, 177);
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    transition: 0.5s;
+}
+
+#complete_modify:hover{
+	border: 1px solid rgb(138, 17, 165);
+    border-radius: 4px;
+    background-color: rgb(138, 17, 165);
+    color: #fff;
+}   
+    
+    .cancel_btn{
+  	cursor: pointer;
+    margin-top: 5px;
+    font-family: 'OTWelcomeRA';
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    line-height: 33px;
+    border: 1px solid rgb(157, 69, 177);
+    background-color: rgb(157, 69, 177);
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 5px;
+     margin-left: 5px;
+    transition: 0.5s;
+}
+
+.cancel_btn:hover{
+	border: 1px solid rgb(138, 17, 165);
+    border-radius: 4px;
+    background-color: rgb(138, 17, 165);
+    color: #fff;
+} 
     
     #flex{
     display: flex;
@@ -400,7 +464,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	    }
     
   	.upup{
-  	width:483.5px;
+  	width:273px;
     position: relative;
     top: 13px;
     }
