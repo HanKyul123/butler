@@ -29,7 +29,7 @@
 			<a class="my_info_magage" href="${pageContext.request.contextPath}/app/myinfo/myinfoView.jsp">
 			<div id="all_choice">내 정보 관리</div>
 			</a> <br> 
-			<a class="my_reservation_info" href="/book/findMyReservation.book"><div>예약 내역</div></a> <br> 
+			<a class="my_reservation_info" href="/book/findMyReservation.book"><div id="all_choice">예약 내역</div></a> <br> 
 			<a class="my_review_info" href="/user/myinfoRevieViewAction.us">
 			<div id="all_choice">내가 쓴 리뷰</div></a>
 
